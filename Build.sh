@@ -1,0 +1,1 @@
+xbuild ./FreecraftCore.API.Common.sln /p:DebugSymbols=False /d:MONO
