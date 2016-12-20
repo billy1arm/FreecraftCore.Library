@@ -1,0 +1,1 @@
+xbuild ./FreecraftCore.Packet.sln /p:DebugSymbols=False /d:MONO
