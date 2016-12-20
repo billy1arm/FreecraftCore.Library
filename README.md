@@ -1,8 +1,8 @@
-# FreecraftCore.API.Common
+# FreecraftCore.Packet
 
 FreecraftCore is an open-source C#-based 3.3.5 World of Warcraft emulation project. It is derived from the work of Mangos and Trinitycore.
 
-The FreecraftCore.API.Common is a library designed to offer common contracts, interface, types and services that should be shared between any client or server implementation of FreecraftCore or World of Warcraft in general.
+FreecraftCore.Packet is a collection of libraries that lay out the format and design for packets and payloads for FreecraftCore. It depends on common libraries and the [FreecraftCore.Serializer](https://github.com/FreecraftCore/FreecraftCore.Serializer) which is a metadata based serializer based on Blizzard's JAM.
 
 ## Builds
 
@@ -13,8 +13,8 @@ Available on a Nuget Feed: https://www.myget.org/F/freecraftcore/api/v2 [![freec
 #### Linux/Mono - Unit Tests
 ||Debug x86|Debug x64|Release x86|Release x64|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.API.Common.svg?branch=master)](https://travis-ci.org/FreecraftCore/FreecraftCore.API.Common) |
-|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.API.Common.svg?branch=dev)](https://travis-ci.org/FreecraftCore/FreecraftCore.API.Common)|
+|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.Packet.svg?branch=master)](https://travis-ci.org/FreecraftCore/FreecraftCore.Packet) |
+|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.Packet.svg?branch=dev)](https://travis-ci.org/FreecraftCore/FreecraftCore.Packet)|
 
 #### Windows - Unit Tests
 
