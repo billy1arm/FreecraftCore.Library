@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FreecraftCore.API.Common.Misc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FreecraftCore.API.Common.Misc.1.0.0\lib\net452\FreecraftCore.API.Common.Misc.dll</HintPath>
+    <Reference Include="FreecraftCore.API.Common.Misc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FreecraftCore.API.Common.Misc.1.0.1\lib\net452\FreecraftCore.API.Common.Misc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FreecraftCore.Serializer.Metadata, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">

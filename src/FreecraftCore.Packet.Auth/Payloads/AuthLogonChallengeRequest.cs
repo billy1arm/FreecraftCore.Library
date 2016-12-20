@@ -23,7 +23,7 @@ namespace FreecraftCore.Packet.Auth
 		/// Unknown byte-sized error field sent, but not checked, by WoW emulation projects such as Mangos/Trinitycore
 		/// </summary>
 		[WireMember(1)]
-		private readonly byte error = 0;
+		public ProtocolVersion Protocol { get; private set; }
 
 		//We don't need to expose this really. Shouldn't need to be checked. This isn't C++
 		/// <summary>
@@ -61,7 +61,7 @@ namespace FreecraftCore.Packet.Auth
 
 		//TODO: Enumerate this maybe?
 		[WireMember(6)]
-		public ushort BuildId { get; private set; }
+		public ClientBuild Build { get; private set; }
 
 		/// <summary>
 		/// Indicates the platform/arc (Ex. 32bit or 64bit)
@@ -108,20 +108,21 @@ namespace FreecraftCore.Packet.Auth
 		public IPAddress IP { get { return cachedIp == null ? cachedIp = new IPAddress(ipAddressInBytes) : cachedIp; } }
 
 		/// <summary>
-		/// Could be Username of maybe Email.
+		/// Could be Username or maybe Email.
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(12)]
-		public string LoginString { get; private set; }
+		public string Identity { get; private set; }
 
-		public AuthLogonChallengeRequest(GameType game, ExpansionType expansion, byte majorPatch, byte minorPatch, ushort buildId, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string loginString)
+		public AuthLogonChallengeRequest(ProtocolVersion protocol, GameType game, ExpansionType expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)
 		{
 			//TODO: Very long ctor. Maybe use builder in the future.
+			Protocol = protocol;
 			Game = game;
 			Expansion = expansion;
 			MajorPatchVersion = majorPatch;
 			MinorPatchVersion = minorPatch;
-			BuildId = buildId;
+			Build = build;
 			Platform = platform;
 			OperatingSystem = operatingSystem;
 			Locale = locale;
@@ -130,10 +131,10 @@ namespace FreecraftCore.Packet.Auth
 			//TODO: Check size
 			ipAddressInBytes = clientIp.GetAddressBytes(); //Trinitycore expects an int32 but an array of bytes should work
 
-			LoginString = loginString;
+			Identity = identity;
 
 			//Now we can compute size. Jackpoz does this with a literal. Trinitycore uses constants. I think we'll just use a literal though.
-			size = (ushort)(loginString.Length + 30);
+			size = (ushort)(identity.Length + 30);
 		}
 
 		public AuthLogonChallengeRequest()
