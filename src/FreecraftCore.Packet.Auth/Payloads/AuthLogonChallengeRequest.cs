@@ -14,9 +14,9 @@ namespace FreecraftCore.Packet.Auth
 	/// Initial Authentication payload
 	/// </summary>
 	[WireMessage]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //metadata market for the "cmd"
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //metadata marker for the "cmd"
 	[AuthenticationPayload(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)]
-	public class AuthLogonChallengeRequest
+	public class AuthLogonChallengeRequest : IAuthenticationPayload
 	{
 		//TODO: This field is the protocol; not an error. https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/LoginChallenge.h
 		/// <summary>
