@@ -18,9 +18,10 @@ namespace FreecraftCore.Packet.Auth
 	[AuthenticationPayload(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)]
 	public class AuthLogonChallengeRequest : IAuthenticationPayload
 	{
-		//TODO: This field is the protocol; not an error. https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/LoginChallenge.h
 		/// <summary>
-		/// Unknown byte-sized error field sent, but not checked, by WoW emulation projects such as Mangos/Trinitycore
+		/// Authentication protocol version to use.
+		/// Trinitycore/Mangos has this marked as an error but Ember https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/LoginChallenge.h has this
+		/// marked as the protocol field.
 		/// </summary>
 		[WireMember(1)]
 		public ProtocolVersion Protocol { get; private set; }
