@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\AuthenticationResult.cs" />
     <Compile Include="Auth\ClientBuild.cs" />
     <Compile Include="Auth\ExpansionType.cs" />
     <Compile Include="Auth\GameType.cs" />
     <Compile Include="Auth\LocaleType.cs" />
+    <Compile Include="Auth\LoginResult.cs" />
     <Compile Include="Auth\OperatingSystemType.cs" />
     <Compile Include="Auth\PlatformType.cs" />
     <Compile Include="Auth\ProtocolVersion.cs" />
