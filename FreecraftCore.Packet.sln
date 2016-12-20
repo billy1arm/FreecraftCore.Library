@@ -7,8 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E903AB5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C69D878A-A37C-4DBD-8D90-8AF30074E3C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.Packet.Common", "src\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj", "{75151464-2AD7-4E57-A892-F337AA563DDF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75151464-2AD7-4E57-A892-F337AA563DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75151464-2AD7-4E57-A892-F337AA563DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75151464-2AD7-4E57-A892-F337AA563DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75151464-2AD7-4E57-A892-F337AA563DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75151464-2AD7-4E57-A892-F337AA563DDF} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
 	EndGlobalSection
 EndGlobal
