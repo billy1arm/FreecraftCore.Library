@@ -1,0 +1,20 @@
+﻿{
+    "version": "1.0.0-*",
+
+    "dependencies": {
+        "FreecraftCore.Serializer.Metadata": "1.0.*"
+    },
+
+    "frameworks": {
+        "net35": {
+        },
+        "net45": {
+        },
+        "net46": {
+        }
+    },
+
+    "buildOptions": {
+        "optimize": true
+    }
+}

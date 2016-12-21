@@ -7,11 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E903AB5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C69D878A-A37C-4DBD-8D90-8AF30074E3C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.Entity.Identity", "src\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj", "{CFA4021D-D75E-4DEC-9C0D-03324F09D375}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.API.Common.Auth", "src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.xproj", "{7E913B40-A4EB-47C4-A2F9-694DCE581FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.Misc", "src\FreecraftCore.API.Common.Misc\FreecraftCore.API.Common.Misc.csproj", "{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.Auth", "src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj", "{34337B0F-000A-409B-BBB8-134337E7F8CC}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.API.Common.Entity.Identity", "src\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.xproj", "{32A6FC83-2694-41C5-A43A-044D039CDC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,25 +17,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFA4021D-D75E-4DEC-9C0D-03324F09D375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFA4021D-D75E-4DEC-9C0D-03324F09D375}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFA4021D-D75E-4DEC-9C0D-03324F09D375}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFA4021D-D75E-4DEC-9C0D-03324F09D375}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E913B40-A4EB-47C4-A2F9-694DCE581FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E913B40-A4EB-47C4-A2F9-694DCE581FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E913B40-A4EB-47C4-A2F9-694DCE581FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E913B40-A4EB-47C4-A2F9-694DCE581FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A6FC83-2694-41C5-A43A-044D039CDC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A6FC83-2694-41C5-A43A-044D039CDC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A6FC83-2694-41C5-A43A-044D039CDC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A6FC83-2694-41C5-A43A-044D039CDC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CFA4021D-D75E-4DEC-9C0D-03324F09D375} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
-		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
-		{34337B0F-000A-409B-BBB8-134337E7F8CC} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{7E913B40-A4EB-47C4-A2F9-694DCE581FF6} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{32A6FC83-2694-41C5-A43A-044D039CDC36} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
 	EndGlobalSection
 EndGlobal
