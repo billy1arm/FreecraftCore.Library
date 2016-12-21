@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FreecraftCore.API.Common.Misc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FreecraftCore.API.Common.Misc.1.0.1\lib\net452\FreecraftCore.API.Common.Misc.dll</HintPath>
+    <Reference Include="FreecraftCore.API.Common.Auth, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FreecraftCore.API.Common.Auth.1.0.4\lib\net452\FreecraftCore.API.Common.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FreecraftCore.Serializer.Metadata, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Attributes\AuthenticationPayloadAttribute.cs" />
     <Compile Include="Payloads\AuthLogonChallengeRequest.cs" />
+    <Compile Include="Payloads\AuthLogonChallengeResponse.cs" />
     <Compile Include="Payloads\IAuthenticationPayload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
