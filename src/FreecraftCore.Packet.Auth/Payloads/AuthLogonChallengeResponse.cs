@@ -34,12 +34,19 @@ namespace FreecraftCore.Packet.Auth
 		[WireMember(3)]
 		public SRPToken Token { get; private set; }
 
+		/// <summary>
+		/// Supposedly is a CRC salt that is used to compute a CRC hash for client files.
+		/// </summary>
+		[KnownSize(16)]
+		[WireMember(4)]
+		public byte[] CRCSalt { get; private set; }
+
 		//TODO: Create enum
 		/// <summary>
 		/// Flags that indicate what security additional measures are required for authentication
 		/// (Ex. Authenticator or Pin) Will usually be 0 meaning none
 		/// </summary>
-		[WireMember(4)]
+		[WireMember(5)]
 		public byte securityFlags { get; private set; }
 
 		//The server is suppose to send additional info depending on the flags
