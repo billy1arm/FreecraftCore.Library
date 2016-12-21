@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.Misc", "src\FreecraftCore.API.Common.Misc\FreecraftCore.API.Common.Misc.csproj", "{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common.Auth", "src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj", "{34337B0F-000A-409B-BBB8-134337E7F8CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34337B0F-000A-409B-BBB8-134337E7F8CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CFA4021D-D75E-4DEC-9C0D-03324F09D375} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
 		{0AF2F6D0-F602-4F40-ADF9-56D48FF904DD} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{34337B0F-000A-409B-BBB8-134337E7F8CC} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
 	EndGlobalSection
 EndGlobal
