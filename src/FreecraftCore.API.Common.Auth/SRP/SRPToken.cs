@@ -42,10 +42,5 @@ namespace FreecraftCore.API.Common.Auth
 		[KnownSize(32)] //trinitycore sends 32 byte salt
 		[WireMember(4)]
 		public byte[] salt { get; private set; }
-
-		//TODO: Find out what this is. Check Mangos or Ember. Trinitycore doesn't know.
-		[KnownSize(16)] //Trinitycore does know it's 16 bytes though
-		[WireMember(5)]
-		public byte[] unk3 { get; private set; }
 	}
 }
