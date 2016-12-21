@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace FreecraftCore.Packet.Auth
 {
@@ -51,6 +51,8 @@ namespace FreecraftCore.Packet.Auth
 		{
 			return Result == AuthenticationResult.Success || Result == AuthenticationResult.Success_Survey;
 		}
+
+		//TODO: Proper ctor; right now we don't have a server so we can get away with just default
 
 		public AuthLogonChallengeResponse()
 		{

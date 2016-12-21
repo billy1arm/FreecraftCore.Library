@@ -1,1 +1,2 @@
-xbuild ./FreecraftCore.Packet.sln /p:DebugSymbols=False /d:MONO
+dotnet restore
+dotnet build -c Debug src/*/project.json
