@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FreecraftCore.API.Common.Misc")]
+[assembly: AssemblyTitle("FreecraftCore.API.Common.Unit.Identity")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("FreecraftCore.API.Common.Misc")]
+[assembly: AssemblyProduct("FreecraftCore.API.Common.Unit.Identity")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0af2f6d0-f602-4f40-adf9-56d48ff904dd")]
+[assembly: Guid("cfa4021d-d75e-4dec-9c0d-03324f09d375")]
 
 // Version information for an assembly consists of the following four values:
 //
