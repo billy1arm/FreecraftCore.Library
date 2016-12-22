@@ -71,6 +71,7 @@ namespace FreecraftCore.Crypto
 
 		public BigInteger ComputeSessionKey(string userName, string password, byte[] challengeSalt)
 		{
+
 			//Attribution to both Jackpoz's 3.3.5 bot and Mangons Client
 			//https://github.com/jackpoz/BotFarm
 			//https://github.com/vermie/MangosClient/blob/master/Client/Authentication/Network/AuthSocket.cs
