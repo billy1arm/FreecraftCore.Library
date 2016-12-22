@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace FreecraftCore.Crypto.SRP6
 {
@@ -71,6 +72,65 @@ namespace FreecraftCore.Crypto.SRP6
 				keyData[i * 2 + 1] = keyHash[i];
 
 			return new BigInteger(keyData);
+		}
+
+		/// <summary>
+		/// Computes M/M1 for the SRP6 protocol.
+		/// M/M1 is defined as H(H(N) xor H(g), H(I), s, A, B, K)
+		/// </summary>
+		/// <param name="g">Generator.</param>
+		/// <param name="N">Modulus</param>
+		/// <param name="userName">Unhashed username string.</param>
+		/// <param name="salt">Provided challenge salt.</param>
+		/// <param name="A">First public component.</param>
+		/// <param name="B">Second public component.</param>
+		/// <param name="unhashedSessionKey">Unhashed session key (S) which is used to build K = H(S)</param>
+		/// <returns>M/M1 byte array.</returns>
+		public byte[] ComputeSRP6M1(BigInteger g, BigInteger N, string userName, byte[] salt, BigInteger A, BigInteger B, BigInteger unhashedSessionKey)
+		{
+			//Ok, so the client is technically the host in this situation
+			//The SRP6 protocol suggests that we provide a proof such as
+			//M = H(H(N) xor H(g), H(I), s, A, B, K) to prove we know K, I think.
+
+			//From Mangos client: https://github.com/vermie/MangosClient/blob/master/Client/Authentication/Network/AuthSocket.cs
+
+			byte[] NHash = GenerateHashFor(N);
+			byte[] gHash = GenerateHashFor(g);
+
+			//Hash the Username provided
+			byte[] hashedUserName = GenerateHashFor(Encoding.ASCII.GetBytes(userName));
+
+			//TODO: Why do we use this hashing algorithm? Is this custom Blizzard hash?
+			//Hash session key (K)
+			//K = H(S)
+			BigInteger hashedSessionKey = HashSessionKey(unhashedSessionKey);
+
+			//XOR the NHash by with the gHash
+			for (int i = 0; i < NHash.Length; i++)
+				NHash[i] ^= gHash[i];
+
+			//SRP6 suggests M be the hash of NHash xor'd, hash of identity, salt, public components and hashed session key
+			//H(H(N) xor H(g), H(I), s, A, B, H(S))
+			return GenerateHashFor(NHash.Concat(hashedUserName)
+				.Concat(salt)
+				.Concat(A.ToCleanByteArray()) 
+				.Concat(B.ToCleanByteArray())
+				.Concat(hashedSessionKey.ToCleanByteArray())
+				.ToArray());
+		}
+
+		private byte[] GenerateHashFor(BigInteger bigInt)
+		{
+			return GenerateHashFor(bigInt.ToCleanByteArray());
+		}
+
+		private byte[] GenerateHashFor(byte[] bytes)
+		{
+			using (SHA1 shaProvider = SHA1.Create())
+			{
+				//Compute SHA1 hash of the provide bigInt
+				return shaProvider.ComputeHash(bytes);
+			}
 		}
 
 		#region IDisposable Support
