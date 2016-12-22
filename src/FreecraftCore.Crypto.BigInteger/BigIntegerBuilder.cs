@@ -1,5 +1,5 @@
 ﻿#if NET35
-//Backported for net35
+//Backported for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.

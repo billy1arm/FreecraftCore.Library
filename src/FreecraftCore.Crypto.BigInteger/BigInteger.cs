@@ -1,5 +1,5 @@
 ﻿#if NET35
-//Backported BigInteger for net35
+//Backported BigInteger for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.

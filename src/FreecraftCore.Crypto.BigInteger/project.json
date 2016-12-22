@@ -9,14 +9,25 @@
             "dependencies": {
             }
         },
+        "net40": {
+            "dependencies": {
+            },
+            "frameworkAssemblies": {
+                "System.Numerics": "4.0.0.0"
+            }
+        },
         "net45": {
             "dependencies": {
-                "System.Runtime.Numerics": "4.0.*"
+            },
+            "frameworkAssemblies": {
+                "System.Numerics": "4.0.0.0"
             }
         },
         "net46": {
             "dependencies": {
-                "System.Runtime.Numerics": "4.0.*"
+            },
+            "frameworkAssemblies": {
+                "System.Numerics": "4.0.0.0"
             }
         }
     },
