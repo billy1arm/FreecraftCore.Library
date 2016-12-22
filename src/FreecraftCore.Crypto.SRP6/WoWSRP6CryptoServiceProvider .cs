@@ -52,14 +52,20 @@ namespace FreecraftCore.Crypto
 
 			//Initialize A
 
-			//Fill array with crypto secure bytes
-			randomProvider.GetNonZeroBytes(randBytes);
+			//The host will abort if it detects that A == 0(mod N)
+			//We try again. Not abort. This shouldn't happen though?
+			do
+			{
+				//Fill array with crypto secure bytes
+				randomProvider.GetNonZeroBytes(randBytes);
 
-			//Build a private component
-			privateKeyComponent_a = new BigInteger(randBytes); //should be secure and valid
+				//Build a private component
+				privateKeyComponent_a = new BigInteger(randBytes); //should be secure and valid
 
-			//Based on SRP6 spec: https://www.codeproject.com/articles/1082676/communication-using-secure-remote-password-protoco
-			A = g.ModPow(privateKeyComponent_a, N);
+				//Based on SRP6 spec: https://www.codeproject.com/articles/1082676/communication-using-secure-remote-password-protoco
+				A = g.ModPow(privateKeyComponent_a, N);
+
+			} while (A.ModPow(1, N) == 0);
 		}
 
 		public BigInteger ComputeSessionKey(BigInteger hashedTokenWithUser, BigInteger hashedSaltPassword)
