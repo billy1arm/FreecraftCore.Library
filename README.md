@@ -18,9 +18,19 @@ Implements SHA1 (unsecure) based [SRP6](http://srp.stanford.edu/design.html)
 
 Implements custom session key hashing based on the [Mangos Client](https://github.com/vermie/MangosClient/blob/master/Client/Authentication/Network/AuthSocket.cs)'s work.
 
+## Works in Progress
+
 ### Client HMAC
 
 Implements hashing aglorithm used for AUTH_LOGON_PROOF's crc_hash (misnamed) using the unk3 (misnamed) seed that is sent with the challenge response.
+
+### M2 Verification (Server's M)
+
+Server sends H(A, M, K) proving that it computed K, recieved A and recieved M. This check is currently not supported.
+
+### Serverside Implementation
+
+Right now only clientside SRP6 is implemented.
 
 ## Builds
 
