@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FreecraftCore.Crypto.SRP6
+namespace FreecraftCore.Crypto
 {
 	/// <summary>
 	/// Provides SRP6 public component hashing service.
@@ -14,18 +14,27 @@ namespace FreecraftCore.Crypto.SRP6
 	/// </summary>
 	public class WoWSRP6PublicComponentHashServiceProvider : IDisposable
 	{
-		public BigInteger Hash(BigInteger componentOne, BigInteger componentTwo)
+		public byte[] Hash(BigInteger componentOne, BigInteger componentTwo)
 		{
 			return Hash(componentOne.ToCleanByteArray(), componentTwo.ToCleanByteArray());
 		}
 
-		public BigInteger Hash(byte[] componentOne, byte[] componentTwo)
+		public byte[] Hash(byte[] componentOne, byte[] componentTwo)
 		{
 			//WoW expects non-secure SHA1 hashing. SRP6 is deprecated too. We need to do it anyway
 			using (SHA1 shaProvider = SHA1.Create())
 			{
 				//See Jackpoz's Combine function
-				return new BigInteger(shaProvider.ComputeHash(Enumerable.Concat(componentOne, componentTwo).ToArray()));
+				return shaProvider.ComputeHash(Enumerable.Concat(componentOne, componentTwo).ToArray());
+			}
+		}
+
+		public byte[] Hash(byte[] bytes)
+		{
+			//WoW expects non-secure SHA1 hashing. SRP6 is deprecated too. We need to do it anyway
+			using (SHA1 shaProvider = SHA1.Create())
+			{
+				return shaProvider.ComputeHash(bytes);
 			}
 		}
 

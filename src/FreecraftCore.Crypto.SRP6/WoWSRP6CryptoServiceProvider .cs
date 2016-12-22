@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace FreecraftCore.Crypto
 {
@@ -68,7 +69,7 @@ namespace FreecraftCore.Crypto
 			} while (A.ModPow(1, N) == 0);
 		}
 
-		public BigInteger ComputeSessionKey(BigInteger hashedTokenWithUser, BigInteger hashedSaltPassword)
+		public BigInteger ComputeSessionKey(string userName, string password, byte[] challengeSalt)
 		{
 			//Attribution to both Jackpoz's 3.3.5 bot and Mangons Client
 			//https://github.com/jackpoz/BotFarm
@@ -78,7 +79,13 @@ namespace FreecraftCore.Crypto
 			//hashedTokenWithUser = SRP6 u
 			//hashedSaltPassword = SRP6 x
 			//compute session key
-			return ((B + new BigInteger(3) * (N - g.ModPow(hashedTokenWithUser, N))) % N).ModPow(privateKeyComponent_a + (hashedTokenWithUser * hashedSaltPassword), N);
+			using (WoWSRP6PublicComponentHashServiceProvider hashProvider = new WoWSRP6PublicComponentHashServiceProvider())
+			{
+				//Compute password hash salted with provided salt
+				BigInteger x = new BigInteger(hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes(password.ToUpper()))));
+
+				return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (new BigInteger(hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray())) * x), N);
+			}
 		}
 
 		#region IDisposable Support
