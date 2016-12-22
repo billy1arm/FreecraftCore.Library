@@ -13,25 +13,18 @@ namespace FreecraftCore.Crypto.SRP6
 	/// </summary>
 	public class WoWSRP6PublicComponentHashServiceProvider : IDisposable
 	{
-		/// <summary>
-		/// SRP6 u. Random scrambling parameter.
-		/// See: http://srp.stanford.edu/design.html
-		/// </summary>
-		public BigInteger u { get; private set; }
-
-		public WoWSRP6PublicComponentHashServiceProvider(BigInteger publicComponentA, BigInteger PublicComponentB)
+		public BigInteger Hash(BigInteger componentOne, BigInteger componentTwo)
 		{
-			if (publicComponentA == null)
-				throw new ArgumentNullException(nameof(publicComponentA), $"Must provide a public key component. Cannot preform hash without two non-null public components.");
+			return Hash(componentOne.ToCleanByteArray(), componentTwo.ToCleanByteArray());
+		}
 
-			if (PublicComponentB == null)
-				throw new ArgumentNullException(nameof(PublicComponentB), $"Must provide a public key component. Cannot preform hash without two non-null public components.");
-
+		public BigInteger Hash(byte[] componentOne, byte[] componentTwo)
+		{
 			//WoW expects non-secure SHA1 hashing. SRP6 is deprecated too. We need to do it anyway
 			using (SHA1 shaProvider = SHA1.Create())
 			{
 				//See Jackpoz's Combine function
-				u = new BigInteger(shaProvider.ComputeHash(Enumerable.Concat(publicComponentA.ToCleanByteArray(), PublicComponentB.ToCleanByteArray()).ToArray()));
+				return new BigInteger(shaProvider.ComputeHash(Enumerable.Concat(componentOne, componentTwo).ToArray()));
 			}
 		}
 
