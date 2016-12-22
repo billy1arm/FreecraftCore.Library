@@ -27,16 +27,16 @@ namespace FreecraftCore.Packet.Auth
 		[WireMember(2)]
 		public byte[] M1 { get; private set; }
 
-		//TODO: Implement clientside CRC hash response. EmberEmu extracts 4 bytes and calls it SurveyID?
+		//TODO: Implement clientside hash response. Is this in 1.12.1?
 		//This is not a CRC. http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-questions-requests/236273-auth-proof-crc-hash.html
 		//Says that it is a SHA1(A, HMAC(client_files)) meaning SRP6 A public component hashed with an HMAC of WoW.ex, Divx and Unicows (maybe).
 		/// <summary>
-		/// Supposedly a CRC hash using the salt provided in <see cref="AuthLogonChallengeResponse"/> involving some client files.
+		/// Supposedly a hash using the empherally computed SRP6 A and some client files.
 		/// Most servers don't implement this.
 		/// </summary>
 		[KnownSize(20)]
 		[WireMember(2)]
-		public byte[] ClientCrcHash { get; private set; }
+		public byte[] EphemeralClientFileHash { get; private set; } = new byte[20]; //TODO: When we actually implement this remove this empty array
 
 		//Documentation says it's never used
 		//TODO: Find out what this is. Trinitycore doesn't seem to reference it. Neither does Mangos.
@@ -49,6 +49,8 @@ namespace FreecraftCore.Packet.Auth
 
 		public AuthLogonProofRequest(byte[] providedA, byte[] m1Hash)
 		{
+			//TODO: Null checks; size checks
+
 			A = providedA;
 			M1 = m1Hash;
 		}
