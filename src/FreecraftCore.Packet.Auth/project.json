@@ -3,8 +3,8 @@
 
     "dependencies": {
         "FreecraftCore.Packet.Common": "1.0.0-*",
-        "FreecraftCore.Serializer.Metadata": "1.1.0",
-        "FreecraftCore.API.Common.Auth": "1.0.7"
+        "FreecraftCore.API.Common.Auth": "1.0.7",
+        "FreecraftCore.Serializer.Metadata": "1.1.7"
     },
 
     "frameworks": {

@@ -15,7 +15,7 @@
           "lib/net35/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.0": {
+      "FreecraftCore.Serializer.Metadata/1.1.7": {
         "type": "package",
         "compile": {
           "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
@@ -48,7 +48,7 @@
           "lib/net45/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.0": {
+      "FreecraftCore.Serializer.Metadata/1.1.7": {
         "type": "package",
         "compile": {
           "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
@@ -81,7 +81,7 @@
           "lib/net46/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.0": {
+      "FreecraftCore.Serializer.Metadata/1.1.7": {
         "type": "package",
         "compile": {
           "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
@@ -115,12 +115,12 @@
         "lib/net46/FreecraftCore.API.Common.Auth.dll"
       ]
     },
-    "FreecraftCore.Serializer.Metadata/1.1.0": {
-      "sha512": "qBL0+8mwtE3zD9erbPj0OjII6q6s3ip2fQ0HJqCIaesRk0QyZlIS/s9SSVDxMl6AJYlsQtGfARRw3LZ4aD1MVQ==",
+    "FreecraftCore.Serializer.Metadata/1.1.7": {
+      "sha512": "0Z/PJhYQG01UL9AmlYFdXE69f8UEVUq6N0aD8ieFRU+EJvFbHRtAxqT4YOwUrtW8uwVoz/rQ7p+NqcjiR/L82g==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/1.1.0",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.7",
       "files": [
-        "FreecraftCore.Serializer.Metadata.1.1.0.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.1.1.7.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
@@ -137,7 +137,7 @@
     "": [
       "FreecraftCore.API.Common.Auth >= 1.0.7",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
-      "FreecraftCore.Serializer.Metadata >= 1.1.0"
+      "FreecraftCore.Serializer.Metadata >= 1.1.7"
     ],
     ".NETFramework,Version=v3.5": [],
     ".NETFramework,Version=v4.5": [],

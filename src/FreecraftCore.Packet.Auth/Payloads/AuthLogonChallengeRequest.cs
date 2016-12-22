@@ -87,6 +87,7 @@ namespace FreecraftCore.Packet.Auth
 		/// </summary>
 		[EnumString]
 		[ReverseData]
+		[DontTerminate] //Locale also doesn't terminate. It is a char[4] like "SUne" without a terminator.
 		[KnownSize(4)]
 		[WireMember(9)]
 		public LocaleType Locale { get; private set; }
