@@ -1,0 +1,28 @@
+﻿{
+    "version": "1.0.0-*",
+
+    "dependencies": {
+    },
+
+    "frameworks": {
+        "net35": {
+            "dependencies": {
+            }
+        },
+        "net45": {
+            "dependencies": {
+                "System.Runtime.Numerics": "4.0.*"
+            }
+        },
+        "net46": {
+            "dependencies": {
+                "System.Runtime.Numerics": "4.0.*"
+            }
+        }
+    },
+
+    "buildOptions": {
+        "allowUnsafe": true,
+        "optimize": true
+    }
+}
