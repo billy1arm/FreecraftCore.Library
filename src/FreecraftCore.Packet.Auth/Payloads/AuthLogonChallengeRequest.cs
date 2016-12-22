@@ -87,7 +87,7 @@ namespace FreecraftCore.Packet.Auth
 		/// </summary>
 		[EnumString]
 		[ReverseData]
-		[KnownSize(3)]
+		[KnownSize(4)]
 		[WireMember(9)]
 		public LocaleType Locale { get; private set; }
 
