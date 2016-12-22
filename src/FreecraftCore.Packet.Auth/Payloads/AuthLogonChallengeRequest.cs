@@ -13,7 +13,7 @@ namespace FreecraftCore.Packet.Auth
 	/// <summary>
 	/// Initial Authentication payload
 	/// </summary>
-	[WireMessage]
+	[WireDataContract]
 	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //metadata marker for the "cmd"
 	[AuthenticationPayload(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)]
 	public class AuthLogonChallengeRequest : IAuthenticationPayload

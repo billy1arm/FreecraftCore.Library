@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FreecraftCore.Packet.Auth
 {
-	[WireMessage]
+	[WireDataContract]
 	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)]
 	public class AuthLogonProofRequest : IAuthenticationPayload
 	{
@@ -25,7 +25,7 @@ namespace FreecraftCore.Packet.Auth
 		/// </summary>
 		[KnownSize(20)]
 		[WireMember(2)]
-		public byte[] TokenHash { get; private set; }
+		public byte[] M1 { get; private set; }
 
 		//TODO: Implement clientside CRC hash response. EmberEmu extracts 4 bytes and calls it SurveyID?
 		//This is not a CRC. http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-questions-requests/236273-auth-proof-crc-hash.html
@@ -46,6 +46,12 @@ namespace FreecraftCore.Packet.Auth
 		//No server implements tokens so security flags are always 0
 		[WireMember(4)]
 		private readonly byte securityFlags = 0;
+
+		public AuthLogonProofRequest(byte[] providedA, byte[] m1Hash)
+		{
+			A = providedA;
+			M1 = m1Hash;
+		}
 
 		public AuthLogonProofRequest()
 		{
