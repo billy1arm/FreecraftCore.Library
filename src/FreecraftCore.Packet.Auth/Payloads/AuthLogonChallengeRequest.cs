@@ -93,7 +93,7 @@ namespace FreecraftCore.Packet.Auth
 
 		//TODO: Timezone bias? Investigate values.
 		[WireMember(10)]
-		private int TimeZoneBias { get; set; }
+		private uint TimeZoneBias { get; set; }
 
 		[KnownSize(4)]
 		[WireMember(11)]
