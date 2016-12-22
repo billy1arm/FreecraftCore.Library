@@ -80,7 +80,7 @@ namespace FreecraftCore.Crypto
 			for (int i = 0; i < 20; ++i)
 				keyData[i * 2 + 1] = keyHash[i];
 
-			return new BigInteger(keyData);
+			return keyData.ToBigInteger();
 		}
 
 		/// <summary>

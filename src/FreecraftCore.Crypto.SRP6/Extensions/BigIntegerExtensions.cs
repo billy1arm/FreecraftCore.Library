@@ -30,5 +30,25 @@ namespace System.Numerics
 		{
 			return BigInteger.ModPow(number, exp, modulus);
 		}
+
+		//From Jackpoz's 3.3.5 bot
+		/// <summary>
+		/// places a non-negative value (0) at the MSB, then converts to a BigInteger.
+		/// This ensures a non-negative value without changing the binary representation.
+		/// </summary>
+		public static BigInteger ToBigInteger(this byte[] array)
+		{
+			byte[] temp;
+			if ((array[array.Length - 1] & 0x80) == 0x80)
+			{
+				temp = new byte[array.Length + 1];
+				temp[array.Length] = 0;
+			}
+			else
+				temp = new byte[array.Length];
+
+			Array.Copy(array, temp, array.Length);
+			return new BigInteger(temp);
+		}
 	}
 }

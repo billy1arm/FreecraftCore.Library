@@ -61,7 +61,7 @@ namespace FreecraftCore.Crypto
 				randomProvider.GetNonZeroBytes(randBytes);
 
 				//Build a private component
-				privateKeyComponent_a = new BigInteger(randBytes); //should be secure and valid
+				privateKeyComponent_a = randBytes.ToBigInteger(); //should be secure and valid
 
 				//Based on SRP6 spec: https://www.codeproject.com/articles/1082676/communication-using-secure-remote-password-protoco
 				A = g.ModPow(privateKeyComponent_a, N);
@@ -83,9 +83,9 @@ namespace FreecraftCore.Crypto
 			using (WoWSRP6PublicComponentHashServiceProvider hashProvider = new WoWSRP6PublicComponentHashServiceProvider())
 			{
 				//Compute password hash salted with provided salt
-				BigInteger x = new BigInteger(hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes(password.ToUpper()))));
+				BigInteger x = hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes(password.ToUpper()))).ToBigInteger();
 
-				return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (new BigInteger(hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray())) * x), N);
+				return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
 			}
 		}
 
