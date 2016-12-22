@@ -680,7 +680,7 @@ namespace System.Numerics
 
 				fixed (char* pinnedExtraDigits = rgch)
 				{
-					return NumberPort.FormatNumberBuffer(number.PackForNative(), format, info, pinnedExtraDigits + ichDst);
+					throw new NotImplementedException($"Could not implement NumberPort.FormatNumberBuffer. Therefore, some {nameof(BigInteger)} functionality is unimplemented.");
 				}
 			}
 #endif //!SILVERLIGHT ||FEATURE_NETCORE

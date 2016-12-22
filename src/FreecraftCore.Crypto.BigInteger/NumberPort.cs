@@ -291,29 +291,6 @@ namespace System
 		{
 		}
 
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatDecimal(Decimal value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatDouble(double value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatInt32(int value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatUInt32(uint value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatInt64(long value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatUInt64(ulong value, String format, NumberFormatInfo info);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public static extern String FormatSingle(float value, String format, NumberFormatInfo info);
-
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		public unsafe static extern Boolean NumberBufferToDecimal(byte* number, ref Decimal value);
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		internal unsafe static extern Boolean NumberBufferToDouble(byte* number, ref Double value);
-
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		internal static extern unsafe string FormatNumberBuffer(byte* number, string format, NumberFormatInfo info, char* allDigits);
-
 		// Constants used by number parsing
 		private const Int32 NumberMaxDigits = 50;
 
@@ -683,10 +660,6 @@ namespace System
 
 			StringToNumber(value, options, ref number, numfmt, true);
 
-			if (!NumberBufferToDecimal(number.PackForNative(), ref result))
-			{
-				throw new OverflowException($"Overflow: Backported {nameof(NumberPort)} failed");
-			}
 			return result;
 		}
 
@@ -720,11 +693,6 @@ namespace System
 					return Double.NaN;
 				}
 				throw new FormatException("Format_InvalidString");
-			}
-
-			if (!NumberBufferToDouble(number.PackForNative(), ref d))
-			{
-				throw new OverflowException("Overflow_Double");
 			}
 
 			return d;
@@ -1028,10 +996,6 @@ namespace System
 				throw new FormatException("Format_InvalidString");
 			}
 
-			if (!NumberBufferToDouble(number.PackForNative(), ref d))
-			{
-				throw new OverflowException("Overflow_Single");
-			}
 			Single castSingle = (Single)d;
 			if (Single.IsInfinity(castSingle))
 			{
@@ -1135,10 +1099,6 @@ namespace System
 				return false;
 			}
 
-			if (!NumberBufferToDecimal(number.PackForNative(), ref result))
-			{
-				return false;
-			}
 			return true;
 		}
 
@@ -1153,10 +1113,7 @@ namespace System
 			{
 				return false;
 			}
-			if (!NumberBufferToDouble(number.PackForNative(), ref result))
-			{
-				return false;
-			}
+
 			return true;
 		}
 
@@ -1229,10 +1186,7 @@ namespace System
 			{
 				return false;
 			}
-			if (!NumberBufferToDouble(number.PackForNative(), ref d))
-			{
-				return false;
-			}
+
 			Single castSingle = (Single)d;
 			if (Single.IsInfinity(castSingle))
 			{
