@@ -35,16 +35,16 @@ namespace FreecraftCore.Packet.Auth
 		/// Most servers don't implement this.
 		/// </summary>
 		[KnownSize(20)]
-		[WireMember(2)]
+		[WireMember(3)]
 		public byte[] EphemeralClientFileHash { get; private set; } = new byte[20]; //TODO: When we actually implement this remove this empty array
 
 		//Documentation says it's never used
 		//TODO: Find out what this is. Trinitycore doesn't seem to reference it. Neither does Mangos.
-		[WireMember(3)]
+		[WireMember(4)]
 		private readonly byte KeyCount = 0;
 
 		//No server implements tokens so security flags are always 0
-		[WireMember(4)]
+		[WireMember(5)]
 		private readonly byte securityFlags = 0;
 
 		public AuthLogonProofRequest(byte[] providedA, byte[] m1Hash)
