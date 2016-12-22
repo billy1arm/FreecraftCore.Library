@@ -34,8 +34,12 @@ namespace FreecraftCore.Packet.Auth
 		[WireMember(3)]
 		public SRPToken Token { get; private set; }
 
+		//Not a salt or related to a CRC http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-questions-requests/236273-auth-proof-crc-hash.html
+		//Ownedcore post indicates that this is the seed used for HMAC generation for client file verification.
+		//Process described as SHA1(A, HMAC(client_files))
 		/// <summary>
 		/// Supposedly is a CRC salt that is used to compute a CRC hash for client files.
+		/// (this is usually referred to as unk3 in in most resources)
 		/// </summary>
 		[KnownSize(16)]
 		[WireMember(4)]
