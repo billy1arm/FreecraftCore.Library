@@ -112,6 +112,8 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Could be Username or maybe Email.
 		/// </summary>
+		//TODO: Check Mangos if they look for a null terminator on Identity
+		[DontTerminate] //JackPoz doesn't terminate and it looks like Trinitycore doesn't really expect a null terminator either.
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(12)]
 		public string Identity { get; private set; }
