@@ -83,7 +83,8 @@ namespace FreecraftCore.Crypto
 			using (WoWSRP6PublicComponentHashServiceProvider hashProvider = new WoWSRP6PublicComponentHashServiceProvider())
 			{
 				//Compute password hash salted with provided salt
-				BigInteger x = hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes(password.ToUpper()))).ToBigInteger();
+				//x doesn't hash salt and hashed password. It actually hashes salt and hashed authstring which is {0}:{1} username:password.
+				BigInteger x = hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes($"{userName}:{password}".ToUpper()))).ToBigInteger();
 
 				return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
 			}

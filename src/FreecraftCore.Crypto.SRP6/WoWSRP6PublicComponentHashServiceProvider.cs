@@ -118,6 +118,8 @@ namespace FreecraftCore.Crypto
 			for (int i = 0; i < NHash.Length; i++)
 				NHash[i] ^= gHash[i];
 
+			//It is not required to clamp the length to 20. All SHA1 hashes are 20 bytes.
+
 			//SRP6 suggests M be the hash of NHash xor'd, hash of identity, salt, public components and hashed session key
 			//H(H(N) xor H(g), H(I), s, A, B, H(S))
 			return GenerateHashFor(NHash.Concat(hashedUserName)
