@@ -28,22 +28,19 @@ namespace FreecraftCore.Packet.Auth
 		public AuthenticationResult Result { get; private set; }
 
 		/// <summary>
-		/// The SRP Token provided by the server.
+		/// The SRP6 challenge provided by the server.
 		/// See: http://srp.stanford.edu/design.html for more information
 		/// </summary>
 		[WireMember(3)]
-		public SRPToken Token { get; private set; }
+		public SRPToken Challenge { get; private set; }
 
-		//Not a salt or related to a CRC http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-questions-requests/236273-auth-proof-crc-hash.html
-		//Ownedcore post indicates that this is the seed used for HMAC generation for client file verification.
-		//Process described as SHA1(A, HMAC(client_files))
 		/// <summary>
-		/// Supposedly is a CRC salt that is used to compute a CRC hash for client files.
-		/// (this is usually referred to as unk3 in in most resources)
+		/// Seed to be used during HMAC of the client files.
+		/// (Not implemented in Trinitycore or Mangos)
 		/// </summary>
 		[KnownSize(16)]
 		[WireMember(4)]
-		public byte[] CRCSalt { get; private set; }
+		public byte[] ClientFileHMACSeed { get; private set; }
 
 		//TODO: Create enum
 		/// <summary>
