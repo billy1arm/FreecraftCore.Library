@@ -1,10 +1,10 @@
-﻿{
+{
     "version": "1.0.0-*",
 
     "dependencies": {
+        "FreecraftCore.API.Common.Auth": "1.0.8",
         "FreecraftCore.Packet.Common": "1.0.0-*",
-        "FreecraftCore.API.Common.Auth": "1.0.7",
-        "FreecraftCore.Serializer.Metadata": "1.1.8"
+        "FreecraftCore.Serializer.Metadata": "1.1.9"
     },
 
     "frameworks": {

@@ -10,8 +10,8 @@ namespace FreecraftCore.Packet.Auth
 	/// </summary>
 	[WireDataContract]
 	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)]
-    public class AuthRealmListRequest : IAuthenticationPayload
-    {
+	public class AuthRealmListRequest : IAuthenticationPayload
+	{
 		//For some reason this is 5 bytes long (remove one for byte sized op code)
 
 		//I can only guess what this is for.

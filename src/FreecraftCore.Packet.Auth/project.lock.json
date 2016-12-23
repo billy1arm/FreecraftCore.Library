@@ -3,10 +3,11 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v3.5": {
-      "FreecraftCore.API.Common.Auth/1.0.7": {
+      "FreecraftCore.API.Common.Auth/1.0.8": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "1.1.0"
+          "FreecraftCore.Serializer.Metadata": "1.1.9",
+          "Net35Essentials": "1.0.2"
         },
         "compile": {
           "lib/net35/FreecraftCore.API.Common.Auth.dll": {}
@@ -15,13 +16,22 @@
           "lib/net35/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.8": {
+      "FreecraftCore.Serializer.Metadata/1.1.9": {
         "type": "package",
         "compile": {
           "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
         },
         "runtime": {
           "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "Net35Essentials/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Net35Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Net35Essentials.dll": {}
         }
       },
       "FreecraftCore.Packet.Common/1.0.0": {
@@ -36,10 +46,10 @@
       }
     },
     ".NETFramework,Version=v4.5": {
-      "FreecraftCore.API.Common.Auth/1.0.7": {
+      "FreecraftCore.API.Common.Auth/1.0.8": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "1.1.0"
+          "FreecraftCore.Serializer.Metadata": "1.1.9"
         },
         "compile": {
           "lib/net45/FreecraftCore.API.Common.Auth.dll": {}
@@ -48,7 +58,7 @@
           "lib/net45/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.8": {
+      "FreecraftCore.Serializer.Metadata/1.1.9": {
         "type": "package",
         "compile": {
           "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
@@ -69,10 +79,10 @@
       }
     },
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Auth/1.0.7": {
+      "FreecraftCore.API.Common.Auth/1.0.8": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "1.1.0"
+          "FreecraftCore.Serializer.Metadata": "1.1.9"
         },
         "compile": {
           "lib/net46/FreecraftCore.API.Common.Auth.dll": {}
@@ -81,7 +91,7 @@
           "lib/net46/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.8": {
+      "FreecraftCore.Serializer.Metadata/1.1.9": {
         "type": "package",
         "compile": {
           "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
@@ -103,28 +113,38 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Auth/1.0.7": {
-      "sha512": "zZYmQOSGRTpNCY6lELLb7PerC5jaK5R4FykozfxtrgQH7ZDxxIN6uYx78WN3i2huLkuZeCjWB1/OKaa9kGKuLg==",
+    "FreecraftCore.API.Common.Auth/1.0.8": {
+      "sha512": "LqefxhZ5FJ6HwUmqWz/YySm1FE4v4riyaiiH2hQxCIFhzgJnrFvGvuij7ciGIbrbRKrQqF99qY024GIGdy+OmQ==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Auth/1.0.7",
+      "path": "FreecraftCore.API.Common.Auth/1.0.8",
       "files": [
-        "FreecraftCore.API.Common.Auth.1.0.7.nupkg.sha512",
+        "FreecraftCore.API.Common.Auth.1.0.8.nupkg.sha512",
         "FreecraftCore.API.Common.Auth.nuspec",
         "lib/net35/FreecraftCore.API.Common.Auth.dll",
         "lib/net45/FreecraftCore.API.Common.Auth.dll",
         "lib/net46/FreecraftCore.API.Common.Auth.dll"
       ]
     },
-    "FreecraftCore.Serializer.Metadata/1.1.8": {
-      "sha512": "rBXfQsKRdtD9E/G3og4qkdE6nOJ0JJIq6oYiLPD3JH8LP76bTEgEpAaHhFqLEO4w7LFxa1UnNmMnuAzkTk/ObA==",
+    "FreecraftCore.Serializer.Metadata/1.1.9": {
+      "sha512": "4ThkrwbJ0cUqQ6cgREKJ238OYK2NbQoEAWlSGkTQ0ElpA4jp3WFhtenF79KiTSaZYSrO6XNQg2JEx+UcYC6GLg==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/1.1.8",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.9",
       "files": [
-        "FreecraftCore.Serializer.Metadata.1.1.8.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.1.1.9.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
         "lib/net46/FreecraftCore.Serializer.Metadata.dll"
+      ]
+    },
+    "Net35Essentials/1.0.2": {
+      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
+      "type": "package",
+      "path": "Net35Essentials/1.0.2",
+      "files": [
+        "Net35Essentials.1.0.2.nupkg.sha512",
+        "Net35Essentials.nuspec",
+        "lib/net35/Net35Essentials.dll"
       ]
     },
     "FreecraftCore.Packet.Common/1.0.0": {
@@ -135,9 +155,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Auth >= 1.0.7",
+      "FreecraftCore.API.Common.Auth >= 1.0.8",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
-      "FreecraftCore.Serializer.Metadata >= 1.1.8"
+      "FreecraftCore.Serializer.Metadata >= 1.1.9"
     ],
     ".NETFramework,Version=v3.5": [],
     ".NETFramework,Version=v4.5": [],
