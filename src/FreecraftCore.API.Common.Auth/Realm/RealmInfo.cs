@@ -9,7 +9,7 @@ namespace FreecraftCore.API.Common
 	public class RealmInfo
 	{
 		[WireMember(1)]
-		public byte RealmType { get; private set; }
+		public RealmType RealmType { get; private set; }
 
 		// <summary>
 		/// Indidicates if the realm is open.
