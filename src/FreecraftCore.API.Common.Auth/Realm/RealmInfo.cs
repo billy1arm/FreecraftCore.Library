@@ -16,9 +16,14 @@ namespace FreecraftCore.API.Common
 		/// (Only in 2.x and 3.x according to Trinitycore)
 		/// </summary>
 		[WireMember(2)]
-		public bool isOpen { get; private set; }
+		public bool isLocked { get; private set; }
 
 		[WireMember(3)]
 		public IRealmInformation Information { get; private set; }
+
+		public RealmInfo()
+		{
+
+		}
 	}
 }

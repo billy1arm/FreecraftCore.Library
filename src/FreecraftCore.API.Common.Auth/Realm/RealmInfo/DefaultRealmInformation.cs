@@ -27,7 +27,7 @@ namespace FreecraftCore.API.Common
 		/// Endpoint information for the realm.
 		/// </summary>
 		[WireMember(3)]
-		public RealmEndpoint RealmAddress { get; }
+		public RealmEndpoint RealmAddress { get; private set; }
 
 		//Maybe wrap this into something? Query it for realm pop info? I don't know
 		//TOOD: Research Mangos and Ember to find out why this is a float.
