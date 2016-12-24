@@ -18,7 +18,7 @@ namespace FreecraftCore.API.Common
 		/// <summary>
 		/// <see cref="IPAddress"/> for the realm.
 		/// </summary>
-		public Lazy<IPAddress> RealmAddress { get; }
+		public Lazy<IPAddress> RealmIP { get; }
 
 		/// <summary>
 		/// Port for the realm.
@@ -30,7 +30,7 @@ namespace FreecraftCore.API.Common
 
 		public RealmEndpoint()
 		{
-			RealmAddress = new Lazy<IPAddress>(BuildRealmIP, true);
+			RealmIP = new Lazy<IPAddress>(BuildRealmIP, true);
 			Port = new Lazy<int>(BuildRealmPort, true);
 		}
 
