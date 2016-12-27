@@ -23,7 +23,7 @@ namespace FreecraftCore.Packet.Auth
 		//Unknown field. Trinitycore always sends 0.
 		//I think EmberEmu said it's expected as 0 in the client? Can't recall
 		[WireMember(2)]
-		private int unknownOne { get; set; }
+		private uint unknownOne { get; set; }
 
 		/// <summary>
 		/// Realm information.

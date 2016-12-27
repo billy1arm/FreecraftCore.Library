@@ -10,7 +10,7 @@ namespace FreecraftCore.Packet.Common
 	/// Represents the unique Operation Code of a message.
 	/// Most operations have a request (CMSG) and response (SMSG).
 	/// </summary>
-	public enum NetworkOperationCode : int
+	public enum NetworkOperationCode : ushort //this is sent as ushort always
 	{
 		MSG_NULL_ACTION = 0x000,
 		CMSG_BOOTME = 0x001,
