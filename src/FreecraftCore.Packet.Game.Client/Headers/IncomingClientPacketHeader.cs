@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Packet
 {
@@ -24,6 +25,11 @@ namespace FreecraftCore.Packet
 
 		}
 
+		/// <summary>
+		/// Computes the payload size.
+		/// </summary>
+		/// <returns>Returns an integer size for the payload.</returns>
+		[Pure]
 		protected abstract int ComputePayloadSize();
 
 		public void OnBeforeSerialization()
