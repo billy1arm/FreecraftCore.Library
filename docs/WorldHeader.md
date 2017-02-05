@@ -10,7 +10,7 @@ A one byte field that represents the packet type and contains part of the size d
 **Small packet header**: Small packet header is the default type of packet header. This header encodes the size of the payload in the first 2 bytes of the incoming stream.
 
 
-**Large packet header**: Large packet header is an optional type of packet header. This type can be deduced by **bitwise and** with 0x80. 
+**Large packet header**: Large packet header is an optional type of packet header. This type can be deduced by **bitwise &** with 0x80. 
 This header encodes the size of the payload in the first 3 bytes.
 
 ###b
