@@ -1,0 +1,343 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5": {
+      "FreecraftCore.Serializer.Metadata/1.1.33": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "Net35Essentials/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Net35Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Net35Essentials.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "compile": {
+          "net35/FreecraftCore.Packet.Common.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Packet.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Game.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.0",
+          "FreecraftCore.Serializer.Metadata": "1.1.33"
+        },
+        "compile": {
+          "net35/FreecraftCore.Packet.Game.Common.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Packet.Game.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5": {
+      "FreecraftCore.Serializer.Metadata/1.1.33": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "System.Runtime/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "FreecraftCore.Packet.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "compile": {
+          "net45/FreecraftCore.Packet.Common.dll": {}
+        },
+        "runtime": {
+          "net45/FreecraftCore.Packet.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Game.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.0",
+          "FreecraftCore.Serializer.Metadata": "1.1.33"
+        },
+        "compile": {
+          "net45/FreecraftCore.Packet.Game.Common.dll": {}
+        },
+        "runtime": {
+          "net45/FreecraftCore.Packet.Game.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6": {
+      "FreecraftCore.Serializer.Metadata/1.1.33": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "System.Runtime/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "FreecraftCore.Packet.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "compile": {
+          "net46/FreecraftCore.Packet.Common.dll": {}
+        },
+        "runtime": {
+          "net46/FreecraftCore.Packet.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Game.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.0",
+          "FreecraftCore.Serializer.Metadata": "1.1.33"
+        },
+        "compile": {
+          "net46/FreecraftCore.Packet.Game.Common.dll": {}
+        },
+        "runtime": {
+          "net46/FreecraftCore.Packet.Game.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FreecraftCore.Serializer.Metadata/1.1.33": {
+      "sha512": "Z4vYzgB47Mq9eZjxHl4yQMe20bwgojk0Vm/xwuYOujlneoWgEsNCC1C4yScc2AsI/msWTfPbMno5lbI6j3NXFQ==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.33",
+      "files": [
+        "FreecraftCore.Serializer.Metadata.1.1.33.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net45/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net46/FreecraftCore.Serializer.Metadata.dll"
+      ]
+    },
+    "JetBrains.Annotations/10.2.1": {
+      "sha512": "yTPQ3CsP2I/3vgAsXWby3Bf+dbzsQC5I8/aOsktLi/cSvr50tVTANcL5rTrEmIllbEhZbtZ0rxzxJ2RU8UkMRg==",
+      "type": "package",
+      "path": "JetBrains.Annotations/10.2.1",
+      "files": [
+        "JetBrains.Annotations.10.2.1.nupkg.sha512",
+        "JetBrains.Annotations.nuspec",
+        "lib/net/JetBrains.Annotations.dll",
+        "lib/net/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.xml",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
+      ]
+    },
+    "Net35Essentials/1.0.2": {
+      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
+      "type": "package",
+      "path": "Net35Essentials/1.0.2",
+      "files": [
+        "Net35Essentials.1.0.2.nupkg.sha512",
+        "Net35Essentials.nuspec",
+        "lib/net35/Net35Essentials.dll"
+      ]
+    },
+    "System.Runtime/4.1.0": {
+      "sha512": "v6c/4Yaa9uWsq+JMhnOFewrYkgdNHNG2eMKuNqRn8P733rNXeRCGvV5FkkjBXn2dbVkPXOsO0xjsEeM1q2zC0g==",
+      "type": "package",
+      "path": "System.Runtime/4.1.0",
+      "files": [
+        "System.Runtime.4.1.0.nupkg.sha512",
+        "System.Runtime.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net462/System.Runtime.dll",
+        "lib/portable-net45+win8+wp80+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net462/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.xml",
+        "ref/netcore50/de/System.Runtime.xml",
+        "ref/netcore50/es/System.Runtime.xml",
+        "ref/netcore50/fr/System.Runtime.xml",
+        "ref/netcore50/it/System.Runtime.xml",
+        "ref/netcore50/ja/System.Runtime.xml",
+        "ref/netcore50/ko/System.Runtime.xml",
+        "ref/netcore50/ru/System.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.0/System.Runtime.dll",
+        "ref/netstandard1.0/System.Runtime.xml",
+        "ref/netstandard1.0/de/System.Runtime.xml",
+        "ref/netstandard1.0/es/System.Runtime.xml",
+        "ref/netstandard1.0/fr/System.Runtime.xml",
+        "ref/netstandard1.0/it/System.Runtime.xml",
+        "ref/netstandard1.0/ja/System.Runtime.xml",
+        "ref/netstandard1.0/ko/System.Runtime.xml",
+        "ref/netstandard1.0/ru/System.Runtime.xml",
+        "ref/netstandard1.0/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.0/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.2/System.Runtime.dll",
+        "ref/netstandard1.2/System.Runtime.xml",
+        "ref/netstandard1.2/de/System.Runtime.xml",
+        "ref/netstandard1.2/es/System.Runtime.xml",
+        "ref/netstandard1.2/fr/System.Runtime.xml",
+        "ref/netstandard1.2/it/System.Runtime.xml",
+        "ref/netstandard1.2/ja/System.Runtime.xml",
+        "ref/netstandard1.2/ko/System.Runtime.xml",
+        "ref/netstandard1.2/ru/System.Runtime.xml",
+        "ref/netstandard1.2/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.2/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.3/System.Runtime.dll",
+        "ref/netstandard1.3/System.Runtime.xml",
+        "ref/netstandard1.3/de/System.Runtime.xml",
+        "ref/netstandard1.3/es/System.Runtime.xml",
+        "ref/netstandard1.3/fr/System.Runtime.xml",
+        "ref/netstandard1.3/it/System.Runtime.xml",
+        "ref/netstandard1.3/ja/System.Runtime.xml",
+        "ref/netstandard1.3/ko/System.Runtime.xml",
+        "ref/netstandard1.3/ru/System.Runtime.xml",
+        "ref/netstandard1.3/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.3/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.5/System.Runtime.dll",
+        "ref/netstandard1.5/System.Runtime.xml",
+        "ref/netstandard1.5/de/System.Runtime.xml",
+        "ref/netstandard1.5/es/System.Runtime.xml",
+        "ref/netstandard1.5/fr/System.Runtime.xml",
+        "ref/netstandard1.5/it/System.Runtime.xml",
+        "ref/netstandard1.5/ja/System.Runtime.xml",
+        "ref/netstandard1.5/ko/System.Runtime.xml",
+        "ref/netstandard1.5/ru/System.Runtime.xml",
+        "ref/netstandard1.5/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.5/zh-hant/System.Runtime.xml",
+        "ref/portable-net45+win8+wp80+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "FreecraftCore.Packet.Common/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Packet.Common/project.json",
+      "msbuildProject": "../FreecraftCore.Packet.Common/FreecraftCore.Packet.Common.xproj"
+    },
+    "FreecraftCore.Packet.Game.Common/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Packet.Game.Common/project.json",
+      "msbuildProject": "../FreecraftCore.Packet.Game.Common/FreecraftCore.Packet.Game.Common.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "FreecraftCore.Packet.Common >= 1.0.0-*",
+      "FreecraftCore.Packet.Game.Common >= 1.0.0-*",
+      "FreecraftCore.Serializer.Metadata >= 1.1.33"
+    ],
+    ".NETFramework,Version=v3.5": [
+      "Net35Essentials >= 1.0.2"
+    ],
+    ".NETFramework,Version=v4.5": [
+      "System.Runtime >= 4.1.0"
+    ],
+    ".NETFramework,Version=v4.6": [
+      "System.Runtime >= 4.1.0"
+    ]
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

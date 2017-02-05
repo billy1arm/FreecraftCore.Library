@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using FreecraftCore.Serializer;
+
+namespace FreecraftCore.Packet
+{
+	/// <summary>
+	/// The header for packets coming into the client.
+	/// </summary>
+	[DefaultChild(typeof(IncomingClientSmallPacketHeader))] //if it doesn't contain the 0x80 flag it is a small packet
+	[WireDataContractBaseTypeByFlags(0x80, typeof(IncomingClientLargePacketHeader))] //Jackpoz bot shows that if the first byte has a 0x80 flag then it is a big packet
+	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)] //Jackpoz shows that first byte indicates length size.
+	public abstract class IncomingClientPacketHeader : IGamePacketHeader, ISerializationEventListener
+	{
+		/// <inheritdoc />
+		public abstract int HeaderSize { get; }
+
+		/// <inheritdoc />
+		public int PayloadSize { get; private set; }
+
+		protected IncomingClientPacketHeader()
+		{
+
+		}
+
+		protected abstract int ComputePayloadSize();
+
+		public void OnBeforeSerialization()
+		{
+			//Don't need to do anything here
+		}
+
+		public void OnAfterDeserialization()
+		{
+			PayloadSize = ComputePayloadSize();
+		}
+	}
+}
