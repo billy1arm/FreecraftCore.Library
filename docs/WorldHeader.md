@@ -1,6 +1,8 @@
 ## Packet Header for Incoming Client Messages
 
-[a][b...][u1...]
+Between 4 and 5 bytes.
+
+[a][b...][cc]
 
 ###a
 A one byte field that represents the packet type and contains part of the size data. There are two types.
@@ -28,13 +30,6 @@ A variable length chunk that is used to compute the packet size in combination w
     
     encoding: ((a & 0x7F) << 16) | (b[0] << 8) | b[1]
     
-###u1
+###cc
 
-A variable length chunk of unknown use.
-  1. Small packet header
-  
-    chunk-length: 2
-    
-  2. Large packet header
-  
-    chunk-length: 3
+Two byte (ushort) chunk that represents the [NetworkOperationCode](https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/src/FreecraftCore.Packet.Common/OpCodes/NetworkOperationCode.cs). Starts after the **b** chunk.
