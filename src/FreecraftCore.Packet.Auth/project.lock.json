@@ -16,7 +16,7 @@
           "lib/net35/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.33": {
+      "FreecraftCore.Serializer.Metadata/1.1.34": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -70,7 +70,7 @@
           "lib/net45/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.33": {
+      "FreecraftCore.Serializer.Metadata/1.1.34": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -115,7 +115,7 @@
           "lib/net46/FreecraftCore.API.Common.Auth.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/1.1.33": {
+      "FreecraftCore.Serializer.Metadata/1.1.34": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -161,12 +161,12 @@
         "lib/net46/FreecraftCore.API.Common.Auth.dll"
       ]
     },
-    "FreecraftCore.Serializer.Metadata/1.1.33": {
-      "sha512": "Z4vYzgB47Mq9eZjxHl4yQMe20bwgojk0Vm/xwuYOujlneoWgEsNCC1C4yScc2AsI/msWTfPbMno5lbI6j3NXFQ==",
+    "FreecraftCore.Serializer.Metadata/1.1.34": {
+      "sha512": "InkDH8qpoZCj1sm+a6phzq7mUASCxm50RzqJ5iIKgkfxACrUCnTpkaQTaQODfcsoFa4wXxuwalAv1KGI0IrMVw==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/1.1.33",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.34",
       "files": [
-        "FreecraftCore.Serializer.Metadata.1.1.33.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.1.1.34.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
@@ -210,7 +210,7 @@
     "": [
       "FreecraftCore.API.Common.Auth >= 1.0.13",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
-      "FreecraftCore.Serializer.Metadata >= 1.1.33"
+      "FreecraftCore.Serializer.Metadata >= 1.1.34"
     ],
     ".NETFramework,Version=v3.5": [],
     ".NETFramework,Version=v4.5": [],
