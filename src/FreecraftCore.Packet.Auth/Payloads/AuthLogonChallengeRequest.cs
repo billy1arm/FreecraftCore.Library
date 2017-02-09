@@ -100,14 +100,14 @@ namespace FreecraftCore.Packet.Auth
 		[WireMember(11)]
 		private readonly byte[] ipAddressInBytes;
 
-		//cached IP built from wired bytes
-		private IPAddress cachedIp;
+		//Lazily cached Ip built from wired bytes
+		private Lazy<IPAddress> cachedIp { get; }
 
 		//TODO: Thread safety
 		/// <summary>
 		/// IP Address of the client.
 		/// </summary>
-		public IPAddress IP { get { return cachedIp == null ? cachedIp = new IPAddress(ipAddressInBytes) : cachedIp; } }
+		public IPAddress IP => cachedIp.Value;
 
 		/// <summary>
 		/// Could be Username or maybe Email.
@@ -119,6 +119,7 @@ namespace FreecraftCore.Packet.Auth
 		public string Identity { get; private set; }
 
 		public AuthLogonChallengeRequest(ProtocolVersion protocol, GameType game, ExpansionType expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)
+			: this()
 		{
 			//TODO: Very long ctor. Maybe use builder in the future.
 			Protocol = protocol;
@@ -143,7 +144,8 @@ namespace FreecraftCore.Packet.Auth
 
 		public AuthLogonChallengeRequest()
 		{
-
+			//Use a Lazy IPAddress to create the IP from the bytes coming across the network
+			cachedIp = new Lazy<IPAddress>(() => new IPAddress(ipAddressInBytes), true);
 		}
 	}
 }
