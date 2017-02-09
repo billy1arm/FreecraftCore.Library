@@ -13,6 +13,7 @@ namespace FreecraftCore.API.Common
 		/// <summary>
 		/// Packed information about the realm.
 		/// </summary>
+		[DontWrite]
 		[WireMember(1)]
 		public RealmFlags Flags { get; private set; }
 
