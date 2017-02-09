@@ -15,23 +15,27 @@ namespace FreecraftCore.API.Common
 		[WireMember(1)]
 		private string RealmEndpointInformation { get; set; }
 
+		private Lazy<IPAddress> lazyIP { get; }
+
 		/// <summary>
 		/// <see cref="IPAddress"/> for the realm.
 		/// </summary>
-		public Lazy<IPAddress> RealmIP { get; }
+		public IPAddress RealmIP => lazyIP.Value;
+
+		private Lazy<int> lazyPort { get; }
 
 		/// <summary>
 		/// Port for the realm.
 		/// (Usually 8085)
 		/// </summary>
-		public Lazy<int> Port { get; }
+		public int Port => lazyPort.Value;
 
 		//TODO: If we make a server make a ctor for this
 
 		public RealmEndpoint()
 		{
-			RealmIP = new Lazy<IPAddress>(BuildRealmIP, true);
-			Port = new Lazy<int>(BuildRealmPort, true);
+			lazyIP = new Lazy<IPAddress>(BuildRealmIP, true);
+			lazyPort = new Lazy<int>(BuildRealmPort, true);
 		}
 
 		//TODO: Cache split realm info
