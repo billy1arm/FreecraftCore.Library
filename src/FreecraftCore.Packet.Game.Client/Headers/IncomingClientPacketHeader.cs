@@ -41,5 +41,8 @@ namespace FreecraftCore.Packet
 		{
 			PayloadSize = ComputePayloadSize();
 		}
+
+		/// <inheritdoc />
+		public abstract bool isValid { get; }
 	}
 }

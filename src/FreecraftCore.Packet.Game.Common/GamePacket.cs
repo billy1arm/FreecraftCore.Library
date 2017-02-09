@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Packet
 {
@@ -16,14 +17,16 @@ namespace FreecraftCore.Packet
 		/// <summary>
 		/// Header data associated with the packet.
 		/// </summary>
+		[NotNull]
 		public IGamePacketHeader Header { get; }
 
 		/// <summary>
 		/// Payload associated with the packet.
 		/// </summary>
+		[NotNull]
 		public IGamePacketPayload Payload { get; }
 
-		public GamePacket(IGamePacketHeader header, IGamePacketPayload payload)
+		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] IGamePacketPayload payload)
 		{
 			if (header == null)
 				throw new ArgumentNullException(nameof(header), $"Must provided a non-null header.");

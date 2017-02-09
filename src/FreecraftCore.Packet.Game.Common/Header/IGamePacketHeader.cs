@@ -22,5 +22,10 @@ namespace FreecraftCore.Packet
 		/// (is a ushort but .NET suggests using int when possible)
 		/// </summary>
 		int PayloadSize { get; }
+
+		/// <summary>
+		/// Indicates if the packet header is in valid state.
+		/// </summary>
+		bool isValid { get; }
 	}
 }

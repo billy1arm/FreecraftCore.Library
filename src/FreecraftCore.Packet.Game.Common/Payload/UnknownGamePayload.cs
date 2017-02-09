@@ -11,7 +11,8 @@ namespace FreecraftCore.Packet
 	{
 		public UnknownGamePayload()
 		{
-				
+			//Don't need to initialize anything
+			//it's unknown so just check the OpCode to see what it is.
 		}
 	}
 }
