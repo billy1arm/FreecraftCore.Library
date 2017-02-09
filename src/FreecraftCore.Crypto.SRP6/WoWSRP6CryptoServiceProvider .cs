@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Crypto
 {
@@ -15,28 +16,29 @@ namespace FreecraftCore.Crypto
 	public class WoWSRP6CryptoServiceProvider : IDisposable
 	{
 		//TODO: Implement >net4 Lazy loaded version.
+		[NotNull]
 		private RNGCryptoServiceProvider randomProvider { get; } = new RNGCryptoServiceProvider();
 
 		/// <summary>
 		/// First public key component for SRP.
 		/// </summary>
-		public BigInteger A { get; private set; }
+		public BigInteger A { get; }
 
 		/// <summary>
 		/// Second public key component for SRP.
 		/// </summary>
-		public BigInteger B { get; private set; }
+		public BigInteger B { get; }
 
 		/// <summary>
 		/// SRP N. A large safe prime (N = 2q+1, where q is prime)
 		/// 2q + 1 primes are Sophie Germain primes https://en.wikipedia.org/wiki/Sophie_Germain_prime
 		/// </summary>
-		public BigInteger N { get; private set; }
+		public BigInteger N { get; }
 
 		/// <summary>
 		/// SRP g. A generator modulo N (might be B generator modulo N in this setup?)
 		/// </summary>
-		public BigInteger g { get; private set; }
+		public BigInteger g { get; }
 
 		/// <summary>
 		/// SRP a. A secrete ephemeral value.
@@ -49,6 +51,8 @@ namespace FreecraftCore.Crypto
 			N = providedN;
 			g = providedg;
 
+			//TODO: Lazy init A and privateKeyComponent_a
+			//TODO: Thread shared buffer for perf
 			byte[] randBytes = new byte[19];
 
 			//Initialize A
@@ -69,8 +73,12 @@ namespace FreecraftCore.Crypto
 			} while (A.ModPow(1, N) == 0);
 		}
 
-		public BigInteger ComputeSessionKey(string userName, string password, byte[] challengeSalt)
+		[Pure]
+		public BigInteger ComputeSessionKey([NotNull] string userName, [NotNull] string password, [NotNull] byte[] challengeSalt)
 		{
+			if (challengeSalt == null) throw new ArgumentNullException(nameof(challengeSalt));
+			if (string.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", nameof(userName));
+			if (string.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", nameof(password));
 
 			//Attribution to both Jackpoz's 3.3.5 bot and Mangons Client
 			//https://github.com/jackpoz/BotFarm
