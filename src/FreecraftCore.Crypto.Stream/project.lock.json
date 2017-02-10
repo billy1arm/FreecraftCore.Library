@@ -1,0 +1,158 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5": {
+      "FreecraftCore.Serializer.Stream/1.1.36": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "Net35Essentials/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Net35Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Net35Essentials.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "compile": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0": {
+      "FreecraftCore.Serializer.Stream/1.1.36": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5": {
+      "FreecraftCore.Serializer.Stream/1.1.36": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Serializer.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FreecraftCore.Serializer.Stream/1.1.36": {
+      "sha512": "sz+hMd6VIJpF1q1JOsg8ykdK5eRJhbmbCjTs9Z0wmYu1scvIRbRAfr5iY/H04xvWOzKqwurDaadY8WDSAsqa9Q==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Stream/1.1.36",
+      "files": [
+        "FreecraftCore.Serializer.Stream.1.1.36.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Stream.dll",
+        "lib/net45/FreecraftCore.Serializer.Stream.dll",
+        "lib/net46/FreecraftCore.Serializer.Stream.dll"
+      ]
+    },
+    "JetBrains.Annotations/10.2.1": {
+      "sha512": "yTPQ3CsP2I/3vgAsXWby3Bf+dbzsQC5I8/aOsktLi/cSvr50tVTANcL5rTrEmIllbEhZbtZ0rxzxJ2RU8UkMRg==",
+      "type": "package",
+      "path": "JetBrains.Annotations/10.2.1",
+      "files": [
+        "JetBrains.Annotations.10.2.1.nupkg.sha512",
+        "JetBrains.Annotations.nuspec",
+        "lib/net/JetBrains.Annotations.dll",
+        "lib/net/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.xml",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
+      ]
+    },
+    "Net35Essentials/1.0.2": {
+      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
+      "type": "package",
+      "path": "Net35Essentials/1.0.2",
+      "files": [
+        "Net35Essentials.1.0.2.nupkg.sha512",
+        "Net35Essentials.nuspec",
+        "lib/net35/Net35Essentials.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.BigInteger/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Crypto.BigInteger/project.json",
+      "msbuildProject": "../FreecraftCore.Crypto.BigInteger/FreecraftCore.Crypto.BigInteger.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "FreecraftCore.Serializer.Stream >= 1.1.36",
+      "JetBrains.Annotations >= 10.2.1"
+    ],
+    ".NETFramework,Version=v3.5": [
+      "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
+      "Net35Essentials >= 1.0.2"
+    ],
+    ".NETFramework,Version=v4.0": [
+      "System.Numerics >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5": [
+      "System.Numerics >= 4.0.0"
+    ]
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

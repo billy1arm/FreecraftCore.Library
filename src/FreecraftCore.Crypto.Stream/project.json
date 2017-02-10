@@ -1,13 +1,17 @@
-{
+﻿{
     "version": "1.0.0-*",
 
-    "dependencies": {
-    },
+  "dependencies": {
+    "FreecraftCore.Serializer.Stream": "1.1.36",
+    "JetBrains.Annotations": "10.2.1"
+  },
 
     "frameworks": {
         "net35": {
-            "dependencies": {
-            }
+          "dependencies": {
+            "Net35Essentials": "1.0.2",
+            "FreecraftCore.Crypto.BigInteger": "1.0.0-*"
+          }
         },
         "net40": {
             "dependencies": {
@@ -22,18 +26,10 @@
             "frameworkAssemblies": {
                 "System.Numerics": "4.0.0.0"
             }
-        },
-        "net46": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
-            }
         }
     },
 
     "buildOptions": {
-        "allowUnsafe": true,
         "optimize": true
     }
 }
