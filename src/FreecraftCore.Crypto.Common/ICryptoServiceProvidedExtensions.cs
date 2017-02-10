@@ -38,6 +38,7 @@ namespace FreecraftCore.Crypto
 			return input;
 		}
 
+		//TODO: These may not be setup properly
 		/// <summary>
 		/// Processes a block of bytes through an RC4 cipher in place.
 		/// </summary>

@@ -12,7 +12,7 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream/1.1.36": {
+      "FreecraftCore.Serializer.Stream/1.1.37": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -22,6 +22,19 @@
         },
         "runtime": {
           "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream.Default/1.1.37": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "1.1.37",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Stream.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Stream.Default.dll": {}
         }
       },
       "JetBrains.Annotations/10.2.1": {
@@ -109,7 +122,7 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream/1.1.36": {
+      "FreecraftCore.Serializer.Stream/1.1.37": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -119,6 +132,19 @@
         },
         "runtime": {
           "lib/net35/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream.Default/1.1.37": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "1.1.37",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Stream.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Stream.Default.dll": {}
         }
       },
       "JetBrains.Annotations/10.2.1": {
@@ -199,7 +225,7 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream/1.1.36": {
+      "FreecraftCore.Serializer.Stream/1.1.37": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -209,6 +235,19 @@
         },
         "runtime": {
           "lib/net45/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream.Default/1.1.37": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "1.1.37",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Serializer.Stream.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Serializer.Stream.Default.dll": {}
         }
       },
       "JetBrains.Annotations/10.2.1": {
@@ -292,16 +331,28 @@
         "lib/BouncyCastle.Crypto.dll"
       ]
     },
-    "FreecraftCore.Serializer.Stream/1.1.36": {
-      "sha512": "sz+hMd6VIJpF1q1JOsg8ykdK5eRJhbmbCjTs9Z0wmYu1scvIRbRAfr5iY/H04xvWOzKqwurDaadY8WDSAsqa9Q==",
+    "FreecraftCore.Serializer.Stream/1.1.37": {
+      "sha512": "0qbYRx+JRHhwfHvyRPQ44dLiVPFdGTwuQCPdXADDziotZQbTxCgs0VZmjT+5CN/NYHAPF60lIeVT6qdVVtW7HA==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Stream/1.1.36",
+      "path": "FreecraftCore.Serializer.Stream/1.1.37",
       "files": [
-        "FreecraftCore.Serializer.Stream.1.1.36.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.1.1.37.nupkg.sha512",
         "FreecraftCore.Serializer.Stream.nuspec",
         "lib/net35/FreecraftCore.Serializer.Stream.dll",
         "lib/net45/FreecraftCore.Serializer.Stream.dll",
         "lib/net46/FreecraftCore.Serializer.Stream.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.Stream.Default/1.1.37": {
+      "sha512": "s+vyQx4nNm2EBKcxQju76L+wHpLAEyvHIaHzPV3OMJ2WWdhmaZvZGrFfgm7zVsDhFRX/5UcHuk471z+/QtTN1g==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Stream.Default/1.1.37",
+      "files": [
+        "FreecraftCore.Serializer.Stream.Default.1.1.37.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.Default.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Stream.Default.dll",
+        "lib/net45/FreecraftCore.Serializer.Stream.Default.dll",
+        "lib/net46/FreecraftCore.Serializer.Stream.Default.dll"
       ]
     },
     "JetBrains.Annotations/10.2.1": {
@@ -356,7 +407,8 @@
     "": [
       "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "FreecraftCore.Crypto.Packet >= 1.0.0-*",
-      "FreecraftCore.Serializer.Stream >= 1.1.36",
+      "FreecraftCore.Serializer.Stream >= 1.1.37",
+      "FreecraftCore.Serializer.Stream.Default >= 1.1.37",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v3.5": [

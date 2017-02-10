@@ -1,11 +1,12 @@
-﻿{
+{
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Serializer.Stream": "1.1.36",
     "JetBrains.Annotations": "10.2.1",
     "FreecraftCore.Crypto.BigInteger": "1.0.0-*",
-    "FreecraftCore.Crypto.Packet": "1.0.0-*"
+    "FreecraftCore.Crypto.Packet": "1.0.0-*",
+    "FreecraftCore.Serializer.Stream.Default": "1.1.37",
+    "FreecraftCore.Serializer.Stream": "1.1.37"
   },
 
     "frameworks": {

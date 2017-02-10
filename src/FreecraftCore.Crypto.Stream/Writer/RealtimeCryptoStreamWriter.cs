@@ -11,7 +11,7 @@ namespace FreecraftCore.Crypto
 	/// Provides a realtime crypto service implementation of the
 	/// wire writer strategy. Processes the stream chunks at request as opposed to all at once.
 	/// </summary>
-	public class RealtimeCryptoStreamWriter : IWireStreamWriterStrategy, IDisposable
+	public class RealtimeCryptoStreamWriter : CryptoStreamService, IWireStreamWriterStrategy, IDisposable
 	{
 		/// <summary>
 		/// Decorated <see cref="IWireStreamReaderStrategy"/>.
@@ -20,25 +20,18 @@ namespace FreecraftCore.Crypto
 		private IWireStreamWriterStrategy Dest { get; }
 
 		/// <summary>
-		/// Provided crypto service.
-		/// </summary>
-		[NotNull]
-		private ISessionPacketCryptoService SessionCryptoService { get; }
-
-		/// <summary>
 		/// Creates a realtime crypto stream reader.
 		/// </summary>
 		/// <param name="dest">The <see cref="IWireStreamWriterStrategy"/> to decorate.</param>
 		/// <param name="sessionCrypto"></param>
 		public RealtimeCryptoStreamWriter([NotNull] IWireStreamWriterStrategy dest, [NotNull] ISessionPacketCryptoService sessionCrypto)
+			: base(sessionCrypto)
 		{
 			//We don't implement the reading ourselves because it could be a default behavior
 			//our we may need network stream reading, which may block, or anything under the sun
 			if (dest == null) throw new ArgumentNullException(nameof(dest));
-			if (SessionCryptoService == null) throw new ArgumentNullException(nameof(SessionCryptoService));
 
 			Dest = dest;
-			SessionCryptoService = sessionCrypto;
 		}
 
 		public void Dispose()
@@ -55,7 +48,6 @@ namespace FreecraftCore.Crypto
 
 		public void Write(byte[] data, int offset, int count)
 		{
-			
 			Dest.Write(SessionCryptoService.ProcessBytes(data, offset, count), offset, count);
 		}
 
