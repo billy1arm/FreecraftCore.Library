@@ -96,7 +96,8 @@ namespace FreecraftCore.Crypto
 
 				//TODO: Do NOT use new BigInteger if this is ever uncommented
 				//return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
-				return B.Add(BigInteger.Three.Multiply(N.Subtract(g.ModPow(x, N)))).Mod(N).ModPow(privateKeyComponent_a.Add((hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray())).ToBigInteger().Multiply(x)), N);
+				//return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
+				return B.Add(BigInteger.Three).Multiply(N.Subtract(g.ModPow(x, N))).Mod(N).ModPow(privateKeyComponent_a.Add(hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger().Multiply(x)), N);
 			}
 		}
 
