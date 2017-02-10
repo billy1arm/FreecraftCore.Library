@@ -6,25 +6,24 @@
     "JetBrains.Annotations": "10.2.1"
   },
 
-    "frameworks": {
-        "net35": {
-          "dependencies": {
-            "Net35Essentials": "1.0.2",
-          }
-        },
-        "net40": {
-            "dependencies": {
-            },
-          "frameworkAssemblies": {
-          }
-        },
-        "net45": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-            }
-        }
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+      }
     },
+    "net40": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    },
+    "net45": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    }
+  },
 
     "buildOptions": {
         "optimize": true

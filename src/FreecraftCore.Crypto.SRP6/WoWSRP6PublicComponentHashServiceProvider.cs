@@ -5,7 +5,6 @@ using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using JetBrains.Annotations;
-using Org.BouncyCastle.Math;
 
 namespace FreecraftCore.Crypto
 {

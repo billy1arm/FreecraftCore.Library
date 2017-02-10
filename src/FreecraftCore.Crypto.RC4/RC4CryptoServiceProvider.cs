@@ -4,7 +4,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Math;
 
 namespace FreecraftCore.Crypto.RC4
 {
@@ -18,16 +17,6 @@ namespace FreecraftCore.Crypto.RC4
 		/// </summary>
 		[NotNull]
 		private RC4Engine internalRC4Engine { get; }
-
-		/// <summary>
-		/// Creates a new RC4 service with the provided <see cref="key"/>.
-		/// </summary>
-		/// <param name="key">The RC4 <see cref="BigInteger"/> key.</param>
-		public RC4CryptoServiceProvider(BigInteger key)
-			: this(key.ToByteArray())
-		{
-
-		}
 
 		/// <summary>
 		/// Creates a new RC4 service with the provided <see cref="key"/>.

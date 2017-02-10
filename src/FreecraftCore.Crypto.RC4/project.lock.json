@@ -20,15 +20,6 @@
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
         }
-      },
-      "Net35Essentials/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/net35/Net35Essentials.dll": {}
-        },
-        "runtime": {
-          "lib/net35/Net35Essentials.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.0": {
@@ -100,16 +91,6 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
       ]
-    },
-    "Net35Essentials/1.0.2": {
-      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
-      "type": "package",
-      "path": "Net35Essentials/1.0.2",
-      "files": [
-        "Net35Essentials.1.0.2.nupkg.sha512",
-        "Net35Essentials.nuspec",
-        "lib/net35/Net35Essentials.dll"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -117,9 +98,7 @@
       "BouncyCastle >= 1.8.1",
       "JetBrains.Annotations >= 10.2.1"
     ],
-    ".NETFramework,Version=v3.5": [
-      "Net35Essentials >= 1.0.2"
-    ],
+    ".NETFramework,Version=v3.5": [],
     ".NETFramework,Version=v4.0": [],
     ".NETFramework,Version=v4.5": []
   },

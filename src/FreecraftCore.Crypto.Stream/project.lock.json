@@ -32,6 +32,16 @@
         "runtime": {
           "lib/net35/Net35Essentials.dll": {}
         }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "compile": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.0": {
@@ -120,6 +130,11 @@
         "Net35Essentials.nuspec",
         "lib/net35/Net35Essentials.dll"
       ]
+    },
+    "FreecraftCore.Crypto.BigInteger/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Crypto.BigInteger/project.json",
+      "msbuildProject": "../FreecraftCore.Crypto.BigInteger/FreecraftCore.Crypto.BigInteger.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -128,10 +143,15 @@
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v3.5": [
+      "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "Net35Essentials >= 1.0.2"
     ],
-    ".NETFramework,Version=v4.0": [],
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.0": [
+      "System.Numerics >= 4.0.0"
+    ],
+    ".NETFramework,Version=v4.5": [
+      "System.Numerics >= 4.0.0"
+    ]
   },
   "tools": {},
   "projectFileToolGroups": {}
