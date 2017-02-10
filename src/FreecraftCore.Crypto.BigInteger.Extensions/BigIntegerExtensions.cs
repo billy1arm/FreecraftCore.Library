@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Org.BouncyCastle.Math;
 
-namespace FreecraftCore.Crypto
+namespace System.Numerics
 {
 	public static class BigIntegerExtensions
 	{
@@ -56,7 +57,7 @@ namespace FreecraftCore.Crypto
 		/// places a non-negative value (0) at the MSB, then converts to a BigInteger.
 		/// This ensures a non-negative value without changing the binary representation.
 		/// </summary>
-		public static BigInteger ToBigInteger(this byte[] array, BigIntegerSign sign = BigIntegerSign.Positive) //WoW expects positive BigInteger
+		public static BigInteger ToBigInteger(this byte[] array)
 		{
 			//This can't be hacked like with ToCleanArray
 			byte[] temp;
@@ -72,9 +73,7 @@ namespace FreecraftCore.Crypto
 			else
 				temp = array;
 
-			//Properly signs based on the provided optional
-			//WoW expects mostly unsigned but Bouncy will default to including negatives
-			return sign == BigIntegerSign.Default ? new BigInteger(temp) : new BigInteger((int) sign, temp);
+			return new BigInteger(temp);
 		}
 	}
 }
