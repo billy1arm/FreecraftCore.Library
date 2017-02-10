@@ -28,21 +28,7 @@ namespace FreecraftCore.Crypto
 		/// <returns></returns>
 		public static unsafe byte[] ToCleanByteArray(this BigInteger bigInt)
 		{
-			byte[] array = bigInt.ToByteArrayUnsigned();
-			if (array.Length == 0 || array[array.Length - 1] != 0)
-				return array;
-
-			//Remove following 0 from end (clean)
-			fixed (void* bytePtr = &array[0])
-			{
-				//Grabs the header for the array
-				ArrayHeader* arrayHeader = (ArrayHeader*)bytePtr - 1;
-
-				//Hacks the array length to be one less than the original size.
-				arrayHeader->length = (UIntPtr)(array.Length - 1);
-			}
-
-			return array;
+			return bigInt.ToByteArrayUnsigned();
 		}
 		
 		//Bouncy has this implemented
@@ -58,23 +44,13 @@ namespace FreecraftCore.Crypto
 		/// </summary>
 		public static BigInteger ToBigInteger(this byte[] array, BigIntegerSign sign = BigIntegerSign.Positive) //WoW expects positive BigInteger
 		{
-			//This can't be hacked like with ToCleanArray
-			byte[] temp;
-			if ((array[array.Length - 1] & 0x80) == 0x80)
-			{
-				temp = new byte[array.Length + 1];
-				temp[array.Length] = 0;
-
-				//Copies the contents of the array into temp
-				//There is no way to memory hack this
-				Array.Copy(array, temp, array.Length);
-			}
-			else
-				temp = array;
+			//Unlike with the System.Numberics or net35 BigInteger the sign byte is the first byte
+			//It also trims all leading 0s. Because of this we do not need to manually remove
+			//the sign byte.
 
 			//Properly signs based on the provided optional
 			//WoW expects mostly unsigned but Bouncy will default to including negatives
-			return sign == BigIntegerSign.Default ? new BigInteger(temp) : new BigInteger((int) sign, temp);
+			return sign == BigIntegerSign.Default ? new BigInteger(array) : new BigInteger((int) sign, array);
 		}
 	}
 }
