@@ -28,7 +28,7 @@ namespace FreecraftCore.Crypto
 		/// <returns></returns>
 		public static unsafe byte[] ToCleanByteArray(this BigInteger bigInt)
 		{
-			byte[] array = bigInt.ToByteArray();
+			byte[] array = bigInt.ToByteArrayUnsigned();
 			if (array.Length == 0 || array[array.Length - 1] != 0)
 				return array;
 
