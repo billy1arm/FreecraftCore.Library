@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using JetBrains.Annotations;
@@ -95,6 +94,7 @@ namespace FreecraftCore.Crypto
 				//x doesn't hash salt and hashed password. It actually hashes salt and hashed authstring which is {0}:{1} username:password.
 				BigInteger x = hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes($"{userName}:{password}".ToUpper()))).ToBigInteger();
 
+				//TODO: Do NOT use new BigInteger if this is ever uncommented
 				//return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
 				return B.Add(BigInteger.Three.Multiply(N.Subtract(g.ModPow(x, N)))).Mod(N).ModPow(privateKeyComponent_a.Add((hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray())).ToBigInteger().Multiply(x)), N);
 			}
