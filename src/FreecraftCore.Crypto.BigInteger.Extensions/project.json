@@ -1,0 +1,32 @@
+﻿{
+    "version": "1.0.0-*",
+
+  "dependencies": {
+    "BouncyCastle": "1.8.1",
+    "JetBrains.Annotations": "10.2.1"
+  },
+
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+      }
+    },
+    "net40": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    },
+    "net45": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    }
+  },
+
+    "buildOptions": {
+      "optimize": true,
+      "allowUnsafe": true
+    }
+}

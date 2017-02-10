@@ -22,6 +22,7 @@ using Conditional = System.Diagnostics.ConditionalAttribute;
 
 namespace System.Numerics
 {
+	[Obsolete("Use Bouncy Castle BigInteger for now.")]
 	public struct BigInteger : IFormattable, IComparable, IComparable<BigInteger>, IEquatable<BigInteger>
 	{
 		// ---- SECTION:  members supporting exposed properties -------------*

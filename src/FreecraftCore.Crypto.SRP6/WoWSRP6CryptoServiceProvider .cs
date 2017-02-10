@@ -5,6 +5,7 @@ using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using JetBrains.Annotations;
+using Org.BouncyCastle.Math;
 
 namespace FreecraftCore.Crypto
 {
@@ -70,7 +71,7 @@ namespace FreecraftCore.Crypto
 				//Based on SRP6 spec: https://www.codeproject.com/articles/1082676/communication-using-secure-remote-password-protoco
 				A = g.ModPow(privateKeyComponent_a, N);
 
-			} while (A.ModPow(1, N) == 0);
+			} while (A.ModPow(BigInteger.One, N).Equals(BigInteger.Zero));
 		}
 
 		[Pure]
@@ -94,7 +95,8 @@ namespace FreecraftCore.Crypto
 				//x doesn't hash salt and hashed password. It actually hashes salt and hashed authstring which is {0}:{1} username:password.
 				BigInteger x = hashProvider.Hash(challengeSalt, hashProvider.Hash(Encoding.ASCII.GetBytes($"{userName}:{password}".ToUpper()))).ToBigInteger();
 
-				return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
+				//return ((B + new BigInteger(3) * (N - g.ModPow(x, N))) % N).ModPow(privateKeyComponent_a + (hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray()).ToBigInteger() * x), N);
+				return B.Add(BigInteger.Three.Multiply(N.Subtract(g.ModPow(x, N)))).Mod(N).ModPow(privateKeyComponent_a.Add((hashProvider.Hash(A.ToCleanByteArray(), B.ToCleanByteArray())).ToBigInteger().Multiply(x)), N);
 			}
 		}
 
