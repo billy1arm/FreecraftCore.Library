@@ -17,6 +17,18 @@ namespace FreecraftCore.Crypto.RC4
 		/// Creates a new RC4 service with the provided <see cref="key"/> and follows
 		/// RC4-Drop[n].
 		/// </summary>
+		/// <param name="key">The RC4 <see cref="BigInteger"/> key.</param>
+		/// <param name="n">The n value to be used in RC4-Drop[n]</param>
+		public RC4DropNCryptoServiceProvider(BigInteger key, int n)
+			: this(key.ToCleanByteArray(), n)
+		{
+
+		}
+
+		/// <summary>
+		/// Creates a new RC4 service with the provided <see cref="key"/> and follows
+		/// RC4-Drop[n].
+		/// </summary>
 		/// <param name="key">The RC4 key.</param>
 		/// <param name="n">The n value to be used in RC4-Drop[n]</param>
 		public RC4DropNCryptoServiceProvider([NotNull] byte[] key, int n)

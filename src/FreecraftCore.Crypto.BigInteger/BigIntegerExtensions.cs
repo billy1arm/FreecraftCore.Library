@@ -17,7 +17,6 @@ namespace FreecraftCore.Crypto
 			public UIntPtr length;
 		}
 
-		//From JackPoz's 3.3.5 bot: https://github.com/jackpoz/BotFarm
 		/// <summary>
 		/// Returns <see cref="BigInteger"/> in byteform but truncates
 		/// the final field if it's 0.

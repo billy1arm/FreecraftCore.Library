@@ -20,6 +20,29 @@
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
         }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "compile": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net35/FreecraftCore.Crypto.Common.dll": {}
+        },
+        "runtime": {
+          "net35/FreecraftCore.Crypto.Common.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.0": {
@@ -40,6 +63,32 @@
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
         }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "net40/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net40/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net40/FreecraftCore.Crypto.Common.dll": {}
+        },
+        "runtime": {
+          "net40/FreecraftCore.Crypto.Common.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5": {
@@ -59,6 +108,32 @@
         },
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "net45/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net45/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net45/FreecraftCore.Crypto.Common.dll": {}
+        },
+        "runtime": {
+          "net45/FreecraftCore.Crypto.Common.dll": {}
         }
       }
     }
@@ -91,11 +166,23 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
       ]
+    },
+    "FreecraftCore.Crypto.BigInteger/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Crypto.BigInteger/project.json",
+      "msbuildProject": "../FreecraftCore.Crypto.BigInteger/FreecraftCore.Crypto.BigInteger.xproj"
+    },
+    "FreecraftCore.Crypto.Common/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Crypto.Common/project.json",
+      "msbuildProject": "../FreecraftCore.Crypto.Common/FreecraftCore.Crypto.Common.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "BouncyCastle >= 1.8.1",
+      "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
+      "FreecraftCore.Crypto.Common >= 1.0.0-*",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v3.5": [],

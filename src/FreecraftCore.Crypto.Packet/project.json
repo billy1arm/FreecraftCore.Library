@@ -1,16 +1,17 @@
 ﻿{
-    "version": "1.0.0-*",
+  "version": "1.0.0-*",
 
   "dependencies": {
-    "BouncyCastle": "1.8.1",
     "JetBrains.Annotations": "10.2.1",
     "FreecraftCore.Crypto.BigInteger": "1.0.0-*",
+    "FreecraftCore.Crypto.RC4": "1.0.0-*",
     "FreecraftCore.Crypto.Common": "1.0.0-*"
   },
 
   "frameworks": {
     "net35": {
       "dependencies": {
+        "Net35Essentials": "1.0.2"
       }
     },
     "net40": {
@@ -27,7 +28,8 @@
     }
   },
 
-    "buildOptions": {
-        "optimize": true
-    }
+  "buildOptions": {
+    "optimize": true,
+    "allowUnsafe": true
+  }
 }

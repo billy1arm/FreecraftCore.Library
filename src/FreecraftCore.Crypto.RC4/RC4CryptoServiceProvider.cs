@@ -21,6 +21,16 @@ namespace FreecraftCore.Crypto.RC4
 		/// <summary>
 		/// Creates a new RC4 service with the provided <see cref="key"/>.
 		/// </summary>
+		/// <param name="key">The RC4 <see cref="BigInteger"/> key.</param>
+		public RC4CryptoServiceProvider(BigInteger key)
+			: this(key.ToCleanByteArray())
+		{
+
+		}
+
+		/// <summary>
+		/// Creates a new RC4 service with the provided <see cref="key"/>.
+		/// </summary>
 		/// <param name="key">The RC4 key.</param>
 		public RC4CryptoServiceProvider([NotNull] byte[] key)
 		{
