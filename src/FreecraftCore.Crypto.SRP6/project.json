@@ -2,33 +2,32 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "JetBrains.Annotations": "10.2.1"
+    "JetBrains.Annotations": "10.2.1",
+    "FreecraftCore.Crypto.BigInteger": "1.0.0-*"
   },
 
     "frameworks": {
         "net35": {
             "dependencies": {
-                "Net35Essentials": "1.0.2",
-                "FreecraftCore.Crypto.BigInteger": "1.0.0-*"
+                "Net35Essentials": "1.0.2"
             }
         },
         "net40": {
             "dependencies": {
             },
             "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
             }
         },
         "net45": {
             "dependencies": {
             },
             "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
             }
         }
     },
 
     "buildOptions": {
-        "optimize": true
+      "optimize": true,
+      "allowUnsafe": true
     }
 }

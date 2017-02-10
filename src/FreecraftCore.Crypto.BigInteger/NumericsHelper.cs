@@ -1,5 +1,4 @@
-﻿#if NET35
-//Backported for NET35
+﻿//Backported for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -12,7 +11,8 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace System.Numerics
+//Don't use numerics to avoid collisions in >net35
+namespace FreecraftCore.Crypto
 {
 
 	[StructLayout(LayoutKind.Explicit)]
@@ -403,4 +403,3 @@ namespace System.Numerics
 		//    }
 	}
 }
-#endif

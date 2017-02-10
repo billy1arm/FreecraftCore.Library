@@ -1,5 +1,4 @@
-﻿#if NET35
-//Backported for NET35
+﻿//Backported for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -10,7 +9,8 @@ using System;
 using System.Runtime.InteropServices;
 using Conditional = System.Diagnostics.ConditionalAttribute;
 
-namespace System.Numerics
+//Don't use numerics to avoid collisions in >net35
+namespace FreecraftCore.Crypto
 {
 	/// <summary>
 	/// BigIntegerBuilder holds a multiprecision unsigned integer value. It is mutable and
@@ -1366,4 +1366,3 @@ namespace System.Numerics
 	};
 	}
 }
-#endif

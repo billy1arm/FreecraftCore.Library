@@ -1,5 +1,4 @@
-﻿#if NET35
-//Backported for NET35
+﻿//Backported for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -273,7 +272,8 @@
 // specified. Note, however, that the Parse methods do not accept
 // NaNs or Infinities.
 //
-namespace System.Numerics
+//Don't use numerics to avoid collisions in >net35
+namespace FreecraftCore.Crypto
 {
 	using System;
 	using System.Globalization;
@@ -708,4 +708,3 @@ namespace System.Numerics
 		}
 	}
 }
-#endif

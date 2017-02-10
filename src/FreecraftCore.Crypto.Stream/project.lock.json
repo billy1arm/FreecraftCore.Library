@@ -65,6 +65,19 @@
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
         }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.0",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "net40/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net40/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.5": {
@@ -87,6 +100,19 @@
         },
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.BigInteger/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "net45/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "net45/FreecraftCore.Crypto.BigInteger.dll": {}
         }
       }
     }
@@ -139,19 +165,15 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "FreecraftCore.Serializer.Stream >= 1.1.36",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v3.5": [
-      "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "Net35Essentials >= 1.0.2"
     ],
-    ".NETFramework,Version=v4.0": [
-      "System.Numerics >= 4.0.0"
-    ],
-    ".NETFramework,Version=v4.5": [
-      "System.Numerics >= 4.0.0"
-    ]
+    ".NETFramework,Version=v4.0": [],
+    ".NETFramework,Version=v4.5": []
   },
   "tools": {},
   "projectFileToolGroups": {}

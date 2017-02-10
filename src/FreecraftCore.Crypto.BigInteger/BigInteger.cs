@@ -1,5 +1,4 @@
-﻿#if NET35
-//Backported BigInteger for NET35
+﻿//Backported BigInteger for NET35
 // ==++==
 // 
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -16,11 +15,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Numerics;
 using System.Text;
 using Conditional = System.Diagnostics.ConditionalAttribute;
 
-namespace System.Numerics
+//Don't use numerics to avoid collisions in >net35
+namespace FreecraftCore.Crypto
 {
 	public struct BigInteger : IFormattable, IComparable, IComparable<BigInteger>, IEquatable<BigInteger>
 	{
@@ -1882,4 +1881,3 @@ namespace System.Numerics
 #endregion internal static utility methods
 	}
 }
-#endif
