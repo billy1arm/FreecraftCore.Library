@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -19,6 +20,9 @@ namespace FreecraftCore.Packet
 
 		/// <inheritdoc />
 		public int PayloadSize { get; private set; }
+
+		/// <inheritdoc />
+		public abstract NetworkOperationCode OperationCode { get; protected set; }
 
 		protected IncomingClientPacketHeader()
 		{

@@ -35,7 +35,7 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Collection of realm's.
 		/// </summary>
-		public IEnumerable<RealmInfo> Realms { get { return realms; } }
+		public IEnumerable<RealmInfo> Realms => realms;
 
 		//2.x and 3.x clients send byte 16 and 0
 		//1.12.1 clients send 0 and 2.

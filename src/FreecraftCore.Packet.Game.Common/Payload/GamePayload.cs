@@ -7,13 +7,14 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.Packet
 {
 	[DefaultChild(typeof(UnknownGamePayload))] //if we encounter something not handled we'll be able to produce an unknown payload
-	[WireDataContract(WireDataContractAttribute.KeyType.UShort, InformationHandlingFlags.DontConsumeRead)]
+	[WireDataContract(WireDataContractAttribute.KeyType.UShort)]
 	public abstract class GamePayload : IGamePacketPayload
 	{
+		//We no longer also write the NetworkOpCode here
+		//It is in the header.
+
 		/// <inheritdoc />
-		[DontWrite] //don't write since this is just a leftover from type information
-		[WireMember(1)]
-		public NetworkOperationCode OperationCode { get; private set; }
+		public abstract bool isValid { get; }
 
 		protected GamePayload()
 		{

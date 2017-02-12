@@ -18,7 +18,7 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Indicates the result of the Authentication attempt.
 		/// </summary>
-		public AuthenticationResult AuthResult { get { return ProofResult.Result; } }
+		public AuthenticationResult AuthResult => ProofResult.Result;
 
 		/// <summary>
 		/// Contains the information sent as a response to the Proof attempt.

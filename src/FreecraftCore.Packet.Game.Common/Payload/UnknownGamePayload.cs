@@ -9,6 +9,8 @@ namespace FreecraftCore.Packet
 	/// </summary>
 	public class UnknownGamePayload : GamePayload
 	{
+		public override bool isValid => true;
+
 		public UnknownGamePayload()
 		{
 			//Don't need to initialize anything

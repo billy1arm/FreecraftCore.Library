@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore.Packet
@@ -10,13 +11,21 @@ namespace FreecraftCore.Packet
 	/// </summary>
 	public class IncomingClientSmallPacketHeader : IncomingClientPacketHeader
 	{
+		//[a][b]
 		//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
 		[KnownSize(2)]
 		[WireMember(1)]
-		private readonly byte[] encodedSizeBytes; //[a][b]
+		private readonly byte[] encodedSizeBytes; 
 
+		//[cc]
+		//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
 		/// <inheritdoc />
-		public override int HeaderSize { get; } = 2; //this indicates that the first 2 bytes of the stream involve the header
+		[WireMember(2)] //after the 2 bytes of encoded size
+		public override NetworkOperationCode OperationCode { get; protected set; }
+
+		//Should be the size of the encoded size in bytes (2) and the OpCode (2)
+		/// <inheritdoc />
+		public override int HeaderSize { get; } = 2 + sizeof(NetworkOperationCode);
 
 		/// <inheritdoc />
 		protected override int ComputePayloadSize()
@@ -31,5 +40,10 @@ namespace FreecraftCore.Packet
 		//Just check the validity of the encoded size bytes.
 		/// <inheritdoc />
 		public override bool isValid => encodedSizeBytes != null && encodedSizeBytes.Length == HeaderSize;
+
+		public IncomingClientSmallPacketHeader()
+		{
+		
+		}
 	}
 }

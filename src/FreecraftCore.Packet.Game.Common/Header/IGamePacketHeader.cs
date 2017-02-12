@@ -18,6 +18,11 @@ namespace FreecraftCore.Packet
 		int HeaderSize { get; }
 
 		/// <summary>
+		/// Indicates the 32bit operation code of the message.
+		/// </summary>
+		NetworkOperationCode OperationCode { get; }
+
+		/// <summary>
 		/// Indicates the size of the payload in this packet.
 		/// (is a ushort but .NET suggests using int when possible)
 		/// </summary>

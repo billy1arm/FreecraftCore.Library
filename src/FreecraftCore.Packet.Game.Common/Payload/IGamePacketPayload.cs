@@ -12,11 +12,9 @@ namespace FreecraftCore.Packet
 	[WireDataContract]
 	public interface IGamePacketPayload
 	{
-		//Nothing. To explain this is just a placeholder/metadata
-		//for the payloads.
 		/// <summary>
-		/// Indicates the operation code of the payload.
+		/// Indicates if the payload is in a valid state.
 		/// </summary>
-		NetworkOperationCode OperationCode { get; }
+		bool isValid { get; }
 	}
 }

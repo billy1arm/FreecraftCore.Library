@@ -3,7 +3,9 @@
 
   "dependencies": {
     "FreecraftCore.Packet.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.35"
+    "FreecraftCore.Serializer.Metadata": "1.1.39",
+    "FreecraftCore.Serializer.Stream": "1.1.39",
+    "JetBrains.Annotations": "10.2.1"
   },
 
     "frameworks": {

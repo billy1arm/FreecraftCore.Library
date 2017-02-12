@@ -3,6 +3,8 @@ using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Packet.Auth
 {
@@ -47,9 +49,16 @@ namespace FreecraftCore.Packet.Auth
 		[WireMember(5)]
 		private readonly byte securityFlags = 0;
 
-		public AuthLogonProofRequest(byte[] providedA, byte[] m1Hash)
+		public AuthLogonProofRequest([NotNull] byte[] providedA, [NotNull] byte[] m1Hash)
 		{
-			//TODO: Null checks; size checks
+			if (providedA == null) throw new ArgumentNullException(nameof(providedA));
+			if (m1Hash == null) throw new ArgumentNullException(nameof(m1Hash));
+
+			ThrowIfInvalidLength(nameof(providedA),
+				GetType().GetMember(nameof(A)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, providedA.Length);
+
+			ThrowIfInvalidLength(nameof(m1Hash),
+				GetType().GetMember(nameof(M1)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, m1Hash.Length);
 
 			A = providedA;
 			M1 = m1Hash;
@@ -58,6 +67,12 @@ namespace FreecraftCore.Packet.Auth
 		public AuthLogonProofRequest()
 		{
 
+		}
+
+		private static void ThrowIfInvalidLength(string argumentName, int expectedLength, int actualLength)
+		{
+			if (expectedLength != actualLength)
+				throw new ArgumentException($"Provided SRP6a {argumentName} is invalid length. Expected {expectedLength} but was {actualLength}.");
 		}
 	}
 }
