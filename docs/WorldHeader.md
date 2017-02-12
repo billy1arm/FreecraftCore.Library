@@ -1,4 +1,4 @@
-## Packet Header for Incoming Client Messages
+# Packet Header for Incoming Client Messages
 
 Between 4 and 5 bytes.
 
@@ -33,3 +33,18 @@ A variable length chunk that is used to compute the packet size in combination w
 ###cc
 
 Two byte (ushort) chunk that represents the [NetworkOperationCode](https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/src/FreecraftCore.Packet.Common/OpCodes/NetworkOperationCode.cs). Starts after the **b** chunk.
+
+# Packet Header for Outgoing Client Messages
+
+Always 6 bytes. Always ARC4 encrypted after handshaking.
+
+[aa][bb][uu]
+
+###aa
+A two byte, or short, size representing the full size of the packet including the header.
+
+###bb
+A two byte, or short, chunk representing the operation code for the message.
+
+###uu
+Two unknown bytes.
