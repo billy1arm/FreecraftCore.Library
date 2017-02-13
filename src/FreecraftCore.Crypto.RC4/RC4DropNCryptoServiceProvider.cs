@@ -19,8 +19,8 @@ namespace FreecraftCore.Crypto.RC4
 		/// </summary>
 		/// <param name="key">The RC4 <see cref="BigInteger"/> key.</param>
 		/// <param name="n">The n value to be used in RC4-Drop[n]</param>
-		public RC4DropNCryptoServiceProvider(BigInteger key, int n)
-			: this(key.ToCleanByteArray(), n)
+		public RC4DropNCryptoServiceProvider(BigInteger key, int n, bool forEncryption)
+			: this(key.ToCleanByteArray(), n, forEncryption)
 		{
 
 		}
@@ -31,11 +31,11 @@ namespace FreecraftCore.Crypto.RC4
 		/// </summary>
 		/// <param name="key">The RC4 key.</param>
 		/// <param name="n">The n value to be used in RC4-Drop[n]</param>
-		public RC4DropNCryptoServiceProvider([NotNull] byte[] key, int n)
+		public RC4DropNCryptoServiceProvider([NotNull] byte[] key, int n, bool forEncryption)
 		{
 			if (key == null) throw new ArgumentNullException(nameof(key));
 
-			internalRC4Engine = new RC4CryptoServiceProvider(key);
+			internalRC4Engine = new RC4CryptoServiceProvider(key, forEncryption);
 
 			//TODO: Create a shared n buffer to be used. Only matters for server. Client only makes one usually.
 			byte[] dropNByteArray = new byte[n];

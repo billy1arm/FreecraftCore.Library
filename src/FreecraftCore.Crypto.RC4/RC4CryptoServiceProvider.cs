@@ -22,8 +22,8 @@ namespace FreecraftCore.Crypto.RC4
 		/// Creates a new RC4 service with the provided <see cref="key"/>.
 		/// </summary>
 		/// <param name="key">The RC4 <see cref="BigInteger"/> key.</param>
-		public RC4CryptoServiceProvider(BigInteger key)
-			: this(key.ToCleanByteArray())
+		public RC4CryptoServiceProvider(BigInteger key, bool forEncryption)
+			: this(key.ToCleanByteArray(), forEncryption)
 		{
 
 		}
@@ -32,13 +32,13 @@ namespace FreecraftCore.Crypto.RC4
 		/// Creates a new RC4 service with the provided <see cref="key"/>.
 		/// </summary>
 		/// <param name="key">The RC4 key.</param>
-		public RC4CryptoServiceProvider([NotNull] byte[] key)
+		public RC4CryptoServiceProvider([NotNull] byte[] key, bool forEncryption)
 		{
 			if (key == null) throw new ArgumentNullException(nameof(key));
 
 			//Bouncy requires key initialization
 			internalRC4Engine = new RC4Engine();
-			internalRC4Engine.Init(true, new KeyParameter(key));
+			internalRC4Engine.Init(forEncryption, new KeyParameter(key));
 		}
 
 		/// <inheritdoc />

@@ -10,7 +10,7 @@ namespace FreecraftCore.Crypto
 	/// <summary>
 	/// Crypto service that produces session authentication hashes.
 	/// </summary>
-	public class WoWSessionDigestCryptoProvider
+	public class WoWSessionDigestCryptoProvider : IDisposable
 	{
 		/// <summary>
 		/// Produces a hash of the provided parameters as well as the required components for
@@ -30,7 +30,7 @@ namespace FreecraftCore.Crypto
 				//Based on Jackpoz's bot implementation
 				//Creates a hash for our random, the username we've logged in as 
 				//and the SRP6 session key.
-				return hasher.ComputeHash(Encoding.ASCII.GetBytes(userName)
+				return hasher.ComputeHash(Encoding.ASCII.GetBytes(userName.ToUpper())
 					.Concat(BitConverter.GetBytes(default(uint)))
 					.Concat(BitConverter.GetBytes((uint) ourSeed))
 					.Concat(BitConverter.GetBytes(authenticationSeed))
@@ -49,6 +49,12 @@ namespace FreecraftCore.Crypto
 
 			RandomNumberGenerator.Create().GetBytes(bytes);
 			return bytes.ToBigInteger();
+		}
+
+		/// <inheritdoc />
+		public void Dispose()
+		{
+			//Don't need to do anything.
 		}
 	}
 }

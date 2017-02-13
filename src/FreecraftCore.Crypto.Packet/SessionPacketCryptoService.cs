@@ -63,7 +63,7 @@ namespace FreecraftCore.Crypto
 			//RC4-Drop[n] for security
 			//Build an RC4 cipher service for the provided session key.
 			using (HMACSHA1 hmacsha = new HMACSHA1(isForEncryption ? encryptionKey : decryptionKey))
-				rc4CryptoService = new RC4DropNCryptoServiceProvider(hmacsha.ComputeHash(key), 1024);
+				rc4CryptoService = new RC4DropNCryptoServiceProvider(hmacsha.ComputeHash(key), 1024, isForEncryption);
 		}
 
 		/// <inheritdoc />
