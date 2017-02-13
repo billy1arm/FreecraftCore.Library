@@ -21,6 +21,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Crypto.Common
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Crypto.Packet", "src\FreecraftCore.Crypto.Packet\FreecraftCore.Crypto.Packet.xproj", "{CDBCCCEA-C532-4B78-BC5A-4520CF709F26}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Crypto.Session", "src\FreecraftCore.Crypto.Session\FreecraftCore.Crypto.Session.xproj", "{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{CDBCCCEA-C532-4B78-BC5A-4520CF709F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDBCCCEA-C532-4B78-BC5A-4520CF709F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDBCCCEA-C532-4B78-BC5A-4520CF709F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{3F939AE6-6D25-4B92-BDF8-1A4AD42DE5B5} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{A5B73A5E-AB50-4E8C-B560-4DF89D39EEA7} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{CDBCCCEA-C532-4B78-BC5A-4520CF709F26} = {948DBB07-8D6A-42C2-9228-4953DD917280}
+		{FA7D1D8C-6166-4BAB-BE33-09C9FAED21DA} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 	EndGlobalSection
 EndGlobal

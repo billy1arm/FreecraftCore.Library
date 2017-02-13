@@ -1,0 +1,33 @@
+﻿{
+    "version": "1.0.0-*",
+
+  "dependencies": {
+    "JetBrains.Annotations": "10.2.1",
+    "FreecraftCore.Crypto.BigInteger": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+        "Net35Essentials": "1.0.2"
+      }
+    },
+    "net40": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    },
+    "net45": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
+    }
+  },
+
+    "buildOptions": {
+      "optimize": true,
+      "allowUnsafe": true
+    }
+}
