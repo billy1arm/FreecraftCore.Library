@@ -66,6 +66,14 @@ namespace FreecraftCore.Packet
 		[WireMember(9)]
 		public byte[] SessionDigest { get; private set; }
 
+		//Trintycore will crash if you don't send this
+		//Though it'll probably be fixed soon
+		//TODO: Add uint strategy
+		[WireMember(10)]
+		[SendSize(SendSizeAttribute.SizeType.Int32)] //it's probably uint but we don't have that yet
+		private byte[] AddonData { get; set; } = new byte[0];
+		
+
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest)
 		{
