@@ -12,7 +12,7 @@ namespace FreecraftCore.Packet
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]
-	public class SessionAuthProofRequest : GamePayload
+	public class SessionAuthProofRequest : GamePacketPayload
 	{
 		public override bool isValid => SessionDigest != null && SessionDigest.Length == 20
 			&& String.IsNullOrEmpty(AccountName) && RandomSeedBytes != null &&

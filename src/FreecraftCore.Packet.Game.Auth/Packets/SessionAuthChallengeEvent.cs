@@ -12,7 +12,7 @@ namespace FreecraftCore.Packet
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AUTH_CHALLENGE)] //the packet the worldserver first sends
-	public class SessionAuthChallengeEvent : GamePayload
+	public class SessionAuthChallengeEvent : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid => SeedOne != null &&

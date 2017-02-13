@@ -28,7 +28,7 @@ namespace FreecraftCore.Packet
 		//But it's more likely the first 2 bytes are the little endian ordered opcode
 		//and these 2 bytes likely represent something different
 		[WireMember(3)]
-		private readonly byte[] unknownBytes = new byte[2];
+		private readonly short unknownBytes = 0;
 
 		/// <inheritdoc />
 		public int PayloadSize => PacketSize - sizeof(ushort) - sizeof(NetworkOperationCode) - 2; //computed as the packet size minus header/opcode info

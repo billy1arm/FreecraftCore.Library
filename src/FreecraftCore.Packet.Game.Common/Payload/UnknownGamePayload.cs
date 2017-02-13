@@ -7,7 +7,7 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// Represents an unknown game payload.
 	/// </summary>
-	public class UnknownGamePayload : GamePayload
+	public class UnknownGamePayload : GamePacketPayload
 	{
 		public override bool isValid => true;
 
