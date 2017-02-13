@@ -35,7 +35,7 @@ namespace FreecraftCore.Packet
 				throw new InvalidOperationException($"{nameof(IncomingClientLargePacketHeader)} did not contain any encoded bytes.");
 
 			//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
-			return (int)(((((uint)encodedSizeBytes[0]) & 0x7F) << 16) | (((uint)encodedSizeBytes[1]) << 8) | encodedSizeBytes[2]);
+			return (int)(((((uint)encodedSizeBytes[0]) & 0x7F) << 16) | (((uint)encodedSizeBytes[1]) << 8) | encodedSizeBytes[2]) - sizeof(NetworkOperationCode);
 		}
 
 		//Just check the validity of the encoded size bytes.
