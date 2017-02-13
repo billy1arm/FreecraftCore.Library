@@ -11,6 +11,7 @@ namespace FreecraftCore.Packet.Common
 	/// <summary>
 	/// Enumeration of all authentication operations.
 	/// </summary>
+	[WireDataContract]
 	public enum AuthOperationCode : byte //Auth OPCodes are bytes (uint8) unlike other op codes
 	{
 		//TODO: Document

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FreecraftCore.Serializer;
 
 
 namespace FreecraftCore.Packet.Common
@@ -10,6 +11,7 @@ namespace FreecraftCore.Packet.Common
 	/// Represents the unique Operation Code of a message.
 	/// Most operations have a request (CMSG) and response (SMSG).
 	/// </summary>
+	[WireDataContract]
 	public enum NetworkOperationCode : ushort //this is sent as ushort always
 	{
 		MSG_NULL_ACTION = 0x000,
