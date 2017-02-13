@@ -7,7 +7,7 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.Packet
 {
 	[DefaultChild(typeof(UnknownGamePayload))] //if we encounter something not handled we'll be able to produce an unknown payload
-	[WireDataContract(WireDataContractAttribute.KeyType.UShort)]
+	[WireDataContract(WireDataContractAttribute.KeyType.UShort, true)] //enable runtime linking with second arg
 	public abstract class GamePayload : IGamePacketPayload
 	{
 		//We no longer also write the NetworkOpCode here
