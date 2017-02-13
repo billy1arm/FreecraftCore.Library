@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common.Auth.Auth
+namespace FreecraftCore.API.Common
 {
 	/// <summary>
 	/// Enumeration of all responses possible for the result of an session authentication.
