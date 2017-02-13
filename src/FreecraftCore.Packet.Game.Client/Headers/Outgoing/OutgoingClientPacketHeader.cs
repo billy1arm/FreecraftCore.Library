@@ -45,7 +45,7 @@ namespace FreecraftCore.Packet
 
 			//Doesn't make much sense because the header is 6 bytes
 			//This is how Jackpoz has it setup.
-			PacketSize = (ushort)(PayloadSize + 4);
+			PacketSize = (ushort)(payloadSize + 4);
 		}
 
 		protected OutgoingClientPacketHeader()
