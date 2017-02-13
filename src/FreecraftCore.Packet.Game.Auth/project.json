@@ -1,0 +1,26 @@
+﻿{
+    "version": "1.0.0-*",
+
+  "dependencies": {
+    "FreecraftCore.Packet.Common": "1.0.0-*",
+    "FreecraftCore.Packet.Game.Common": "1.0.0-*",
+    "FreecraftCore.Serializer.Metadata": "1.1.43",
+    "FreecraftCore.Serializer.Stream": "1.1.43",
+    "JetBrains.Annotations": "10.2.1"
+  },
+
+    "frameworks": {
+        "net35": {
+        },
+        "net45": {
+
+        },
+        "net46": {
+
+        }
+    },
+
+    "buildOptions": {
+        "optimize": true
+    }
+}
