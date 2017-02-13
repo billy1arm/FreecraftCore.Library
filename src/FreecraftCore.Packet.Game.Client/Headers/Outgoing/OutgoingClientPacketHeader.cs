@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
@@ -17,7 +18,7 @@ namespace FreecraftCore.Packet
 		//Packet size which is 4 bytes (from WoW header) + Payload.Length
 		[ReverseData] //makes bigendian
 		[WireMember(1)]
-		private readonly ushort _PacketSize;
+		private ushort PacketSize { get; set; }
 
 		[WireMember(2)]
 		public NetworkOperationCode OperationCode { get; private set; }
@@ -30,14 +31,26 @@ namespace FreecraftCore.Packet
 		private readonly byte[] unknownBytes = new byte[2];
 
 		/// <inheritdoc />
-		public int PayloadSize => _PacketSize - sizeof(ushort) - sizeof(NetworkOperationCode) - 2; //computed as the packet size minus header/opcode info
+		public int PayloadSize => PacketSize - sizeof(ushort) - sizeof(NetworkOperationCode) - 2; //computed as the packet size minus header/opcode info
 
 		/// <inheritdoc />
-		public bool isValid => _PacketSize >= HeaderSize; //Is only valid if we have at least a header
+		public bool isValid => (PacketSize + 2) >= HeaderSize; //Is only valid if we have at least a header
 
-		public OutgoingClientPacketHeader()
+		public OutgoingClientPacketHeader(int payloadSize, NetworkOperationCode operationCode)
 		{
-			
+			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode))
+				throw new InvalidEnumArgumentException(nameof(operationCode), (int) operationCode, typeof(NetworkOperationCode));
+
+			OperationCode = operationCode;
+
+			//Doesn't make much sense because the header is 6 bytes
+			//This is how Jackpoz has it setup.
+			PacketSize = (ushort)(PayloadSize + 4);
+		}
+
+		protected OutgoingClientPacketHeader()
+		{
+				
 		}		
 	}
 }
