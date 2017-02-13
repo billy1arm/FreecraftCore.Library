@@ -59,7 +59,6 @@ namespace FreecraftCore.Crypto
 			Create a SHA-1 hash of each buffer.
 			Create K by combining the even bytes of the first buffer, and the odd bytes of the second.*/
 
-
 			byte[] keyHash;
 			byte[] sData = key.ToCleanByteArray();
 			if (sData.Length < 32)

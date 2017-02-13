@@ -12,6 +12,18 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
       "JetBrains.Annotations/10.2.1": {
         "type": "package",
         "compile": {
@@ -24,6 +36,9 @@
       "FreecraftCore.Crypto.BigInteger/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v3.5",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "1.1.43"
+        },
         "compile": {
           "net35/FreecraftCore.Crypto.BigInteger.dll": {}
         },
@@ -55,6 +70,18 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
       "JetBrains.Annotations/10.2.1": {
         "type": "package",
         "compile": {
@@ -67,6 +94,9 @@
       "FreecraftCore.Crypto.BigInteger/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.0",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "1.1.43"
+        },
         "frameworkAssemblies": [
           "System.Numerics"
         ],
@@ -101,6 +131,18 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
       "JetBrains.Annotations/10.2.1": {
         "type": "package",
         "compile": {
@@ -113,6 +155,9 @@
       "FreecraftCore.Crypto.BigInteger/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "1.1.43"
+        },
         "frameworkAssemblies": [
           "System.Numerics"
         ],
@@ -148,6 +193,18 @@
         "BouncyCastle.nuspec",
         "Readme.txt",
         "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.Metadata/1.1.43": {
+      "sha512": "KsG7HTgqjcFMfSOXVoIbYh7V3DBxTf7OogBn6VGXyX9oiNAYatomV35utL0JqtCTkUV2E6Vg2oEPuYb7B5F2nA==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.43",
+      "files": [
+        "FreecraftCore.Serializer.Metadata.1.1.43.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net45/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net46/FreecraftCore.Serializer.Metadata.dll"
       ]
     },
     "JetBrains.Annotations/10.2.1": {

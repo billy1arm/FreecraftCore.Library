@@ -16,15 +16,34 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using FreecraftCore.Serializer;
 using Conditional = System.Diagnostics.ConditionalAttribute;
 
 //Don't use numerics to avoid collisions in >net35
 namespace FreecraftCore.Crypto
 {
-	public struct BigInteger : IFormattable, IComparable, IComparable<BigInteger>, IEquatable<BigInteger>
+	[WireDataContract]
+	public struct BigInteger : IFormattable, IComparable, IComparable<BigInteger>, IEquatable<BigInteger>, ISerializationEventListener
 	{
+		/// <summary>
+		/// Network bytearray representation sent over the network.
+		/// </summary>
+		[WireMember(1)]
+		private byte[] internalNetworkSentBytes;
+
+		public void OnBeforeSerialization()
+		{
+			internalNetworkSentBytes = this.ToCleanByteArray();
+		}
+
+		public void OnAfterDeserialization()
+		{
+			//Called a custom SetFromByteArray
+			this = internalNetworkSentBytes.ToBigInteger();
+		}
+
 		// ---- SECTION:  members supporting exposed properties -------------*
-#region members supporting exposed properties
+		#region members supporting exposed properties
 		private const int knMaskHighBit = int.MinValue;
 		private const uint kuMaskHighBit = unchecked((uint)int.MinValue);
 		private const int kcbitUint = 32;
@@ -371,6 +390,8 @@ namespace FreecraftCore.Crypto
 				_sign = value;
 				_bits = null;
 			}
+
+			internalNetworkSentBytes = null;
 		}
 
 		[CLSCompliant(false)]
@@ -387,10 +408,14 @@ namespace FreecraftCore.Crypto
 				_bits = new uint[1];
 				_bits[0] = value;
 			}
+
+			internalNetworkSentBytes = null;
 		}
 
 		public BigInteger(Int64 value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (Int32.MinValue <= value && value <= Int32.MaxValue)
 			{
 				if (value == Int32.MinValue)
@@ -423,6 +448,8 @@ namespace FreecraftCore.Crypto
 		[CLSCompliant(false)]
 		public BigInteger(UInt64 value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (value <= Int32.MaxValue)
 			{
 				_sign = (int)value;
@@ -439,6 +466,8 @@ namespace FreecraftCore.Crypto
 
 		public BigInteger(Single value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (Single.IsInfinity(value))
 				throw new OverflowException("SR.Overflow_BigIntInfinity");
 			if (Single.IsNaN(value))
@@ -451,6 +480,8 @@ namespace FreecraftCore.Crypto
 
 		public BigInteger(Double value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (Double.IsInfinity(value))
 				throw new OverflowException("SR.Overflow_BigIntInfinity");
 			if (Double.IsNaN(value))
@@ -463,6 +494,8 @@ namespace FreecraftCore.Crypto
 
 		public BigInteger(Decimal value)
 		{
+			internalNetworkSentBytes = null;
+
 			// First truncate to get scale to 0 and extract bits
 			int[] bits = Decimal.GetBits(Decimal.Truncate(value));
 
@@ -500,6 +533,8 @@ namespace FreecraftCore.Crypto
 		//
 		public BigInteger(Byte[] value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (value == null)
 				throw new ArgumentNullException("value");
 
@@ -630,6 +665,8 @@ namespace FreecraftCore.Crypto
 
 		internal BigInteger(int n, uint[] rgu)
 		{
+			internalNetworkSentBytes = null;
+
 			_sign = n;
 			_bits = rgu;
 		}
@@ -646,6 +683,8 @@ namespace FreecraftCore.Crypto
 		//
 		internal BigInteger(uint[] value, bool negative)
 		{
+			internalNetworkSentBytes = null;
+
 			if (value == null)
 				throw new ArgumentNullException("value");
 
@@ -682,6 +721,8 @@ namespace FreecraftCore.Crypto
 		//
 		private BigInteger(uint[] value)
 		{
+			internalNetworkSentBytes = null;
+
 			if (value == null)
 				throw new ArgumentNullException("value");
 
@@ -1878,6 +1919,7 @@ namespace FreecraftCore.Crypto
 			}
 			return 0;
 		}
-#endregion internal static utility methods
+
+		#endregion internal static utility methods
 	}
 }

@@ -2,14 +2,134 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v3.5": {},
-    ".NETFramework,Version=v4.0": {},
-    ".NETFramework,Version=v4.5": {},
-    ".NETFramework,Version=v4.6": {}
+    ".NETFramework,Version=v3.5": {
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0": {
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net35/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5": {
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6": {
+      "FreecraftCore.Serializer.Metadata/1.1.43": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FreecraftCore.Serializer.Metadata/1.1.43": {
+      "sha512": "KsG7HTgqjcFMfSOXVoIbYh7V3DBxTf7OogBn6VGXyX9oiNAYatomV35utL0JqtCTkUV2E6Vg2oEPuYb7B5F2nA==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.43",
+      "files": [
+        "FreecraftCore.Serializer.Metadata.1.1.43.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net45/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net46/FreecraftCore.Serializer.Metadata.dll"
+      ]
+    },
+    "JetBrains.Annotations/10.2.1": {
+      "sha512": "yTPQ3CsP2I/3vgAsXWby3Bf+dbzsQC5I8/aOsktLi/cSvr50tVTANcL5rTrEmIllbEhZbtZ0rxzxJ2RU8UkMRg==",
+      "type": "package",
+      "path": "JetBrains.Annotations/10.2.1",
+      "files": [
+        "JetBrains.Annotations.10.2.1.nupkg.sha512",
+        "JetBrains.Annotations.nuspec",
+        "lib/net/JetBrains.Annotations.dll",
+        "lib/net/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.xml",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "": [],
+    "": [
+      "FreecraftCore.Serializer.Metadata >= 1.1.43"
+    ],
     ".NETFramework,Version=v3.5": [],
     ".NETFramework,Version=v4.0": [
       "System.Numerics >= 4.0.0"

@@ -1,8 +1,9 @@
 {
     "version": "1.0.0-*",
 
-    "dependencies": {
-    },
+  "dependencies": {
+    "FreecraftCore.Serializer.Metadata": "1.1.43"
+  },
 
     "frameworks": {
         "net35": {
