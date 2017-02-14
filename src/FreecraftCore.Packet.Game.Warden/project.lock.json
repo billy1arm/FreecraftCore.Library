@@ -49,7 +49,7 @@
           "lib/net/JetBrains.Annotations.dll": {}
         }
       },
-      "Net35Essentials/1.0.2": {
+      "Net35Essentials/1.0.3": {
         "type": "package",
         "compile": {
           "lib/net35/Net35Essentials.dll": {}
@@ -295,12 +295,12 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
       ]
     },
-    "Net35Essentials/1.0.2": {
-      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
+    "Net35Essentials/1.0.3": {
+      "sha512": "7HRjKzvfbuzpxdeEteDEQt6PED5Jw4qTW/VqFPAtdJW8wfF9uqWujaDPoVbkUDet4Xu9ZMcFb88tFH/Q74FODw==",
       "type": "package",
-      "path": "Net35Essentials/1.0.2",
+      "path": "Net35Essentials/1.0.3",
       "files": [
-        "Net35Essentials.1.0.2.nupkg.sha512",
+        "Net35Essentials.1.0.3.nupkg.sha512",
         "Net35Essentials.nuspec",
         "lib/net35/Net35Essentials.dll"
       ]
@@ -324,7 +324,7 @@
       "FreecraftCore.Serializer.Metadata >= 1.1.45"
     ],
     ".NETFramework,Version=v3.5": [
-      "Net35Essentials >= 1.0.2"
+      "Net35Essentials >= 1.0.3"
     ],
     ".NETFramework,Version=v4.5": [],
     ".NETFramework,Version=v4.6": []
