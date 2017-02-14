@@ -43,10 +43,10 @@ namespace FreecraftCore.Crypto
 		/// <summary>
 		/// Creates a new session packet crypto service.
 		/// </summary>
-		/// <param name="key">The key to be used in the cipher.</param>
+		/// <param name="sessionKey">The key to be used in the cipher.</param>
 		/// <param name="isForEncryption">If true the the service encrypts. Otherwise it decrypts.</param>
-		public SessionPacketCryptoService(BigInteger key, bool isForEncryption)
-			: this(key.ToCleanByteArray(), isForEncryption)
+		public SessionPacketCryptoService(BigInteger sessionKey, bool isForEncryption)
+			: this(sessionKey.ToCleanByteArray(), isForEncryption)
 		{
 
 		}
@@ -54,16 +54,29 @@ namespace FreecraftCore.Crypto
 		/// <summary>
 		/// Creates a new session packet crypto service.
 		/// </summary>
-		/// <param name="key">The key to be used in the cipher.</param>
+		/// <param name="sessionKey">The key to be used in the cipher.</param>
 		/// <param name="isForEncryption">If true the the service encrypts. Otherwise it decrypts.</param>
-		public SessionPacketCryptoService([NotNull] byte[] key, bool isForEncryption)
+		public SessionPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption)
+			: this(sessionKey, isForEncryption, isForEncryption ? encryptionKey : decryptionKey)
 		{
-			if (key == null) throw new ArgumentNullException(nameof(key));
+
+		}
+
+		/// <summary>
+		/// Creates a new session paket crypto service.
+		/// </summary>
+		/// <param name="sessionKey"></param>
+		/// <param name="isForEncryption"></param>
+		/// <param name="hmacKey"></param>
+		public SessionPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption, [NotNull] byte[] hmacKey)
+		{
+			if (sessionKey == null) throw new ArgumentNullException(nameof(sessionKey));
+			if (hmacKey == null) throw new ArgumentNullException(nameof(hmacKey));
 
 			//RC4-Drop[n] for security
 			//Build an RC4 cipher service for the provided session key.
-			using (HMACSHA1 hmacsha = new HMACSHA1(isForEncryption ? encryptionKey : decryptionKey))
-				rc4CryptoService = new RC4DropNCryptoServiceProvider(hmacsha.ComputeHash(key), 1024, isForEncryption);
+			using (HMACSHA1 hmacsha = new HMACSHA1(hmacKey))
+				rc4CryptoService = new RC4DropNCryptoServiceProvider(hmacsha.ComputeHash(sessionKey), 1024, isForEncryption);
 		}
 
 		/// <inheritdoc />
