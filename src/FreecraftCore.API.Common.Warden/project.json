@@ -2,13 +2,13 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Serializer.Metadata": "1.1.44"
+    "FreecraftCore.Serializer.Metadata": "1.1.45"
   },
 
     "frameworks": {
         "net35": {
           "dependencies": {
-            "Net35Essentials": "1.0.2"
+            "Net35Essentials": "1.0.3"
           }
         },
         "net45": {

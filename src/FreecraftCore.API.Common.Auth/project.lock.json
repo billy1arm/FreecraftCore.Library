@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v3.5": {
-      "FreecraftCore.Serializer.Metadata/1.1.44": {
+      "FreecraftCore.Serializer.Metadata/1.1.45": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -24,7 +24,7 @@
           "lib/net/JetBrains.Annotations.dll": {}
         }
       },
-      "Net35Essentials/1.0.2": {
+      "Net35Essentials/1.0.3": {
         "type": "package",
         "compile": {
           "lib/net35/Net35Essentials.dll": {}
@@ -35,7 +35,7 @@
       }
     },
     ".NETFramework,Version=v4.5": {
-      "FreecraftCore.Serializer.Metadata/1.1.44": {
+      "FreecraftCore.Serializer.Metadata/1.1.45": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -58,7 +58,7 @@
       }
     },
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.Serializer.Metadata/1.1.44": {
+      "FreecraftCore.Serializer.Metadata/1.1.45": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -82,12 +82,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.Serializer.Metadata/1.1.44": {
-      "sha512": "ZCttZnhhwXGw02//mv5/W6YTnv3JUXZpAKGR9Hdb+Y451E//PVi8GCaI4eG3lITcnSiYaIruqwydF3mLQt4YhQ==",
+    "FreecraftCore.Serializer.Metadata/1.1.45": {
+      "sha512": "kBSUZRmVV8OYDq7IxNLLdKqQPLukJlKL1QBpwSl/MSQQ4k5P6105ExDjB1cbcewFYFklkMQ9kzIO7lFlF38aYw==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/1.1.44",
+      "path": "FreecraftCore.Serializer.Metadata/1.1.45",
       "files": [
-        "FreecraftCore.Serializer.Metadata.1.1.44.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.1.1.45.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
@@ -111,12 +111,12 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
       ]
     },
-    "Net35Essentials/1.0.2": {
-      "sha512": "+TcBHsG294kae50xoyO5gEp8btHAIAf2FslV+3WBfvmdFIWI8dcvWXUzQh3ztpvgV+2rE4CK3bv5y8Kc0WLT5Q==",
+    "Net35Essentials/1.0.3": {
+      "sha512": "7HRjKzvfbuzpxdeEteDEQt6PED5Jw4qTW/VqFPAtdJW8wfF9uqWujaDPoVbkUDet4Xu9ZMcFb88tFH/Q74FODw==",
       "type": "package",
-      "path": "Net35Essentials/1.0.2",
+      "path": "Net35Essentials/1.0.3",
       "files": [
-        "Net35Essentials.1.0.2.nupkg.sha512",
+        "Net35Essentials.1.0.3.nupkg.sha512",
         "Net35Essentials.nuspec",
         "lib/net35/Net35Essentials.dll"
       ]
@@ -124,10 +124,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.Serializer.Metadata >= 1.1.44"
+      "FreecraftCore.Serializer.Metadata >= 1.1.45"
     ],
     ".NETFramework,Version=v3.5": [
-      "Net35Essentials >= 1.0.2"
+      "Net35Essentials >= 1.0.3"
     ],
     ".NETFramework,Version=v4.5": [],
     ".NETFramework,Version=v4.6": []
