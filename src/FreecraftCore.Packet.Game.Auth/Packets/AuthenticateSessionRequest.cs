@@ -45,7 +45,7 @@ namespace FreecraftCore.Packet
 		//Not check on trinitycore
 		//Don't know what the type of login server would mean.
 		[WireMember(5)]
-		private uint LoginServerType { get; set; } = 0;
+		private uint LoginServerType { get; set; } = 1; // 0 GRUNT, 1 Battle.net
 
 		[NotNull]
 		[KnownSize(4)]
