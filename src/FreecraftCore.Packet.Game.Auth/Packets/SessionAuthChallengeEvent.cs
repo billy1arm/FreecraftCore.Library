@@ -39,7 +39,7 @@ namespace FreecraftCore.Packet
 		/// </summary>
 		[KnownSize(16)] //jackpoz shows this is a 16 byte BigInt
 		[WireMember(3)]
-		private byte[] SeedOne { get; set; }
+		public byte[] SeedOne { get; private set; }
 
 		/// <summary>
 		/// A 16 byte non-cryptographically secure BigInteger.
@@ -48,7 +48,7 @@ namespace FreecraftCore.Packet
 		/// </summary>
 		[KnownSize(16)] //jackpoz shows this is a 16 byte BigInt
 		[WireMember(4)]
-		private byte[] SeedTwo { get; set; }
+		public byte[] SeedTwo { get; private set; }
 
 		public SessionAuthChallengeEvent()
 		{
