@@ -28,7 +28,7 @@ namespace FreecraftCore.Packet
 		//But clientbuild number is only a short, on the authentication process,
 		//so it's likely these are unknown bytes
 		[WireMember(2)]
-		private short unknownOne { get; set; }
+		private short unknownOne { get; set; } = 0;
 
 		//Not checked on Trinitycore
 		//Was probably used for loadbalancing so it knows
@@ -45,7 +45,7 @@ namespace FreecraftCore.Packet
 		//Not check on trinitycore
 		//Don't know what the type of login server would mean.
 		[WireMember(5)]
-		private uint LoginServerType { get; set; } = 1; // 0 GRUNT, 1 Battle.net
+		private uint LoginServerType { get; set; } = 0; // 0 GRUNT, 1 Battle.net
 
 		[NotNull]
 		[KnownSize(4)]
