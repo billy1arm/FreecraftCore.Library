@@ -43,7 +43,8 @@ namespace FreecraftCore.API.Common
 			if (checksums == null) throw new ArgumentNullException(nameof(checksums));
 
 			addonChecksumInfos = checksums;
-			Timestamp = DateTime.UtcNow;
+			Timestamp = new DateTime(DateTime.UtcNow.ToUniversalTime()
+				.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks);
 		}
 
 		protected AddonChecksumsContainer()
