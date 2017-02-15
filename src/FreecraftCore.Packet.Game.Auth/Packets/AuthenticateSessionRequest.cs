@@ -16,7 +16,7 @@ namespace FreecraftCore.Packet
 	{
 		public override bool isValid => SessionDigest != null && SessionDigest.Length == 20
 			&& String.IsNullOrEmpty(AccountName) && RandomSeedBytes != null &&
-			RandomSeedBytes.Length == 4 && RealmIdentity != null;
+			RandomSeedBytes.Length == 4 && RealmIdentity != null && BlizzardAddonVerificationData != null;
 
 		/// <summary>
 		/// The build number of the client.
@@ -66,16 +66,17 @@ namespace FreecraftCore.Packet
 		[WireMember(9)]
 		public byte[] SessionDigest { get; private set; }
 
-		//Trintycore will crash if you don't send this
+		//Trintycore will crash if you don't at least send the size on newer versions
 		//Though it'll probably be fixed soon
-		//TODO: Add uint strategy
+		[NotNull]
+		[Compress] //compressed with zlib
 		[WireMember(10)]
 		[SendSize(SendSizeAttribute.SizeType.Int32)] //it's probably uint but we don't have that yet
-		private byte[] AddonData { get; set; } = new byte[0];
+		public AddonVerificationInfo[] BlizzardAddonVerificationData { get; set; }
 		
 
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
-			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest)
+			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonVerificationInfo[] addonVerification)
 		{
 			if (!Enum.IsDefined(typeof(ClientBuild), clientBuildNumber))
 				throw new InvalidEnumArgumentException(nameof(clientBuildNumber), (int)clientBuildNumber, typeof(ClientBuild));
@@ -83,10 +84,12 @@ namespace FreecraftCore.Packet
 			if (randomSeedBytes == null) throw new ArgumentNullException(nameof(randomSeedBytes));
 			if (realmIdentity == null) throw new ArgumentNullException(nameof(realmIdentity));
 			if (sessionDigest == null) throw new ArgumentNullException(nameof(sessionDigest));
+			if (addonVerification == null) throw new ArgumentNullException(nameof(addonVerification));
 
 			if (string.IsNullOrEmpty(accountName))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(accountName));
 
+			BlizzardAddonVerificationData = addonVerification;
 			ClientBuildNumber = clientBuildNumber;
 			AccountName = accountName;
 			RandomSeedBytes = randomSeedBytes;
