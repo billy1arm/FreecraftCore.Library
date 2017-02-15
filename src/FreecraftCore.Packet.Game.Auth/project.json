@@ -2,12 +2,10 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Addon": "1.0.26",
-    "FreecraftCore.API.Common.Auth": "1.0.26",
+    "FreecraftCore.API.Common.Addon": "1.0.28",
+    "FreecraftCore.API.Common.Auth": "1.0.28",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.45",
-    "FreecraftCore.Serializer.Stream": "1.1.45",
     "JetBrains.Annotations": "10.2.1"
   },
 

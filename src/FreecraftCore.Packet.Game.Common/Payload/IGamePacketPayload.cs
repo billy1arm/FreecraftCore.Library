@@ -9,7 +9,6 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// Interface metadata market for game payloads.
 	/// </summary>
-	[WireDataContract]
 	public interface IGamePacketPayload
 	{
 		/// <summary>

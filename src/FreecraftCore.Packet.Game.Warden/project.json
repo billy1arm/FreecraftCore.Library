@@ -2,10 +2,10 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Warden": "1.0.26",
+    "FreecraftCore.API.Common.Warden": "1.0.28",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.45"
+    "FreecraftCore.Serializer.Metadata": "1.1.46"
   },
 
   "frameworks": {

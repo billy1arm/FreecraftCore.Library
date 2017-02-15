@@ -3,8 +3,6 @@
 
   "dependencies": {
     "FreecraftCore.Packet.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.45",
-    "FreecraftCore.Serializer.Stream": "1.1.45",
     "JetBrains.Annotations": "10.2.1"
   },
 

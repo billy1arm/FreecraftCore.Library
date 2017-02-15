@@ -14,9 +14,10 @@ namespace FreecraftCore.Packet
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]
 	public class SessionAuthProofRequest : GamePacketPayload
 	{
+		/// <inheritdoc />
 		public override bool isValid => SessionDigest != null && SessionDigest.Length == 20
 			&& String.IsNullOrEmpty(AccountName) && RandomSeedBytes != null &&
-			RandomSeedBytes.Length == 4 && RealmIdentity != null && BlizzardAddonVerificationData != null;
+			RandomSeedBytes.Length == 4 && RealmIdentity != null && BlizzardAddonVerificationContainer != null;
 
 		/// <summary>
 		/// The build number of the client.
@@ -47,11 +48,18 @@ namespace FreecraftCore.Packet
 		[WireMember(5)]
 		private uint LoginServerType { get; set; } = 0; // 0 GRUNT, 1 Battle.net
 
+		/// <summary>
+		/// The client's randomly generated seed.
+		/// </summary>
 		[NotNull]
 		[KnownSize(4)]
 		[WireMember(6)]
 		public byte[] RandomSeedBytes { get; private set; }
 
+		/// <summary>
+		/// The realm indentify containing information about ID
+		/// and other unexposed data.
+		/// </summary>
 		[NotNull]
 		[WireMember(7)]
 		public RealmIdentification RealmIdentity { get; private set; }
@@ -61,6 +69,9 @@ namespace FreecraftCore.Packet
 		[WireMember(8)]
 		private ulong DosResponse { get; set; }
 
+		/// <summary>
+		/// The client's computed digest for session authentication.
+		/// </summary>
 		[NotNull]
 		[KnownSize(20)]
 		[WireMember(9)]
@@ -71,12 +82,10 @@ namespace FreecraftCore.Packet
 		[NotNull]
 		[Compress] //compressed with zlib
 		[WireMember(10)]
-		[SendSize(SendSizeAttribute.SizeType.Int32)] //it's probably uint but we don't have that yet
-		public AddonVerificationInfo[] BlizzardAddonVerificationData { get; set; }
+		public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
 		
-
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
-			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonVerificationInfo[] addonVerification)
+			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)
 		{
 			if (!Enum.IsDefined(typeof(ClientBuild), clientBuildNumber))
 				throw new InvalidEnumArgumentException(nameof(clientBuildNumber), (int)clientBuildNumber, typeof(ClientBuild));
@@ -84,12 +93,12 @@ namespace FreecraftCore.Packet
 			if (randomSeedBytes == null) throw new ArgumentNullException(nameof(randomSeedBytes));
 			if (realmIdentity == null) throw new ArgumentNullException(nameof(realmIdentity));
 			if (sessionDigest == null) throw new ArgumentNullException(nameof(sessionDigest));
-			if (addonVerification == null) throw new ArgumentNullException(nameof(addonVerification));
+			if (addonChecksums == null) throw new ArgumentNullException(nameof(addonChecksums));
 
 			if (string.IsNullOrEmpty(accountName))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(accountName));
 
-			BlizzardAddonVerificationData = addonVerification;
+			BlizzardAddonVerificationContainer = new AddonChecksumsContainer(addonChecksums);
 			ClientBuildNumber = clientBuildNumber;
 			AccountName = accountName;
 			RandomSeedBytes = randomSeedBytes;
@@ -99,7 +108,7 @@ namespace FreecraftCore.Packet
 
 		protected SessionAuthProofRequest()
 		{
-			
+			//protected ctor for serialization
 		}
 	}
 }
