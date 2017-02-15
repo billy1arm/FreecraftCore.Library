@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore.API.Common
 {
 	[WireDataContract]
-	public class AddonVerificationInfo
+	public class AddonChecksumInfo
 	{
 		//Null terminated addon name.
 		/// <summary>
@@ -37,7 +37,7 @@ namespace FreecraftCore.API.Common
 		[WireMember(4)]
 		private uint URLFileCRC { get; set; } = 0; //sniffed as 0 but I don't know what this is
 
-		public AddonVerificationInfo([NotNull] string addonName)
+		public AddonChecksumInfo([NotNull] string addonName)
 		{
 			if (string.IsNullOrEmpty(addonName))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(addonName));
@@ -45,7 +45,7 @@ namespace FreecraftCore.API.Common
 			AddonName = addonName;
 		}
 
-		protected AddonVerificationInfo()
+		protected AddonChecksumInfo()
 		{
 			//For deserialization
 		}
