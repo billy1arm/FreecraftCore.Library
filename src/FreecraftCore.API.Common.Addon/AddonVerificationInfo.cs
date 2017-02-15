@@ -21,7 +21,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates if the addon is enabled.
 		/// </summary>
 		[WireMember(2)]
-		public bool isEnabled { get; private set; }
+		private bool UsesPublicKeyCRC { get; set; } = true; //sniffed as true
 
 		//TODO: How do we compute this? It looks the same for every addon in the auth packet.
 		/// <summary>
