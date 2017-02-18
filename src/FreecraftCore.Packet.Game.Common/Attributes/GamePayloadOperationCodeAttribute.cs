@@ -26,8 +26,12 @@ namespace FreecraftCore.Packet
 		public GamePayloadOperationCodeAttribute(NetworkOperationCode operationCode) 
 			: base((int)operationCode)
 		{
+#if !NETSTANDARD1_6
 			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode))
 				throw new InvalidEnumArgumentException(nameof(operationCode), (int) operationCode, typeof(NetworkOperationCode));
+#else
+			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode)) throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the NetworkOperationCode enum.");
+#endif
 		}
 	}
 }

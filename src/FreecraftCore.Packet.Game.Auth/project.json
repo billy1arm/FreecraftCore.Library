@@ -2,23 +2,24 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Addon": "1.0.29",
-    "FreecraftCore.API.Common.Auth": "1.0.29",
+    "FreecraftCore.API.Common.Addon": "1.0.30",
+    "FreecraftCore.API.Common.Auth": "1.0.30",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
     "JetBrains.Annotations": "10.2.1"
   },
 
-    "frameworks": {
-        "net35": {
-        },
-        "net45": {
+  "frameworks": {
+    "net46": {
 
-        },
-        "net46": {
-
-        }
     },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
 
     "buildOptions": {
         "optimize": true

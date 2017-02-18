@@ -55,10 +55,10 @@ namespace FreecraftCore.Packet.Auth
 			if (m1Hash == null) throw new ArgumentNullException(nameof(m1Hash));
 
 			ThrowIfInvalidLength(nameof(providedA),
-				GetType().GetMember(nameof(A)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, providedA.Length);
+				() => GetType().GetTypeInfo().GetMember(nameof(A)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, providedA.Length);
 
 			ThrowIfInvalidLength(nameof(m1Hash),
-				GetType().GetMember(nameof(M1)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, m1Hash.Length);
+				() => GetType().GetTypeInfo().GetMember(nameof(M1)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, m1Hash.Length);
 
 			A = providedA;
 			M1 = m1Hash;
@@ -69,9 +69,9 @@ namespace FreecraftCore.Packet.Auth
 
 		}
 
-		private static void ThrowIfInvalidLength(string argumentName, int expectedLength, int actualLength)
+		private static void ThrowIfInvalidLength(string argumentName, Func<int> expectedLength, int actualLength)
 		{
-			if (expectedLength != actualLength)
+			if (expectedLength() != actualLength)
 				throw new ArgumentException($"Provided SRP6a {argumentName} is invalid length. Expected {expectedLength} but was {actualLength}.");
 		}
 	}

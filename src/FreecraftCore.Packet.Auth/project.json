@@ -2,21 +2,22 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Auth": "1.0.29",
+    "FreecraftCore.API.Common.Auth": "1.0.30",
     "FreecraftCore.Packet.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.47"
+    "FreecraftCore.Serializer.Metadata": "2.0.1"
   },
 
-    "frameworks": {
-        "net35": {
-        },
-        "net45": {
+  "frameworks": {
+    "net46": {
 
-        },
-        "net46": {
-
-        }
     },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
 
     "buildOptions": {
         "optimize": true

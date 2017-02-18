@@ -6,16 +6,17 @@
     "JetBrains.Annotations": "10.2.1"
   },
 
-    "frameworks": {
-        "net35": {
-        },
-        "net45": {
+  "frameworks": {
+    "net46": {
 
-        },
-        "net46": {
-
-        }
     },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
 
     "buildOptions": {
         "optimize": true

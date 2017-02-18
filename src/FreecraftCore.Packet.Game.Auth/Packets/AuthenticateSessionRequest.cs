@@ -87,8 +87,13 @@ namespace FreecraftCore.Packet
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)
 		{
+#if !NETSTANDARD1_6
 			if (!Enum.IsDefined(typeof(ClientBuild), clientBuildNumber))
 				throw new InvalidEnumArgumentException(nameof(clientBuildNumber), (int)clientBuildNumber, typeof(ClientBuild));
+#else
+			if (!Enum.IsDefined(typeof(ClientBuild), clientBuildNumber))
+				throw new ArgumentOutOfRangeException(nameof(clientBuildNumber), "Value should be defined in the ClientBuild enum.");
+#endif
 
 			if (randomSeedBytes == null) throw new ArgumentNullException(nameof(randomSeedBytes));
 			if (realmIdentity == null) throw new ArgumentNullException(nameof(realmIdentity));

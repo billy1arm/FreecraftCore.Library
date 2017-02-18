@@ -4,21 +4,18 @@
   "dependencies": {
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
-    "FreecraftCore.Serializer.Metadata": "1.1.47"
+    "FreecraftCore.Serializer.Metadata": "2.0.1"
   },
 
   "frameworks": {
-    "net35": {
-      "dependencies": {
-        "Net35Essentials": "1.0.3"
-      }
-    },
-    "net45": {
-      "dependencies": {
-      }
-    },
     "net46": {
       "dependencies": {
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
       }
     }
   },
