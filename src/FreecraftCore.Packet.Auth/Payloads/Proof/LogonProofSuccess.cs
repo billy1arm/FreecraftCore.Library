@@ -10,6 +10,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Sent by the server when a logon proof request was successful.
 	/// Only for >= 2.x.x clients. 1.12.1 clients recieve something slightly different.
 	/// </summary>
+	[WireDataContract]
 	public class LogonProofSuccess : ILogonProofResult
 	{
 		/// <summary>

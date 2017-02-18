@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore.Packet
 {
 	//We cannot use basetype polymorphic serialization. The serializer supports only 1 to 1 for keys.
 	//In authentication's case there is a response and a request associated with the command/opcode. Therefore it cannot be used.

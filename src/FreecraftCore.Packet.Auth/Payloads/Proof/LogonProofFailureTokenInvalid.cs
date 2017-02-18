@@ -10,6 +10,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Sent by the server when a logon proof request was failed due to either an invalid SRP6 M sent
 	/// or an invalid token (Authenticator pin) sent. (Ex. Invalid authenticator pin or invalid phone pin)
 	/// </summary>
+	[WireDataContract]
 	public class LogonProofFailure : ILogonProofResult
 	{
 		//This is sent when SRP6 was invalid or Token failed
