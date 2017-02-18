@@ -6,20 +6,21 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore.Crypto
 {
-	public abstract class CryptoStreamReader : CryptoStreamService, IWireStreamReaderStrategy
+	public abstract class CryptoStreamReader<TStreamType> : CryptoStreamService, IWireStreamReaderStrategy
+		where TStreamType : IWireStreamReaderStrategy
 	{
 		/// <summary>
 		/// Decorated <see cref="IWireStreamReaderStrategy"/>.
 		/// </summary>
 		[NotNull]
-		protected IWireStreamReaderStrategy Source { get; }
+		protected TStreamType Source { get; }
 
 		/// <summary>
 		/// Creates a realtime crypto stream reader.
 		/// </summary>
-		/// <param name="source">The <see cref="IWireStreamReaderStrategy"/> to decorate.</param>
+		/// <param name="source">The <see cref="TStreamType"/> to decorate.</param>
 		/// <param name="sessionCrypto"></param>
-		protected CryptoStreamReader([NotNull] IWireStreamReaderStrategy source, [NotNull] ISessionPacketCryptoService sessionCrypto)
+		protected CryptoStreamReader([NotNull] TStreamType source, [NotNull] ISessionPacketCryptoService sessionCrypto)
 			: base(sessionCrypto)
 		{
 			//We don't implement the reading ourselves because it could be a default behavior
@@ -38,12 +39,12 @@ namespace FreecraftCore.Crypto
 		//See doc for IWireStreamReaderStrategy
 		public virtual byte ReadByte()
 		{
-			return Source.ReadByte();
+			return ReadBytes(1)[0];
 		}
 
 		public virtual byte PeekByte()
 		{
-			return Source.PeekByte();
+			return PeakBytes(1)[0];
 		}
 
 		public virtual byte[] ReadAllBytes()

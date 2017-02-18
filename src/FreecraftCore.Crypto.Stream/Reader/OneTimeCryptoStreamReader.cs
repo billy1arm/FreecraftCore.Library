@@ -13,7 +13,8 @@ namespace FreecraftCore.Crypto
 	/// This yields better performance than the realtime which does chunk by chunk.
 	/// This reader may not immediately read the stream. Will read it as soon as it is needed.
 	/// </summary>
-	public class OneTimeCryptoStreamReader : CryptoStreamReader
+	public class OneTimeCryptoStreamReader<TStreamType> : CryptoStreamReader<TStreamType>
+		where TStreamType : class, IWireStreamReaderStrategy
 	{
 		/// <summary>
 		/// Creates a realtime crypto stream reader.
@@ -21,8 +22,8 @@ namespace FreecraftCore.Crypto
 		/// <param name="source">The <see cref="IWireStreamReaderStrategy"/> to decorate.</param>
 		/// <param name="sessionCrypto"></param>
 		/// <param name="count">The amount of bytes to be read immediately.</param>
-		public OneTimeCryptoStreamReader([NotNull] IWireStreamReaderStrategy source, [NotNull] ISessionPacketCryptoService sessionCrypto, int count)
-			: base(new DefaultStreamReaderStrategy(new LazyCryptoStreamReader(source, sessionCrypto).ReadBytes(count)), sessionCrypto) //Reads count many bytes and decrypts and creates a default reader around it
+		public OneTimeCryptoStreamReader([NotNull] TStreamType source, [NotNull] ISessionPacketCryptoService sessionCrypto, int count)
+			: base(new DefaultStreamReaderStrategy(new LazyCryptoStreamReader<TStreamType>(source, sessionCrypto).ReadBytes(count)) as TStreamType, sessionCrypto) //Reads count many bytes and decrypts and creates a default reader around it
 		{
 			if (count < 0) throw new ArgumentOutOfRangeException(nameof(count));
 		}
