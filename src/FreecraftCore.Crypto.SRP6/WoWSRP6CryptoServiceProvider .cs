@@ -14,9 +14,15 @@ namespace FreecraftCore.Crypto
 	/// </summary>
 	public class WoWSRP6CryptoServiceProvider : IDisposable
 	{
+		//TODO: Reimplement secure random generation in netstandard1.6
 		//TODO: Implement >net4 Lazy loaded version.
+#if !NETSTANDARD1_6
 		[NotNull]
 		private RNGCryptoServiceProvider randomProvider { get; } = new RNGCryptoServiceProvider();
+#else
+		[NotNull]
+		private RandomNumberGenerator randomProvider { get; } = RandomNumberGenerator.Create();
+#endif
 
 		/// <summary>
 		/// First public key component for SRP.
@@ -61,7 +67,7 @@ namespace FreecraftCore.Crypto
 			do
 			{
 				//Fill array with crypto secure bytes
-				randomProvider.GetNonZeroBytes(randBytes);
+				GetNonZeroBytes(randomProvider, randBytes);
 
 				//Build a private component
 				privateKeyComponent_a = randBytes.ToBigInteger(); //should be secure and valid
@@ -97,6 +103,49 @@ namespace FreecraftCore.Crypto
 			}
 		}
 
+		//Based on the source from: http://www.dotnetframework.org/default.aspx/DotNET/DotNET/8@0/untmp/whidbey/REDBITS/ndp/clr/src/BCL/System/Security/Cryptography/RNGCryptoServiceProvider@cs/1/RNGCryptoServiceProvider@cs
+		public static void GetNonZeroBytes(RandomNumberGenerator generator, byte[] data)
+		{
+#if NETSTANDARD1_6
+			generator.GetBytes(data);
+
+			int indexOfFirst0Byte = data.Length;
+			for (int i = 0; i < data.Length; i++)
+			{
+				if (data[i] == 0)
+				{
+					indexOfFirst0Byte = i;
+					break;
+				}
+			}
+			for (int i = indexOfFirst0Byte; i < data.Length; i++)
+			{
+				if (data[i] != 0)
+				{
+					data[indexOfFirst0Byte++] = data[i];
+				}
+			}
+
+			while (indexOfFirst0Byte < data.Length)
+			{
+				// this should be more than enough to fill the rest in one iteration
+				byte[] tmp = new byte[2 * (data.Length - indexOfFirst0Byte)];
+				generator.GetBytes(tmp);
+
+				for (int i = 0; i < tmp.Length; i++)
+				{
+					if (tmp[i] != 0)
+					{
+						data[indexOfFirst0Byte++] = tmp[i];
+						if (indexOfFirst0Byte >= data.Length) break;
+					}
+				}
+			}
+#else
+			generator.GetNonZeroBytes(data);
+#endif
+		}
+
 		#region IDisposable Support
 		private bool disposedValue = false; // To detect redundant calls
 
@@ -130,6 +179,6 @@ namespace FreecraftCore.Crypto
 			// TODO: uncomment the following line if the finalizer is overridden above.
 			// GC.SuppressFinalize(this);
 		}
-		#endregion
+#endregion
 	}
 }

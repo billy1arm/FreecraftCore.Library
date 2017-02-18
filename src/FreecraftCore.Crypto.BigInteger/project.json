@@ -2,36 +2,42 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Serializer.Metadata": "1.1.43"
+    "FreecraftCore.Serializer.Metadata": "2.0.1"
   },
 
-    "frameworks": {
-        "net35": {
-            "dependencies": {
-            }
-        },
-        "net40": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
-            }
-        },
-        "net45": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
-            }
-        },
-        "net46": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-                "System.Numerics": "4.0.0.0"
-            }
-        }
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+      }
     },
+    "net40": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Numerics": "4.0.0.0"
+      }
+    },
+    "net45": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Numerics": "4.0.0.0"
+      }
+    },
+    "net46": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Numerics": "4.0.0.0"
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
 
     "buildOptions": {
         "allowUnsafe": true,

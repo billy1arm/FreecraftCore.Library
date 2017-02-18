@@ -7,21 +7,18 @@
   },
 
   "frameworks": {
-    "net35": {
+    "net46": {
       "dependencies": {
-        "Net35Essentials": "1.0.2"
-      }
-    },
-    "net40": {
-      "dependencies": {
+        "Net35Essentials": "1.0.3"
       },
       "frameworkAssemblies": {
       }
     },
-    "net45": {
+
+    "netstandard1.6": {
+      "imports": "dnxcore50",
       "dependencies": {
-      },
-      "frameworkAssemblies": {
+        "NETStandard.Library": "1.6.0"
       }
     }
   },

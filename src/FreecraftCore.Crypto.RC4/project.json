@@ -2,27 +2,25 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "BouncyCastle": "1.8.1",
     "JetBrains.Annotations": "10.2.1",
     "FreecraftCore.Crypto.BigInteger": "1.0.0-*",
     "FreecraftCore.Crypto.Common": "1.0.0-*"
   },
 
   "frameworks": {
-    "net35": {
+    "net46": {
       "dependencies": {
-      }
-    },
-    "net40": {
-      "dependencies": {
+        "Portable.BouncyCastle": "1.8.1.2"
       },
       "frameworkAssemblies": {
       }
     },
-    "net45": {
+
+    "netstandard1.6": {
+      "imports": "dnxcore50",
       "dependencies": {
-      },
-      "frameworkAssemblies": {
+        "NETStandard.Library": "1.6.0",
+        "Portable.BouncyCastle": "1.8.1.2"
       }
     }
   },

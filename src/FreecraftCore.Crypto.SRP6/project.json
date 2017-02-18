@@ -6,25 +6,22 @@
     "FreecraftCore.Crypto.BigInteger": "1.0.0-*"
   },
 
-    "frameworks": {
-        "net35": {
-            "dependencies": {
-                "Net35Essentials": "1.0.2"
-            }
-        },
-        "net40": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-            }
-        },
-        "net45": {
-            "dependencies": {
-            },
-            "frameworkAssemblies": {
-            }
-        }
+  "frameworks": {
+    "net46": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+      }
     },
+
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "System.Security.Cryptography.Csp": "4.0.0"
+      }
+    }
+  },
 
     "buildOptions": {
       "optimize": true,
