@@ -5,19 +5,20 @@ using System.Threading.Tasks;
 using FreecraftCore.Packet;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore.Packet.Auth
 {
 	//We cannot just deserialize this object because there is not a 1:1 mapping for
 	//Authentication Operation Codes
-	public class AuthenticationPacket : IAuthenticationPacket
+	public class AuthenticationPacket<TPacketPayloadType> : IAuthenticationPacket<TPacketPayloadType>
+		where TPacketPayloadType : IAuthenticationPayload
 	{
 		[NotNull]
 		public IAuthenticationPacketHeader AuthPacketHeader { get; }
 
 		[NotNull]
-		public IAuthenticationPayload AuthPayload { get; }
+		public TPacketPayloadType AuthPayload { get; }
 
-		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] IAuthenticationPayload authPayload)
+		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] TPacketPayloadType authPayload)
 		{
 			if (authPacketHeader == null) throw new ArgumentNullException(nameof(authPacketHeader));
 			if (authPayload == null) throw new ArgumentNullException(nameof(authPayload));

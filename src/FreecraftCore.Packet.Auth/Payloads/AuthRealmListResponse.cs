@@ -11,7 +11,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Response to the request <see cref="AuthRealmListRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)]
+	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthRealmListResponse : IAuthenticationPayload
 	{
 		/// <summary>

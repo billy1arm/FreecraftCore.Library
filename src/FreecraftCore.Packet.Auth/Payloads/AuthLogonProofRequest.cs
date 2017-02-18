@@ -9,7 +9,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore.Packet.Auth
 {
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)]
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthLogonProofRequest : IAuthenticationPayload
 	{
 		//TODO: Add BigInter serialization to our "JAM"

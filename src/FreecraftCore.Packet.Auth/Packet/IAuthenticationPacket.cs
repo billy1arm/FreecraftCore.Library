@@ -4,14 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore.Packet.Auth
 {
-	public interface IAuthenticationPacket
+	public interface IAuthenticationPacket<TPacketPayloadType>
+		where TPacketPayloadType : IAuthenticationPayload
 	{
 		[NotNull]
 		IAuthenticationPacketHeader AuthPacketHeader { get; }
 
 		[NotNull]
-		IAuthenticationPayload AuthPayload { get; }
+		TPacketPayloadType AuthPayload { get; }
 	}
 }

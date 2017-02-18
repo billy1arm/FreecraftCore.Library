@@ -9,7 +9,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Payload for requesting the realm list.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)]
+	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthRealmListRequest : IAuthenticationPayload
 	{
 		//For some reason this is 5 bytes long (remove one for byte sized op code)

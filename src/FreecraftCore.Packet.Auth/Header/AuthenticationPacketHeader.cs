@@ -6,7 +6,7 @@ using FreecraftCore.Packet;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore.Packet.Auth
 {
 	/// <summary>
 	/// The default <see cref="IAuthenticationPacketHeader"/> and only type of authentication
