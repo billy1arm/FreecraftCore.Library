@@ -27,7 +27,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the time this container was generated.
 		/// </summary>
 		[WireMember(2)]
-		public DateTime Timestamp { get; private set; }
+		public uint Timestamp { get; private set; }
 
 		/// <summary>
 		/// Collection of Addon checksums used for Addon validation.
@@ -43,8 +43,8 @@ namespace FreecraftCore.API.Common
 			if (checksums == null) throw new ArgumentNullException(nameof(checksums));
 
 			addonChecksumInfos = checksums;
-			Timestamp = new DateTime(DateTime.UtcNow.ToUniversalTime()
-				.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks);
+			Timestamp = (uint)DateTime.UtcNow.ToUniversalTime()
+				.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks;
 		}
 
 		protected AddonChecksumsContainer()

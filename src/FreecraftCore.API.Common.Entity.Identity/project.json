@@ -2,20 +2,26 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Serializer.Metadata": "1.1.46"
+    "FreecraftCore.Serializer.Metadata": "2.0.1"
   },
 
-    "frameworks": {
-        "net35": {
-          "dependencies": {
-            "Net35Essentials": "1.0.3"
-          }
-        },
-        "net45": {
-        },
-        "net46": {
-        }
+  "frameworks": {
+    "net35": {
+      "dependencies": {
+        "Net35Essentials": "1.0.3"
+      }
     },
+    "net45": {
+    },
+    "net46": {
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
 
     "buildOptions": {
         "optimize": true
