@@ -29,6 +29,11 @@ namespace FreecraftCore.Packet.Auth
 				throw new ArgumentOutOfRangeException(nameof(authenticationOpCode), "Value should be defined in the AuthOperationCode enum.");
 
 			OperationCode = authenticationOpCode;
-		}	
+		}
+
+		protected AuthenticationPacketHeader()
+		{
+			//for serialization
+		}
 	}
 }
