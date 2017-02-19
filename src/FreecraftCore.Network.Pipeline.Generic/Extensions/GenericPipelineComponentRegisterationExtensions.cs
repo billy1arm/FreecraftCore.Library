@@ -146,4 +146,56 @@ namespace FreecraftCore
 			return pipelineRegister;
 		}
 	}
+
+	public static class OperationCodeInsertionPipelineComponentRegisterationExtensions
+	{
+		/// <summary>
+		/// Registers a pipeline component that reinserts the operation code into the reader on the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <typeparam name="TContextBuilderType"></typeparam>
+		/// <typeparam name="TNetworkOperationCodeType"></typeparam>
+		/// <typeparam name="THeaderType"></typeparam>
+		/// <typeparam name="TPayloadType"></typeparam>
+		/// <param name="pipelineRegister"></param>
+		/// <param name="serializer"></param>
+		/// <returns></returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionPayloadPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] ISerializationService serializer)
+			where TPayloadType : IMessageVerifyable
+			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
+			where TNetworkOperationCodeType : struct
+			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
+		{
+			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
+
+			pipelineRegister.TryRegisterPipeline(new OperationCodeReinsertPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(serializer), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+
+		//Don't do this, I can't think of a real purpose for this
+		/// <summary>
+		/// Registers a pipeline component that reinserts the operation code into the reader on the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <typeparam name="TContextBuilderType"></typeparam>
+		/// <typeparam name="TNetworkOperationCodeType"></typeparam>
+		/// <typeparam name="THeaderType"></typeparam>
+		/// <typeparam name="TPayloadType"></typeparam>
+		/// <param name="pipelineRegister"></param>
+		/// <param name="serializer"></param>
+		/// <returns></returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionHeaderPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] ISerializationService serializer)
+			where TPayloadType : IMessageVerifyable
+			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
+			where TNetworkOperationCodeType : struct
+			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
+		{
+			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
+
+			pipelineRegister.TryRegisterPipeline(new OperationCodeReinsertPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(serializer), NetworkPipelineTypes.Header | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+	}
 }

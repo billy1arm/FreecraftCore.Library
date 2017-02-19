@@ -41,8 +41,7 @@ namespace FreecraftCore
 			where TDeserializablePayloadType : AuthenticationPayload
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
-			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
-			//Provides a slightly clean looking API
+
 			pipelineRegister.TryRegisterPipeline(new PayloadReadingPipelineComponent<TDeserializablePayloadType, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>(serializer), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
 
 			//Return for fluent registeration
@@ -60,8 +59,6 @@ namespace FreecraftCore
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
 
-			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
-			//Provides a slightly clean looking API
 			pipelineRegister.TryRegisterPipeline(new HeaderReadingPipelineComponent<TDeserializableHeaderType, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>(serializer), NetworkPipelineTypes.Header | NetworkPipelineTypes.Main);
 
 			//Return for fluent registeration
