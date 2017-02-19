@@ -208,7 +208,7 @@ namespace FreecraftCore
 		/// <typeparam name="TPayloadType"></typeparam>
 		/// <param name="pipelineRegister"></param>
 		/// <returns></returns>
-		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionPayloadPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithPeekStreamPayloadPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct
@@ -229,7 +229,7 @@ namespace FreecraftCore
 		/// <typeparam name="TPayloadType"></typeparam>
 		/// <param name="pipelineRegister"></param>
 		/// <returns></returns>
-		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionHeaderPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithPeekStreamHeaderPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct
