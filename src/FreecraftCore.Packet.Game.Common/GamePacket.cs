@@ -26,13 +26,13 @@ namespace FreecraftCore.Packet
 		[NotNull]
 		public IGamePacketPayload Payload { get; }
 
-		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] GamePacketPayload payload)
+		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] IGamePacketPayload payload)
 		{
 			if (header == null)
 				throw new ArgumentNullException(nameof(header), $"Must provided a non-null header.");
 
 			if(payload == null)
-				throw new ArgumentNullException(nameof(payload), $"Must provided a non-null {nameof(GamePacketPayload)}.");
+				throw new ArgumentNullException(nameof(payload), $"Must provided a non-null {nameof(IGamePacketPayload)}.");
 
 			Payload = payload;
 			Header = header;
