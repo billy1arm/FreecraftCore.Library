@@ -6,7 +6,7 @@ using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Network.Pipeline.Auth.Services
+namespace FreecraftCore.Network
 {
 	/// <summary>
 	/// Service for handling game network inputs utilizing the pipeline system.

@@ -32,6 +32,22 @@ namespace FreecraftCore
 		}
 
 		/// <summary>
+		/// Registers a parameterless pipeline component in the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Header
+		/// </summary>
+		/// <param name="pipelineRegister">Pipeline service to register on.</param>
+		/// <returns>Register for fluent chaining.</returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithHeaderPipeline<TPipelineComponentType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister)
+			where TPipelineComponentType : IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>>, new()
+		{
+			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
+			//Provides a slightly clean looking API
+			pipelineRegister.TryRegisterPipeline(new TPipelineComponentType(), NetworkPipelineTypes.Header | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+
+		/// <summary>
 		/// Registers a payload deserialization pipeline in the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
 		/// </summary>
 		/// <param name="pipelineRegister">Pipeline service to register on.</param>

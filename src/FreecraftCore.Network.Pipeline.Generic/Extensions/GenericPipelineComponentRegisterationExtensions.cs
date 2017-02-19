@@ -124,13 +124,11 @@ namespace FreecraftCore
 		/// <summary>
 		/// Registers a pipeline in the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
 		/// </summary>
-		/// <typeparam name="TNetworkInputType"></typeparam>
 		/// <typeparam name="TContextBuilderType"></typeparam>
 		/// <typeparam name="TNetworkOperationCodeType"></typeparam>
 		/// <typeparam name="THeaderType"></typeparam>
 		/// <typeparam name="TPayloadType"></typeparam>
 		/// <param name="pipelineRegister"></param>
-		/// <param name="pipelineComponent"></param>
 		/// <returns></returns>
 		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithPayloadSizingPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] ISessionPacketCryptoService cryptoService)
 			where TPayloadType : IMessageVerifyable
