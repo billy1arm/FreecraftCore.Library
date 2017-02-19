@@ -10,7 +10,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Enumeration of authentication destination codes.
 	/// </summary>
 	[WireDataContract]
-	public enum AuthOperationDestinationCode : short
+	public enum AuthOperationDestinationCode : byte
 	{
 		Default = 0,
 
