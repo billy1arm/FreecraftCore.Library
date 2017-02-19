@@ -14,7 +14,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TNetworkOperationCodeType">The operationcode type.</typeparam>
 	/// <typeparam name="THeaderType">The header type.</typeparam>
 	/// <typeparam name="TPayloadType">The payload type.</typeparam>
-	public abstract class NetworkInputPipelineService<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> :
+	public abstract class WireReaderInputPipelineService<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> :
 		INetworkMessageContextFactory<IWireStreamReaderStrategyAsync, TNetworkOperationCodeType, THeaderType, TPayloadType>,
 		INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>
 		where TNetworkOperationCodeType : struct
@@ -32,7 +32,7 @@ namespace FreecraftCore.Network
 		/// </summary>
 		protected List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> PayloadPipelines { get; }
 
-		protected NetworkInputPipelineService()
+		protected WireReaderInputPipelineService()
 		{
 			//For now we just construct new collections
 			PayloadPipelines = new List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
