@@ -100,7 +100,5 @@ namespace FreecraftCore
 			//Return for fluent registeration
 			return pipelineRegister;
 		}
-
-		
 	}
 }

@@ -196,4 +196,50 @@ namespace FreecraftCore
 			return pipelineRegister;
 		}
 	}
+
+	public static class PeekSupportPipelineComponentRegisterationExtensions
+	{
+		/// <summary>
+		/// Registers a pipeline component provides peeking/seeking support functionality for readers on the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <typeparam name="TContextBuilderType"></typeparam>
+		/// <typeparam name="TNetworkOperationCodeType"></typeparam>
+		/// <typeparam name="THeaderType"></typeparam>
+		/// <typeparam name="TPayloadType"></typeparam>
+		/// <param name="pipelineRegister"></param>
+		/// <returns></returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionPayloadPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
+			where TPayloadType : IMessageVerifyable
+			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
+			where TNetworkOperationCodeType : struct
+			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
+		{
+			pipelineRegister.TryRegisterPipeline(new PeekSupportPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+
+		/// <summary>
+		/// Registers a pipeline component provides peeking/seeking support functionality for readers on the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <typeparam name="TContextBuilderType"></typeparam>
+		/// <typeparam name="TNetworkOperationCodeType"></typeparam>
+		/// <typeparam name="THeaderType"></typeparam>
+		/// <typeparam name="TPayloadType"></typeparam>
+		/// <param name="pipelineRegister"></param>
+		/// <returns></returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithOpCodeReinsertionHeaderPipeline<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister)
+			where TPayloadType : IMessageVerifyable
+			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
+			where TNetworkOperationCodeType : struct
+			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
+		{
+			pipelineRegister.TryRegisterPipeline(new PeekSupportPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), NetworkPipelineTypes.Header | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+	}
+
 }
