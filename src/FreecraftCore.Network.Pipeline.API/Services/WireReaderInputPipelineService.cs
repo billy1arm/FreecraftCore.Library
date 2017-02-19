@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Packet;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Network
 {
@@ -20,8 +21,14 @@ namespace FreecraftCore.Network
 		where TNetworkOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 		where TPayloadType : IMessageVerifyable
-		where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>, new() //new is dangerous. Use a compiled lambda to construct instead of new
+		where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType> //new is dangerous. Use a compiled lambda to construct instead of new
 	{
+		/// <summary>
+		/// Factory service that can build the contexts.
+		/// </summary>
+		[NotNull]
+		public INetworkMessageContextBuilderFactory<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> ContextBuilderFactory { get; }
+
 		/// <summary>
 		/// Enumerable list of header pipelines.
 		/// </summary>
@@ -32,8 +39,13 @@ namespace FreecraftCore.Network
 		/// </summary>
 		protected List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> PayloadPipelines { get; }
 
-		protected WireReaderInputPipelineService()
+		protected WireReaderInputPipelineService([NotNull] INetworkMessageContextBuilderFactory<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> contextBuilderFactory)
+
 		{
+			if (contextBuilderFactory == null) throw new ArgumentNullException(nameof(contextBuilderFactory));
+
+			ContextBuilderFactory = contextBuilderFactory;
+
 			//For now we just construct new collections
 			PayloadPipelines = new List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
 			HeaderPipelines = new List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
@@ -79,7 +91,7 @@ namespace FreecraftCore.Network
 		public async Task<INetworkMessageContext<TNetworkOperationCodeType, THeaderType, TPayloadType>> ConstructNetworkContextAsync(IWireStreamReaderStrategyAsync reader)
 		{
 			//Need a new context builder for every network context we try to build
-			TContextBuilderType contextBuilder = new TContextBuilderType();
+			TContextBuilderType contextBuilder = ContextBuilderFactory.CreateNew();
 
 			//Make a new ref so that we can maintain the decorated input
 			IWireStreamReaderStrategyAsync readerDecorated = reader;
