@@ -23,6 +23,6 @@ namespace FreecraftCore.Network
 		/// <returns></returns>
 		[Pure]
 		[NotNull]
-		Task<TResultType> RecievePipelineMessageAsync(TSourceType input, [NotNull] TStateType currentState);
+		Task<TResultType> RecievePipelineMessageAsync([NotNull] TSourceType input, [NotNull] TStateType currentState);
 	}
 }
