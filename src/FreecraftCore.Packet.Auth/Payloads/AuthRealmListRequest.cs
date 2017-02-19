@@ -12,6 +12,9 @@ namespace FreecraftCore.Packet.Auth
 	[AuthenticationPayload(Common.AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthRealmListRequest : IAuthenticationPayload
 	{
+		//TODO: Implement
+		public bool isValid { get; } = true;
+
 		//For some reason this is 5 bytes long (remove one for byte sized op code)
 
 		//I can only guess what this is for.

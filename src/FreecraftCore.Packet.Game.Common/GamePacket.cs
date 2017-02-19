@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -13,7 +14,7 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// A game packet.
 	/// </summary>
-	public class GamePacket
+	public class GamePacket : INetworkPacket<NetworkOperationCode, IGamePacketHeader, IGamePacketPayload>
 	{
 		/// <summary>
 		/// Header data associated with the packet.
@@ -21,11 +22,9 @@ namespace FreecraftCore.Packet
 		[NotNull]
 		public IGamePacketHeader Header { get; }
 
-		/// <summary>
-		/// Payload associated with the packet.
-		/// </summary>
+		/// <inheritdoc />
 		[NotNull]
-		public GamePacketPayload Payload { get; }
+		public IGamePacketPayload Payload { get; }
 
 		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] GamePacketPayload payload)
 		{
@@ -38,5 +37,7 @@ namespace FreecraftCore.Packet
 			Payload = payload;
 			Header = header;
 		}
+
+
 	}
 }

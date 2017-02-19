@@ -9,11 +9,8 @@ namespace FreecraftCore.Packet.Auth
 	/// <summary>
 	/// The header for authentication packets.
 	/// </summary>
-	public interface IAuthenticationPacketHeader
+	public interface IAuthenticationPacketHeader : IMessageVerifyable, IOperationIdentifable<AuthOperationCode>
 	{
-		/// <summary>
-		/// Indicates the operation code for the authentication packet.
-		/// </summary>
-		AuthOperationCode AuthenticationOpCode { get; }
+
 	}
 }

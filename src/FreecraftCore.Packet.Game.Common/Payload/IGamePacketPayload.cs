@@ -9,11 +9,8 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// Interface metadata market for game payloads.
 	/// </summary>
-	public interface IGamePacketPayload
+	public interface IGamePacketPayload : IMessageVerifyable
 	{
-		/// <summary>
-		/// Indicates if the payload is in a valid state.
-		/// </summary>
-		bool isValid { get; }
+
 	}
 }

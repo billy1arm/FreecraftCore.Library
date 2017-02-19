@@ -14,6 +14,9 @@ namespace FreecraftCore.Packet.Auth
 	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthLogonProofResponse : IAuthenticationPayload
 	{
+		//TODO: Implement
+		public bool isValid { get; } = true;
+
 		//Not a wire member. Pull from proof result. It eats the byte for type info
 		/// <summary>
 		/// Indicates the result of the Authentication attempt.

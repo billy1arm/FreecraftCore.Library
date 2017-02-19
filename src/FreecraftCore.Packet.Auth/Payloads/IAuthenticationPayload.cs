@@ -13,7 +13,7 @@ namespace FreecraftCore.Packet.Auth
 	//In authentication's case there is a response and a request associated with the command/opcode. Therefore it cannot be used.
 	//[WireDataContract]
 	//[WireDataContractBaseType(1, typeof(AuthLogonChallengeRequest))]
-	public interface IAuthenticationPayload //this is sorta like a Java metadata interface marker. We use it for polymorphic serialization
+	public interface IAuthenticationPayload : IMessageVerifyable //this is sorta like a Java metadata interface marker. We use it for polymorphic serialization
 	{
 		//Can't do OpCode prop because concrete classes may be involved in multiple op codes
 

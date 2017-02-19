@@ -18,6 +18,9 @@ namespace FreecraftCore.Packet.Auth
 	//[AuthenticationPayload(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)]
 	public class AuthLogonChallengeRequest : IAuthenticationPayload
 	{
+		/// <inheritdoc />
+		public bool isValid => Protocol.VerifyIsDefined() && Game.VerifyIsDefined() && Expansion.VerifyIsDefined();
+
 		/// <summary>
 		/// Authentication protocol version to use.
 		/// Trinitycore/Mangos has this marked as an error but Ember https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/LoginChallenge.h has this

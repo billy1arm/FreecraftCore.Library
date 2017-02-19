@@ -17,6 +17,9 @@ namespace FreecraftCore.Packet.Auth
 	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthLogonChallengeResponse : IAuthenticationPayload
 	{
+		//TODO: Implement
+		public bool isValid { get; } = true;
+
 		/// <summary>
 		/// Unknown 0x00 byte sent from the server.
 		/// </summary>

@@ -15,16 +15,20 @@ namespace FreecraftCore.Packet.Auth
 	[WireDataContract]
 	public class AuthenticationPacketHeader : IAuthenticationPacketHeader
 	{
+		//TODO: Implement later
+		/// <inheritdoc />
+		public bool isValid { get; }
+
 		/// <inheritdoc />
 		[WireMember(1)]
-		public AuthOperationCode AuthenticationOpCode { get; private set; }
+		public AuthOperationCode OperationCode { get; private set; }
 
 		public AuthenticationPacketHeader(AuthOperationCode authenticationOpCode)
 		{
 			if (!Enum.IsDefined(typeof(AuthOperationCode), authenticationOpCode))
 				throw new ArgumentOutOfRangeException(nameof(authenticationOpCode), "Value should be defined in the AuthOperationCode enum.");
 
-			AuthenticationOpCode = authenticationOpCode;
-		}
+			OperationCode = authenticationOpCode;
+		}	
 	}
 }

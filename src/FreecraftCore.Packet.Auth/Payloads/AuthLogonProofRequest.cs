@@ -12,6 +12,9 @@ namespace FreecraftCore.Packet.Auth
 	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthLogonProofRequest : IAuthenticationPayload
 	{
+		//TODO: Implement
+		public bool isValid { get; } = true;
+
 		//TODO: Add BigInter serialization to our "JAM"
 		/// <summary>
 		/// SRP A. One of the public keys. Created by the client.

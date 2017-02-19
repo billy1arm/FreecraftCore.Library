@@ -9,22 +9,26 @@ namespace FreecraftCore.Packet.Auth
 {
 	//We cannot just deserialize this object because there is not a 1:1 mapping for
 	//Authentication Operation Codes
+	/// <summary>
+	/// Represents a strongly typed DTO for an authentication message.
+	/// </summary>
+	/// <typeparam name="TPacketPayloadType"></typeparam>
 	public class AuthenticationPacket<TPacketPayloadType> : IAuthenticationPacket<TPacketPayloadType>
 		where TPacketPayloadType : IAuthenticationPayload
 	{
-		[NotNull]
-		public IAuthenticationPacketHeader AuthPacketHeader { get; }
+		/// <inheritdoc />
+		public IAuthenticationPacketHeader Header { get; }
 
-		[NotNull]
-		public TPacketPayloadType AuthPayload { get; }
+		/// <inheritdoc />
+		public TPacketPayloadType Payload { get; }
 
 		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] TPacketPayloadType authPayload)
 		{
 			if (authPacketHeader == null) throw new ArgumentNullException(nameof(authPacketHeader));
 			if (authPayload == null) throw new ArgumentNullException(nameof(authPayload));
 
-			AuthPacketHeader = authPacketHeader;
-			AuthPayload = authPayload;
+			Header = authPacketHeader;
+			Payload = authPayload;
 		}
 	}
 }
