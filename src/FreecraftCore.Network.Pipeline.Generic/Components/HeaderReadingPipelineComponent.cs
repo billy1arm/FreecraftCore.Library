@@ -16,7 +16,7 @@ namespace FreecraftCore.Network.Pipeline.Generic.Components
 	/// <typeparam name="TOperationCodeType"></typeparam>
 	/// <typeparam name="THeaderType"></typeparam>
 	/// <typeparam name="TPayloadType"></typeparam>
-	public sealed class StreamHeaderReadingPipelineComponent<TDerivedDeserializableHeaderType, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
+	public sealed class HeaderReadingPipelineComponent<TDerivedDeserializableHeaderType, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
 		where TDerivedDeserializableHeaderType : THeaderType
 		where TNetworkContextBuilderType : INetworkMessageContextBuilder<TOperationCodeType, THeaderType, TPayloadType>
 		where TOperationCodeType : struct
@@ -29,7 +29,7 @@ namespace FreecraftCore.Network.Pipeline.Generic.Components
 		[NotNull]
 		private ISerializationServiceAsync Serializer { get; }
 
-		public StreamHeaderReadingPipelineComponent([NotNull] ISerializationServiceAsync serializer)
+		public HeaderReadingPipelineComponent([NotNull] ISerializationServiceAsync serializer)
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
 

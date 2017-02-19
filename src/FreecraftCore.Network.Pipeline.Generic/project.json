@@ -1,7 +1,9 @@
-﻿{
+{
     "version": "1.0.0-*",
 
   "dependencies": {
+    "FreecraftCore.Crypto.Packet": "1.0.23",
+    "FreecraftCore.Crypto.Stream": "1.0.23",
     "FreecraftCore.Network.Pipeline.API": "1.0.0-*",
     "FreecraftCore.Packet.Common": "1.0.49",
     "FreecraftCore.Serializer.API.Service": "2.0.2",

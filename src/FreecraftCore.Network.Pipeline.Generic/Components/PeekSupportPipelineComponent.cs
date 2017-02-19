@@ -15,7 +15,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TOperationCodeType"></typeparam>
 	/// <typeparam name="THeaderType"></typeparam>
 	/// <typeparam name="TPayloadType"></typeparam>
-	public sealed class AddStreamPeekSupportPipelineComponent<TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
+	public sealed class PeekSupportPipelineComponent<TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
 		where TNetworkContextBuilderType : INetworkMessageContextBuilder<TOperationCodeType, THeaderType, TPayloadType>
 		where TOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCodeType>

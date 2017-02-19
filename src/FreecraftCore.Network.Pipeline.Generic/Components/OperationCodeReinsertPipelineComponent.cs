@@ -17,7 +17,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TOperationCodeType">The type of the operation code.</typeparam>
 	/// <typeparam name="THeaderType">The type of the header.</typeparam>
 	/// <typeparam name="TPayloadType">The type of the payload.</typeparam>
-	public sealed class StreamOperationCodeReinsertPipelineComponent<TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
+	public sealed class OperationCodeReinsertPipelineComponent<TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
 		where TNetworkContextBuilderType : INetworkMessageContextBuilder<TOperationCodeType, THeaderType, TPayloadType>
 		where TOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCodeType>
@@ -29,7 +29,7 @@ namespace FreecraftCore.Network
 		[NotNull]
 		private ISerializationService Serializer { get; }
 
-		public StreamOperationCodeReinsertPipelineComponent([NotNull] ISerializationService serializer)
+		public OperationCodeReinsertPipelineComponent([NotNull] ISerializationService serializer)
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
 

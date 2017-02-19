@@ -8,7 +8,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore.Network
 {
-	public sealed class StreamPayloadReadingPipelineComponent<TDerivedGamePayloadDeserializableType, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
+	public sealed class PayloadReadingPipelineComponent<TDerivedGamePayloadDeserializableType, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType> : INetworkInputPipelineAsyncListener<IWireStreamReaderStrategyAsync, TNetworkContextBuilderType, TOperationCodeType, THeaderType, TPayloadType>
 		where TDerivedGamePayloadDeserializableType : TPayloadType
 		where TNetworkContextBuilderType : INetworkMessageContextBuilder<TOperationCodeType, THeaderType, TPayloadType>
 		where TOperationCodeType : struct
@@ -21,7 +21,7 @@ namespace FreecraftCore.Network
 		[NotNull]
 		private ISerializationServiceAsync Serializer { get; }
 
-		public StreamPayloadReadingPipelineComponent([NotNull] ISerializationServiceAsync serializer)
+		public PayloadReadingPipelineComponent([NotNull] ISerializationServiceAsync serializer)
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
 
