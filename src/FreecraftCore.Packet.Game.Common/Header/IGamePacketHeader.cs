@@ -8,7 +8,7 @@ namespace FreecraftCore.Packet
 {
 	//TODO: We may use the serializer for this one day.
 	[WireDataContract]
-	public interface IGamePacketHeader : IMessageVerifyable, IOperationIdentifable<NetworkOperationCode>
+	public interface IGamePacketHeader : IMessageVerifyable, IOperationIdentifable<NetworkOperationCode>, IHeaderPayloadSizeable
 	{
 		/// <summary>
 		/// Indicates the size of the header. 
@@ -16,11 +16,5 @@ namespace FreecraftCore.Packet
 		/// (is a uint32 but .NET suggests using int when possible)
 		/// </summary>
 		int HeaderSize { get; }
-
-		/// <summary>
-		/// Indicates the size of the payload in this packet.
-		/// (is a ushort but .NET suggests using int when possible)
-		/// </summary>
-		int PayloadSize { get; }
 	}
 }
