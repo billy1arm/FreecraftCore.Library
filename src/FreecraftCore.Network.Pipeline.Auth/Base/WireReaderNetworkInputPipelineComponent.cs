@@ -11,7 +11,7 @@ namespace FreecraftCore.Network
 	/// Simplified type alias for a <see cref="WireReaderInputPipelineService{TContextBuilderType,TNetworkOperationCodeType,THeaderType,TPayloadType}"/> for authentication
 	/// network stream inputes.
 	/// </summary>
-	public abstract class AuthenticationWireReaderPipelineComponent : WireReaderPipelineComponent<IAuthenticationNetworkMessageContextBuilder, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>
+	public abstract class AuthenticationWireReaderPipelineComponent : WireReaderPipelineComponent<INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>
 	{
 
 	}

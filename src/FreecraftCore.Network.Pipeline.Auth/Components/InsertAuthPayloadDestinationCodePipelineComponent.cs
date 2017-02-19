@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Packet.Auth;
+using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -36,7 +37,7 @@ namespace FreecraftCore.Network
 		}
 
 		/// <inheritdoc />
-		public override Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync([NotNull] IWireStreamReaderStrategyAsync input, [NotNull] IAuthenticationNetworkMessageContextBuilder currentState)
+		public override Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync([NotNull] IWireStreamReaderStrategyAsync input, [NotNull] INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> currentState)
 		{
 			if (input == null) throw new ArgumentNullException(nameof(input));
 			if (currentState == null) throw new ArgumentNullException(nameof(currentState));

@@ -80,5 +80,28 @@ namespace FreecraftCore
 			//Return for fluent registeration
 			return pipelineRegister;
 		}
+
+		/// <summary>
+		/// Registers a component that adds the authentication destination code to the reader in the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <param name="pipelineRegister">Pipeline service to register on.</param>
+		/// <param name="serializer"></param>
+		/// <param name="destinationCode"></param>
+		/// <returns>Register for fluent chaining.</returns>
+		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithAuthDestinationCodePayloadPipeline<TDeserializableHeaderType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister, [NotNull] ISerializerService serializer, AuthOperationDestinationCode destinationCode)
+			where TDeserializableHeaderType : IAuthenticationPacketHeader
+		{
+			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
+
+			if (!Enum.IsDefined(typeof(AuthOperationDestinationCode), destinationCode))
+				throw new ArgumentOutOfRangeException(nameof(destinationCode), "Value should be defined in the AuthOperationDestinationCode enum.");
+
+			pipelineRegister.TryRegisterPipeline(new InsertAuthPayloadDestinationCodePipelineComponent(serializer, destinationCode), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
+
+			//Return for fluent registeration
+			return pipelineRegister;
+		}
+
+		
 	}
 }
