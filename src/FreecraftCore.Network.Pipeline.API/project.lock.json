@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.Packet.Common/1.0.49": {
+      "FreecraftCore.Packet.Common/1.0.50": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.2"
@@ -50,7 +50,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.Packet.Common/1.0.49": {
+      "FreecraftCore.Packet.Common/1.0.50": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.2",
@@ -1169,12 +1169,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.Packet.Common/1.0.49": {
-      "sha512": "ejGikkW0Ysq/AhnM9Wxn55I46wp9YJ/zJ7kLTNoDf7KgYrj4ZtStGZTLA943DwIayI3gIU0HfSNrj++8Qnfcrw==",
+    "FreecraftCore.Packet.Common/1.0.50": {
+      "sha512": "b1sZskwxVlESAJBTwfBYCdDzCHp/Zo/wnjb8TobBVX7ZTaMbo6Xnm/c+CFMXtYhtbDzJpUp+frZOnLiBXUZ6EA==",
       "type": "package",
-      "path": "FreecraftCore.Packet.Common/1.0.49",
+      "path": "FreecraftCore.Packet.Common/1.0.50",
       "files": [
-        "FreecraftCore.Packet.Common.1.0.49.nupkg.sha512",
+        "FreecraftCore.Packet.Common.1.0.50.nupkg.sha512",
         "FreecraftCore.Packet.Common.nuspec",
         "lib/net46/FreecraftCore.Packet.Common.dll",
         "lib/netstandard1.6/FreecraftCore.Packet.Common.dll"
@@ -4168,7 +4168,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.Packet.Common >= 1.0.49",
+      "FreecraftCore.Packet.Common >= 1.0.50",
       "FreecraftCore.Serializer.Stream >= 2.0.2",
       "JetBrains.Annotations >= 10.2.1"
     ],
