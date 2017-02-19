@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Warden/1.0.30": {
+      "FreecraftCore.API.Common.Warden/1.0.31": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.1"
@@ -15,7 +15,7 @@
           "lib/net46/FreecraftCore.API.Common.Warden.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/2.0.1": {
+      "FreecraftCore.Serializer.Metadata/2.0.2": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -40,7 +40,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "2.0.1"
+          "FreecraftCore.Serializer.Metadata": "2.0.2"
         },
         "compile": {
           "net46/FreecraftCore.Packet.Common.dll": {}
@@ -65,7 +65,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.API.Common.Warden/1.0.30": {
+      "FreecraftCore.API.Common.Warden/1.0.31": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.1",
@@ -78,7 +78,7 @@
           "lib/netstandard1.6/FreecraftCore.API.Common.Warden.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Metadata/2.0.1": {
+      "FreecraftCore.Serializer.Metadata/2.0.2": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1",
@@ -1172,7 +1172,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "2.0.1",
+          "FreecraftCore.Serializer.Metadata": "2.0.2",
           "NETStandard.Library": "1.6.0"
         },
         "compile": {
@@ -1200,12 +1200,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Warden/1.0.30": {
-      "sha512": "vzyjO645aGD+pQJMeNMG1wNIBS7vw4rjsPERqnAybWATiLclTI+bQRT3u3frrNRFk0ZDODdc5z/puBGTpaygTA==",
+    "FreecraftCore.API.Common.Warden/1.0.31": {
+      "sha512": "EPVQA/LahH4/pxG5JwS4GKGyrvSlO72AaC72hXkGh+aqRSZPKL8wwaaPifSL0FPfjEaU6Rh4HbJxQqkYRkAUzw==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Warden/1.0.30",
+      "path": "FreecraftCore.API.Common.Warden/1.0.31",
       "files": [
-        "FreecraftCore.API.Common.Warden.1.0.30.nupkg.sha512",
+        "FreecraftCore.API.Common.Warden.1.0.31.nupkg.sha512",
         "FreecraftCore.API.Common.Warden.nuspec",
         "lib/net35/FreecraftCore.API.Common.Warden.dll",
         "lib/net45/FreecraftCore.API.Common.Warden.dll",
@@ -1213,12 +1213,12 @@
         "lib/netstandard1.6/FreecraftCore.API.Common.Warden.dll"
       ]
     },
-    "FreecraftCore.Serializer.Metadata/2.0.1": {
-      "sha512": "wBsUlmkY6EuluF2t8eHurpX0MrnKlUG5/OQN1dvARCsYTbRo2DgwUxWhyp9S2qnCuR++B9XHQcB3RGvI9RhJAw==",
+    "FreecraftCore.Serializer.Metadata/2.0.2": {
+      "sha512": "V/kG1Mg6e9ItmxItTExRbBZ/H4+mmaqwk20YopPjk7GP33RDE03XGER+kNjkrqhcULkI50kKylVT4XL6Vi1ZhA==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/2.0.1",
+      "path": "FreecraftCore.Serializer.Metadata/2.0.2",
       "files": [
-        "FreecraftCore.Serializer.Metadata.2.0.1.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.2.0.2.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
@@ -4199,10 +4199,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Warden >= 1.0.30",
+      "FreecraftCore.API.Common.Warden >= 1.0.31",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
       "FreecraftCore.Packet.Game.Common >= 1.0.0-*",
-      "FreecraftCore.Serializer.Metadata >= 2.0.1"
+      "FreecraftCore.Serializer.Metadata >= 2.0.2"
     ],
     ".NETFramework,Version=v4.6": [],
     ".NETStandard,Version=v1.6": [

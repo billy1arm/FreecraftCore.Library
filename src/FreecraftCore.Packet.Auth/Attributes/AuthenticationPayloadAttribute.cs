@@ -19,14 +19,23 @@ namespace FreecraftCore.Packet.Auth
 		/// Represents the authentication operation (or Auth Command in Mangos/Trinitycore)
 		/// </summary>
 		public AuthOperationCode OperationCode { get; }
- 
-		public AuthenticationPayloadAttribute(AuthOperationCode operationCode)
-			: base((int)operationCode)
+
+		/// <summary>
+		/// Indicates the desttination code for the payload.
+		/// </summary>
+		public AuthOperationDestinationCode DestinationCode { get; }
+
+		public AuthenticationPayloadAttribute(AuthOperationCode operationCode, AuthOperationDestinationCode destinationCode)
+			: base((((int)operationCode) << 4) + (int)destinationCode) //this shifts the opcode (Ex. 0001 to become 0001 0000) and then inserts the destination code (Ex. 0001 0001) which is written little endian with the real opcode being closest
 		{
 			if (!Enum.IsDefined(typeof(AuthOperationCode), operationCode))
 				throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the AuthOperationCode enum.");
 
+			if (!Enum.IsDefined(typeof(AuthOperationDestinationCode), destinationCode))
+				throw new ArgumentOutOfRangeException(nameof(destinationCode), "Value should be defined in the AuthOperationDestinationCode enum.");
+
 			OperationCode = operationCode;
+			DestinationCode = destinationCode;
 		}
 	}
 }

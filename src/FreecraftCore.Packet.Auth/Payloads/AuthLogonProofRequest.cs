@@ -9,11 +9,11 @@ using JetBrains.Annotations;
 namespace FreecraftCore.Packet.Auth
 {
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
-	public class AuthLogonProofRequest : IAuthenticationPayload
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Server)] //TODO: Figure out how to support linking with the limited information.
+	public class AuthLogonProofRequest : AuthenticationPayload
 	{
 		//TODO: Implement
-		public bool isValid { get; } = true;
+		public override bool isValid { get; } = true;
 
 		//TODO: Add BigInter serialization to our "JAM"
 		/// <summary>

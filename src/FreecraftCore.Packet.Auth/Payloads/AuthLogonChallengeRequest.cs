@@ -14,12 +14,12 @@ namespace FreecraftCore.Packet.Auth
 	/// Initial Authentication payload
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //TODO: Figure out how to support linking with the limited information.
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE, AuthOperationDestinationCode.Server)] //TODO: Figure out how to support linking with the limited information.
 	//[AuthenticationPayload(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)]
-	public class AuthLogonChallengeRequest : IAuthenticationPayload
+	public class AuthLogonChallengeRequest : AuthenticationPayload
 	{
 		/// <inheritdoc />
-		public bool isValid => Protocol.VerifyIsDefined() && Game.VerifyIsDefined() && Expansion.VerifyIsDefined();
+		public override bool isValid => Protocol.VerifyIsDefined() && Game.VerifyIsDefined() && Expansion.VerifyIsDefined();
 
 		/// <summary>
 		/// Authentication protocol version to use.

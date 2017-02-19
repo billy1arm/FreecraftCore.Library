@@ -9,14 +9,16 @@ using FreecraftCore.Packet.Auth;
 
 namespace FreecraftCore.Packet.Auth
 {
-	//We cannot use basetype polymorphic serialization. The serializer supports only 1 to 1 for keys.
-	//In authentication's case there is a response and a request associated with the command/opcode. Therefore it cannot be used.
-	//[WireDataContract]
-	//[WireDataContractBaseType(1, typeof(AuthLogonChallengeRequest))]
-	public interface IAuthenticationPayload : IMessageVerifyable //this is sorta like a Java metadata interface marker. We use it for polymorphic serialization
-	{
-		//Can't do OpCode prop because concrete classes may be involved in multiple op codes
+	//There is a reason the keytype is UShort. It's complex to explain but the authserver sends a byte operation code. This is not enough information
+	//to know what payload to deserialize so we extend the keytype by inserting data into the stream depending on if we're on the client or the server.
+	/// <summary>
+	/// Authentication payload base type that is used to wire children for serialization purposes.
+	/// </summary>
 
-		//TODO: Add a verify
+	[WireDataContract(WireDataContractAttribute.KeyType.UShort, InformationHandlingFlags.DontWrite, true)] //expect runtime linking
+	public abstract class AuthenticationPayload : IMessageVerifyable 
+	{
+		/// <inheritdoc />
+		public abstract bool isValid { get; }
 	}
 }

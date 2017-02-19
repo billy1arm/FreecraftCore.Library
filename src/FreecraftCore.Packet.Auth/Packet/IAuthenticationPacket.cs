@@ -7,8 +7,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore.Packet.Auth
 {
-	public interface IAuthenticationPacket<TPacketPayloadType> : INetworkPacket<AuthOperationCode, IAuthenticationPacketHeader, TPacketPayloadType>
-		where TPacketPayloadType : IAuthenticationPayload
+	public interface IAuthenticationPacket : INetworkPacket<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>
 	{
 
 	}

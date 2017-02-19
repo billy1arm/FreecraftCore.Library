@@ -11,11 +11,11 @@ namespace FreecraftCore.Packet.Auth
 	/// Response payload sent in response to the <see cref="AuthLogonProofRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
-	public class AuthLogonProofResponse : IAuthenticationPayload
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Client)] //TODO: Figure out how to support linking with the limited information.
+	public class AuthLogonProofResponse : AuthenticationPayload
 	{
 		//TODO: Implement
-		public bool isValid { get; } = true;
+		public override bool isValid { get; } = true;
 
 		//Not a wire member. Pull from proof result. It eats the byte for type info
 		/// <summary>

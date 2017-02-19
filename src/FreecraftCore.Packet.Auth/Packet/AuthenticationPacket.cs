@@ -13,16 +13,15 @@ namespace FreecraftCore.Packet.Auth
 	/// Represents a strongly typed DTO for an authentication message.
 	/// </summary>
 	/// <typeparam name="TPacketPayloadType"></typeparam>
-	public class AuthenticationPacket<TPacketPayloadType> : IAuthenticationPacket<TPacketPayloadType>
-		where TPacketPayloadType : IAuthenticationPayload
+	public class AuthenticationPacket : IAuthenticationPacket
 	{
 		/// <inheritdoc />
 		public IAuthenticationPacketHeader Header { get; }
 
 		/// <inheritdoc />
-		public TPacketPayloadType Payload { get; }
+		public AuthenticationPayload Payload { get; }
 
-		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] TPacketPayloadType authPayload)
+		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] AuthenticationPayload authPayload)
 		{
 			if (authPacketHeader == null) throw new ArgumentNullException(nameof(authPacketHeader));
 			if (authPayload == null) throw new ArgumentNullException(nameof(authPayload));

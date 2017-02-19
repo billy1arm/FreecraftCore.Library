@@ -31,13 +31,11 @@ namespace FreecraftCore.Packet
 			if (header == null)
 				throw new ArgumentNullException(nameof(header), $"Must provided a non-null header.");
 
-			if(payload == null)
+			if (payload == null)
 				throw new ArgumentNullException(nameof(payload), $"Must provided a non-null {nameof(IGamePacketPayload)}.");
 
 			Payload = payload;
 			Header = header;
 		}
-
-
 	}
 }
