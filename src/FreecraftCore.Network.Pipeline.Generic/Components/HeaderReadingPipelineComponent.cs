@@ -6,7 +6,7 @@ using FreecraftCore.Packet;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Network.Pipeline.Generic.Components
+namespace FreecraftCore.Network
 {
 	/// <summary>
 	/// Generic header reading pipeline component.
