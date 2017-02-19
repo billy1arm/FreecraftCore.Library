@@ -24,7 +24,7 @@ namespace FreecraftCore.Network
 		/// <param name="pipelineRegister"></param>
 		/// <param name="pipelineComponent"></param>
 		/// <returns></returns>
-		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithPayloadPipeline<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] INetworkInputPipelineAsyncListener<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineComponent)
+		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithPayloadPipeline<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] INetworkReaderInputPipelineListenerAsync<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineComponent)
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct
@@ -49,7 +49,7 @@ namespace FreecraftCore.Network
 		/// <param name="pipelineRegister"></param>
 		/// <param name="pipelineComponent"></param>
 		/// <returns></returns>
-		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithHeaderPipeline<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] INetworkInputPipelineAsyncListener<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineComponent)
+		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> WithHeaderPipeline<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] INetworkReaderInputPipelineListenerAsync<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineComponent)
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct
