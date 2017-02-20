@@ -21,6 +21,6 @@ namespace FreecraftCore.Network
 		where TPayloadType : IMessageVerifyable
 	{
 		/// <inheritdoc />
-		public abstract Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync(IWireStreamReaderStrategyAsync input, TNetworkContextBuilderType currentState);
+		public abstract Task<IWireStreamReaderStrategyAsync> RecievePipelineMessage(IWireStreamReaderStrategyAsync input, TNetworkContextBuilderType currentState);
 	}
 }

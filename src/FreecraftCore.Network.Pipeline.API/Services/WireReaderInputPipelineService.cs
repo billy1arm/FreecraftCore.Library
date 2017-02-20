@@ -32,12 +32,12 @@ namespace FreecraftCore.Network
 		/// <summary>
 		/// Enumerable list of header pipelines.
 		/// </summary>
-		protected List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> HeaderPipelines { get; }
+		protected List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> HeaderPipelines { get; }
 
 		/// <summary>
 		/// Enumerable list of header pipelines.
 		/// </summary>
-		protected List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> PayloadPipelines { get; }
+		protected List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> PayloadPipelines { get; }
 
 		protected WireReaderInputPipelineService([NotNull] INetworkMessageContextBuilderFactory<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> contextBuilderFactory)
 
@@ -47,13 +47,13 @@ namespace FreecraftCore.Network
 			ContextBuilderFactory = contextBuilderFactory;
 
 			//For now we just construct new collections
-			PayloadPipelines = new List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
-			HeaderPipelines = new List<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
+			PayloadPipelines = new List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
+			HeaderPipelines = new List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
 		}
 
 		//TODO: Support ordering and location
 		/// <inheritdoc />
-		public bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType)
+		public bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType)
 		{
 			//On bottom is the default so use that
 			return TryRegisterPipeline(pipelineComponent, pipelineType, new OnBottom());
@@ -61,7 +61,7 @@ namespace FreecraftCore.Network
 
 		//TODO: Support ordering and location
 		/// <inheritdoc />
-		private bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType, IPipelineOrderingStrategy ordedStrategy)
+		private bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType, IPipelineOrderingStrategy ordedStrategy)
 		{
 			bool registered = false;
 
@@ -84,12 +84,12 @@ namespace FreecraftCore.Network
 			return true;
 		}
 
-		protected async Task PassThroughPipeline(IReadOnlyCollection<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> pipelines, TContextBuilderType contextBuilder, IWireStreamReaderStrategyAsync readerDecorated)
+		protected async Task PassThroughPipeline(IReadOnlyCollection<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> pipelines, TContextBuilderType contextBuilder, IWireStreamReaderStrategyAsync readerDecorated)
 		{
 			//Pass the reader and contextbuilder to all provided pipelines
 			if (pipelines.Count != 0)
 				foreach (var pipeline in pipelines)
-					readerDecorated = await pipeline.RecievePipelineMessageAsync(readerDecorated, contextBuilder);
+					readerDecorated = await pipeline.RecievePipelineMessage(readerDecorated, contextBuilder);
 		}
 
 		public INetworkMessageContext<TNetworkOperationCodeType, THeaderType, TPayloadType> ConstructNetworkContext(IWireStreamReaderStrategyAsync reader)
@@ -120,7 +120,7 @@ namespace FreecraftCore.Network
 		}
 
 		/// <inheritdoc />
-		public bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options)
+		public bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options)
 		{
 			return TryRegisterPipeline(pipelineComponent, options.PipelineFlags, options);
 		}

@@ -26,7 +26,7 @@ namespace FreecraftCore
 		/// <param name="pipelineRegister"></param>
 		/// <param name="pipelineComponent"></param>
 		/// <returns></returns>
-		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> With<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] IPipelineAsyncListener<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, [CanBeNull] Func<UnorderedPipelineRegisterationOptions, ICompleteOptionsReadable> options = null)
+		public static INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> With<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(this INetworkInputPipelineRegister<TNetworkInputType, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] IPipelineListenerAsync<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, [CanBeNull] Func<UnorderedPipelineRegisterationOptions, ICompleteOptionsReadable> options = null)
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct

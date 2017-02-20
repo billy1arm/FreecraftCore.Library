@@ -21,7 +21,7 @@ namespace FreecraftCore.Network
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCodeType>
 		where TPayloadType : IMessageVerifyable
 	{
-		public Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync(IWireStreamReaderStrategyAsync input, [NotNull] TNetworkContextBuilderType currentState)
+		public Task<IWireStreamReaderStrategyAsync> RecievePipelineMessage(IWireStreamReaderStrategyAsync input, [NotNull] TNetworkContextBuilderType currentState)
 		{
 			//We need to add stream peaking functionality
 			//The streams we're dealing with won't support it by default.

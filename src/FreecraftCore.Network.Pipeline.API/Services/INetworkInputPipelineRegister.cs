@@ -27,13 +27,13 @@ namespace FreecraftCore.Network
 		/// <param name="pipelineComponent">The pipeline component to register.</param>
 		/// <param name="pipelineType">What this pipeline should register itself as.</param>
 		/// <returns>True if the pipeline was successfully handled.</returns>
-		bool TryRegisterPipeline(IPipelineAsyncListener<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType);
+		bool TryRegisterPipeline(IPipelineListenerAsync<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType);
 
 		/// <summary>
 		/// Tries to register a pipeline component with the specified <see cref="NetworkPipelineTypes"/>.
 		/// </summary>
 		/// <param name="pipelineComponent">The pipeline component to register.</param>
 		/// <returns>True if the pipeline was successfully handled.</returns>
-		bool TryRegisterPipeline(IPipelineAsyncListener<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options);
+		bool TryRegisterPipeline(IPipelineListenerAsync<TNetworkInputType, TNetworkInputType, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options);
 	}
 }

@@ -37,7 +37,7 @@ namespace FreecraftCore.Network
 		}
 
 		/// <inheritdoc />
-		public Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync([NotNull] IWireStreamReaderStrategyAsync input, TNetworkContextBuilderType currentState)
+		public Task<IWireStreamReaderStrategyAsync> RecievePipelineMessage([NotNull] IWireStreamReaderStrategyAsync input, TNetworkContextBuilderType currentState)
 		{
 			if (input == null) throw new ArgumentNullException(nameof(input));
 			if (currentState == null) throw new ArgumentNullException(nameof(currentState));

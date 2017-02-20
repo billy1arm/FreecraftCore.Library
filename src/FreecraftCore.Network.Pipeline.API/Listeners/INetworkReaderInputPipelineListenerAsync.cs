@@ -14,7 +14,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TNetworkOperationCodeType">The operation code type.</typeparam>
 	/// <typeparam name="THeaderType">The header type.</typeparam>
 	/// <typeparam name="TPayloadType">The payload type.</typeparam>
-	public interface INetworkReaderInputPipelineListenerAsync<TNetworkInputType, in TNetworkMessageContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> : IPipelineAsyncListener<TNetworkInputType, TNetworkInputType, TNetworkMessageContextBuilderType>
+	public interface INetworkReaderInputPipelineListenerAsync<TNetworkInputType, in TNetworkMessageContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> : IPipelineListenerAsync<TNetworkInputType, TNetworkInputType, TNetworkMessageContextBuilderType>
 		where TNetworkMessageContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
 		where TNetworkOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>

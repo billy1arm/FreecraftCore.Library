@@ -37,7 +37,7 @@ namespace FreecraftCore.Network
 		}
 
 		/// <inheritdoc />
-		public override Task<IWireStreamReaderStrategyAsync> RecievePipelineMessageAsync([NotNull] IWireStreamReaderStrategyAsync input, [NotNull] INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> currentState)
+		public override Task<IWireStreamReaderStrategyAsync> RecievePipelineMessage([NotNull] IWireStreamReaderStrategyAsync input, [NotNull] INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> currentState)
 		{
 			if (input == null) throw new ArgumentNullException(nameof(input));
 			if (currentState == null) throw new ArgumentNullException(nameof(currentState));

@@ -12,7 +12,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TResultType">Result type to yield at the end of recieve.</typeparam>
 	/// <typeparam name="TSourceType">The source type to recieve.</typeparam>
 	/// <typeparam name="TStateType">The state type to manage.</typeparam>
-	public interface IPipelineAsyncListener<TResultType, in TSourceType, in TStateType>
+	public interface IPipelineListener<out TResultType, in TSourceType, in TStateType>
 	{
 		/// <summary>
 		/// Pipeline listener that recieves a <typeparam name="TSourceType"></typeparam> and a <typeparam name="TStateType"></typeparam>
@@ -23,6 +23,6 @@ namespace FreecraftCore.Network
 		/// <returns></returns>
 		[Pure]
 		[NotNull]
-		Task<TResultType> RecievePipelineMessageAsync([NotNull] TSourceType input, [NotNull] TStateType currentState);
+		TResultType RecievePipelineMessage([NotNull] TSourceType input, [NotNull] TStateType currentState);
 	}
 }
