@@ -14,7 +14,7 @@ namespace FreecraftCore.Network
 		/// <typeparam name="TOrderStrategyType"></typeparam>
 		/// <param name="options"></param>
 		/// <returns></returns>
-		public static PipelineRegisterationOptionsWithOrder<TOrderStrategyType> WithOrder<TOrderStrategyType>(this UnorderedPipelineRegisterationOptions options)
+		public static PipelineRegisterationOptionsWithOrder<TOrderStrategyType> WithOrder<TOrderStrategyType>(this ICompleteOptionsReadable options)
 			where TOrderStrategyType : IPipelineOrderingStrategy, new()
 		{
 			//Produce a built options of the aggregate of the order strategy and the flags
@@ -28,27 +28,16 @@ namespace FreecraftCore.Network
 		/// <typeparam name="TOrderStrategyType"></typeparam>
 		/// <param name="options"></param>
 		/// <returns></returns>
-		public static AggregateOptionsWithOrderStrategyDecorated WithOrder(this UnorderedPipelineRegisterationOptions options, IPipelineOrderingStrategy orderingStrategy)
+		public static AggregateOptionsWithOrderStrategyDecorated WithOrder(this ICompleteOptionsReadable options, IPipelineOrderingStrategy orderingStrategy)
 		{
 			//Aggregate the options
 			return new AggregateOptionsWithOrderStrategyDecorated(orderingStrategy, options.PipelineFlags);
 		}
 
-		/// <summary>
-		/// Lets you specificy pipelines this pipeline should bind itself to.
-		/// </summary>
-		/// <typeparam name="TRegisterationType">The extended object type.</typeparam>
-		/// <param name="options"></param>
-		/// <param name="pipelineTypeFlagsStrategy"></param>
-		/// <returns></returns>
-		public static TRegisterationType ForType<TRegisterationType>(this TRegisterationType options, IPipelineTypeFlagsStrategy pipelineTypeFlagsStrategy)
-			where TRegisterationType : IPipelineTypeFlagsMutatable
+		public static ICompleteOptionsReadable For<TPipelineType>(this ICompleteOptionsReadable options)
+			where TPipelineType : IPipelineTypeFlagsStrategy, new()
 		{
-			//Preforms the transformation of the flags based on the provided strategy.
-			options.PipelineFlags = pipelineTypeFlagsStrategy.TransformTypeFlags(options.PipelineFlags);
-
-			//transform the option's flags
-			return options;
+			return new AggregateOptionsWithOrderStrategyDecorated(options, new TPipelineType().TransformTypeFlags(options.PipelineFlags));
 		}
 	}
 }

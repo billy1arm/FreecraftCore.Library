@@ -92,7 +92,7 @@ namespace FreecraftCore
 			if (orderStrategy == null)
 				pipelineRegister.TryRegisterPipeline(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
 			else
-				pipelineRegister.With(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), o => o.ForType(PipelineType<PayloadPipeline>.Main()).WithOrder(orderStrategy));
+				pipelineRegister.With(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), o => o.For<PayloadPipeline>().WithOrder(orderStrategy));
 			//Return for fluent registeration
 			return pipelineRegister;
 		}
