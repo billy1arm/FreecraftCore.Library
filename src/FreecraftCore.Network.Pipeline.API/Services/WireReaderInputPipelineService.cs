@@ -55,22 +55,33 @@ namespace FreecraftCore.Network
 		/// <inheritdoc />
 		public bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType)
 		{
-			//TODO: Handle all flags
+			//On bottom is the default so use that
+			return TryRegisterPipeline(pipelineComponent, pipelineType, new OnBottom());
+		}
+
+		//TODO: Support ordering and location
+		/// <inheritdoc />
+		private bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType, IPipelineOrderingStrategy ordedStrategy)
+		{
+			bool registered = false;
+
+			//TODO: Handle error/main flags and others
 			if (pipelineType.HasFlag(NetworkPipelineTypes.Header))
 			{
-				HeaderPipelines.Add(pipelineComponent);
-				return true;
-			}
-			else
-			{
-				if (pipelineType.HasFlag(NetworkPipelineTypes.Payload))
-				{
-					PayloadPipelines.Add(pipelineComponent);
-					return true;
-				}
+				ordedStrategy.RegisterVisitor(HeaderPipelines, pipelineComponent);
+				registered = true;
 			}
 
-			throw new NotImplementedException($"Unable to handle pipelines with {pipelineType} flags right now. Must be only payload or header pipelines.");
+			if (pipelineType.HasFlag(NetworkPipelineTypes.Payload))
+			{
+				ordedStrategy.RegisterVisitor(PayloadPipelines, pipelineComponent);
+				registered = true;
+			}
+
+			if (!registered)
+				throw new NotImplementedException($"Unable to handle pipelines with {pipelineType} flags right now. Must be only payload or header pipelines.");
+
+			return true;
 		}
 
 		protected async Task PassThroughPipeline(IReadOnlyCollection<IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> pipelines, TContextBuilderType contextBuilder, IWireStreamReaderStrategyAsync readerDecorated)
@@ -106,6 +117,12 @@ namespace FreecraftCore.Network
 
 			//Return the built context
 			return contextBuilder.Build();
+		}
+
+		/// <inheritdoc />
+		public bool TryRegisterPipeline(IPipelineAsyncListener<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options)
+		{
+			return TryRegisterPipeline(pipelineComponent, options.PipelineFlags, options);
 		}
 	}
 }
