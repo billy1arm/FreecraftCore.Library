@@ -37,7 +37,7 @@ namespace FreecraftCore
 			if (options == null)
 				pipelineRegister.TryRegisterPipeline(pipelineComponent, NetworkPipelineTypes.Default);
 			else
-				pipelineRegister.With(pipelineComponent, options);
+				pipelineRegister.TryRegisterPipeline(pipelineComponent, options(new UnorderedPipelineRegisterationOptions()));
 
 			//Return for fluent registeration
 			return pipelineRegister;
