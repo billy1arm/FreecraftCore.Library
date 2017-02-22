@@ -20,13 +20,13 @@ namespace FreecraftCore.Network
 		/// <inheritdoc />
 		public void Lock(NetworkOperationCode operationCode)
 		{
-
+			//Do nothing, we don't lock with lockless
 		}
 
 		/// <inheritdoc />
 		public void Unlock(NetworkOperationCode operationCode)
 		{
-
+			//Do nothing, we don't lock with lockless
 		}
 
 		/// <inheritdoc />

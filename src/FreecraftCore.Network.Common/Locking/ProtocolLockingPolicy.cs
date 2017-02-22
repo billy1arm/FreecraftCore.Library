@@ -8,9 +8,9 @@ using FreecraftCore.Packet.Common;
 namespace FreecraftCore.Network
 {
 	/// <summary>
-	/// Locking policy that syncronizes locking globally within the service it's being used in.
+	/// Locking policy that syncronizes locking globally within the protocol it's being used in.
 	/// </summary>
-	public class GlobalServiceLockingPolicy : INetworkLockingPolicyStrategy
+	public class ProtocolLockingPolicy : INetworkLockingPolicyStrategy
 	{
 		/// <summary>
 		/// Async-capable semaphore (1) that acts as a mutex.
@@ -39,7 +39,7 @@ namespace FreecraftCore.Network
 		}
 
 		//Locking policies must be new() able.
-		public GlobalServiceLockingPolicy()
+		public ProtocolLockingPolicy()
 		{
 
 		}
