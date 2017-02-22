@@ -1,7 +1,8 @@
-﻿{
+{
     "version": "1.0.0-*",
 
   "dependencies": {
+    "FreecraftCore.Packet.Common": "1.0.52",
     "JetBrains.Annotations": "10.2.1"
   },
 
