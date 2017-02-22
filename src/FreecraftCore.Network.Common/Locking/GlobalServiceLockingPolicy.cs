@@ -18,21 +18,24 @@ namespace FreecraftCore.Network
 		private SemaphoreSlim LockingObject { get; } = new SemaphoreSlim(1,1);
 
 		/// <inheritdoc />
-		public Task LockAsync(NetworkOperationCode operationCode)
+		public async Task LockAsync(NetworkOperationCode operationCode)
 		{
-			throw new NotImplementedException();
+			//No matter the opcode we should lock
+			await LockingObject.WaitAsync();
 		}
 
 		/// <inheritdoc />
 		public void Lock(NetworkOperationCode operationCode)
 		{
-			throw new NotImplementedException();
+			//No matter the opcode we should lock
+			LockingObject.Wait();
 		}
 
 		/// <inheritdoc />
 		public void Unlock(NetworkOperationCode operationCode)
 		{
-			throw new NotImplementedException();
+			//No matter the opcode we should release back
+			LockingObject.Release(1);
 		}
 
 		//Locking policies must be new() able.
