@@ -2,7 +2,380 @@
   "locked": false,
   "version": 2,
   "targets": {
+    ".NETFramework,Version=v4.6": {
+      "FreecraftCore.Crypto.BigInteger/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "lib/net46/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Common/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net45/FreecraftCore.Crypto.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45/FreecraftCore.Crypto.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Packet/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Common": "1.0.23",
+          "FreecraftCore.Crypto.RC4": "1.0.23",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Crypto.Packet.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Crypto.Packet.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.RC4/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Common": "1.0.23",
+          "JetBrains.Annotations": "10.2.1",
+          "Portable.BouncyCastle": "1.8.1.2"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Crypto.RC4.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Crypto.RC4.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Stream/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Serializer.Stream.Default": "2.0.1",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Crypto.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Crypto.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Network.Pipeline.API/1.0.9": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.50",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Network.Pipeline.API.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Network.Pipeline.API.dll": {}
+        }
+      },
+      "FreecraftCore.Network.Pipeline.Generic/1.0.9": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Crypto.Stream": "1.0.23",
+          "FreecraftCore.Network.Pipeline.API": "1.0.9",
+          "FreecraftCore.Packet.Common": "1.0.50",
+          "FreecraftCore.Serializer.API.Service": "2.0.2",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Network.Pipeline.Generic.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Network.Pipeline.Generic.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Common/1.0.50": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "2.0.2"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Packet.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Packet.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.API.Service/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.API.Service.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.API.Service.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Metadata/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream.Default/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "2.0.1",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Serializer.Stream.Default.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Serializer.Stream.Default.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net/JetBrains.Annotations.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net4/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net4/BouncyCastle.Crypto.dll": {}
+        }
+      }
+    },
     ".NETStandard,Version=v1.6": {
+      "FreecraftCore.Crypto.BigInteger/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "2.0.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.BigInteger.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.BigInteger.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Common/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Packet/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Common": "1.0.23",
+          "FreecraftCore.Crypto.RC4": "1.0.23",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Packet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Packet.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.RC4/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Common": "1.0.23",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0",
+          "Portable.BouncyCastle": "1.8.1.2"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.RC4.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.RC4.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.Stream/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Serializer.Stream.Default": "2.0.1",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Network.Pipeline.API/1.0.9": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.50",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Network.Pipeline.API.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Network.Pipeline.API.dll": {}
+        }
+      },
+      "FreecraftCore.Network.Pipeline.Generic/1.0.9": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Crypto.Stream": "1.0.23",
+          "FreecraftCore.Network.Pipeline.API": "1.0.9",
+          "FreecraftCore.Packet.Common": "1.0.50",
+          "FreecraftCore.Serializer.API.Service": "2.0.2",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Network.Pipeline.Generic.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Network.Pipeline.Generic.dll": {}
+        }
+      },
+      "FreecraftCore.Packet.Common/1.0.50": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "2.0.2",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Packet.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Packet.Common.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.API.Service/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.API.Service.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.API.Service.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Metadata/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Metadata.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Stream.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Stream.dll": {}
+        }
+      },
+      "FreecraftCore.Serializer.Stream.Default/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Serializer.Stream": "2.0.1",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Stream.Default.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Serializer.Stream.Default.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.2.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.0.1": {
         "type": "package",
         "compile": {
@@ -79,6 +452,18 @@
           "System.Threading.Timer": "4.0.1",
           "System.Xml.ReaderWriter": "4.0.11",
           "System.Xml.XDocument": "4.0.11"
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/BouncyCastle.Crypto.dll": {}
         }
       },
       "runtime.native.System/4.0.0": {
@@ -1071,6 +1456,164 @@
     }
   },
   "libraries": {
+    "FreecraftCore.Crypto.BigInteger/1.0.23": {
+      "sha512": "CaXKfF6nwnILRz8sbZJbHPfCQ0/dGty35YeeNmUi3+tEJ0IXvTjPwXzOsM2V6TW3dGZHg7ICgmuYHlEMIjHOPg==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.BigInteger/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.BigInteger.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.BigInteger.nuspec",
+        "lib/net35/FreecraftCore.Crypto.BigInteger.dll",
+        "lib/net40/FreecraftCore.Crypto.BigInteger.dll",
+        "lib/net45/FreecraftCore.Crypto.BigInteger.dll",
+        "lib/net46/FreecraftCore.Crypto.BigInteger.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.BigInteger.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.Common/1.0.23": {
+      "sha512": "YVxRyQARUFtVHCLytKSv/NI7OBtnNsQQ2ONbT4NTG/aTYNwKEKcTV9fau/z04Ded/ly9x5ljrDSuAFxEr1cA/A==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.Common/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.Common.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.Common.nuspec",
+        "lib/net35/FreecraftCore.Crypto.Common.dll",
+        "lib/net40/FreecraftCore.Crypto.Common.dll",
+        "lib/net45/FreecraftCore.Crypto.Common.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.Common.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.Packet/1.0.23": {
+      "sha512": "+hLoF4wqe5qKZMHONpGuNnQrwn5xsMg4Bsl3UARqtV5UGHSs+k/RrmT9Bgn+83j5fgEAhs5yUgwJgeCth+rGMg==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.Packet/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.Packet.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.Packet.nuspec",
+        "lib/net46/FreecraftCore.Crypto.Packet.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.Packet.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.RC4/1.0.23": {
+      "sha512": "7wTNv2I7rzbZ48nMnCN1xm0NrWFjeRULu6aPM7RT/rhJNW4GqsZnS+SFVwKI7n6lQ+UrL3TkKmbPca1gdrR/eQ==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.RC4/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.RC4.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.RC4.nuspec",
+        "lib/net46/FreecraftCore.Crypto.RC4.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.RC4.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.Stream/1.0.23": {
+      "sha512": "qnNN0mgs7z3NVcdjp3v+fsGh1NbH3MB2Fm8j4SHL00NJ0Dl0Y6ncocLW4qNJ9iXVJCZ0mgdi7+htFeaBztnpQQ==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.Stream/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.Stream.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.Stream.nuspec",
+        "lib/net46/FreecraftCore.Crypto.Stream.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll"
+      ]
+    },
+    "FreecraftCore.Network.Pipeline.API/1.0.9": {
+      "sha512": "tDlkUBWLQ5GIGAFCYCWncS3JIGpwlZBAQ9Hhr7UTriUIZam8A/7JE40JZZlIxS/kmsP0CC2Wq+IXFetl53EIpQ==",
+      "type": "package",
+      "path": "FreecraftCore.Network.Pipeline.API/1.0.9",
+      "files": [
+        "FreecraftCore.Network.Pipeline.API.1.0.9.nupkg.sha512",
+        "FreecraftCore.Network.Pipeline.API.nuspec",
+        "lib/net46/FreecraftCore.Network.Pipeline.API.dll",
+        "lib/netstandard1.6/FreecraftCore.Network.Pipeline.API.dll"
+      ]
+    },
+    "FreecraftCore.Network.Pipeline.Generic/1.0.9": {
+      "sha512": "K94IV283qzzRNQ2yPmdTDYOYIl4fFOmk2168LJOQtxrBFBkD6pxeutDrua7sQUjoW0cn9h9eRC5xvD7eGMhwHg==",
+      "type": "package",
+      "path": "FreecraftCore.Network.Pipeline.Generic/1.0.9",
+      "files": [
+        "FreecraftCore.Network.Pipeline.Generic.1.0.9.nupkg.sha512",
+        "FreecraftCore.Network.Pipeline.Generic.nuspec",
+        "lib/net46/FreecraftCore.Network.Pipeline.Generic.dll",
+        "lib/netstandard1.6/FreecraftCore.Network.Pipeline.Generic.dll"
+      ]
+    },
+    "FreecraftCore.Packet.Common/1.0.50": {
+      "sha512": "b1sZskwxVlESAJBTwfBYCdDzCHp/Zo/wnjb8TobBVX7ZTaMbo6Xnm/c+CFMXtYhtbDzJpUp+frZOnLiBXUZ6EA==",
+      "type": "package",
+      "path": "FreecraftCore.Packet.Common/1.0.50",
+      "files": [
+        "FreecraftCore.Packet.Common.1.0.50.nupkg.sha512",
+        "FreecraftCore.Packet.Common.nuspec",
+        "lib/net46/FreecraftCore.Packet.Common.dll",
+        "lib/netstandard1.6/FreecraftCore.Packet.Common.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.API.Service/2.0.2": {
+      "sha512": "GJ4CvmJ5w1COGlQHG1dEu+sYNjhJdmmdJz6yOpW0rgvF6FV4qcjCLNUWphuRnJVNmwcn/SfMy74WUDMNUV52OQ==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.API.Service/2.0.2",
+      "files": [
+        "FreecraftCore.Serializer.API.Service.2.0.2.nupkg.sha512",
+        "FreecraftCore.Serializer.API.Service.nuspec",
+        "lib/net46/FreecraftCore.Serializer.API.Service.dll",
+        "lib/netstandard1.6/FreecraftCore.Serializer.API.Service.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.Metadata/2.0.2": {
+      "sha512": "V/kG1Mg6e9ItmxItTExRbBZ/H4+mmaqwk20YopPjk7GP33RDE03XGER+kNjkrqhcULkI50kKylVT4XL6Vi1ZhA==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Metadata/2.0.2",
+      "files": [
+        "FreecraftCore.Serializer.Metadata.2.0.2.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.nuspec",
+        "lib/net35/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net45/FreecraftCore.Serializer.Metadata.dll",
+        "lib/net46/FreecraftCore.Serializer.Metadata.dll",
+        "lib/netstandard1.6/FreecraftCore.Serializer.Metadata.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.Stream/2.0.2": {
+      "sha512": "2C7kgxUrJNDCFcdfqwSR5Nq2uEj/n5r5b+Q3UEWEDxMxt+iDARldtr97z8o1UuR0vLi8Nb4XslUOGQP1FbmN6Q==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Stream/2.0.2",
+      "files": [
+        "FreecraftCore.Serializer.Stream.2.0.2.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.nuspec",
+        "lib/net45/FreecraftCore.Serializer.Stream.dll",
+        "lib/net46/FreecraftCore.Serializer.Stream.dll",
+        "lib/netstandard1.6/FreecraftCore.Serializer.Stream.dll"
+      ]
+    },
+    "FreecraftCore.Serializer.Stream.Default/2.0.1": {
+      "sha512": "IqO2mv1sgM398KdBAqs+NNoe63E+FP1a8HmLbPj0xtxMB1LUsnsMsYLA/IHrfBYsUM2GGXLM76tl7H3FCwAE/Q==",
+      "type": "package",
+      "path": "FreecraftCore.Serializer.Stream.Default/2.0.1",
+      "files": [
+        "FreecraftCore.Serializer.Stream.Default.2.0.1.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.Default.nuspec",
+        "lib/net45/FreecraftCore.Serializer.Stream.Default.dll",
+        "lib/net46/FreecraftCore.Serializer.Stream.Default.dll",
+        "lib/netstandard1.6/FreecraftCore.Serializer.Stream.Default.dll"
+      ]
+    },
+    "JetBrains.Annotations/10.2.1": {
+      "sha512": "yTPQ3CsP2I/3vgAsXWby3Bf+dbzsQC5I8/aOsktLi/cSvr50tVTANcL5rTrEmIllbEhZbtZ0rxzxJ2RU8UkMRg==",
+      "type": "package",
+      "path": "JetBrains.Annotations/10.2.1",
+      "files": [
+        "JetBrains.Annotations.10.2.1.nupkg.sha512",
+        "JetBrains.Annotations.nuspec",
+        "lib/net/JetBrains.Annotations.dll",
+        "lib/net/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.NetStandard.xml",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.0.1": {
       "sha512": "2G6OjjJzwBfNOO8myRV/nFrbTw5iA+DEm0N+qUqhrOmaVtn4pC77h38I1jsXGw5VH55+dPfQsqHD0We9sCl9FQ==",
       "type": "package",
@@ -1142,6 +1685,30 @@
         "NETStandard.Library.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt"
+      ]
+    },
+    "Portable.BouncyCastle/1.8.1.2": {
+      "sha512": "G0pWrYwtjjiyka+twqqphegc4ddDWskvf2uWu2YiAUNdaAz0UYa/eXBlt+xjafby5Opa6J1ySw5MPezwiGi9aQ==",
+      "type": "package",
+      "path": "Portable.BouncyCastle/1.8.1.2",
+      "files": [
+        "Portable.BouncyCastle.1.8.1.2.nupkg.sha512",
+        "Portable.BouncyCastle.nuspec",
+        "Readme.html",
+        "lib/net4/BouncyCastle.Crypto.dll",
+        "lib/net4/BouncyCastle.Crypto.pdb",
+        "lib/net4/BouncyCastle.Crypto.xml",
+        "lib/netstandard1.0/BouncyCastle.Crypto.deps.json",
+        "lib/netstandard1.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard1.0/BouncyCastle.Crypto.pdb",
+        "lib/netstandard1.0/BouncyCastle.Crypto.xml",
+        "lib/netstandard1.3/BouncyCastle.Crypto.deps.json",
+        "lib/netstandard1.3/BouncyCastle.Crypto.dll",
+        "lib/netstandard1.3/BouncyCastle.Crypto.pdb",
+        "lib/netstandard1.3/BouncyCastle.Crypto.xml",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/BouncyCastle.Crypto.dll",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/BouncyCastle.Crypto.pdb",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/BouncyCastle.Crypto.xml"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -4017,9 +4584,14 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "NETStandard.Library >= 1.6.0"
+      "FreecraftCore.Network.Pipeline.API >= 1.0.9",
+      "FreecraftCore.Network.Pipeline.Generic >= 1.0.9",
+      "JetBrains.Annotations >= 10.2.1"
     ],
-    ".NETStandard,Version=v1.6": []
+    ".NETFramework,Version=v4.6": [],
+    ".NETStandard,Version=v1.6": [
+      "NETStandard.Library >= 1.6.0"
+    ]
   },
   "tools": {},
   "projectFileToolGroups": {}
