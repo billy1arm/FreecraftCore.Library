@@ -6,9 +6,9 @@ FreecraftCore.Network is a collection of libraries that implements the core netw
 
 # Functionality
 
-### Async Augmentable Pipeline System
+### [Async Augmentable Pipeline System](https://github.com/FreecraftCore/FreecraftCore.Network/blob/dev/docs/PipelineSystem.md)
 
-TODO: Doc and link
+The pipeline system is the core component responsible for building the incoming networking handling logic. Additionally this pipeline system is extended and used in the message handling API as well. Refer to the [documentation](https://github.com/FreecraftCore/FreecraftCore.Network/blob/dev/docs/PipelineSystem.md) for more information on how this works.
 
 ## Builds
 
