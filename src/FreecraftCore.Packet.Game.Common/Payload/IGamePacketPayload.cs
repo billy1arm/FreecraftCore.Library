@@ -9,7 +9,7 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// Interface metadata market for game payloads.
 	/// </summary>
-	public interface IGamePacketPayload : IMessageVerifyable
+	public interface IGamePacketPayload : IMessageVerifyable, IProtocolGroupable
 	{
 
 	}
