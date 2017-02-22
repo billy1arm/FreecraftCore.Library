@@ -12,7 +12,7 @@ namespace FreecraftCore.Network
 	/// where JAM developer talks about the ability of JAM and its handlers determining a lock policy
 	/// for a specific Protocol. Protocols are a collection of JAM message definitions. We have no concept of a protocol.
 	/// </summary>
-	public interface INetworkLockingPolicyStrategy
+	public interface INetworkLockingPolicyStrategy : IDisposable
 	{
 		/// <summary>
 		/// Attempts to aquire an async lock based on the implemented locking policy.
