@@ -39,9 +39,6 @@ namespace FreecraftCore.Network
 		}
 
 		//Locking policies must be new() able.
-		/// <summary>
-		/// 
-		/// </summary>
 		public GlobalServiceLockingPolicy()
 		{
 
