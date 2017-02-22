@@ -12,6 +12,7 @@ namespace FreecraftCore.Packet
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AUTH_CHALLENGE)] //the packet the worldserver first sends
+	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.
 	public class SessionAuthChallengeEvent : GamePacketPayload
 	{
 		/// <inheritdoc />

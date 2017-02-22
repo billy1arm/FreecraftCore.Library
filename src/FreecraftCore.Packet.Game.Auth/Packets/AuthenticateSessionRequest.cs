@@ -12,6 +12,7 @@ namespace FreecraftCore.Packet
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]
+	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.
 	public class SessionAuthProofRequest : GamePacketPayload
 	{
 		/// <inheritdoc />

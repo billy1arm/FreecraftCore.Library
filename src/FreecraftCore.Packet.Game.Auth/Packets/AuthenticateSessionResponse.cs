@@ -9,6 +9,7 @@ namespace FreecraftCore.Packet
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AUTH_RESPONSE)] //the response to a request to authenticate a session
+	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.
 	public class AuthenticateSessionResponse : GamePacketPayload
 	{
 		/// <inheritdoc />
