@@ -224,6 +224,21 @@
         "runtime": {
           "lib/net4/BouncyCastle.Crypto.dll": {}
         }
+      },
+      "FreecraftCore.Handlers.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "FreecraftCore.Network.Pipeline.API": "1.0.9",
+          "FreecraftCore.Network.Pipeline.Generic": "1.0.9",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net46/FreecraftCore.Handlers.Common.dll": {}
+        },
+        "runtime": {
+          "net46/FreecraftCore.Handlers.Common.dll": {}
+        }
       }
     },
     ".NETStandard,Version=v1.6": {
@@ -1530,6 +1545,22 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
+        }
+      },
+      "FreecraftCore.Handlers.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "FreecraftCore.Network.Pipeline.API": "1.0.9",
+          "FreecraftCore.Network.Pipeline.Generic": "1.0.9",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/FreecraftCore.Handlers.Common.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/FreecraftCore.Handlers.Common.dll": {}
         }
       }
     }
@@ -4693,12 +4724,18 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "FreecraftCore.Handlers.Common/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Handlers.Common/project.json",
+      "msbuildProject": "../FreecraftCore.Handlers.Common/FreecraftCore.Handlers.Common.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "FreecraftCore.Crypto.Packet >= 1.0.23",
       "FreecraftCore.Crypto.Stream >= 1.0.23",
+      "FreecraftCore.Handlers.Common >= 1.0.0-*",
       "FreecraftCore.Network.Common >= 1.0.9",
       "FreecraftCore.Network.Pipeline.API >= 1.0.9",
       "FreecraftCore.Network.Pipeline.Generic >= 1.0.9",
