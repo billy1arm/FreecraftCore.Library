@@ -1,3 +1,3 @@
-dotnet pack src/FreecraftCore.Network.Pipeline.API/ -c Release
-dotnet pack src/FreecraftCore.Network.Pipeline.Auth/ -c Release
-dotnet pack src/FreecraftCore.Network.Pipeline.Generic/ -c Release
+dotnet pack src/FreecraftCore.Handlers.Common/ -c Release
+dotnet pack src/FreecraftCore.Handlers.Auth/ -c Release
+dotnet pack src/FreecraftCore.Handlers.Client/ -c Release

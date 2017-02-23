@@ -226,6 +226,29 @@
           "lib/net4/BouncyCastle.Crypto.dll": {}
         }
       },
+      "FreecraftCore.Handlers.Auth/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Crypto.Stream": "1.0.23",
+          "FreecraftCore.Handlers.Common": "1.0.0",
+          "FreecraftCore.Network.Common": "1.0.10",
+          "FreecraftCore.Network.Pipeline.API": "1.0.10",
+          "FreecraftCore.Network.Pipeline.Generic": "1.0.10",
+          "FreecraftCore.Packet.Auth": "1.0.55",
+          "FreecraftCore.Packet.Common": "1.0.55",
+          "FreecraftCore.Serializer.API.Service": "2.0.2",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net46/FreecraftCore.Handlers.Auth.dll": {}
+        },
+        "runtime": {
+          "net46/FreecraftCore.Handlers.Auth.dll": {}
+        }
+      },
       "FreecraftCore.Handlers.Common/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
@@ -1548,6 +1571,30 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
+        }
+      },
+      "FreecraftCore.Handlers.Auth/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "FreecraftCore.Crypto.Packet": "1.0.23",
+          "FreecraftCore.Crypto.Stream": "1.0.23",
+          "FreecraftCore.Handlers.Common": "1.0.0",
+          "FreecraftCore.Network.Common": "1.0.10",
+          "FreecraftCore.Network.Pipeline.API": "1.0.10",
+          "FreecraftCore.Network.Pipeline.Generic": "1.0.10",
+          "FreecraftCore.Packet.Auth": "1.0.55",
+          "FreecraftCore.Packet.Common": "1.0.55",
+          "FreecraftCore.Serializer.API.Service": "2.0.2",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/FreecraftCore.Handlers.Auth.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/FreecraftCore.Handlers.Auth.dll": {}
         }
       },
       "FreecraftCore.Handlers.Common/1.0.0": {
@@ -4729,6 +4776,11 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "FreecraftCore.Handlers.Auth/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Handlers.Auth/project.json",
+      "msbuildProject": "../FreecraftCore.Handlers.Auth/FreecraftCore.Handlers.Auth.xproj"
+    },
     "FreecraftCore.Handlers.Common/1.0.0": {
       "type": "project",
       "path": "../FreecraftCore.Handlers.Common/project.json",
@@ -4737,17 +4789,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.Crypto.Packet >= 1.0.23",
-      "FreecraftCore.Crypto.Stream >= 1.0.23",
-      "FreecraftCore.Handlers.Common >= 1.0.0-*",
-      "FreecraftCore.Network.Common >= 1.0.10",
-      "FreecraftCore.Network.Pipeline.API >= 1.0.10",
-      "FreecraftCore.Network.Pipeline.Generic >= 1.0.10",
-      "FreecraftCore.Packet.Auth >= 1.0.55",
-      "FreecraftCore.Packet.Common >= 1.0.55",
-      "FreecraftCore.Serializer.API.Service >= 2.0.2",
-      "FreecraftCore.Serializer.Stream >= 2.0.2",
-      "JetBrains.Annotations >= 10.2.1"
+      "FreecraftCore.Handlers.Auth >= 1.0.0-*"
     ],
     ".NETFramework,Version=v4.6": [],
     ".NETStandard,Version=v1.6": [
