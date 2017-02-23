@@ -6,7 +6,7 @@ using System.Text;
 using FreecraftCore.Serializer;
 
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore.Packet
 {
 	/// <summary>
 	/// Metadata marker for an authentication payload.
