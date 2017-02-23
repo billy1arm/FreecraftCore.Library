@@ -17,7 +17,7 @@ namespace FreecraftCore.Handlers
 	/// <typeparam name="TOperationCode"></typeparam>
 	/// <typeparam name="THeaderType"></typeparam>
 	/// <typeparam name="TPayloadType"></typeparam>
-	public class MessageHandlerService<TMessageType, TOperationCode, THeaderType, TPayloadType> 
+	public abstract class MessageHandlerService<TMessageType, TOperationCode, THeaderType, TPayloadType> 
 		: IHandlerRegisterService<INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType>, TOperationCode>, IHandlerRegisterService<INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>, TOperationCode>,
 		INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>
 		where TMessageType : INetworkMessageContext<TOperationCode, THeaderType, TPayloadType> 
@@ -30,22 +30,22 @@ namespace FreecraftCore.Handlers
 		/// Dicitionary that maps operation codes to their respective syncronous message handlers.
 		/// </summary>
 		[NotNull]
-		private Dictionary<TOperationCode, INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType>> SyncMessageHandlerMap { get; }
+		protected Dictionary<TOperationCode, INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType>> SyncMessageHandlerMap { get; }
 
 		/// <summary>
 		/// Dicitionary that maps operation codes to their respective async message handlers.
 		/// </summary>
 		[NotNull]
-		private Dictionary<TOperationCode, INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>> AsyncMessageHandlerMap { get; }
+		protected Dictionary<TOperationCode, INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>> AsyncMessageHandlerMap { get; }
 
-		public MessageHandlerService()
+		protected MessageHandlerService()
 		{
 			AsyncMessageHandlerMap = new Dictionary<TOperationCode, INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>>();
 			SyncMessageHandlerMap = new Dictionary<TOperationCode, INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType>>();
 		}
 
 		/// <inheritdoc />
-		public bool TryRegister([NotNull] INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType> handler, TOperationCode code)
+		public virtual bool TryRegister([NotNull] INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType> handler, TOperationCode code)
 		{
 			if (handler == null) throw new ArgumentNullException(nameof(handler));
 
@@ -57,7 +57,7 @@ namespace FreecraftCore.Handlers
 		}
 
 		/// <inheritdoc />
-		public bool TryRegister([NotNull] INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType> handler, TOperationCode code)
+		public virtual bool TryRegister([NotNull] INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType> handler, TOperationCode code)
 		{
 			if (handler == null) throw new ArgumentNullException(nameof(handler));
 
@@ -69,7 +69,7 @@ namespace FreecraftCore.Handlers
 		}
 
 		/// <inheritdoc />
-		public async Task<NetworkMessageContextState> RecievePipelineMessage([NotNull] TMessageType input, NetworkMessageContextState currentState)
+		public virtual async Task<NetworkMessageContextState> RecievePipelineMessage([NotNull] TMessageType input, NetworkMessageContextState currentState)
 		{
 			if (input == null) throw new ArgumentNullException(nameof(input));
 			if (!Enum.IsDefined(typeof(NetworkMessageContextState), currentState))
