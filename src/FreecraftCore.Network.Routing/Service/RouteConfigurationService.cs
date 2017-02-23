@@ -15,9 +15,9 @@ namespace FreecraftCore.Network
 	/// <typeparam name="THeaderType">The header type of the message.</typeparam>
 	/// <typeparam name="TPayloadType">The type of the payload.</typeparam>
 	public class RouteConfigurationService<TMessageType, TOperationCode, THeaderType, TPayloadType> : IMessageRouteRegister<TMessageType>, IMessageRoutingStrategy<TMessageType> //it's also technically a message routing strategy
-		where TMessageType : INetworkMessageContext<TOperationCode, THeaderType, TPayloadType> 
-		where TOperationCode : struct 
-		where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCode> 
+		where TMessageType : INetworkMessageContext<TOperationCode, THeaderType, TPayloadType>
+		where TOperationCode : struct
+		where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCode>
 		where TPayloadType : IMessageVerifyable, IProtocolGroupable //also add contraint that the payload be routegroupable
 	{
 		[NotNull]
