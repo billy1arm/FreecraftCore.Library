@@ -30,7 +30,7 @@ namespace FreecraftCore.Handlers
 		/// </summary>
 		/// <param name="networkMessage"></param>
 		/// <param name="connectionLink"></param>
-		protected AuthenticationNetworkMessageContext([NotNull] INetworkPacket<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> networkMessage, [NotNull] INetworkConnectionContext connectionLink)
+		public AuthenticationNetworkMessageContext([NotNull] INetworkPacket<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> networkMessage, [NotNull] INetworkConnectionContext connectionLink)
 		{
 			if (networkMessage == null) throw new ArgumentNullException(nameof(networkMessage));
 			if (connectionLink == null) throw new ArgumentNullException(nameof(connectionLink));
