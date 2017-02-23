@@ -1,14 +1,8 @@
-# FreecraftCore.Network
+#FreecraftCore.Network
 
 FreecraftCore is an open-source C#/.NET World of Warcraft emulation project. It is derived from the reverse engineering work of Mangos and Trinitycore.
 
-FreecraftCore.Network is a collection of libraries that implements the core networking components for a functioning network client and serverside for World of Warcraft emulation.
-
-# Functionality
-
-### Async Augmentable Pipeline System
-
-TODO: Doc and link
+FreecraftCore.Handlers are a collection of libraries for the message handler API, concrete handlers implementations and other handler related libraries.
 
 ## Builds
 
@@ -19,8 +13,8 @@ Available on a Nuget Feed: https://www.myget.org/F/freecraftcore/api/v2 [![freec
 #### Linux/Mono - Unit Tests
 ||Debug x86|Debug x64|Release x86|Release x64|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.Network.svg?branch=master)](https://travis-ci.org/FreecraftCore/FreecraftCore.Network) |
-|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/FreecraftCore.Network.svg?branch=dev)](https://travis-ci.org/FreecraftCore/FreecraftCore.Network)|
+|**master**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/Freecraftcore.Handlers.svg?branch=master)](https://travis-ci.org/FreecraftCore/Freecraftcore.Handlers) |
+|**dev**| N/A | N/A | N/A | [![Build Status](https://travis-ci.org/FreecraftCore/Freecraftcore.Handlers.svg?branch=dev)](https://travis-ci.org/FreecraftCore/Freecraftcore.Handlers)|
 
 #### Windows - Unit Tests
 
