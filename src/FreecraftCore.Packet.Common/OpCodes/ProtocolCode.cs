@@ -9,7 +9,7 @@ namespace FreecraftCore.Packet
 	/// Represents a logical grouping of messages. According to JAM GDC talk
 	/// a Protocol groups messages together for service routing and for locking policy.
 	/// </summary>
-	public enum ProtocolCode : byte
+	public enum ProtocolCode : int //use an int to prevent boxing in any map we may use protocol for. .NET won't box ints.
 	{
 		/// <summary>
 		/// Indicates no protocol
