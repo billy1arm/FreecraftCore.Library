@@ -47,6 +47,21 @@
         "runtime": {
           "lib/net/JetBrains.Annotations.dll": {}
         }
+      },
+      "FreecraftCore.Network.Pipeline.API/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "net46/FreecraftCore.Network.Pipeline.API.dll": {}
+        },
+        "runtime": {
+          "net46/FreecraftCore.Network.Pipeline.API.dll": {}
+        }
       }
     },
     ".NETStandard,Version=v1.6": {
@@ -1164,6 +1179,22 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
+        }
+      },
+      "FreecraftCore.Network.Pipeline.API/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Serializer.Stream": "2.0.2",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/FreecraftCore.Network.Pipeline.API.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/FreecraftCore.Network.Pipeline.API.dll": {}
         }
       }
     }
@@ -4164,12 +4195,17 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "FreecraftCore.Network.Pipeline.API/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.Network.Pipeline.API/project.json",
+      "msbuildProject": "../FreecraftCore.Network.Pipeline.API/FreecraftCore.Network.Pipeline.API.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "FreecraftCore.Network.Pipeline.API >= 1.0.0-*",
       "FreecraftCore.Packet.Common >= 1.0.54",
-      "FreecraftCore.Serializer.Stream >= 2.0.2",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v4.6": [],

@@ -2,7 +2,7 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Packet.Common": "1.0.50",
+    "FreecraftCore.Packet.Common": "1.0.54",
     "FreecraftCore.Serializer.Stream": "2.0.2",
     "JetBrains.Annotations": "10.2.1"
   },

@@ -2,6 +2,7 @@
     "version": "1.0.0-*",
 
   "dependencies": {
+    "FreecraftCore.Network.Pipeline.API": "1.0.0-*",
     "FreecraftCore.Packet.Common": "1.0.54",
     "JetBrains.Annotations": "10.2.1"
   },
