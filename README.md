@@ -6,7 +6,7 @@ FreecraftCore.Handlers are a collection of libraries for the message handler API
 
 ## Builds
 
-Available on a Nuget Feed: https://www.myget.org/F/freecraftcore/api/v2 [![freecraftcore MyGet Build Status](https://www.myget.org/BuildSource/Badge/freecraftcore?identifier=c8b700be-7ec4-4a5b-87a0-f663ab446ad0)](https://www.myget.org/)
+Available on a Nuget Feed: https://www.myget.org/F/freecraftcore/api/v2 [![freecraftcore MyGet Build Status](https://www.myget.org/BuildSource/Badge/freecraftcore?identifier=8f30da22-9d08-4776-81c8-c7bf1c127114)](https://www.myget.org/)
 
 ##Tests
 
