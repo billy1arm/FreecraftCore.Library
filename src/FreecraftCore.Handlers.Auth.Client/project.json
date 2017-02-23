@@ -1,8 +1,12 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Handlers.Auth": "1.0.0-*"
+    "FreecraftCore.API.Client.Auth": "1.0.1",
+    "FreecraftCore.API.Client.Common": "1.0.1",
+    "FreecraftCore.Crypto.SRP6": "1.0.23",
+    "FreecraftCore.Handlers.Auth": "1.0.0-*",
+    "FreecraftCore.Handlers.Common": "1.0.0-*"
   },
 
   "frameworks": {

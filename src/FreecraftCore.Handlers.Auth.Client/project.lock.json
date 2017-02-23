@@ -3,6 +3,31 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
+      "FreecraftCore.API.Client.Auth/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.API.Client.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.API.Client.Auth.dll": {}
+        }
+      },
+      "FreecraftCore.API.Client.Common/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.API.Client.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.API.Client.Common.dll": {}
+        }
+      },
       "FreecraftCore.API.Common.Auth/1.0.31": {
         "type": "package",
         "dependencies": {
@@ -70,6 +95,19 @@
         },
         "runtime": {
           "lib/net46/FreecraftCore.Crypto.RC4.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.SRP6/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "JetBrains.Annotations": "10.2.1"
+        },
+        "compile": {
+          "lib/net46/FreecraftCore.Crypto.SRP6.dll": {}
+        },
+        "runtime": {
+          "lib/net46/FreecraftCore.Crypto.SRP6.dll": {}
         }
       },
       "FreecraftCore.Crypto.Stream/1.0.23": {
@@ -267,6 +305,33 @@
       }
     },
     ".NETStandard,Version=v1.6": {
+      "FreecraftCore.API.Client.Auth/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.API.Client.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.API.Client.Auth.dll": {}
+        }
+      },
+      "FreecraftCore.API.Client.Common/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.API.Client.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.API.Client.Common.dll": {}
+        }
+      },
       "FreecraftCore.API.Common.Auth/1.0.31": {
         "type": "package",
         "dependencies": {
@@ -336,6 +401,21 @@
         },
         "runtime": {
           "lib/netstandard1.6/FreecraftCore.Crypto.RC4.dll": {}
+        }
+      },
+      "FreecraftCore.Crypto.SRP6/1.0.23": {
+        "type": "package",
+        "dependencies": {
+          "FreecraftCore.Crypto.BigInteger": "1.0.23",
+          "JetBrains.Annotations": "10.2.1",
+          "NETStandard.Library": "1.6.0",
+          "System.Security.Cryptography.Csp": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.SRP6.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FreecraftCore.Crypto.SRP6.dll": {}
         }
       },
       "FreecraftCore.Crypto.Stream/1.0.23": {
@@ -1301,7 +1381,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Security.Cryptography.Csp.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Csp.dll": {
@@ -1617,6 +1697,28 @@
     }
   },
   "libraries": {
+    "FreecraftCore.API.Client.Auth/1.0.1": {
+      "sha512": "AJBMxzlOVN70pWG+Fh+JmO0lcmaJ2zlk8T+HUmGlmkdZ7iuxi4bX6uI+xAE7QrCzq8Bz+5ZiLrZ7It5QvKHWLg==",
+      "type": "package",
+      "path": "FreecraftCore.API.Client.Auth/1.0.1",
+      "files": [
+        "FreecraftCore.API.Client.Auth.1.0.1.nupkg.sha512",
+        "FreecraftCore.API.Client.Auth.nuspec",
+        "lib/net46/FreecraftCore.API.Client.Auth.dll",
+        "lib/netstandard1.6/FreecraftCore.API.Client.Auth.dll"
+      ]
+    },
+    "FreecraftCore.API.Client.Common/1.0.1": {
+      "sha512": "kSO5eOuiX4CJF/YOaS2twJ3EKiO1Aa9qXCbh+hL9tHiWJikzTVq0gEVX8YNZioinuttGS+UNWmrIeK/5DBnxwA==",
+      "type": "package",
+      "path": "FreecraftCore.API.Client.Common/1.0.1",
+      "files": [
+        "FreecraftCore.API.Client.Common.1.0.1.nupkg.sha512",
+        "FreecraftCore.API.Client.Common.nuspec",
+        "lib/net46/FreecraftCore.API.Client.Common.dll",
+        "lib/netstandard1.6/FreecraftCore.API.Client.Common.dll"
+      ]
+    },
     "FreecraftCore.API.Common.Auth/1.0.31": {
       "sha512": "g5KEVHJMtyjwXLfksTyK26XYTQ6ItcxNcQT+JgVeh7nMCzTwttZFFpC3J2XgOLc9mLHq8+IyOK7RyrVPPbbUuA==",
       "type": "package",
@@ -1676,6 +1778,17 @@
         "FreecraftCore.Crypto.RC4.nuspec",
         "lib/net46/FreecraftCore.Crypto.RC4.dll",
         "lib/netstandard1.6/FreecraftCore.Crypto.RC4.dll"
+      ]
+    },
+    "FreecraftCore.Crypto.SRP6/1.0.23": {
+      "sha512": "3a9rN9uQpjseBSTvB5KqDadWb0Dn/ROlxtDmos8ethxyG0i5zF2qpPzW0cxidxm2Xqbc9I9kj3bONB6IX0g7RA==",
+      "type": "package",
+      "path": "FreecraftCore.Crypto.SRP6/1.0.23",
+      "files": [
+        "FreecraftCore.Crypto.SRP6.1.0.23.nupkg.sha512",
+        "FreecraftCore.Crypto.SRP6.nuspec",
+        "lib/net46/FreecraftCore.Crypto.SRP6.dll",
+        "lib/netstandard1.6/FreecraftCore.Crypto.SRP6.dll"
       ]
     },
     "FreecraftCore.Crypto.Stream/1.0.23": {
@@ -4789,7 +4902,11 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.Handlers.Auth >= 1.0.0-*"
+      "FreecraftCore.API.Client.Auth >= 1.0.1",
+      "FreecraftCore.API.Client.Common >= 1.0.1",
+      "FreecraftCore.Crypto.SRP6 >= 1.0.23",
+      "FreecraftCore.Handlers.Auth >= 1.0.0-*",
+      "FreecraftCore.Handlers.Common >= 1.0.0-*"
     ],
     ".NETFramework,Version=v4.6": [],
     ".NETStandard,Version=v1.6": [
