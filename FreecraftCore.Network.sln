@@ -15,6 +15,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Pipel
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Common", "src\FreecraftCore.Network.Common\FreecraftCore.Network.Common.xproj", "{B1C371C1-4C63-486A-A5BA-E5C9339AD76C}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Routing.Auth", "src\FreecraftCore.Network.Routing.Auth\FreecraftCore.Network.Routing.Auth.xproj", "{30538561-7E5B-4BA2-AD39-143895269804}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Routing", "src\FreecraftCore.Network.Routing\FreecraftCore.Network.Routing.xproj", "{02156992-39D2-446B-9FEA-CCDF9A370578}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{B1C371C1-4C63-486A-A5BA-E5C9339AD76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C371C1-4C63-486A-A5BA-E5C9339AD76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1C371C1-4C63-486A-A5BA-E5C9339AD76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30538561-7E5B-4BA2-AD39-143895269804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30538561-7E5B-4BA2-AD39-143895269804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30538561-7E5B-4BA2-AD39-143895269804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30538561-7E5B-4BA2-AD39-143895269804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02156992-39D2-446B-9FEA-CCDF9A370578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02156992-39D2-446B-9FEA-CCDF9A370578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02156992-39D2-446B-9FEA-CCDF9A370578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02156992-39D2-446B-9FEA-CCDF9A370578}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +58,7 @@ Global
 		{FFEC70A1-4C09-4A64-ABF8-9BCCED4B736F} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{AC3D8686-3A97-4A95-BB70-13409ECADF24} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{B1C371C1-4C63-486A-A5BA-E5C9339AD76C} = {948DBB07-8D6A-42C2-9228-4953DD917280}
+		{30538561-7E5B-4BA2-AD39-143895269804} = {948DBB07-8D6A-42C2-9228-4953DD917280}
+		{02156992-39D2-446B-9FEA-CCDF9A370578} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 	EndGlobalSection
 EndGlobal
