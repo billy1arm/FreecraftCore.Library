@@ -47,7 +47,7 @@ namespace FreecraftCore.Network
 
 		//TODO: Thread safety
 		/// <inheritdoc />
-		public void RouteMessage(TMessageType message, Action onFinishedHandlingMessage = null)
+		public void RouteMessage(TMessageType message)
 		{
 			//Check the protocol coming in on the message
 			ProtocolCode code = message.NetworkMessage.Payload.GetProtocol();
@@ -55,7 +55,7 @@ namespace FreecraftCore.Network
 			if(!RoutingMap.ContainsKey(code))
 				throw new InvalidOperationException($"{GetType().FullName} does not contain a registered routing strategy for Protocol: {code.ToString()}.");
 
-			RoutingMap[code].RouteMessage(message, onFinishedHandlingMessage);
+			RoutingMap[code].RouteMessage(message);
 		}
 	}
 }
