@@ -30,7 +30,6 @@ namespace FreecraftCore
 			where TPayloadType : IMessageVerifyable
 			where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 			where TNetworkOperationCodeType : struct
-			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
 		{
 			if (pipelineComponent == null) throw new ArgumentNullException(nameof(pipelineComponent));
 
@@ -144,7 +143,7 @@ namespace FreecraftCore
 			where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCodeType, THeaderType, TPayloadType>
 		{
 			//Return for fluent registeration
-			return pipelineRegister.With(new PeekSupportPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), options);
+			return pipelineRegister.With(new PeekSupportReadingPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), options);
 		}
 	}
 

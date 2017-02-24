@@ -3,10 +3,10 @@
 
   "dependencies": {
     "FreecraftCore.Network.Pipeline.API": "1.0.0-*",
-    "FreecraftCore.Packet.Common": "1.0.54",
     "JetBrains.Annotations": "10.2.1",
     "System.Threading.Tasks.Dataflow": "4.6.0",
-    "System.Runtime": "4.3.0" 
+    "System.Runtime": "4.3.0",
+    "FreecraftCore.Packet.Common": "1.0.56"
   },
 
   "frameworks": {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Network;
+using FreecraftCore.Packet;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
@@ -22,6 +23,20 @@ namespace FreecraftCore
 		/// <returns>Register for fluent chaining.</returns>
 		public static INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithType<TPipelineComponentType>(this INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister, [CanBeNull] Func<UnorderedPipelineRegisterationOptions, ICompleteOptionsReadable> options = null)
 			where TPipelineComponentType : IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, INetworkMessageContextBuilder<AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>>, new()
+		{
+			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
+			//Provides a slightly clean looking API
+			//Return for fluent registeration
+			return pipelineRegister.With(new TPipelineComponentType(), options);
+		}
+
+		/// <summary>
+		/// Registers a parameterless pipeline component in the <see cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <param name="pipelineRegister">Pipeline service to register on.</param>
+		/// <returns>Register for fluent chaining.</returns>
+		public static INetworkInputPipelineRegister<IWireStreamWriterStrategy, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithType<TPipelineComponentType>(this INetworkInputPipelineRegister<IWireStreamWriterStrategy, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister, [CanBeNull] Func<UnorderedPipelineRegisterationOptions, ICompleteOptionsReadable> options = null)
+			where TPipelineComponentType : IPipelineListenerAsync<IWireStreamWriterStrategy, IWireStreamWriterStrategy, AuthenticationPayload>, new()
 		{
 			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
 			//Provides a slightly clean looking API
