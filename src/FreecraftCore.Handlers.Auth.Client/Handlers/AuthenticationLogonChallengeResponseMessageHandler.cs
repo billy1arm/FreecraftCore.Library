@@ -29,13 +29,21 @@ namespace FreecraftCore.Handlers
 		[NotNull]
 		private ISessionKeyStore SessionKeyStorage { get; }
 
-		public AuthenticationLogonChallengeResponseMessageHandler([NotNull] IAuthenticationDetailsProvider detailsProvider, [NotNull] ISessionKeyStore sessionKeyStorage)
+		/// <summary>
+		/// The service that is able to send messages back to the connection that sent this one.
+		/// </summary>
+		[NotNull]
+		private INetworkMessageSendingService<AuthOperationCode> SendService { get; }
+
+		public AuthenticationLogonChallengeResponseMessageHandler([NotNull] IAuthenticationDetailsProvider detailsProvider, [NotNull] ISessionKeyStore sessionKeyStorage, [NotNull] INetworkMessageSendingService<AuthOperationCode> sendService)
 		{
 			if (detailsProvider == null) throw new ArgumentNullException(nameof(detailsProvider));
 			if (sessionKeyStorage == null) throw new ArgumentNullException(nameof(sessionKeyStorage));
+			if (sendService == null) throw new ArgumentNullException(nameof(sendService));
 
 			DetailsProvider = detailsProvider;
 			SessionKeyStorage = sessionKeyStorage;
+			SendService = sendService;
 		}
 
 		//The parameters are promised to never be null
@@ -65,7 +73,8 @@ namespace FreecraftCore.Handlers
 				}
 			}
 
-			//SendRequest.Create(AuthOperationCode.AUTH_LOGON_PROOF, proof, networkStream, serializer).Send();
+			//Send the proof to the authserver
+			SendService.SendMessage(proof);
 
 			return NetworkMessageContextState.Handled;
 		}
