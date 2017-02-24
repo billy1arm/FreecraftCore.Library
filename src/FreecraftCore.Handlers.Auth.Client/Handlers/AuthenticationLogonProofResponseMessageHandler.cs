@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Subjects;
 using System.Threading.Tasks;
 using FreecraftCore.API.Common;
 using FreecraftCore.Network;
@@ -12,8 +13,10 @@ namespace FreecraftCore.Handlers
 {
 	public class AuthenticationLogonProofResponseMessageHandler : AuthenticationMessageHandler<AuthLogonProofResponse>
 	{
-		[NotNull]
-		private IObserver<AuthenticationResult> OnResultRecieved { get; }
+		/// <summary>
+		/// Publisher object that can publish the authentication result.
+		/// </summary>
+		private IObserver<AuthenticationResult> OnAuthenticationResultRecieved { get; }
 
 		/// <summary>
 		/// The service that is able to send messages back to the connection that sent this one.
@@ -21,32 +24,24 @@ namespace FreecraftCore.Handlers
 		[NotNull]
 		private INetworkMessageSendingService<AuthOperationCode> SendService { get; }
 
-		public AuthenticationLogonProofResponseMessageHandler([NotNull] IObserver<AuthenticationResult> onResultRecieved, [NotNull] INetworkMessageSendingService<AuthOperationCode> sendService)
+		public AuthenticationLogonProofResponseMessageHandler([NotNull] INetworkMessageSendingService<AuthOperationCode> sendService, [NotNull] IObserver<AuthenticationResult> onAuthenticationResultRecieved)
 		{
-			if (onResultRecieved == null) throw new ArgumentNullException(nameof(onResultRecieved));
 			if (sendService == null) throw new ArgumentNullException(nameof(sendService));
+			if (onAuthenticationResultRecieved == null) throw new ArgumentNullException(nameof(onAuthenticationResultRecieved));
 
-			OnResultRecieved = onResultRecieved;
 			SendService = sendService;
+			OnAuthenticationResultRecieved = onAuthenticationResultRecieved;
 		}
 
 		//The parameters are promised to never be null
 		/// <inheritdoc />
 		protected override NetworkMessageContextState RecieveMessage(AuthenticationNetworkMessageContext context, AuthLogonProofResponse stronglyTypedPayload)
 		{
-			//TODO: How should the result be pushed out into UI or other space?
-			if (stronglyTypedPayload.AuthResult != AuthenticationResult.Success)
-			{
-				//TODO: What do we do if we fail?
-				OnResultRecieved.OnNext(stronglyTypedPayload.AuthResult);
-			}
-			else
-			{
-				OnResultRecieved.OnNext(stronglyTypedPayload.AuthResult);
+			OnAuthenticationResultRecieved.OnNext(stronglyTypedPayload.AuthResult);
 
-				//Send the realm list request too.
-				SendService.SendMessage(new AuthRealmListRequest());
-			}
+			//TODO: How should the result be pushed out into UI or other space?
+			if (stronglyTypedPayload.AuthResult == AuthenticationResult.Success)
+				SendService.SendMessage(new AuthRealmListRequest()); //Send the realm list request too.
 
 			return NetworkMessageContextState.Handled;
 		}
