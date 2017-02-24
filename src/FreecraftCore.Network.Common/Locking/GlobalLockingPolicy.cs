@@ -23,8 +23,6 @@ namespace FreecraftCore.Network
 		{
 			//No matter the opcode we should lock
 			await LockingObject.WaitAsync();
-
-			//WithRouteConfiguration(o => o.Route<TProtocolType, TRoutingStrategy>().Route)
 		}
 
 		/// <inheritdoc />

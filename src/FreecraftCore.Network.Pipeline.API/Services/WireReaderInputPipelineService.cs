@@ -15,9 +15,8 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TNetworkOperationCodeType">The operationcode type.</typeparam>
 	/// <typeparam name="THeaderType">The header type.</typeparam>
 	/// <typeparam name="TPayloadType">The payload type.</typeparam>
-	public abstract class WireReaderInputPipelineService<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> :
-		INetworkMessageContextFactory<IWireStreamReaderStrategyAsync, TNetworkOperationCodeType, THeaderType, TPayloadType>,
-		INetworkInputPipelineRegister<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>
+	public abstract class WireReaderInputPipelineService<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> : WireNetworkInputPipelineService<IWireStreamReaderStrategyAsync, TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>,
+		INetworkMessageContextFactory<IWireStreamReaderStrategyAsync, TNetworkOperationCodeType, THeaderType, TPayloadType>
 		where TNetworkOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 		where TPayloadType : IMessageVerifyable
@@ -29,69 +28,13 @@ namespace FreecraftCore.Network
 		[NotNull]
 		public INetworkMessageContextBuilderFactory<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> ContextBuilderFactory { get; }
 
-		/// <summary>
-		/// Enumerable list of header pipelines.
-		/// </summary>
-		protected List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> HeaderPipelines { get; }
-
-		/// <summary>
-		/// Enumerable list of header pipelines.
-		/// </summary>
-		protected List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> PayloadPipelines { get; }
-
 		protected WireReaderInputPipelineService([NotNull] INetworkMessageContextBuilderFactory<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType> contextBuilderFactory)
 
 		{
 			if (contextBuilderFactory == null) throw new ArgumentNullException(nameof(contextBuilderFactory));
 
 			ContextBuilderFactory = contextBuilderFactory;
-
-			//For now we just construct new collections
-			PayloadPipelines = new List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
-			HeaderPipelines = new List<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>>();
 		}
-
-		//TODO: Support ordering and location
-		/// <inheritdoc />
-		public bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType)
-		{
-			//On bottom is the default so use that
-			return TryRegisterPipeline(pipelineComponent, pipelineType, new OnBottom());
-		}
-
-		//TODO: Support ordering and location
-		/// <inheritdoc />
-		private bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, NetworkPipelineTypes pipelineType, IPipelineOrderingStrategy ordedStrategy)
-		{
-			bool registered = false;
-
-			//TODO: Handle error/main flags and others
-			if (pipelineType.HasFlag(NetworkPipelineTypes.Header))
-			{
-				ordedStrategy.RegisterVisitor(HeaderPipelines, pipelineComponent);
-				registered = true;
-			}
-
-			if (pipelineType.HasFlag(NetworkPipelineTypes.Payload))
-			{
-				ordedStrategy.RegisterVisitor(PayloadPipelines, pipelineComponent);
-				registered = true;
-			}
-
-			if (!registered)
-				throw new NotImplementedException($"Unable to handle pipelines with {pipelineType} flags right now. Must be only payload or header pipelines.");
-
-			return true;
-		}
-
-		protected async Task PassThroughPipeline(IReadOnlyCollection<IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType>> pipelines, TContextBuilderType contextBuilder, IWireStreamReaderStrategyAsync readerDecorated)
-		{
-			//Pass the reader and contextbuilder to all provided pipelines
-			if (pipelines.Count != 0)
-				foreach (var pipeline in pipelines)
-					readerDecorated = await pipeline.RecievePipelineMessage(readerDecorated, contextBuilder);
-		}
-
 		public INetworkMessageContext<TNetworkOperationCodeType, THeaderType, TPayloadType> ConstructNetworkContext(IWireStreamReaderStrategyAsync reader)
 		{
 			throw new NotImplementedException();
@@ -117,12 +60,6 @@ namespace FreecraftCore.Network
 
 			//Return the built context
 			return contextBuilder.Build();
-		}
-
-		/// <inheritdoc />
-		public bool TryRegisterPipeline(IPipelineListenerAsync<IWireStreamReaderStrategyAsync, IWireStreamReaderStrategyAsync, TContextBuilderType> pipelineComponent, ICompleteOptionsReadable options)
-		{
-			return TryRegisterPipeline(pipelineComponent, options.PipelineFlags, options);
 		}
 	}
 }

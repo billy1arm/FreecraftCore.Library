@@ -87,11 +87,11 @@
           "lib/net46/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Packet.Auth/1.0.54": {
+      "FreecraftCore.Packet.Auth/1.0.56": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.API.Common.Auth": "1.0.31",
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.Metadata": "2.0.2"
         },
         "compile": {
@@ -101,7 +101,7 @@
           "lib/net46/FreecraftCore.Packet.Auth.dll": {}
         }
       },
-      "FreecraftCore.Packet.Common/1.0.54": {
+      "FreecraftCore.Packet.Common/1.0.56": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.2"
@@ -185,7 +185,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1"
         },
@@ -203,7 +203,7 @@
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
           "FreecraftCore.Network.Pipeline.API": "1.0.0",
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1"
@@ -304,11 +304,11 @@
           "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Packet.Auth/1.0.54": {
+      "FreecraftCore.Packet.Auth/1.0.56": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.API.Common.Auth": "1.0.31",
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.Metadata": "2.0.2",
           "NETStandard.Library": "1.6.0"
         },
@@ -319,7 +319,7 @@
           "lib/netstandard1.6/FreecraftCore.Packet.Auth.dll": {}
         }
       },
-      "FreecraftCore.Packet.Common/1.0.54": {
+      "FreecraftCore.Packet.Common/1.0.56": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.2",
@@ -1479,7 +1479,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1",
           "NETStandard.Library": "1.6.0"
@@ -1498,7 +1498,7 @@
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
           "FreecraftCore.Network.Pipeline.API": "1.0.0",
-          "FreecraftCore.Packet.Common": "1.0.54",
+          "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1",
@@ -1586,23 +1586,23 @@
         "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll"
       ]
     },
-    "FreecraftCore.Packet.Auth/1.0.54": {
-      "sha512": "1tBBBbJiXprtPdsXptOl118Lusk4GsBjXv7Th8KJokwhRR3EFIJBlxjT6k3FCsitKNQzE7OGmwl83o0jD+hv0A==",
+    "FreecraftCore.Packet.Auth/1.0.56": {
+      "sha512": "lIA/oexa79Uy0ICrWSj8A47AyoCChkebq8ISWwu7WssjKl+GICDgfAHzCvA9P8vdTPSPNYhA4xcKNYwEuixE9w==",
       "type": "package",
-      "path": "FreecraftCore.Packet.Auth/1.0.54",
+      "path": "FreecraftCore.Packet.Auth/1.0.56",
       "files": [
-        "FreecraftCore.Packet.Auth.1.0.54.nupkg.sha512",
+        "FreecraftCore.Packet.Auth.1.0.56.nupkg.sha512",
         "FreecraftCore.Packet.Auth.nuspec",
         "lib/net46/FreecraftCore.Packet.Auth.dll",
         "lib/netstandard1.6/FreecraftCore.Packet.Auth.dll"
       ]
     },
-    "FreecraftCore.Packet.Common/1.0.54": {
-      "sha512": "kJO+q7hCLtus95RP/MBr7YnDzPLk1h3g7jC/pzhD3QvNdU/YyW2aI5WIk0TwKzdLsQMpHMtjGDQT+lQN9SeC2w==",
+    "FreecraftCore.Packet.Common/1.0.56": {
+      "sha512": "W36CsQzIhD+jwToXynfioHNgasXcmZuNAodGfJqPyxFSMU5ktAmBRHrhMkikyMVlEw3Edi75qXX67en2fSdSXg==",
       "type": "package",
-      "path": "FreecraftCore.Packet.Common/1.0.54",
+      "path": "FreecraftCore.Packet.Common/1.0.56",
       "files": [
-        "FreecraftCore.Packet.Common.1.0.54.nupkg.sha512",
+        "FreecraftCore.Packet.Common.1.0.56.nupkg.sha512",
         "FreecraftCore.Packet.Common.nuspec",
         "lib/net46/FreecraftCore.Packet.Common.dll",
         "lib/netstandard1.6/FreecraftCore.Packet.Common.dll"
@@ -4657,7 +4657,7 @@
       "FreecraftCore.Crypto.Stream >= 1.0.23",
       "FreecraftCore.Network.Pipeline.API >= 1.0.0-*",
       "FreecraftCore.Network.Pipeline.Generic >= 1.0.0-*",
-      "FreecraftCore.Packet.Auth >= 1.0.54",
+      "FreecraftCore.Packet.Auth >= 1.0.56",
       "FreecraftCore.Serializer.API.Service >= 2.0.2",
       "FreecraftCore.Serializer.Stream >= 2.0.2",
       "JetBrains.Annotations >= 10.2.1"

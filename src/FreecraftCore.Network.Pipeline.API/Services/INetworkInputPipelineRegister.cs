@@ -14,8 +14,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TNetworkOperationCode"></typeparam>
 	/// <typeparam name="THeaderType"></typeparam>
 	/// <typeparam name="TPayloadType"></typeparam>
-	public interface INetworkInputPipelineRegister<TNetworkInputType, out TContextBuilderType, TNetworkOperationCode, THeaderType, TPayloadType>
-		where TContextBuilderType : INetworkMessageContextBuilder<TNetworkOperationCode, THeaderType, TPayloadType>
+	public interface INetworkInputPipelineRegister<TNetworkInputType, out TContextBuilderType, TNetworkOperationCode, THeaderType, TPayloadType> //do not remove these type parameters. They are needed for the extension API
 		where TNetworkOperationCode : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCode>
 		where TPayloadType : IMessageVerifyable

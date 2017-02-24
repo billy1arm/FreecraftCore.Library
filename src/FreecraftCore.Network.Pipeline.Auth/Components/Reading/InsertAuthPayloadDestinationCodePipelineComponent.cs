@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FreecraftCore.Packet;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
