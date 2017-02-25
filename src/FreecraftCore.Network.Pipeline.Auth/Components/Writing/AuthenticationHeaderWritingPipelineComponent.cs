@@ -13,12 +13,12 @@ namespace FreecraftCore.Network
 	/// <summary>
 	/// Pipeline component that builds and writes an authentication packet header into the writer.
 	/// </summary>
-	public class AuthHeaderWritingPipelineComponent : AuthenticationWireWriterPipelineComponent
+	public class AuthenticationHeaderWritingPipelineComponent : AuthenticationWireWriterPipelineComponent
 	{
 		[NotNull]
 		private ISerializerService Serializer { get; }
 
-		public AuthHeaderWritingPipelineComponent([NotNull] ISerializerService serializer)
+		public AuthenticationHeaderWritingPipelineComponent([NotNull] ISerializerService serializer)
 		{
 			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
 

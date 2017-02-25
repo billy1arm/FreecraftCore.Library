@@ -11,7 +11,7 @@ namespace FreecraftCore.Network
 	/// Type alia for the generic <see cref="WireWriterInputPipelineService{TMessageType,TNetworkOperationCodeType,THeaderType,TPayloadType}"/>
 	/// used for authentication messages.
 	/// </summary>
-	public class AuthenticationWriterInputPipelineService : WireWriterInputPipelineService<AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>
+	public class AuthenticationWireWriterInputPipelineService : WireWriterInputPipelineService<AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload>
 	{
 
 	}
