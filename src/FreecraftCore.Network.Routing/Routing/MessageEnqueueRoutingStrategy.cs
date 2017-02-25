@@ -25,10 +25,13 @@ namespace FreecraftCore.Network
 		}
 
 		/// <inheritdoc />
-		public void RouteMessage(TMessageType message)
+		public Task RouteMessage(TMessageType message)
 		{
+			//The async method for this doesn't work for some reason. Caused dll ref issue
 			if(!LinkedMessageQueue.Post(message))
 				throw new InvalidOperationException($"The buffer {nameof(LinkedMessageQueue)} in {GetType().FullName} did not route to queue.");
+
+			return Task.CompletedTask;
 		}
 	}
 }

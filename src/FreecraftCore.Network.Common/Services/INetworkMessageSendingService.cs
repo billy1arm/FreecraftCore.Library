@@ -12,6 +12,7 @@ namespace FreecraftCore.Network
 	/// <typeparam name="TOperationCodeType">The operation code of the message.</typeparam>
 	public interface INetworkMessageSendingService<TOperationCodeType>
 	{
+		//TODO: Change API. maybe
 		/// <summary>
 		/// Send the provided <see cref="message"/>
 		/// </summary>

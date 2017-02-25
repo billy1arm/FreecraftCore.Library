@@ -44,7 +44,7 @@ namespace FreecraftCore.Network
 
 			//If the header is null then this pipeline component is out of order or the header failed to deserialize
 			if (currentState.GameHeader == null)
-				throw new InvalidOperationException($"Failed to read the {nameof(NetworkOperationCode)} from the stream. There was no {typeof(THeaderType).FullName} in the {typeof(TNetworkContextBuilderType).FullName} available.");
+				throw new InvalidOperationException($"Failed to read the {typeof(TOperationCodeType).FullName} from the stream. There was no {typeof(THeaderType).FullName} in the {typeof(TNetworkContextBuilderType).FullName} available.");
 
 			//Doesn't need to be async because serializing doesn't need to be async unless we serialize directly to a network stream.
 			return Task.FromResult(input.PreprendWithBytesAsync(Serializer.Serialize(currentState.GameHeader.OperationCode)));
