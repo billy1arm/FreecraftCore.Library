@@ -43,7 +43,7 @@ namespace FreecraftCore.Packet
 			try
 			{
 				//Recheck otherwise there is a race condition
-				if (!NetworkOperationCodeMap.ContainsKey(NetworkOperationCodeMap.GetType()))
+				if (!NetworkOperationCodeMap.ContainsKey(provider.GetType()))
 					NetworkOperationCodeMap[provider.GetType()] = ReflectForGameOperationCode(provider.GetType());
 			}
 			finally
@@ -76,7 +76,7 @@ namespace FreecraftCore.Packet
 			try
 			{
 				//Recheck otherwise there is a race condition
-				if (!AuthenticationCodeMap.ContainsKey(NetworkOperationCodeMap.GetType()))
+				if (!AuthenticationCodeMap.ContainsKey(provider.GetType()))
 					AuthenticationCodeMap[provider.GetType()] = ReflectForAuthenticationOperationCode(provider.GetType());
 			}
 			finally
