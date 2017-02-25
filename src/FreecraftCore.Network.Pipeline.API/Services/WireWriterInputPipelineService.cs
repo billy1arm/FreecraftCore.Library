@@ -28,12 +28,12 @@ namespace FreecraftCore.Network
 
 		}
 
-		public IWireStreamWriterStrategyAsync RecievePipelineMessage([NotNull] TMessageType input, [NotNull] IWireStreamWriterStrategyAsync currentState)
+		public async Task<IWireStreamWriterStrategyAsync> RecievePipelineMessage([NotNull] TMessageType input, [NotNull] IWireStreamWriterStrategyAsync currentState)
 		{
 			//Pass the writer to the header and payload pipelines
-			PassThroughPipeline(HeaderPipelines, input, currentState).Wait();
+			await PassThroughPipeline(HeaderPipelines, input, currentState);
 
-			PassThroughPipeline(PayloadPipelines, input, currentState).Wait();
+			await PassThroughPipeline(PayloadPipelines, input, currentState);
 
 			//Return the built context
 			return currentState;

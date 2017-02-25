@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FreecraftCore.Network
 {
-	public interface INetworkMessageWriterHandler<in TMessageType, TWriterType> : IPipelineListener<TWriterType, TMessageType, TWriterType>
+	public interface INetworkMessageWriterHandler<in TMessageType, TWriterType> : IPipelineListenerAsync<TWriterType, TMessageType, TWriterType>
 	{
 
 	}
