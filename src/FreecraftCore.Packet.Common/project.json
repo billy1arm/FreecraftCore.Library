@@ -2,7 +2,7 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Serializer.Metadata": "2.0.2"
+    "FreecraftCore.Serializer.Metadata": "2.0.6"
   },
 
   "frameworks": {
