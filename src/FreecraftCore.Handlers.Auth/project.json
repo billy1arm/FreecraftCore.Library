@@ -2,16 +2,16 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Crypto.Packet": "1.0.23",
-    "FreecraftCore.Crypto.Stream": "1.0.23",
+    "FreecraftCore.Crypto.Packet": "1.0.24",
+    "FreecraftCore.Crypto.Stream": "1.0.24",
     "FreecraftCore.Handlers.Common": "1.0.0-*",
-    "FreecraftCore.Network.Common": "1.0.14",
-    "FreecraftCore.Network.Pipeline.API": "1.0.14",
-    "FreecraftCore.Network.Pipeline.Generic": "1.0.14",
-    "FreecraftCore.Packet.Auth": "1.0.56",
-    "FreecraftCore.Packet.Common": "1.0.56",
-    "FreecraftCore.Serializer.API.Service": "2.0.2",
-    "FreecraftCore.Serializer.Stream": "2.0.2",
+    "FreecraftCore.Network.Common": "1.0.15",
+    "FreecraftCore.Network.Pipeline.API": "1.0.15",
+    "FreecraftCore.Network.Pipeline.Generic": "1.0.15",
+    "FreecraftCore.Packet.Auth": "1.0.57",
+    "FreecraftCore.Packet.Common": "1.0.57",
+    "FreecraftCore.Serializer.API.Service": "2.0.6",
+    "FreecraftCore.Serializer.Stream": "2.0.6",
     "JetBrains.Annotations": "10.2.1"
   },
 

@@ -75,7 +75,7 @@
           "lib/net46/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Network.Common/1.0.14": {
+      "FreecraftCore.Network.Common/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Packet.Common": "1.0.56",
@@ -88,7 +88,7 @@
           "lib/net46/FreecraftCore.Network.Common.dll": {}
         }
       },
-      "FreecraftCore.Network.Pipeline.API/1.0.14": {
+      "FreecraftCore.Network.Pipeline.API/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Packet.Common": "1.0.56",
@@ -102,12 +102,12 @@
           "lib/net46/FreecraftCore.Network.Pipeline.API.dll": {}
         }
       },
-      "FreecraftCore.Network.Pipeline.Generic/1.0.14": {
+      "FreecraftCore.Network.Pipeline.Generic/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
-          "FreecraftCore.Network.Pipeline.API": "1.0.14",
+          "FreecraftCore.Network.Pipeline.API": "1.0.15",
           "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
@@ -276,7 +276,7 @@
           "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Network.Common/1.0.14": {
+      "FreecraftCore.Network.Common/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Packet.Common": "1.0.56",
@@ -290,7 +290,7 @@
           "lib/netstandard1.6/FreecraftCore.Network.Common.dll": {}
         }
       },
-      "FreecraftCore.Network.Pipeline.API/1.0.14": {
+      "FreecraftCore.Network.Pipeline.API/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Packet.Common": "1.0.56",
@@ -305,12 +305,12 @@
           "lib/netstandard1.6/FreecraftCore.Network.Pipeline.API.dll": {}
         }
       },
-      "FreecraftCore.Network.Pipeline.Generic/1.0.14": {
+      "FreecraftCore.Network.Pipeline.Generic/1.0.15": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
-          "FreecraftCore.Network.Pipeline.API": "1.0.14",
+          "FreecraftCore.Network.Pipeline.API": "1.0.15",
           "FreecraftCore.Packet.Common": "1.0.56",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
@@ -1543,34 +1543,34 @@
         "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll"
       ]
     },
-    "FreecraftCore.Network.Common/1.0.14": {
-      "sha512": "qj9Zi/5Va6dk5TcjbglkxMD7p0kF14xya1PVOJEc+j1aKlLQbYE3ayotDHKpLv4NxxP9fPshOc+9zSrUIDbVuA==",
+    "FreecraftCore.Network.Common/1.0.15": {
+      "sha512": "SjSn83mrMsZW7kI9Z4Wtw2SyLDbzpRYdyPSFocU5k1OI2LiI+XOuVt6goEgB7lZ7lZkOFzhQaLiCDdiI+5wokQ==",
       "type": "package",
-      "path": "FreecraftCore.Network.Common/1.0.14",
+      "path": "FreecraftCore.Network.Common/1.0.15",
       "files": [
-        "FreecraftCore.Network.Common.1.0.14.nupkg.sha512",
+        "FreecraftCore.Network.Common.1.0.15.nupkg.sha512",
         "FreecraftCore.Network.Common.nuspec",
         "lib/net46/FreecraftCore.Network.Common.dll",
         "lib/netstandard1.6/FreecraftCore.Network.Common.dll"
       ]
     },
-    "FreecraftCore.Network.Pipeline.API/1.0.14": {
-      "sha512": "SC6NVNxNRt651tTmYa2+6m1wDY+VCMq8rZRU9hq1SFOBMaXH7QGlfBG5KkubeThwFmTQ/QslyM1yGA9TeQiHig==",
+    "FreecraftCore.Network.Pipeline.API/1.0.15": {
+      "sha512": "Zeg59GVLVp0429uPt4lLZzX9NgHbBTY9MFJu/CNCtoq0P7J0ugZP8Kd+GQnnEwxRvmVGykMGfHUdw9WQeeIUyQ==",
       "type": "package",
-      "path": "FreecraftCore.Network.Pipeline.API/1.0.14",
+      "path": "FreecraftCore.Network.Pipeline.API/1.0.15",
       "files": [
-        "FreecraftCore.Network.Pipeline.API.1.0.14.nupkg.sha512",
+        "FreecraftCore.Network.Pipeline.API.1.0.15.nupkg.sha512",
         "FreecraftCore.Network.Pipeline.API.nuspec",
         "lib/net46/FreecraftCore.Network.Pipeline.API.dll",
         "lib/netstandard1.6/FreecraftCore.Network.Pipeline.API.dll"
       ]
     },
-    "FreecraftCore.Network.Pipeline.Generic/1.0.14": {
-      "sha512": "Gz+T5dkVeyz/1DgIDs7O58qyvFqEd79+Pk5o3NpUs2bx7V3PjTkyxY0p+2X7tbs+Fmb/LEx6iK3YCbjIAD+hCg==",
+    "FreecraftCore.Network.Pipeline.Generic/1.0.15": {
+      "sha512": "g4gjoIsNM7zVYcJmw2hBE8AICbH2Jqjjf+SG3ID+CgaHT2zbl+09YxmH5tURk4bWUjN12R+N053bDLSUx7AjnA==",
       "type": "package",
-      "path": "FreecraftCore.Network.Pipeline.Generic/1.0.14",
+      "path": "FreecraftCore.Network.Pipeline.Generic/1.0.15",
       "files": [
-        "FreecraftCore.Network.Pipeline.Generic.1.0.14.nupkg.sha512",
+        "FreecraftCore.Network.Pipeline.Generic.1.0.15.nupkg.sha512",
         "FreecraftCore.Network.Pipeline.Generic.nuspec",
         "lib/net46/FreecraftCore.Network.Pipeline.Generic.dll",
         "lib/netstandard1.6/FreecraftCore.Network.Pipeline.Generic.dll"
@@ -4622,9 +4622,9 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.Network.Common >= 1.0.14",
-      "FreecraftCore.Network.Pipeline.API >= 1.0.14",
-      "FreecraftCore.Network.Pipeline.Generic >= 1.0.14",
+      "FreecraftCore.Network.Common >= 1.0.15",
+      "FreecraftCore.Network.Pipeline.API >= 1.0.15",
+      "FreecraftCore.Network.Pipeline.Generic >= 1.0.15",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v4.6": [],
