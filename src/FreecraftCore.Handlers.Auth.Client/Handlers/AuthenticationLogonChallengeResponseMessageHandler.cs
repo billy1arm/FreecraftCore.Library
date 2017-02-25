@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.API;
 using FreecraftCore.API.Client;
+using FreecraftCore.API.Common;
 using FreecraftCore.Crypto;
 using FreecraftCore.Network;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using JetBrains.Annotations;
+using Org.BouncyCastle.Asn1;
 
 namespace FreecraftCore.Handlers
 {
@@ -59,6 +61,9 @@ namespace FreecraftCore.Handlers
 
 			if (String.IsNullOrWhiteSpace(DetailsProvider.Details.PlainTextPassword))
 				throw new InvalidOperationException($"There was no {nameof(DetailsProvider.Details.PlainTextPassword)} available.");
+
+			if(stronglyTypedPayload.Result != AuthenticationResult.Success)
+				throw new InvalidOperationException($"The auth challenge failed. Returned: {stronglyTypedPayload.Result}.");
 
 			AuthLogonProofRequest proof = null;
 
