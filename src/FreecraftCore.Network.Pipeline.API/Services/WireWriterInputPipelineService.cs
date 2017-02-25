@@ -15,8 +15,8 @@ namespace FreecraftCore.Network
 	/// <typeparam name="THeaderType">The header type.</typeparam>
 	/// <typeparam name="TPayloadType">The payload type.</typeparam>
 	/// <typeparam name="TMessageType"></typeparam>
-	public abstract class WireWriterInputPipelineService<TMessageType, TNetworkOperationCodeType, THeaderType, TPayloadType> : WireNetworkInputPipelineService<IWireStreamWriterStrategy, TMessageType, TNetworkOperationCodeType, THeaderType, TPayloadType>,
-		INetworkMessageWriterHandler<TMessageType, IWireStreamWriterStrategy>
+	public abstract class WireWriterInputPipelineService<TMessageType, TNetworkOperationCodeType, THeaderType, TPayloadType> : WireNetworkInputPipelineService<IWireStreamWriterStrategyAsync, TMessageType, TNetworkOperationCodeType, THeaderType, TPayloadType>,
+		INetworkMessageWriterHandler<TMessageType, IWireStreamWriterStrategyAsync>
 		where TNetworkOperationCodeType : struct
 		where THeaderType : IMessageVerifyable, IOperationIdentifable<TNetworkOperationCodeType>
 		where TPayloadType : IMessageVerifyable
@@ -28,7 +28,7 @@ namespace FreecraftCore.Network
 
 		}
 
-		public IWireStreamWriterStrategy RecievePipelineMessage([NotNull] TMessageType input, [NotNull] IWireStreamWriterStrategy currentState)
+		public IWireStreamWriterStrategyAsync RecievePipelineMessage([NotNull] TMessageType input, [NotNull] IWireStreamWriterStrategyAsync currentState)
 		{
 			//Pass the writer to the header and payload pipelines
 			PassThroughPipeline(HeaderPipelines, input, currentState).RunSynchronously();
