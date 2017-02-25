@@ -5,7 +5,8 @@
     "JetBrains.Annotations": "10.2.1",
     "FreecraftCore.Crypto.BigInteger": "1.0.0-*",
     "FreecraftCore.Crypto.Packet": "1.0.0-*",
-    "FreecraftCore.Serializer.Stream.Default": "2.0.1"
+    "FreecraftCore.Serializer.Stream": "2.0.6",
+    "FreecraftCore.Serializer.Stream.Default": "2.0.6"
   },
 
   "frameworks": {

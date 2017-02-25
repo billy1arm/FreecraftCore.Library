@@ -36,9 +36,9 @@ namespace FreecraftCore.Crypto
 			return SessionCryptoService.ProcessBytes(Source.ReadBytes(count), 0);
 		}
 
-		public override byte[] PeakBytes(int count)
+		public override byte[] PeekBytes(int count)
 		{
-			return SessionCryptoService.ProcessBytes(Source.PeakBytes(count), 0);
+			return SessionCryptoService.ProcessBytes(Source.PeekBytes(count), 0);
 		}
 	}
 }

@@ -44,7 +44,7 @@ namespace FreecraftCore.Crypto
 
 		public virtual byte PeekByte()
 		{
-			return PeakBytes(1)[0];
+			return PeekBytes(1)[0];
 		}
 
 		public virtual byte[] ReadAllBytes()
@@ -57,9 +57,9 @@ namespace FreecraftCore.Crypto
 			return Source.ReadBytes(count);
 		}
 
-		public virtual byte[] PeakBytes(int count)
+		public virtual byte[] PeekBytes(int count)
 		{
-			return Source.PeakBytes(count);
+			return Source.PeekBytes(count);
 		}
 	}
 }

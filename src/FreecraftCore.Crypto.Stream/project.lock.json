@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.Serializer.Metadata/2.0.1": {
+      "FreecraftCore.Serializer.Metadata/2.0.6": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -15,7 +15,7 @@
           "lib/net46/FreecraftCore.Serializer.Metadata.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream/2.0.1": {
+      "FreecraftCore.Serializer.Stream/2.0.6": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1"
@@ -27,10 +27,10 @@
           "lib/net46/FreecraftCore.Serializer.Stream.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream.Default/2.0.1": {
+      "FreecraftCore.Serializer.Stream.Default/2.0.6": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Serializer.Stream": "2.0.1",
+          "FreecraftCore.Serializer.Stream": "2.0.6",
           "JetBrains.Annotations": "10.2.1"
         },
         "compile": {
@@ -62,7 +62,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "2.0.1"
+          "FreecraftCore.Serializer.Metadata": "2.0.6"
         },
         "frameworkAssemblies": [
           "System.Numerics"
@@ -121,7 +121,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.Serializer.Metadata/2.0.1": {
+      "FreecraftCore.Serializer.Metadata/2.0.6": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1",
@@ -134,7 +134,7 @@
           "lib/netstandard1.6/FreecraftCore.Serializer.Metadata.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream/2.0.1": {
+      "FreecraftCore.Serializer.Stream/2.0.6": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "10.2.1",
@@ -147,10 +147,10 @@
           "lib/netstandard1.6/FreecraftCore.Serializer.Stream.dll": {}
         }
       },
-      "FreecraftCore.Serializer.Stream.Default/2.0.1": {
+      "FreecraftCore.Serializer.Stream.Default/2.0.6": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Serializer.Stream": "2.0.1",
+          "FreecraftCore.Serializer.Stream": "2.0.6",
           "JetBrains.Annotations": "10.2.1",
           "NETStandard.Library": "1.6.0"
         },
@@ -1254,7 +1254,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "FreecraftCore.Serializer.Metadata": "2.0.1",
+          "FreecraftCore.Serializer.Metadata": "2.0.6",
           "NETStandard.Library": "1.6.0"
         },
         "compile": {
@@ -1315,12 +1315,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.Serializer.Metadata/2.0.1": {
-      "sha512": "wBsUlmkY6EuluF2t8eHurpX0MrnKlUG5/OQN1dvARCsYTbRo2DgwUxWhyp9S2qnCuR++B9XHQcB3RGvI9RhJAw==",
+    "FreecraftCore.Serializer.Metadata/2.0.6": {
+      "sha512": "KTS625WIE/sCOAlaVLLfKMhq+Px7M4oviq5S8vE4VMlbSzgRL5hPka9+PHqdAdWklRDaT73ssGLLH+pJcczxGw==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Metadata/2.0.1",
+      "path": "FreecraftCore.Serializer.Metadata/2.0.6",
       "files": [
-        "FreecraftCore.Serializer.Metadata.2.0.1.nupkg.sha512",
+        "FreecraftCore.Serializer.Metadata.2.0.6.nupkg.sha512",
         "FreecraftCore.Serializer.Metadata.nuspec",
         "lib/net35/FreecraftCore.Serializer.Metadata.dll",
         "lib/net45/FreecraftCore.Serializer.Metadata.dll",
@@ -1328,24 +1328,24 @@
         "lib/netstandard1.6/FreecraftCore.Serializer.Metadata.dll"
       ]
     },
-    "FreecraftCore.Serializer.Stream/2.0.1": {
-      "sha512": "I3gXvjupEcuaWNs6lvGOK/WyTYkyhXs3J50amVN8/0vSgb51DitqPDVElMPDuFqYCgBcRb2ctnIiWBdwiPpyzA==",
+    "FreecraftCore.Serializer.Stream/2.0.6": {
+      "sha512": "yvZdY7n5ZH4TvppYzV6dLZbXlYrvGgxscckaWY33OFzoq2d+HI984P6HakyCJQ23mepfkNbaq3kpsT3IbBOR5Q==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Stream/2.0.1",
+      "path": "FreecraftCore.Serializer.Stream/2.0.6",
       "files": [
-        "FreecraftCore.Serializer.Stream.2.0.1.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.2.0.6.nupkg.sha512",
         "FreecraftCore.Serializer.Stream.nuspec",
         "lib/net45/FreecraftCore.Serializer.Stream.dll",
         "lib/net46/FreecraftCore.Serializer.Stream.dll",
         "lib/netstandard1.6/FreecraftCore.Serializer.Stream.dll"
       ]
     },
-    "FreecraftCore.Serializer.Stream.Default/2.0.1": {
-      "sha512": "IqO2mv1sgM398KdBAqs+NNoe63E+FP1a8HmLbPj0xtxMB1LUsnsMsYLA/IHrfBYsUM2GGXLM76tl7H3FCwAE/Q==",
+    "FreecraftCore.Serializer.Stream.Default/2.0.6": {
+      "sha512": "tS8ifpp7LTA+HJIHXFNsoKfTqsZg03noRODUOTYbzaoJzJU2/wTrtO9LfXy3/DF27UQe6hCZNqGQLcOqfjDzpw==",
       "type": "package",
-      "path": "FreecraftCore.Serializer.Stream.Default/2.0.1",
+      "path": "FreecraftCore.Serializer.Stream.Default/2.0.6",
       "files": [
-        "FreecraftCore.Serializer.Stream.Default.2.0.1.nupkg.sha512",
+        "FreecraftCore.Serializer.Stream.Default.2.0.6.nupkg.sha512",
         "FreecraftCore.Serializer.Stream.Default.nuspec",
         "lib/net45/FreecraftCore.Serializer.Stream.Default.dll",
         "lib/net46/FreecraftCore.Serializer.Stream.Default.dll",
@@ -4361,7 +4361,8 @@
     "": [
       "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "FreecraftCore.Crypto.Packet >= 1.0.0-*",
-      "FreecraftCore.Serializer.Stream.Default >= 2.0.1",
+      "FreecraftCore.Serializer.Stream >= 2.0.6",
+      "FreecraftCore.Serializer.Stream.Default >= 2.0.6",
       "JetBrains.Annotations >= 10.2.1"
     ],
     ".NETFramework,Version=v4.6": [],

@@ -25,7 +25,7 @@ namespace FreecraftCore.Crypto
 		/// <inheritdoc />
 		public async Task<byte> PeekByteAsync()
 		{
-			return (await PeakBytesAsync(1))[0];
+			return (await PeekBytesAsync(1))[0];
 		}
 
 		/// <inheritdoc />
@@ -41,9 +41,9 @@ namespace FreecraftCore.Crypto
 		}
 
 		/// <inheritdoc />
-		public async Task<byte[]> PeakBytesAsync(int count)
+		public async Task<byte[]> PeekBytesAsync(int count)
 		{
-			return SessionCryptoService.ProcessBytes(await Source.PeakBytesAsync(count), 0);
+			return SessionCryptoService.ProcessBytes(await Source.PeekBytesAsync(count), 0);
 
 		}
 	}
