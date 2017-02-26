@@ -10,7 +10,7 @@ namespace FreecraftCore.Network
 	/// an object provides access to abstraction over a connected
 	/// service or client.
 	/// </summary>
-	public interface INetworkConnectionContext
+	public interface INetworkConnectionContext : IDisconnectable
 	{
 		//JAMLink is suppose to contain information about the type of program
 		/// <summary>
