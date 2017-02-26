@@ -6,6 +6,7 @@ using FreecraftCore.API;
 using FreecraftCore.API.Client;
 using FreecraftCore.API.Common;
 using FreecraftCore.Crypto;
+using FreecraftCore.Handlers;
 using FreecraftCore.Network;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
@@ -17,6 +18,7 @@ namespace FreecraftCore.Handlers
 	/// <summary>
 	/// Handler that handles the <see cref="AuthLogonChallengeResponse"/>.
 	/// </summary>
+	[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_CHALLENGE)]
 	public class AuthenticationLogonChallengeResponseMessageHandler : AuthenticationMessageHandler<AuthLogonChallengeResponse>
 	{
 		/// <summary>

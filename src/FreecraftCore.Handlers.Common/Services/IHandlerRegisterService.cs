@@ -20,5 +20,13 @@ namespace FreecraftCore.Handlers
 		/// <param name="code">The operation code.</param>
 		/// <returns>True if it was able to register the provided handler.</returns>
 		bool TryRegister([NotNull] THandlerType handler, TOperationCodeType code);
+
+		/// <summary>
+		/// Tries to register a default handler for handling when
+		/// no other handlers is found.
+		/// </summary>
+		/// <param name="handler">The default handler.</param>
+		/// <returns>True if it was able to register the provided handler.</returns>
+		bool TryRegisterDefault(THandlerType handler);
 	}
 }

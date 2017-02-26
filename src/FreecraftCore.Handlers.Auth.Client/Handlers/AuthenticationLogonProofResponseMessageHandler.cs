@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore.Handlers
 {
+	[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_PROOF)]
 	public class AuthenticationLogonProofResponseMessageHandler : AuthenticationMessageHandler<AuthLogonProofResponse>
 	{
 		/// <summary>

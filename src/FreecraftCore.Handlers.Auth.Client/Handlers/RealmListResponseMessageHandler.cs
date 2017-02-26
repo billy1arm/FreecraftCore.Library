@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using FreecraftCore.API.Common;
 using FreecraftCore.Network;
 using FreecraftCore.Packet.Auth;
+using FreecraftCore.Packet.Common;
 using JetBrains.Annotations;
 
 namespace FreecraftCore.Handlers
 {
+	[AuthenticationMessageHandler(AuthOperationCode.REALM_LIST)]
 	public class RealmListResponseMessageHandler : AuthenticationMessageHandler<AuthRealmListResponse>
 	{
 		/// <summary>

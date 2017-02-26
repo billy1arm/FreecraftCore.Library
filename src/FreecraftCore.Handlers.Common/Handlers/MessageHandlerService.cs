@@ -38,6 +38,19 @@ namespace FreecraftCore.Handlers
 		[NotNull]
 		protected Dictionary<TOperationCode, INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>> AsyncMessageHandlerMap { get; }
 
+		//TODO: This is kind of ugly but it's the only way we can support defaults
+		/// <summary>
+		/// Optional default syncronous handler.
+		/// </summary>
+		[CanBeNull]
+		private INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType> DefaultSyncHandler { get; set; }
+
+		/// <summary>
+		/// Optional default async handler.
+		/// </summary>
+		[CanBeNull]
+		private INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType> DefaultAsyncHandler { get; set; }
+
 		protected MessageHandlerService()
 		{
 			AsyncMessageHandlerMap = new Dictionary<TOperationCode, INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType>>();
@@ -83,7 +96,35 @@ namespace FreecraftCore.Handlers
 			else if (AsyncMessageHandlerMap.ContainsKey(code))
 				return await AsyncMessageHandlerMap[code].RecievePipelineMessage(input, currentState);
 
+			//Try to find a default
+			if (DefaultSyncHandler != null)
+				return DefaultSyncHandler.RecievePipelineMessage(input, currentState);
+			else if (DefaultAsyncHandler != null)
+				return await DefaultAsyncHandler.RecievePipelineMessage(input, currentState);
+
 			throw new InvalidOperationException($"Requested {typeof(TOperationCode).FullName} with Value: {code} did not have a matching handler contained in the service.");
+		}
+
+		/// <inheritdoc />
+		public bool TryRegisterDefault([NotNull] INetworkMessagePipelineListener<TMessageType, TOperationCode, THeaderType, TPayloadType> handler)
+		{
+			if (handler == null) throw new ArgumentNullException(nameof(handler));
+
+			//TODO: Should we override this?
+			DefaultSyncHandler = handler;
+
+			return true;
+		}
+
+		/// <inheritdoc />
+		public bool TryRegisterDefault([NotNull] INetworkMessagePipelineListenerAsync<TMessageType, TOperationCode, THeaderType, TPayloadType> handler)
+		{
+			if (handler == null) throw new ArgumentNullException(nameof(handler));
+
+			//TODO: Should we override this?
+			DefaultAsyncHandler = handler;
+
+			return true;
 		}
 	}
 }
