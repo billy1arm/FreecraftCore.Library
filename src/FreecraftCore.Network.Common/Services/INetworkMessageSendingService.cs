@@ -18,7 +18,7 @@ namespace FreecraftCore.Network
 		/// </summary>
 		/// <typeparam name="TMessageType">A non-null message that </typeparam>
 		/// <param name="message"></param>
-		void SendMessage<TMessageType>(TMessageType message)
+		Task SendMessage<TMessageType>(TMessageType message)
 			where TMessageType : IOperationCodeProvidable<TOperationCodeType>, IMessageVerifyable;
 	}
 }
