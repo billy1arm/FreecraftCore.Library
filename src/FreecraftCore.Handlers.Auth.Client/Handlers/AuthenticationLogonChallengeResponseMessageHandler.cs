@@ -19,7 +19,7 @@ namespace FreecraftCore.Handlers
 	/// Handler that handles the <see cref="AuthLogonChallengeResponse"/>.
 	/// </summary>
 	[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_CHALLENGE)]
-	public class AuthenticationLogonChallengeResponseMessageHandler : AuthenticationMessageHandler<AuthLogonChallengeResponse>
+	public class AuthenticationLogonChallengeResponseMessageHandler : AuthenticationMessageHandlerAsync<AuthLogonChallengeResponse>
 	{
 		/// <summary>
 		/// Injected details provider dependency.
@@ -52,7 +52,7 @@ namespace FreecraftCore.Handlers
 
 		//The parameters are promised to never be null
 		/// <inheritdoc />
-		protected override NetworkMessageContextState RecieveMessage(AuthenticationNetworkMessageContext context, AuthLogonChallengeResponse stronglyTypedPayload)
+		protected override async Task<NetworkMessageContextState> RecieveMessage(AuthenticationNetworkMessageContext context, AuthLogonChallengeResponse stronglyTypedPayload)
 		{
 			//Check that we have a valid account and password
 			if(DetailsProvider.Details == null)
@@ -81,7 +81,7 @@ namespace FreecraftCore.Handlers
 			}
 
 			//Send the proof to the authserver
-			SendService.SendMessage(proof);
+			await SendService.SendMessage(proof);
 
 			return NetworkMessageContextState.Handled;
 		}

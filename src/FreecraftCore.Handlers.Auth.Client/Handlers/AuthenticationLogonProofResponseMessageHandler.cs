@@ -12,7 +12,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore.Handlers
 {
 	[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_PROOF)]
-	public class AuthenticationLogonProofResponseMessageHandler : AuthenticationMessageHandler<AuthLogonProofResponse>
+	public class AuthenticationLogonProofResponseMessageHandler : AuthenticationMessageHandlerAsync<AuthLogonProofResponse>
 	{
 		/// <summary>
 		/// Publisher object that can publish the authentication result.
@@ -36,13 +36,15 @@ namespace FreecraftCore.Handlers
 
 		//The parameters are promised to never be null
 		/// <inheritdoc />
-		protected override NetworkMessageContextState RecieveMessage(AuthenticationNetworkMessageContext context, AuthLogonProofResponse stronglyTypedPayload)
+		protected override async Task<NetworkMessageContextState> RecieveMessage(AuthenticationNetworkMessageContext context, AuthLogonProofResponse stronglyTypedPayload)
 		{
 			OnAuthenticationResultRecieved.OnNext(stronglyTypedPayload.AuthResult);
 
 			//TODO: How should the result be pushed out into UI or other space?
 			if (stronglyTypedPayload.AuthResult == AuthenticationResult.Success)
-				SendService.SendMessage(new AuthRealmListRequest()); //Send the realm list request too.
+				await SendService.SendMessage(new AuthRealmListRequest()); //Send the realm list request too.
+			else
+				context.ConnectionLink.Disconnect(); //if it's not success when we're done and dead
 
 			return NetworkMessageContextState.Handled;
 		}

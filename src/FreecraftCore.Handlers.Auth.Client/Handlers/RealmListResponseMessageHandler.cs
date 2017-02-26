@@ -34,6 +34,9 @@ namespace FreecraftCore.Handlers
 			//Push all the realm info
 			stronglyTypedPayload.Realms.ToObservable().Subscribe(OnRealmInformationAvailable).Dispose();
 
+			//We should disconnect after we recieve the response
+			context.ConnectionLink.Disconnect();
+
 			return NetworkMessageContextState.Handled;
 		}
 	}
