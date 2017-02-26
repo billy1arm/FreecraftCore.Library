@@ -2,9 +2,9 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.Network.Common": "1.0.16",
-    "FreecraftCore.Network.Pipeline.API": "1.0.16",
-    "FreecraftCore.Network.Pipeline.Generic": "1.0.16",
+    "FreecraftCore.Network.Common": "1.0.17",
+    "FreecraftCore.Network.Pipeline.API": "1.0.17",
+    "FreecraftCore.Network.Pipeline.Generic": "1.0.17",
     "JetBrains.Annotations": "10.2.1"
   },
 
