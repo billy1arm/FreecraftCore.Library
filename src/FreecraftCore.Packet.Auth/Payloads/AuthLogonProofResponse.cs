@@ -11,7 +11,7 @@ namespace FreecraftCore.Packet.Auth
 	/// Response payload sent in response to the <see cref="AuthLogonProofRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Client)] //TODO: Figure out how to support linking with the limited information.
+	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Client)]
 	public class AuthLogonProofResponse : AuthenticationPayload
 	{
 		//TODO: Implement
