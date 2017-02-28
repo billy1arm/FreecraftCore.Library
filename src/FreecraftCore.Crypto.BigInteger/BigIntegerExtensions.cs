@@ -8,16 +8,6 @@ namespace FreecraftCore.Crypto
 	public static class BigIntegerExtensions
 	{
 		/// <summary>
-		/// Header for Array types.
-		/// </summary>
-		[StructLayout(LayoutKind.Sequential, Pack = 1)]
-		private struct ArrayHeader
-		{
-			public UIntPtr type;
-			public UIntPtr length;
-		}
-
-		/// <summary>
 		/// Returns <see cref="BigInteger"/> in byteform but truncates
 		/// the final field if it's 0.
 		/// (The MSB)
@@ -26,21 +16,17 @@ namespace FreecraftCore.Crypto
 		/// <returns></returns>
 		public static unsafe byte[] ToCleanByteArray(this BigInteger bigInt)
 		{
-			byte[] array = bigInt.ToByteArray();
+			//We removed the array header memory hack
+			//due to it likely causes the runtime crashes
+			byte[] array = b.ToByteArray();
+
 			if (array.Length == 0 || array[array.Length - 1] != 0)
 				return array;
 
-			//Remove following 0 from end (clean)
-			fixed (void* bytePtr = &array[0])
-			{
-				//Grabs the header for the array
-				ArrayHeader* arrayHeader = (ArrayHeader*)bytePtr - 1;
+			byte[] temp = new byte[array.Length - 1];
+			Array.Copy(array, temp, temp.Length);
 
-				//Hacks the array length to be one less than the original size.
-				arrayHeader->length = (UIntPtr)(array.Length - 1);
-			}
-
-			return array;
+			return temp;
 		}
 
 		//Bouncy has this implemented
