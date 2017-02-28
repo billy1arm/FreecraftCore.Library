@@ -18,7 +18,7 @@ namespace FreecraftCore.Crypto
 		{
 			//We removed the array header memory hack
 			//due to it likely causes the runtime crashes
-			byte[] array = b.ToByteArray();
+			byte[] array = bigInt.ToByteArray();
 
 			if (array.Length == 0 || array[array.Length - 1] != 0)
 				return array;
