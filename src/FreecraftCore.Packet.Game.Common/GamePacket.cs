@@ -14,7 +14,7 @@ namespace FreecraftCore.Packet
 	/// <summary>
 	/// A game packet.
 	/// </summary>
-	public class GamePacket : INetworkPacket<NetworkOperationCode, IGamePacketHeader, IGamePacketPayload>
+	public class GamePacket : INetworkPacket<NetworkOperationCode, IGamePacketHeader, GamePacketPayload>
 	{
 		/// <summary>
 		/// Header data associated with the packet.
@@ -24,9 +24,9 @@ namespace FreecraftCore.Packet
 
 		/// <inheritdoc />
 		[NotNull]
-		public IGamePacketPayload Payload { get; }
+		public GamePacketPayload Payload { get; }
 
-		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] IGamePacketPayload payload)
+		public GamePacket([NotNull] IGamePacketHeader header, [NotNull] GamePacketPayload payload)
 		{
 			if (header == null)
 				throw new ArgumentNullException(nameof(header), $"Must provided a non-null header.");
