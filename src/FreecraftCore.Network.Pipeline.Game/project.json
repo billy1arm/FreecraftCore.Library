@@ -1,0 +1,30 @@
+﻿{
+    "version": "1.0.0-*",
+
+  "dependencies": {
+    "FreecraftCore.Crypto.Packet": "1.0.23",
+    "FreecraftCore.Crypto.Stream": "1.0.23",
+    "FreecraftCore.Network.Pipeline.API": "1.0.0-*",
+    "FreecraftCore.Network.Pipeline.Generic": "1.0.0-*",
+    "FreecraftCore.Packet.Game.Common": "1.0.58",
+    "FreecraftCore.Serializer.API.Service": "2.0.2",
+    "FreecraftCore.Serializer.Stream": "2.0.2",
+    "JetBrains.Annotations": "10.2.1"
+  },
+
+  "frameworks": {
+    "net46": {
+
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+
+    "buildOptions": {
+        "optimize": true
+    }
+}

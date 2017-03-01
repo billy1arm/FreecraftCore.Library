@@ -36,7 +36,7 @@ namespace FreecraftCore
 		/// <param name="pipelineRegister">Pipeline service to register on.</param>
 		/// <returns>Register for fluent chaining.</returns>
 		public static INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithType<TPipelineComponentType>(this INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister, [CanBeNull] Func<UnorderedPipelineRegisterationOptions, ICompleteOptionsReadable> options = null)
-			where TPipelineComponentType : IPipelineListenerAsync<IWireStreamWriterStrategyAsync, IWireStreamWriterStrategy, AuthenticationPayload>, new()
+			where TPipelineComponentType : IPipelineListenerAsync<IWireStreamWriterStrategyAsync, IWireStreamWriterStrategyAsync, AuthenticationPayload>, new()
 		{
 			//This just Activator.CreateInstance a pipeline component that doesn't require any parameters.
 			//Provides a slightly clean looking API
@@ -114,20 +114,6 @@ namespace FreecraftCore
 
 			//Just register through generic with HeaderPipeline.Main
 			return pipelineRegister.With(new AuthenticationHeaderWritingPipelineComponent(serializer), o => o.For<HeaderPipeline.Main>());
-		}
-
-		/// <summary>
-		/// Registers a payload writing pipeline component cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
-		/// </summary>
-		/// <param name="pipelineRegister">Pipeline service to register on.</param>
-		/// <param name="serializer"></param>
-		/// <returns>Register for fluent chaining.</returns>
-		public static INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> WithPayloadWriting(this INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, AuthenticationPayload, AuthOperationCode, IAuthenticationPacketHeader, AuthenticationPayload> pipelineRegister, [NotNull] ISerializerService serializer)
-		{
-			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
-
-			//Just register through generic with HeaderPipeline.Main
-			return pipelineRegister.With(new AuthenticationPayloadWritingComponent(serializer), o => o.For<PayloadPipeline.Main>());
 		}
 	}
 }

@@ -91,7 +91,7 @@ namespace FreecraftCore
 			if (orderStrategy == null)
 				pipelineRegister.TryRegisterPipeline(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), NetworkPipelineTypes.Payload | NetworkPipelineTypes.Main);
 			else
-				pipelineRegister.With(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), o => o.For<PayloadPipeline>().WithOrder(orderStrategy));
+				pipelineRegister.With(new PayloadSizingStreamInsertionPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), o => o.For<PayloadPipeline.Main>().WithOrder(orderStrategy));
 			//Return for fluent registeration
 			return pipelineRegister;
 		}
@@ -144,6 +144,26 @@ namespace FreecraftCore
 		{
 			//Return for fluent registeration
 			return pipelineRegister.With(new PeekSupportReadingPipelineComponent<TContextBuilderType, TNetworkOperationCodeType, THeaderType, TPayloadType>(), options);
+		}
+	}
+
+	public static class PayloadWritingComponentRegisterationExtensions
+	{
+		/// <summary>
+		/// Registers a payload writing pipeline component cref="pipelineRegister"/> with the <see cref="NetworkPipelineTypes"/> flags NetworkPipelineTypes.Payload
+		/// </summary>
+		/// <param name="pipelineRegister">Pipeline service to register on.</param>
+		/// <param name="serializer"></param>
+		/// <returns>Register for fluent chaining.</returns>
+		public static INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, TPayloadType, TOperationCodeType, THeaderType, TPayloadType> WithPayloadWriting<TPayloadType, TOperationCodeType, THeaderType>(this INetworkInputPipelineRegister<IWireStreamWriterStrategyAsync, TPayloadType, TOperationCodeType, THeaderType, TPayloadType> pipelineRegister, [NotNull] ISerializerService serializer) 
+			where TOperationCodeType : struct 
+			where THeaderType : IMessageVerifyable, IOperationIdentifable<TOperationCodeType> 
+			where TPayloadType : IMessageVerifyable
+		{
+			if (serializer == null) throw new ArgumentNullException(nameof(serializer));
+
+			//Just register through generic with PayloadPipeline.Main
+			return pipelineRegister.With(new PayloadWritingComponent<TPayloadType, TOperationCodeType, THeaderType>(serializer), o => o.For<PayloadPipeline.Main>());
 		}
 	}
 
