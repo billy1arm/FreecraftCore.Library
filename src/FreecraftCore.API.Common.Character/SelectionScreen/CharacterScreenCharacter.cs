@@ -60,18 +60,22 @@ namespace FreecraftCore.API.Common
 
 		//TODO: Figure out how these flags work
 		[WireMember(10)]
+		public uint CharacterFlags { get; private set; }
+
+		//TODO: Figure out how these flags work
+		[WireMember(11)]
 		public uint SelectionFlags { get; private set; }
 
 		/// <summary>
 		/// Indicates if this is the first login by the account.
 		/// </summary>
-		[WireMember(11)]
+		[WireMember(12)]
 		public bool isFirstLogin { get; private set; } //This may be used to tell it to go to character customization?
 
 		/// <summary>
 		/// The visual display pet information.
 		/// </summary>
-		[WireMember(12)]
+		[WireMember(13)]
 		public CharacterScreenPetInfo PetInformation { get; private set; }
 
 		/// <summary>
@@ -79,12 +83,12 @@ namespace FreecraftCore.API.Common
 		/// the client can render it.
 		/// </summary>
 		[KnownSize(20)] //Jackpoz has this set as 20 items.
-		[WireMember(13)]
+		[WireMember(14)]
 		public CharacterScreenItem[] VisualEquipmentItems { get; private set; }
 
 		//TODO: Why is this sent?
 		[KnownSize(4)] //jackpoz bot shows they send 4 bags
-		[WireMember(14)]
+		[WireMember(15)]
 		public CharacterScreenBag[] Bags { get; private set; }
 
 		protected CharacterScreenCharacter()
