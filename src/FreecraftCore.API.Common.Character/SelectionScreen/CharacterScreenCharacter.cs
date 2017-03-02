@@ -80,11 +80,12 @@ namespace FreecraftCore.API.Common
 		/// </summary>
 		[KnownSize(20)] //Jackpoz has this set as 20 items.
 		[WireMember(13)]
-		public CharacterScreenItem VisualEquipmentItems { get; private set; }
+		public CharacterScreenItem[] VisualEquipmentItems { get; private set; }
 
 		//TODO: Why is this sent?
+		[KnownSize(4)] //jackpoz bot shows they send 4 bags
 		[WireMember(14)]
-		public CharacterScreenBag Bags { get; private set; }
+		public CharacterScreenBag[] Bags { get; private set; }
 
 		protected CharacterScreenCharacter()
 		{
