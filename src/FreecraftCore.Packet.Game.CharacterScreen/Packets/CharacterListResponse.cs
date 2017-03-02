@@ -18,7 +18,7 @@ namespace FreecraftCore.Packet
 
 		[WireMember(1)]
 		[SendSize(SendSizeAttribute.SizeType.Byte)] //Jackpoz's bot shows it sends count as byte
-		public CharacterScreenCharacter Characters { get; private set; }
+		public CharacterScreenCharacter[] Characters { get; private set; }
 
 		protected CharacterListResponse()
 		{
