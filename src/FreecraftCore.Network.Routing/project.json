@@ -6,7 +6,7 @@
     "JetBrains.Annotations": "10.2.1",
     "System.Threading.Tasks.Dataflow": "4.6.0",
     "System.Runtime": "4.3.0",
-    "FreecraftCore.Packet.Common": "1.0.56"
+    "FreecraftCore.Packet.Common": "1.0.59"
   },
 
   "frameworks": {

@@ -76,7 +76,7 @@
           "lib/net46/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Packet.Common/1.0.58": {
+      "FreecraftCore.Packet.Common/1.0.59": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -88,10 +88,10 @@
           "lib/net46/FreecraftCore.Packet.Common.dll": {}
         }
       },
-      "FreecraftCore.Packet.Game.Common/1.0.58": {
+      "FreecraftCore.Packet.Game.Common/1.0.59": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.58",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "JetBrains.Annotations": "10.2.1"
         },
         "compile": {
@@ -173,7 +173,7 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.56",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1"
         },
@@ -191,7 +191,7 @@
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
           "FreecraftCore.Network.Pipeline.API": "1.0.0",
-          "FreecraftCore.Packet.Common": "1.0.56",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1"
@@ -280,7 +280,7 @@
           "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll": {}
         }
       },
-      "FreecraftCore.Packet.Common/1.0.58": {
+      "FreecraftCore.Packet.Common/1.0.59": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -293,10 +293,10 @@
           "lib/netstandard1.6/FreecraftCore.Packet.Common.dll": {}
         }
       },
-      "FreecraftCore.Packet.Game.Common/1.0.58": {
+      "FreecraftCore.Packet.Game.Common/1.0.59": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.58",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "JetBrains.Annotations": "10.2.1",
           "NETStandard.Library": "1.6.0"
         },
@@ -1454,7 +1454,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "FreecraftCore.Packet.Common": "1.0.56",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1",
           "NETStandard.Library": "1.6.0"
@@ -1473,7 +1473,7 @@
           "FreecraftCore.Crypto.Packet": "1.0.23",
           "FreecraftCore.Crypto.Stream": "1.0.23",
           "FreecraftCore.Network.Pipeline.API": "1.0.0",
-          "FreecraftCore.Packet.Common": "1.0.56",
+          "FreecraftCore.Packet.Common": "1.0.59",
           "FreecraftCore.Serializer.API.Service": "2.0.2",
           "FreecraftCore.Serializer.Stream": "2.0.2",
           "JetBrains.Annotations": "10.2.1",
@@ -1549,24 +1549,24 @@
         "lib/netstandard1.6/FreecraftCore.Crypto.Stream.dll"
       ]
     },
-    "FreecraftCore.Packet.Common/1.0.58": {
-      "sha512": "4JYIc8rGdAzJbbmKWP1Pj/QgZXEAZVBZWMUnjzdhmHV7Q4NtOisIYKgYDr6/FD7obecxGNHtFisgB/hULo++/Q==",
+    "FreecraftCore.Packet.Common/1.0.59": {
+      "sha512": "UUfUdIViKa9+Igs0zdB6pz82C99NMYCYUfordtnrZTJfmcjJjAIwkQU3Cr5RnhAKfBqyCPypYEwum9OjI9H29Q==",
       "type": "package",
-      "path": "FreecraftCore.Packet.Common/1.0.58",
+      "path": "FreecraftCore.Packet.Common/1.0.59",
       "files": [
-        "freecraftcore.packet.common.1.0.58.nupkg.sha512",
-        "freecraftcore.packet.common.nuspec",
+        "FreecraftCore.Packet.Common.1.0.59.nupkg.sha512",
+        "FreecraftCore.Packet.Common.nuspec",
         "lib/net46/FreecraftCore.Packet.Common.dll",
         "lib/netstandard1.6/FreecraftCore.Packet.Common.dll"
       ]
     },
-    "FreecraftCore.Packet.Game.Common/1.0.58": {
-      "sha512": "mcZknllX9gNw2BuNVvFn71kMJnJ40BfxWfHmUIh7eQvNUD/7KxHXzKMzZzwLlvLak9IDxKCPPRcdEwtMCWmM+g==",
+    "FreecraftCore.Packet.Game.Common/1.0.59": {
+      "sha512": "pXPOd7IWX62G59+mtD5901/0wxj14Y1XWdzh30vxwgaDi0wVRnAeaUyoUmaD5IACRTuq/4xOlTwHAgSGJVaEZA==",
       "type": "package",
-      "path": "FreecraftCore.Packet.Game.Common/1.0.58",
+      "path": "FreecraftCore.Packet.Game.Common/1.0.59",
       "files": [
-        "freecraftcore.packet.game.common.1.0.58.nupkg.sha512",
-        "freecraftcore.packet.game.common.nuspec",
+        "FreecraftCore.Packet.Game.Common.1.0.59.nupkg.sha512",
+        "FreecraftCore.Packet.Game.Common.nuspec",
         "lib/net46/FreecraftCore.Packet.Game.Common.dll",
         "lib/netstandard1.6/FreecraftCore.Packet.Game.Common.dll"
       ]
@@ -4620,7 +4620,7 @@
       "FreecraftCore.Crypto.Stream >= 1.0.23",
       "FreecraftCore.Network.Pipeline.API >= 1.0.0-*",
       "FreecraftCore.Network.Pipeline.Generic >= 1.0.0-*",
-      "FreecraftCore.Packet.Game.Common >= 1.0.58",
+      "FreecraftCore.Packet.Game.Common >= 1.0.59",
       "FreecraftCore.Serializer.API.Service >= 2.0.2",
       "FreecraftCore.Serializer.Stream >= 2.0.2",
       "JetBrains.Annotations >= 10.2.1"
