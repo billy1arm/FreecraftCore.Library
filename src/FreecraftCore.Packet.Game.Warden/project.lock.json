@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Warden/1.0.34": {
+      "FreecraftCore.API.Common.Warden/1.0.36": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -65,7 +65,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.API.Common.Warden/1.0.34": {
+      "FreecraftCore.API.Common.Warden/1.0.36": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -1200,12 +1200,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Warden/1.0.34": {
-      "sha512": "WivUwQq2EE0B8fZ24+ka+H3/+lak97EqNqfmq0R5sICuJ0NF6rjItHy/yJNCsYPdy0JN36oiFZy5kMi/Sa/JmA==",
+    "FreecraftCore.API.Common.Warden/1.0.36": {
+      "sha512": "+1omPkpEHvgceDvpBLm41UzpgmF4nKcqBqWjpp7i6L3YjiMTMSVCBzPyUu37yYZd4h2ogFDO4Gq47p1mdYSVlA==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Warden/1.0.34",
+      "path": "FreecraftCore.API.Common.Warden/1.0.36",
       "files": [
-        "FreecraftCore.API.Common.Warden.1.0.34.nupkg.sha512",
+        "FreecraftCore.API.Common.Warden.1.0.36.nupkg.sha512",
         "FreecraftCore.API.Common.Warden.nuspec",
         "lib/net35/FreecraftCore.API.Common.Warden.dll",
         "lib/net45/FreecraftCore.API.Common.Warden.dll",
@@ -4199,7 +4199,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Warden >= 1.0.34",
+      "FreecraftCore.API.Common.Warden >= 1.0.36",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
       "FreecraftCore.Packet.Game.Common >= 1.0.0-*",
       "FreecraftCore.Serializer.Metadata >= 2.0.6"
