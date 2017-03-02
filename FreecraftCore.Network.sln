@@ -21,6 +21,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Routi
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Pipeline.Game", "src\FreecraftCore.Network.Pipeline.Game\FreecraftCore.Network.Pipeline.Game.xproj", "{1F6E6347-5DC7-4F20-BF56-1E3B45E6F1D8}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FreecraftCore.Network.Pipeline.Game.Client", "src\FreecraftCore.Network.Pipeline.Game.Client\FreecraftCore.Network.Pipeline.Game.Client.xproj", "{98AC351D-A7F4-4E2E-8636-9C48835E4B8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{1F6E6347-5DC7-4F20-BF56-1E3B45E6F1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F6E6347-5DC7-4F20-BF56-1E3B45E6F1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F6E6347-5DC7-4F20-BF56-1E3B45E6F1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AC351D-A7F4-4E2E-8636-9C48835E4B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AC351D-A7F4-4E2E-8636-9C48835E4B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AC351D-A7F4-4E2E-8636-9C48835E4B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AC351D-A7F4-4E2E-8636-9C48835E4B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{30538561-7E5B-4BA2-AD39-143895269804} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{02156992-39D2-446B-9FEA-CCDF9A370578} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 		{1F6E6347-5DC7-4F20-BF56-1E3B45E6F1D8} = {948DBB07-8D6A-42C2-9228-4953DD917280}
+		{98AC351D-A7F4-4E2E-8636-9C48835E4B8D} = {948DBB07-8D6A-42C2-9228-4953DD917280}
 	EndGlobalSection
 EndGlobal
