@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Auth/1.0.32": {
+      "FreecraftCore.API.Common.Auth/1.0.34": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -51,7 +51,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.API.Common.Auth/1.0.32": {
+      "FreecraftCore.API.Common.Auth/1.0.34": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -1171,12 +1171,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Auth/1.0.32": {
-      "sha512": "acJLzpChb7Dru0+Mn45fCKxtNGIOfnLHbey6jFVomtT6lcFkOgwN8EPAIAdFlunoI8Sdij5fA+jomVcp6pHZHA==",
+    "FreecraftCore.API.Common.Auth/1.0.34": {
+      "sha512": "uLKin/d723XNGDOfZyaMGxVWagzlBvrOdpD3J0XKQAG0DY4aIxHZHWSv97RCkUHFvM7Xo2Zp9Tio4l22/cZwVw==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Auth/1.0.32",
+      "path": "FreecraftCore.API.Common.Auth/1.0.34",
       "files": [
-        "FreecraftCore.API.Common.Auth.1.0.32.nupkg.sha512",
+        "FreecraftCore.API.Common.Auth.1.0.34.nupkg.sha512",
         "FreecraftCore.API.Common.Auth.nuspec",
         "lib/net45/FreecraftCore.API.Common.Auth.dll",
         "lib/net46/FreecraftCore.API.Common.Auth.dll",
@@ -4164,7 +4164,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Auth >= 1.0.32",
+      "FreecraftCore.API.Common.Auth >= 1.0.34",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
       "FreecraftCore.Serializer.Metadata >= 2.0.6"
     ],
