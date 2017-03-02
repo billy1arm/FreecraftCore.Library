@@ -33,8 +33,12 @@ namespace FreecraftCore.Network
 			//Doesn't this just suck? We spend so much time building a pipeline system and it works for everything but outgoing packets for games
 			byte[] payloadBytes = Serializer.Serialize(currentState);
 
+			byte[] headerBytes = Serializer.Serialize(new OutgoingClientPacketHeader(payloadBytes.Length, currentState.GetOperationCode()));
+
+			//TODO: Fix to empty buffer fault
 			//Encrypt the header including the payload byte lengths
-			byte[] headerBytes = PacketCrypto.ProcessBytesToNewBuffer(Serializer.Serialize(new OutgoingClientPacketHeader(payloadBytes.Length, currentState.GetOperationCode())), 0);
+			//Don't use ToNewBuffer because if the crypto service is unavailable it'll create a new empty buffer
+			PacketCrypto.ProcessBytes(headerBytes, 0, headerBytes.Length, headerBytes, 0);
 
 			//Write the data
 			input.Write(headerBytes);
