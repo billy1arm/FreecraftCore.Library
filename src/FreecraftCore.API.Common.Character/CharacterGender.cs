@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.API
+namespace FreecraftCore.API.Common
 {
 	/// <summary>
 	/// Enumeration of all gender states

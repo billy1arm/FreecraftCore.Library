@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API
+namespace FreecraftCore.API.Common
 {
 	/// <summary>
 	/// Represents the bags on the character screen.

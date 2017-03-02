@@ -1,7 +1,8 @@
-﻿{
+{
     "version": "1.0.0-*",
 
   "dependencies": {
+    "FreecraftCore.API.Common.Entity.Identity": "1.0.0-*",
     "FreecraftCore.Serializer.Metadata": "2.0.6"
   },
 
