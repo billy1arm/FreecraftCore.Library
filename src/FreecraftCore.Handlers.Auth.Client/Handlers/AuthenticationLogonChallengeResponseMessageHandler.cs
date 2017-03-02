@@ -74,9 +74,12 @@ namespace FreecraftCore.Handlers
 				using (WoWSRP6PublicComponentHashServiceProvider hashingService = new WoWSRP6PublicComponentHashServiceProvider())
 				{
 					//Set the session key in the store for usage
-					SessionKeyStorage.SessionKey = srpProvider.ComputeSessionKey(DetailsProvider.Details.AccountName.ToUpper(), DetailsProvider.Details.PlainTextPassword, stronglyTypedPayload.Challenge.salt);
+					BigInteger unhashedKey = srpProvider.ComputeSessionKey(DetailsProvider.Details.AccountName.ToUpper(), DetailsProvider.Details.PlainTextPassword, stronglyTypedPayload.Challenge.salt);
 
-					proof = new AuthLogonProofRequest(srpProvider.A.ToCleanByteArray(), hashingService.ComputeSRP6M1(srpProvider.g, srpProvider.N, DetailsProvider.Details.AccountName.ToUpper(), stronglyTypedPayload.Challenge.salt, srpProvider.A, srpProvider.B, SessionKeyStorage.SessionKey));
+					proof = new AuthLogonProofRequest(srpProvider.A.ToCleanByteArray(), hashingService.ComputeSRP6M1(srpProvider.g, srpProvider.N, DetailsProvider.Details.AccountName.ToUpper(), stronglyTypedPayload.Challenge.salt, srpProvider.A, srpProvider.B, unhashedKey));
+
+					//Set the session key as a hashed session key
+					SessionKeyStorage.SessionKey = hashingService.HashSessionKey(unhashedKey);
 				}
 			}
 
