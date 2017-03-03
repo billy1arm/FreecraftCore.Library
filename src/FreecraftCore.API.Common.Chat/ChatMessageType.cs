@@ -9,9 +9,9 @@ namespace FreecraftCore.API.Common
 	/// <summary>
 	/// Enumeration of all valid chat message types.
 	/// </summary>
-	public enum ChatMessageType : uint
+	public enum ChatMessageType : byte
 	{
-		CHAT_MSG_ADDON = 0xFFFFFFFF, // -1
+		//CHAT_MSG_ADDON = 0xFFFFFFFF, // -1
 		CHAT_MSG_SYSTEM = 0x00,
 		CHAT_MSG_SAY = 0x01,
 		CHAT_MSG_PARTY = 0x02,

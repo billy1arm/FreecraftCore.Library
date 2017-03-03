@@ -1092,6 +1092,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "FreecraftCore.API.Common.Entity.Identity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "FreecraftCore.Serializer.Metadata": "2.0.6",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/FreecraftCore.API.Common.Entity.Identity.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/FreecraftCore.API.Common.Entity.Identity.dll": {}
+        }
       }
     }
   },
@@ -4068,10 +4082,16 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "FreecraftCore.API.Common.Entity.Identity/1.0.0": {
+      "type": "project",
+      "path": "../FreecraftCore.API.Common.Entity.Identity/project.json",
+      "msbuildProject": "../FreecraftCore.API.Common.Entity.Identity/FreecraftCore.API.Common.Entity.Identity.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "FreecraftCore.API.Common.Entity.Identity >= 1.0.38",
       "FreecraftCore.Serializer.Metadata >= 2.0.6",
       "NETStandard.Library >= 1.6.0"
     ],
