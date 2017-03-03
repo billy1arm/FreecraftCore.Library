@@ -64,9 +64,6 @@
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
         },
-        "frameworkAssemblies": [
-          "System.Numerics"
-        ],
         "compile": {
           "net46/FreecraftCore.Crypto.BigInteger.dll": {}
         },

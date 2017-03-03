@@ -9,7 +9,6 @@
   "frameworks": {
     "net46": {
       "dependencies": {
-        "Net35Essentials": "1.0.3"
       },
       "frameworkAssemblies": {
       }

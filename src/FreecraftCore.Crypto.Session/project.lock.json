@@ -24,24 +24,12 @@
           "lib/net/JetBrains.Annotations.dll": {}
         }
       },
-      "Net35Essentials/1.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net35/Net35Essentials.dll": {}
-        },
-        "runtime": {
-          "lib/net35/Net35Essentials.dll": {}
-        }
-      },
       "FreecraftCore.Crypto.BigInteger/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
         },
-        "frameworkAssemblies": [
-          "System.Numerics"
-        ],
         "compile": {
           "net46/FreecraftCore.Crypto.BigInteger.dll": {}
         },
@@ -1248,16 +1236,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "Net35Essentials/1.0.3": {
-      "sha512": "7HRjKzvfbuzpxdeEteDEQt6PED5Jw4qTW/VqFPAtdJW8wfF9uqWujaDPoVbkUDet4Xu9ZMcFb88tFH/Q74FODw==",
-      "type": "package",
-      "path": "Net35Essentials/1.0.3",
-      "files": [
-        "Net35Essentials.1.0.3.nupkg.sha512",
-        "Net35Essentials.nuspec",
-        "lib/net35/Net35Essentials.dll"
       ]
     },
     "NETStandard.Library/1.6.0": {
@@ -4152,9 +4130,7 @@
       "FreecraftCore.Crypto.BigInteger >= 1.0.0-*",
       "JetBrains.Annotations >= 10.2.1"
     ],
-    ".NETFramework,Version=v4.6": [
-      "Net35Essentials >= 1.0.3"
-    ],
+    ".NETFramework,Version=v4.6": [],
     ".NETStandard,Version=v1.6": [
       "NETStandard.Library >= 1.6.0"
     ]
