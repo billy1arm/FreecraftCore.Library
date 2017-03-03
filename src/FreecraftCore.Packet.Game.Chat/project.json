@@ -1,16 +1,15 @@
 {
-    "version": "1.0.0-*",
+  "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Auth": "1.0.39",
+    "FreecraftCore.API.Common.Chat": "1.0.39",
+    "FreecraftCore.API.Common.Entity.Identity": "1.0.39",
     "FreecraftCore.Packet.Common": "1.0.0-*",
+    "FreecraftCore.Packet.Game.Common": "1.0.0-*",
     "FreecraftCore.Serializer.Metadata": "2.0.6"
   },
 
   "frameworks": {
-    "net46": {
-
-    },
     "netstandard1.6": {
       "imports": "dnxcore50",
       "dependencies": {
@@ -19,7 +18,7 @@
     }
   },
 
-    "buildOptions": {
-        "optimize": true
-    }
+  "buildOptions": {
+    "optimize": true
+  }
 }

@@ -3,10 +3,10 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Character/1.0.37": {
+      "FreecraftCore.API.Common.Character/1.0.39": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.API.Common.Entity.Identity": "1.0.37",
+          "FreecraftCore.API.Common.Entity.Identity": "1.0.39",
           "FreecraftCore.Serializer.Metadata": "2.0.6"
         },
         "compile": {
@@ -16,7 +16,7 @@
           "lib/net46/FreecraftCore.API.Common.Character.dll": {}
         }
       },
-      "FreecraftCore.API.Common.Entity.Identity/1.0.37": {
+      "FreecraftCore.API.Common.Entity.Identity/1.0.39": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -78,10 +78,10 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.API.Common.Character/1.0.37": {
+      "FreecraftCore.API.Common.Character/1.0.39": {
         "type": "package",
         "dependencies": {
-          "FreecraftCore.API.Common.Entity.Identity": "1.0.37",
+          "FreecraftCore.API.Common.Entity.Identity": "1.0.39",
           "FreecraftCore.Serializer.Metadata": "2.0.6",
           "NETStandard.Library": "1.6.0"
         },
@@ -92,7 +92,7 @@
           "lib/netstandard1.6/FreecraftCore.API.Common.Character.dll": {}
         }
       },
-      "FreecraftCore.API.Common.Entity.Identity/1.0.37": {
+      "FreecraftCore.API.Common.Entity.Identity/1.0.39": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -1227,12 +1227,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Character/1.0.37": {
-      "sha512": "UhtMXV3IKVfbZfU0RxIQZV+kDi2Cym32C9Z9NLqSC79o5jozouTfcqH28UUUV2F21UpjqEuT/M1/HPYiScidYQ==",
+    "FreecraftCore.API.Common.Character/1.0.39": {
+      "sha512": "KqMsZ0mySnlbcz+nNwL9toTinoxCQDX39xL0zsErzoaD1c5oABznYu88pX/veZPPj5LSK55wci4oVCktrc586A==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Character/1.0.37",
+      "path": "FreecraftCore.API.Common.Character/1.0.39",
       "files": [
-        "FreecraftCore.API.Common.Character.1.0.37.nupkg.sha512",
+        "FreecraftCore.API.Common.Character.1.0.39.nupkg.sha512",
         "FreecraftCore.API.Common.Character.nuspec",
         "lib/net35/FreecraftCore.API.Common.Character.dll",
         "lib/net45/FreecraftCore.API.Common.Character.dll",
@@ -1240,12 +1240,12 @@
         "lib/netstandard1.6/FreecraftCore.API.Common.Character.dll"
       ]
     },
-    "FreecraftCore.API.Common.Entity.Identity/1.0.37": {
-      "sha512": "ez6XGV8uiJiquOkyxe1bbeOkqeCBuXTy/GxfXfn6W3AMTB9RrJVYDWM68bROsFJbO9Mi3tPaw8ZOLDoz2t6P5Q==",
+    "FreecraftCore.API.Common.Entity.Identity/1.0.39": {
+      "sha512": "rN6ffcCdfDjXPggR94bNqDlfBRTAk7JSpk7WmlYwH4h1EA7e+EMa9oCm0PP0IuBEvhaBfaamTlfK3j1p60rVkQ==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Entity.Identity/1.0.37",
+      "path": "FreecraftCore.API.Common.Entity.Identity/1.0.39",
       "files": [
-        "FreecraftCore.API.Common.Entity.Identity.1.0.37.nupkg.sha512",
+        "FreecraftCore.API.Common.Entity.Identity.1.0.39.nupkg.sha512",
         "FreecraftCore.API.Common.Entity.Identity.nuspec",
         "lib/net35/FreecraftCore.API.Common.Entity.Identity.dll",
         "lib/net45/FreecraftCore.API.Common.Entity.Identity.dll",
@@ -4239,8 +4239,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Character >= 1.0.37",
-      "FreecraftCore.API.Common.Entity.Identity >= 1.0.37",
+      "FreecraftCore.API.Common.Character >= 1.0.39",
+      "FreecraftCore.API.Common.Entity.Identity >= 1.0.39",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
       "FreecraftCore.Packet.Game.Common >= 1.0.0-*",
       "FreecraftCore.Serializer.Metadata >= 2.0.6"

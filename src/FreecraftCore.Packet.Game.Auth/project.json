@@ -2,8 +2,8 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Addon": "1.0.37",
-    "FreecraftCore.API.Common.Auth": "1.0.37",
+    "FreecraftCore.API.Common.Addon": "1.0.39",
+    "FreecraftCore.API.Common.Auth": "1.0.39",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
     "JetBrains.Annotations": "10.2.1"
