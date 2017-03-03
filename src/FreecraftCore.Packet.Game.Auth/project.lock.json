@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6": {
-      "FreecraftCore.API.Common.Addon/1.0.36": {
+      "FreecraftCore.API.Common.Addon/1.0.37": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -15,7 +15,7 @@
           "lib/net46/FreecraftCore.API.Common.Addon.dll": {}
         }
       },
-      "FreecraftCore.API.Common.Auth/1.0.36": {
+      "FreecraftCore.API.Common.Auth/1.0.37": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -77,7 +77,7 @@
       }
     },
     ".NETStandard,Version=v1.6": {
-      "FreecraftCore.API.Common.Addon/1.0.36": {
+      "FreecraftCore.API.Common.Addon/1.0.37": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -90,7 +90,7 @@
           "lib/netstandard1.6/FreecraftCore.API.Common.Addon.dll": {}
         }
       },
-      "FreecraftCore.API.Common.Auth/1.0.36": {
+      "FreecraftCore.API.Common.Auth/1.0.37": {
         "type": "package",
         "dependencies": {
           "FreecraftCore.Serializer.Metadata": "2.0.6",
@@ -1225,12 +1225,12 @@
     }
   },
   "libraries": {
-    "FreecraftCore.API.Common.Addon/1.0.36": {
-      "sha512": "gJFr2qtNmXRan67Ztv/IiUk0OjRhuJbZoLkeYaQAMx/i294q28/WnrHzYGykkEhD2fzOGGv3/WTYs3BkD6TIVQ==",
+    "FreecraftCore.API.Common.Addon/1.0.37": {
+      "sha512": "iEH6NbO/WeO8z+ohrV0vxJJmDpa3v5x4cywsCiNyL/sR4S5K0yNOQIw4CimZfJIaGpahB8zr1i1mTMFPA3kpbw==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Addon/1.0.36",
+      "path": "FreecraftCore.API.Common.Addon/1.0.37",
       "files": [
-        "FreecraftCore.API.Common.Addon.1.0.36.nupkg.sha512",
+        "FreecraftCore.API.Common.Addon.1.0.37.nupkg.sha512",
         "FreecraftCore.API.Common.Addon.nuspec",
         "lib/net35/FreecraftCore.API.Common.Addon.dll",
         "lib/net45/FreecraftCore.API.Common.Addon.dll",
@@ -1238,12 +1238,12 @@
         "lib/netstandard1.6/FreecraftCore.API.Common.Addon.dll"
       ]
     },
-    "FreecraftCore.API.Common.Auth/1.0.36": {
-      "sha512": "hpuklxQyYKSZpnSso54cB3yArHQcPd9KusMWDW8QWoWUevYCrFbKxD6EdknrLOpDS4hw0oOwtfp6VyMhg9gTqw==",
+    "FreecraftCore.API.Common.Auth/1.0.37": {
+      "sha512": "HG4W0vahv9pANyLHIbCRCb/OBEYX4YyW2trLw/baCDMxDnIObUlqUklZ2BadQKe5EI28QmYZsFObEu57Af2Hjw==",
       "type": "package",
-      "path": "FreecraftCore.API.Common.Auth/1.0.36",
+      "path": "FreecraftCore.API.Common.Auth/1.0.37",
       "files": [
-        "FreecraftCore.API.Common.Auth.1.0.36.nupkg.sha512",
+        "FreecraftCore.API.Common.Auth.1.0.37.nupkg.sha512",
         "FreecraftCore.API.Common.Auth.nuspec",
         "lib/net45/FreecraftCore.API.Common.Auth.dll",
         "lib/net46/FreecraftCore.API.Common.Auth.dll",
@@ -4236,8 +4236,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FreecraftCore.API.Common.Addon >= 1.0.36",
-      "FreecraftCore.API.Common.Auth >= 1.0.36",
+      "FreecraftCore.API.Common.Addon >= 1.0.37",
+      "FreecraftCore.API.Common.Auth >= 1.0.37",
       "FreecraftCore.Packet.Common >= 1.0.0-*",
       "FreecraftCore.Packet.Game.Common >= 1.0.0-*",
       "JetBrains.Annotations >= 10.2.1"
