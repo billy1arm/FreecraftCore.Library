@@ -41,7 +41,8 @@ namespace FreecraftCore.API.Common
 		[WireMember(5)]
 		public CharacterGender Gender { get; private set; }
 
-		//TODO: Find out what these bytes are
+		//TODO: Implement the looks
+		//This is uint8 Skin, uint8 Face, uint8 Hairstyle, uint8 hairColor, uint8 facialStyle
 		[KnownSize(5)] //is sent as 5 bytes in JackPoz's setup
 		[WireMember(6)]
 		public byte[] UnknownBytesOne { get; private set; }
@@ -58,11 +59,11 @@ namespace FreecraftCore.API.Common
 		[WireMember(9)]
 		public uint GuildId { get; private set; }
 
-		//TODO: Figure out how these flags work
+		//TODO: See Trinitycore's HandleCharEnum to see how these flags look and implement it
 		[WireMember(10)]
 		public uint CharacterFlags { get; private set; }
 
-		//TODO: Figure out how these flags work
+		//TODO: See Trinitycore's HandleCharEnum to see how the selection customization optional flags are set
 		[WireMember(11)]
 		public uint SelectionFlags { get; private set; }
 
@@ -82,7 +83,7 @@ namespace FreecraftCore.API.Common
 		/// Represents the display IDs of the various items equipped by a character so that
 		/// the client can render it.
 		/// </summary>
-		[KnownSize(20)] //Jackpoz has this set as 20 items.
+		[KnownSize(19)] //Jackpoz has this set as 20 items but reads length - 1 and Trinitycore sends 19 items. SO THERE ARE 19!!
 		[WireMember(14)]
 		public CharacterScreenItem[] VisualEquipmentItems { get; private set; }
 

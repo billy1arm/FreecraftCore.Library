@@ -25,13 +25,13 @@ namespace FreecraftCore.API.Common
 		//TODO: Find out what this means
 
 		[WireMember(3)]
-		private uint UnknownOne { get; set; }
+		private uint EnchantDisplayId { get; set; }
 
-		public CharacterScreenItem(uint displayId, byte inventoryType, uint unknownOne)
+		public CharacterScreenItem(uint displayId, byte inventoryType, uint enchantDisplayId)
 		{
 			DisplayId = displayId;
 			InventoryType = inventoryType;
-			UnknownOne = unknownOne;
+			EnchantDisplayId = enchantDisplayId;
 		}
 
 		protected CharacterScreenItem()

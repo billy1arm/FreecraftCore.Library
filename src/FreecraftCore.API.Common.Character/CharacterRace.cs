@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore.API.Common
 {
 	/// <summary>
 	/// Enumeration of all player character races.
 	/// </summary>
+	[WireDataContract]
 	public enum CharacterRace : byte
 	{
 		Human = 1,
