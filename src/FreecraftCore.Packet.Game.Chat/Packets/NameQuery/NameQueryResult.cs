@@ -12,7 +12,7 @@ namespace FreecraftCore.Packet
 	/// Name query result base object.
 	/// </summary>
 	[WireDataContractBaseType(1, typeof(UnknownNameQueryResult))]
-	[WireDataContractBaseType(1, typeof(KnownNameQueryResult))]
+	[WireDataContractBaseType(0, typeof(KnownNameQueryResult))]
 	[WireDataContract(WireDataContractAttribute.KeyType.Byte)]
 	public abstract class NameQueryResult
 	{
