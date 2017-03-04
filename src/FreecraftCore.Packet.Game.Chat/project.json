@@ -2,8 +2,8 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Chat": "1.0.40",
-    "FreecraftCore.API.Common.Entity.Identity": "1.0.40",
+    "FreecraftCore.API.Common.Chat": "1.0.41",
+    "FreecraftCore.API.Common.Entity.Identity": "1.0.41",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
     "FreecraftCore.Serializer.Metadata": "2.0.6"
@@ -15,8 +15,12 @@
       "dependencies": {
         "NETStandard.Library": "1.6.0"
       }
-    }
-  },
+    },
+    "net46":
+    {
+      
+    } 
+},
 
   "buildOptions": {
     "optimize": true
