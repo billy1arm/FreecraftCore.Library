@@ -17,16 +17,17 @@ namespace FreecraftCore.Packet
 		/// <inheritdoc />
 		public override bool isValid { get; } = true;
 
+		/// <summary>
+		/// The GUID requested in the name query request.
+		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid TargetGuid { get; private set; }
+		public PackedGuid RequestedGuid { get; private set; }
 
-		public NameQueryResponse([NotNull] ObjectGuid targetGuid)
-		{
-			if (targetGuid == null)
-				throw new ArgumentNullException(nameof(targetGuid));
-
-			TargetGuid = targetGuid;
-		}
+		/// <summary>
+		/// The name query result.
+		/// </summary>
+		[WireMember(2)]
+		public NameQueryResult Result { get; private set; }
 
 		protected NameQueryResponse()
 		{

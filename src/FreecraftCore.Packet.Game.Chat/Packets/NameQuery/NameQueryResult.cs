@@ -17,12 +17,6 @@ namespace FreecraftCore.Packet
 	public abstract class NameQueryResult
 	{
 		/// <summary>
-		/// The GUID requested in the name query request.
-		/// </summary>
-		[WireMember(1)]
-		public PackedGuid RequestedGuid { get; private set; }
-
-		/// <summary>
 		/// Indicates if the query was successful.
 		/// </summary>
 		public abstract bool Successful { get; }
