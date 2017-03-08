@@ -6,4 +6,4 @@ dotnet pack src/FreecraftCore.Packet.Game.Auth/ -c Release
 dotnet pack src/FreecraftCore.Packet.Game.Warden/ -c Release
 dotnet pack src/FreecraftCore.Packet.Game.CharacterScreen/ -c Release
 dotnet pack src/FreecraftCore.Packet.Game.Chat/ -c Release
-
+dotnet pack src/FreecraftCore.Packet.Game.Core/ -c Release
