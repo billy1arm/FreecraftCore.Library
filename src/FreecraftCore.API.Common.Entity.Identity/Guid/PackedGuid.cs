@@ -9,6 +9,11 @@ namespace FreecraftCore.API.Common
 	[WireDataContract]
 	public class PackedGuid : BaseGuid
 	{
+		/// <summary>
+		/// Represents an Empty or uninitialized <see cref="PackedGuid"/>.
+		/// </summary>
+		public static PackedGuid Empty { get; } = new PackedGuid(0);
+
 		/// <inheritdoc />
 		public override ulong RawGuidValue { get; }
 

@@ -7,7 +7,8 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.API.Common
 {
 	[DefaultChild(typeof(UnhandledChatTypeMessage))]
-	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(GuildChatNetworkMesage))]
+	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(DefaultNetworkChatMessage))] //for guild chat messages
+	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_WHISPER, typeof(DefaultNetworkChatMessage))] //for player whispers
 	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)]
 	public abstract class NetworkChatMessage
 	{

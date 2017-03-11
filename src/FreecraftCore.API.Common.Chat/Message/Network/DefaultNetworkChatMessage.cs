@@ -7,10 +7,10 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.API.Common
 {
 	[WireDataContract]
-	public class GuildChatNetworkMesage : NetworkChatMessage
+	public class DefaultNetworkChatMessage : NetworkChatMessage
 	{
 		/// <summary>
-		/// Don't really know what this would be for guild messages.
+		/// Don't really know what this would be for most messages.
 		/// </summary>
 		[WireMember(1)]
 		public ObjectGuid RecieverGuid { get; private set; }
@@ -30,7 +30,7 @@ namespace FreecraftCore.API.Common
 		[WireMember(3)]
 		public ChatStateTag Tag { get; private set; }
 
-		protected GuildChatNetworkMesage()
+		protected DefaultNetworkChatMessage()
 		{
 
 		}
