@@ -23,7 +23,7 @@ namespace FreecraftCore.Packet
 		[WireMember(1)]
 		public PlayerChatMessage Message { get; private set; }
 
-		protected ChatMessageRequest([NotNull] PlayerChatMessage message)
+		public ChatMessageRequest([NotNull] PlayerChatMessage message)
 		{
 			if (message == null) throw new ArgumentNullException(nameof(message));
 
