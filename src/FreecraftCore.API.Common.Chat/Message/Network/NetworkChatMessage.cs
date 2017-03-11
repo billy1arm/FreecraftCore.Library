@@ -9,7 +9,7 @@ namespace FreecraftCore.API.Common
 	[DefaultChild(typeof(UnhandledChatTypeMessage))]
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(DefaultNetworkChatMessage))] //for guild chat messages
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_WHISPER, typeof(DefaultNetworkChatMessage))] //for player whispers
-	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)]
+	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead | InformationHandlingFlags.DontWrite)]
 	public abstract class NetworkChatMessage
 	{
 		/// <summary>

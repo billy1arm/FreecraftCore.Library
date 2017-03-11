@@ -7,9 +7,10 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.API.Common
 {
 	[DefaultChild(typeof(DefaultPlayerChatMessage))]
+	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(GuildPlayerChatMessage))] //for guild chat
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_CHANNEL, typeof(ChannelPlayerChatMessage))] //for channel messages
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_WHISPER, typeof(WhisperPlayerChatMessage))] //for player whispers
-	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)]
+	[WireDataContract(WireDataContractAttribute.KeyType.Int32, InformationHandlingFlags.DontConsumeRead | InformationHandlingFlags.DontWrite)]
 	public abstract class PlayerChatMessage
 	{
 		//for some reason Blizzard sends uint32s for message type instead of the byte for enum.
