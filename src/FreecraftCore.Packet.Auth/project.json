@@ -2,7 +2,7 @@
     "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Auth": "1.0.44",
+    "FreecraftCore.API.Common.Auth": "1.0.45",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Serializer.Metadata": "2.0.6"
   },

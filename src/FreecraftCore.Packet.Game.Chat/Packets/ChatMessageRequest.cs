@@ -29,5 +29,10 @@ namespace FreecraftCore.Packet
 
 			Message = message;
 		}
+
+		protected ChatMessageRequest()
+		{
+			
+		}
 	}
 }

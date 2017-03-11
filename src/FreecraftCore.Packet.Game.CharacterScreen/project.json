@@ -2,8 +2,8 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "FreecraftCore.API.Common.Character": "1.0.44",
-    "FreecraftCore.API.Common.Entity.Identity": "1.0.44",
+    "FreecraftCore.API.Common.Character": "1.0.45",
+    "FreecraftCore.API.Common.Entity.Identity": "1.0.45",
     "FreecraftCore.Packet.Common": "1.0.0-*",
     "FreecraftCore.Packet.Game.Common": "1.0.0-*",
     "FreecraftCore.Serializer.Metadata": "2.0.6"
