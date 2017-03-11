@@ -34,5 +34,10 @@ namespace FreecraftCore.API.Common
 			Target = target;
 			Message = message;
 		}
+
+		protected WhisperPlayerChatMessage()
+		{
+			
+		}
 	}
 }

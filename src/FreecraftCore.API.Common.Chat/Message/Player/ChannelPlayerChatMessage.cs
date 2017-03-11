@@ -34,5 +34,10 @@ namespace FreecraftCore.API.Common
 			ChannelName = channelName;
 			Message = message;
 		}
+
+		protected ChannelPlayerChatMessage()
+		{
+			
+		}
 	}
 }

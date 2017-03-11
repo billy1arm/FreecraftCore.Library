@@ -37,5 +37,10 @@ namespace FreecraftCore.API.Common
 			_messageType = (uint)messageType;
 			Language = language;
 		}
+
+		protected PlayerChatMessage()
+		{
+			
+		}
 	}
 }

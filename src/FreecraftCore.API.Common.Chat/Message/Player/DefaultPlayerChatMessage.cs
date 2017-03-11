@@ -25,5 +25,10 @@ namespace FreecraftCore.API.Common
 
 			Message = message;
 		}
+
+		protected DefaultPlayerChatMessage()
+		{
+			
+		}
 	}
 }
