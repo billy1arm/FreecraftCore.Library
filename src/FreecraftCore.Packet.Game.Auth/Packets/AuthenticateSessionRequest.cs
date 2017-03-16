@@ -104,7 +104,7 @@ namespace FreecraftCore.Packet
 			if (string.IsNullOrEmpty(accountName))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(accountName));
 
-			//BlizzardAddonVerificationContainer = new AddonChecksumsContainer(addonChecksums);
+			BlizzardAddonVerificationContainer = new AddonChecksumsContainer(addonChecksums);
 			ClientBuildNumber = clientBuildNumber;
 			AccountName = accountName;
 			RandomSeedBytes = randomSeedBytes;
