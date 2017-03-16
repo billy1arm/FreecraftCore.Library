@@ -18,7 +18,7 @@ namespace FreecraftCore.Packet
 		/// <inheritdoc />
 		public override bool isValid => SessionDigest != null && SessionDigest.Length == 20
 			&& String.IsNullOrEmpty(AccountName) && RandomSeedBytes != null &&
-			RandomSeedBytes.Length == 4 && RealmIdentity != null;// && BlizzardAddonVerificationContainer != null;
+			RandomSeedBytes.Length == 4 && RealmIdentity != null && BlizzardAddonVerificationContainer != null;
 
 		/// <summary>
 		/// The build number of the client.
@@ -80,10 +80,10 @@ namespace FreecraftCore.Packet
 
 		//Trintycore will crash if you don't at least send the size on newer versions
 		//Though it'll probably be fixed soon
-		//[NotNull]
-		//[Compress] //compressed with zlib
-		//[WireMember(10)]
-		//public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
+		[NotNull]
+		[Compress] //compressed with zlib
+		[WireMember(10)]
+		public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
 		
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)
