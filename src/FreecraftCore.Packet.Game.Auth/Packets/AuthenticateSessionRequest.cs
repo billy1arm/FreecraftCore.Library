@@ -18,7 +18,7 @@ namespace FreecraftCore.Packet
 		/// <inheritdoc />
 		public override bool isValid => SessionDigest != null && SessionDigest.Length == 20
 			&& String.IsNullOrEmpty(AccountName) && RandomSeedBytes != null &&
-			RandomSeedBytes.Length == 4 && RealmIdentity != null && BlizzardAddonVerificationContainer != null;
+			RandomSeedBytes.Length == 4 && RealmIdentity != null;// && BlizzardAddonVerificationContainer != null;
 
 		/// <summary>
 		/// The build number of the client.
