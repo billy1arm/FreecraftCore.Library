@@ -80,10 +80,10 @@ namespace FreecraftCore.Packet
 
 		//Trintycore will crash if you don't at least send the size on newer versions
 		//Though it'll probably be fixed soon
-		[NotNull]
-		[Compress] //compressed with zlib
-		[WireMember(10)]
-		public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
+		//[NotNull]
+		//[Compress] //compressed with zlib
+		//[WireMember(10)]
+		//public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
 		
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)
@@ -104,7 +104,7 @@ namespace FreecraftCore.Packet
 			if (string.IsNullOrEmpty(accountName))
 				throw new ArgumentException("Value cannot be null or empty.", nameof(accountName));
 
-			BlizzardAddonVerificationContainer = new AddonChecksumsContainer(addonChecksums);
+			//BlizzardAddonVerificationContainer = new AddonChecksumsContainer(addonChecksums);
 			ClientBuildNumber = clientBuildNumber;
 			AccountName = accountName;
 			RandomSeedBytes = randomSeedBytes;
