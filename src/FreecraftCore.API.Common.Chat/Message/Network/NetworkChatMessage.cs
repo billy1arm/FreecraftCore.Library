@@ -22,7 +22,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the language of the chat message.
 		/// </summary>
 		[WireMember(2)]
-		public ChatLanguage Language { get; private set; }
+		public ChatLanguage Language { get; }
 
 		/// <summary>
 		/// The <see cref="ObjectGuid"/> of the entity that sent the message.
