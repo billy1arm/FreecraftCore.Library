@@ -13,7 +13,7 @@ namespace FreecraftCore.API.Common
 
 		//They send IP as a string that contains both IP and the port
 		[WireMember(1)]
-		private string RealmEndpointInformation { get; set; }
+		private string RealmEndpointInformation { get; }
 
 		private Lazy<IPAddress> lazyIP { get; }
 

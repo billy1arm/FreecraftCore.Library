@@ -14,13 +14,13 @@ namespace FreecraftCore.API.Common
 	{
 		//TODO: Figure out what these values are or do
 		[WireMember(1)]
-		private uint UnknownOne { get; set; }
+		private uint UnknownOne { get; }
 
 		[WireMember(2)]
-		private byte UnknownTwo { get; set; }
+		private byte UnknownTwo { get; }
 
 		[WireMember(3)]
-		private uint UnknownThree { get; set; }
+		private uint UnknownThree { get; }
 
 		protected CharacterScreenBag()
 		{

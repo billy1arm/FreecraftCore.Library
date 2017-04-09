@@ -14,7 +14,7 @@ namespace FreecraftCore.API.Common
 		/// The chat message being sent.
 		/// </summary>
 		[WireMember(1)]
-		public string Message { get; private set; } //null terminated string message
+		public string Message { get; } //null terminated string message
 
 		/// <inheritdoc />
 		public GuildPlayerChatMessage(ChatLanguage language, [NotNull] string message)

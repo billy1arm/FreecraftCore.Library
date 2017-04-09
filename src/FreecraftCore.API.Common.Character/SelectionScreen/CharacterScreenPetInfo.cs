@@ -10,13 +10,13 @@ namespace FreecraftCore.API.Common
 	{
 		//TODO: Figure out what any of this means
 		[WireMember(1)]
-		public uint PetInformationId { get; private set; }
+		public uint PetInformationId { get; }
 
 		[WireMember(2)]
-		public uint PetLevel { get; private set; }
+		public uint PetLevel { get; }
 
 		[WireMember(3)]
-		public uint PetFamilyId { get; private set; }
+		public uint PetFamilyId { get; }
 
 		protected CharacterScreenPetInfo()
 		{

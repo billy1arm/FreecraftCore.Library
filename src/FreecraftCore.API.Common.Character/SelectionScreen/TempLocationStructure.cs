@@ -14,21 +14,21 @@ namespace FreecraftCore.API.Common
 	{
 		//TODO: Encapsulate this in a location object when we make it
 		[WireMember(1)]
-		public uint ZoneId { get; private set; }
+		public uint ZoneId { get; }
 
 		//TODO: Encapsulate this in a location object when we make it
 		[WireMember(2)]
-		public uint MapId { get; private set; }
+		public uint MapId { get; }
 
 		//TODO: Encapsulate this in the Vector3 in System.Numerics with SIMD or create a Vector3 class
 		[WireMember(3)]
-		public float XPosition { get; private set; }
+		public float XPosition { get; }
 
 		[WireMember(4)]
-		public float YPosition { get; private set; }
+		public float YPosition { get; }
 
 		[WireMember(5)]
-		public float ZPosition { get; private set; }
+		public float ZPosition { get; }
 
 		//TODO: Create a real ctor if we ever make a server
 		protected TempLocationStructure()

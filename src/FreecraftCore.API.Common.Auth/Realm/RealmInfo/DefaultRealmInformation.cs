@@ -15,37 +15,37 @@ namespace FreecraftCore.API.Common
 		/// </summary>
 		[DontWrite]
 		[WireMember(1)]
-		public RealmFlags Flags { get; private set; }
+		public RealmFlags Flags { get; }
 
 		/// <summary>
 		/// The string the realm should display on the realmlist tab.
 		/// This might not be only the name. It could include build information.
 		/// </summary>
 		[WireMember(2)]
-		public string RealmString { get; private set; }
+		public string RealmString { get; }
 
 		/// <summary>
 		/// Endpoint information for the realm.
 		/// </summary>
 		[WireMember(3)]
-		public RealmEndpoint RealmAddress { get; private set; }
+		public RealmEndpoint RealmAddress { get; }
 
 		//Maybe wrap this into something? Query it for realm pop info? I don't know
 		//TOOD: Research Mangos and Ember to find out why this is a float.
 		//Odd that this is a float.
 		[WireMember(4)]
-		public float PopulationLevel { get; private set; }
+		public float PopulationLevel { get; }
 
 		/// <summary>
 		/// Indicates how many character's the account of the client has
 		/// on this realm.
 		/// </summary>
 		[WireMember(5)]
-		public byte CharacterCount { get; private set; }
+		public byte CharacterCount { get; }
 
 		//TODO: Ok, which time zone maps to which byte?
 		[WireMember(6)]
-		public byte RealmTimeZone { get; private set; }
+		public byte RealmTimeZone { get; }
 
 		//2.x and 3.x clients expect the realm index.
 		//1.12.1 just expect a byte-sized 0
@@ -53,7 +53,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the ID of the realm.
 		/// </summary>
 		[WireMember(7)]
-		public byte RealmId { get; private set; }
+		public byte RealmId { get; }
 
 		//TODO: If we ever make a server then we should create a real ctor
 

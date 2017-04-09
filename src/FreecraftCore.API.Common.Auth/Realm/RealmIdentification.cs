@@ -14,11 +14,11 @@ namespace FreecraftCore.API.Common
 	{
 		//Probably used to verify the correct realm has been connected to
 		[WireMember(7)]
-		private uint RegionID { get; set; } = 0;
+		private uint RegionID { get; } = 0;
 
 		//Probably used to verify the correct realm has been connected to
 		[WireMember(8)]
-		private uint BattlegroupID { get; set; } = 0;
+		private uint BattlegroupID { get; } = 0;
 
 		//Unused by Trinitycore aside from
 		//assigning to the database
@@ -26,7 +26,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the realm that was selected.
 		/// </summary>
 		[WireMember(9)]
-		public uint RealmID { get; private set; }
+		public uint RealmID { get; }
 
 		/// <summary>
 		/// Creates a new realm identification object

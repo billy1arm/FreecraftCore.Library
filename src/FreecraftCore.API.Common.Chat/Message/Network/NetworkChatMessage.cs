@@ -16,7 +16,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the message type of the chat message.
 		/// </summary>
 		[WireMember(1)]
-		public ChatMessageType MessageType { get; private set; }
+		public ChatMessageType MessageType { get; }
 
 		/// <summary>
 		/// Indicates the language of the chat message.
@@ -28,11 +28,11 @@ namespace FreecraftCore.API.Common
 		/// The <see cref="ObjectGuid"/> of the entity that sent the message.
 		/// </summary>
 		[WireMember(3)]
-		public ObjectGuid SenderGuid { get; private set; }
+		public ObjectGuid SenderGuid { get; }
 
 		//TODO: Find out what this is
 		[WireMember(4)]
-		private int UnknownOne { get; set; }
+		private int UnknownOne { get; }
 
 		protected NetworkChatMessage()
 		{

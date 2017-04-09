@@ -9,13 +9,13 @@ namespace FreecraftCore.API.Common
 	public class RealmBuildInformation
 	{
 		[WireMember(1)]
-		public ExpansionType Expansion { get; private set; }
+		public ExpansionType Expansion { get; }
 
 		[WireMember(2)]
-		public byte MajorVersion { get; private set; }
+		public byte MajorVersion { get; }
 
 		[WireMember(3)]
-		public byte MinorVersion { get; private set; }
+		public byte MinorVersion { get; }
 
 		//TODO: If we ever make a server add a real ctor. Right now only the server sends this
 

@@ -20,14 +20,14 @@ namespace FreecraftCore.API.Common
 		[NotNull]
 		[WireMember(1)]
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
-		private AddonChecksumInfo[] addonChecksumInfos { get; set; }
+		private AddonChecksumInfo[] addonChecksumInfos { get; }
 
 		//TODO: Trinitycore just reads a uint32 but does nothing with it. What does real WoW client send?
 		/// <summary>
 		/// Indicates the time this container was generated.
 		/// </summary>
 		[WireMember(2)]
-		public uint Timestamp { get; private set; }
+		public uint Timestamp { get; }
 
 		/// <summary>
 		/// Collection of Addon checksums used for Addon validation.

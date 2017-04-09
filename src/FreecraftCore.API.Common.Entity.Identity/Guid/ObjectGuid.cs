@@ -20,9 +20,7 @@ namespace FreecraftCore.API.Common
 		/// GUID value.
 		/// </summary>
 		[WireMember(1)]
-		private ulong _RawGuidValue { get; set; }
-
-		public override ulong RawGuidValue => _RawGuidValue;
+		public override ulong RawGuidValue { get; }
 
 		/// <summary>
 		/// Creates a new value-type wrapped for the uint64 raw GUID value.
@@ -30,7 +28,7 @@ namespace FreecraftCore.API.Common
 		/// <param name="guidValue">Raw GUID value.</param>
 		public ObjectGuid(ulong guidValue)
 		{
-			_RawGuidValue = guidValue;
+			RawGuidValue = guidValue;
 		}
 
 		protected ObjectGuid()

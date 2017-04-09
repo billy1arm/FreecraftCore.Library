@@ -15,7 +15,8 @@ namespace FreecraftCore.API.Common
 	{
 		//for some reason Blizzard sends uint32s for message type instead of the byte for enum.
 		[WireMember(1)]
-		private readonly uint _messageType;
+		private uint _messageType { get; }
+
 		/// <summary>
 		/// Indicates the message type of the chat message.
 		/// </summary>
@@ -25,7 +26,7 @@ namespace FreecraftCore.API.Common
 		/// Indicates the language of the chat message.
 		/// </summary>	
 		[WireMember(2)]
-		public ChatLanguage Language { get; private set; }
+		public ChatLanguage Language { get; }
 
 		protected PlayerChatMessage(ChatMessageType messageType, ChatLanguage language)
 		{
