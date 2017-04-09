@@ -16,7 +16,7 @@ namespace FreecraftCore.Crypto
 	{
 		//TODO: Reimplement secure random generation in netstandard1.6
 		//TODO: Implement >net4 Lazy loaded version.
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_5 && !NETSTANDARD1_6
 		[NotNull]
 		private RNGCryptoServiceProvider randomProvider { get; } = new RNGCryptoServiceProvider();
 #else
@@ -106,7 +106,7 @@ namespace FreecraftCore.Crypto
 		//Based on the source from: http://www.dotnetframework.org/default.aspx/DotNET/DotNET/8@0/untmp/whidbey/REDBITS/ndp/clr/src/BCL/System/Security/Cryptography/RNGCryptoServiceProvider@cs/1/RNGCryptoServiceProvider@cs
 		public static void GetNonZeroBytes(RandomNumberGenerator generator, byte[] data)
 		{
-#if NETSTANDARD1_6
+#if NETSTANDARD1_5 || NETSTANDARD1_6
 			generator.GetBytes(data);
 
 			int indexOfFirst0Byte = data.Length;
