@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FreecraftCore.API.Common.Character" Version="1.0.47" />
     <PackageReference Include="FreecraftCore.API.Common.Entity.Identity" Version="1.0.47" />
     <PackageReference Include="JetBrains.Annotations" Version="10.2.1" />
   </ItemGroup>
