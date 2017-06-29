@@ -60,11 +60,11 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Indicates the major patch version (Ex. x.x.5)
 		/// </summary>
-		[WireMember(5)]
+		[WireMember(6)]
 		public byte MinorPatchVersion { get; private set; }
 
 		//TODO: Enumerate this maybe?
-		[WireMember(6)]
+		[WireMember(7)]
 		public ClientBuild Build { get; private set; }
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace FreecraftCore.Packet.Auth
 		[EnumString]
 		[ReverseData]
 		[KnownSize(3)]
-		[WireMember(7)]
+		[WireMember(8)]
 		public PlatformType Platform { get; private set; }
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace FreecraftCore.Packet.Auth
 		[EnumString]
 		[ReverseData]
 		[KnownSize(3)]
-		[WireMember(8)]
+		[WireMember(9)]
 		public OperatingSystemType OperatingSystem { get; private set; }
 
 		/// <summary>
@@ -92,15 +92,15 @@ namespace FreecraftCore.Packet.Auth
 		[ReverseData]
 		[DontTerminate] //Locale also doesn't terminate. It is a char[4] like "SUne" without a terminator.
 		[KnownSize(4)]
-		[WireMember(9)]
+		[WireMember(10)]
 		public LocaleType Locale { get; private set; }
 
 		//TODO: Timezone bias? Investigate values.
-		[WireMember(10)]
+		[WireMember(11)]
 		private uint TimeZoneBias { get; set; }
 
 		[KnownSize(4)]
-		[WireMember(11)]
+		[WireMember(12)]
 		private readonly byte[] ipAddressInBytes;
 
 		//Lazily cached Ip built from wired bytes
@@ -118,7 +118,7 @@ namespace FreecraftCore.Packet.Auth
 		//TODO: Check Mangos if they look for a null terminator on Identity
 		[DontTerminate] //JackPoz doesn't terminate and it looks like Trinitycore doesn't really expect a null terminator either.
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
-		[WireMember(12)]
+		[WireMember(13)]
 		public string Identity { get; private set; }
 
 		public AuthLogonChallengeRequest(ProtocolVersion protocol, GameType game, ExpansionType expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)

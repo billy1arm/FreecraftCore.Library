@@ -1,9 +1,2 @@
-dotnet pack src/FreecraftCore.Packet.Common/ -c Release
-dotnet pack src/FreecraftCore.Packet.Auth/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Common/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Client/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Auth/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Warden/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.CharacterScreen/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Chat/ -c Release
-dotnet pack src/FreecraftCore.Packet.Game.Core/ -c Release
+%NUGET% restore FreecraftCore.Packet.sln -NoCache -NonInteractive -ConfigFile Nuget.config
+msbuild FreecraftCore.Packet.sln /p:Configuration=Release

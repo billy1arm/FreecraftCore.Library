@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.API.Common;
-using FreecraftCore.API.Common.Chat.Emote;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 
