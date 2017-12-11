@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0-*",
+
+  "dependencies": {
+    "FreecraftCore.Network.Pipeline.API": "1.0.0-*",
+    "JetBrains.Annotations": "10.2.1",
+    "System.Threading.Tasks.Dataflow": "4.6.0",
+    "System.Runtime": "4.3.0",
+    "FreecraftCore.Packet.Common": "1.0.59"
+  },
+
+  "frameworks": {
+    "net46": {
+
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+
+    "buildOptions": {
+        "optimize": true
+    }
+}
