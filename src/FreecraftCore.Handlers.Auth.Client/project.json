@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "FreecraftCore.API.Client.Auth": "1.0.2",
+    "FreecraftCore.API.Client.Common": "1.0.2",
+    "FreecraftCore.Crypto.SRP6": "1.0.24",
+    "FreecraftCore.Handlers.Auth": "1.0.0-*",
+    "FreecraftCore.Handlers.Common": "1.0.0-*",
+    "System.Reactive": "3.1.1"
+  },
+
+  "frameworks": {
+    "net46": {
+
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+
+  "buildOptions": {
+    "optimize": true
+  }
+}
