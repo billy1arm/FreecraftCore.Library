@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E903AB5-E882-49A7-A612-FCCB9F11D540}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C69D878A-A37C-4DBD-8D90-8AF30074E3C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Addon", "src\FreecraftCore.API.Common.Addon\FreecraftCore.API.Common.Addon.csproj", "{87D4C146-AD22-466B-991E-26C355C9FB76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Auth", "src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj", "{8579CD34-8B4F-4578-AC53-1EA46A92A67E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Character", "src\FreecraftCore.API.Common.Character\FreecraftCore.API.Common.Character.csproj", "{737E3BEB-47FA-43EA-8236-198151AA6758}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Chat", "src\FreecraftCore.API.Common.Chat\FreecraftCore.API.Common.Chat.csproj", "{DAD069F0-4810-4F0C-8522-EA4AD0C499FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Core", "src\FreecraftCore.API.Common.Core\FreecraftCore.API.Common.Core.csproj", "{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Entity.Identity", "src\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj", "{D2FF6BD2-9756-4B05-B141-0847BBD15B78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Movement", "src\FreecraftCore.API.Common.Movement\FreecraftCore.API.Common.Movement.csproj", "{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common.Warden", "src\FreecraftCore.API.Common.Warden\FreecraftCore.API.Common.Warden.csproj", "{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87D4C146-AD22-466B-991E-26C355C9FB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D4C146-AD22-466B-991E-26C355C9FB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D4C146-AD22-466B-991E-26C355C9FB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D4C146-AD22-466B-991E-26C355C9FB76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8579CD34-8B4F-4578-AC53-1EA46A92A67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8579CD34-8B4F-4578-AC53-1EA46A92A67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8579CD34-8B4F-4578-AC53-1EA46A92A67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8579CD34-8B4F-4578-AC53-1EA46A92A67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737E3BEB-47FA-43EA-8236-198151AA6758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737E3BEB-47FA-43EA-8236-198151AA6758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737E3BEB-47FA-43EA-8236-198151AA6758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737E3BEB-47FA-43EA-8236-198151AA6758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD069F0-4810-4F0C-8522-EA4AD0C499FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD069F0-4810-4F0C-8522-EA4AD0C499FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD069F0-4810-4F0C-8522-EA4AD0C499FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD069F0-4810-4F0C-8522-EA4AD0C499FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FF6BD2-9756-4B05-B141-0847BBD15B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FF6BD2-9756-4B05-B141-0847BBD15B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FF6BD2-9756-4B05-B141-0847BBD15B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FF6BD2-9756-4B05-B141-0847BBD15B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87D4C146-AD22-466B-991E-26C355C9FB76} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{8579CD34-8B4F-4578-AC53-1EA46A92A67E} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{737E3BEB-47FA-43EA-8236-198151AA6758} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{DAD069F0-4810-4F0C-8522-EA4AD0C499FD} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{D2FF6BD2-9756-4B05-B141-0847BBD15B78} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{852D88E2-28DD-44C9-AFD2-CFEB7A55DC77} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+		{AB6F1E0F-2931-4DDA-9886-10D565D5AEFB} = {C69D878A-A37C-4DBD-8D90-8AF30074E3C0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}
+	EndGlobalSection
+EndGlobal

@@ -20,14 +20,11 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="2.0.21" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.20" />
   </ItemGroup>
 
 </Project>
