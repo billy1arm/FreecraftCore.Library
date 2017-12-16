@@ -9,12 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.API.Common.Chat" Version="1.0.47" />
-    <PackageReference Include="JetBrains.Annotations" Version="10.2.1" />
+    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.Packet.Game.Common\FreecraftCore.Packet.Game.Common.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
   </ItemGroup>
 
 </Project>

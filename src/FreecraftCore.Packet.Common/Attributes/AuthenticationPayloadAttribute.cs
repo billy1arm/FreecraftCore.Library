@@ -13,7 +13,7 @@ namespace FreecraftCore.Packet
 	/// Inherits from RuntimeLinkAttribute which allows types to link themselves at runtime.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)] //sometimes multiple operations will send the same payload though this is not yet supported
-	public class AuthenticationPayloadAttribute : WireDataContractBaseTypeRuntimeLinkAttribute
+	public class AuthenticationPayloadAttribute : WireDataContractBaseLinkAttribute
 	{
 		/// <summary>
 		/// Represents the authentication operation (or Auth Command in Mangos/Trinitycore)

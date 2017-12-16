@@ -8,10 +8,10 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore.Packet
 {
 	/// <summary>
-	/// Metadata marker that fulfills the <see cref="WireDataContractBaseTypeRuntimeLinkAttribute"/> metadata role
+	/// Metadata marker that fulfills the <see cref="WireDataContractBaseLinkAttribute"/> metadata role
 	/// with a stronger typed ctor parameter for a <see cref="NetworkOperationCode"/>.
 	/// </summary>
-	public class GamePayloadOperationCodeAttribute : WireDataContractBaseTypeRuntimeLinkAttribute
+	public class GamePayloadOperationCodeAttribute : WireDataContractBaseLinkAttribute
 	{
 		/// <summary>
 		/// The <see cref="NetworkOperationCode"/> of the packet.
