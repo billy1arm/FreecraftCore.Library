@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>net46</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -17,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="2.0.21" />
-    <PackageReference Include="JetBrains.Annotations" Version="10.2.1" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.20" />
+    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
   </ItemGroup>
 
   <ItemGroup>

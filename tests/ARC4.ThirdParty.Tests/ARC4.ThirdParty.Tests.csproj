@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ARC4.ThirdParty.Tests</RootNamespace>
     <AssemblyName>ARC4.ThirdParty.Tests</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,31 +33,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+    <Reference Include="BouncyCastle.Crypto">
       <HintPath>..\..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FreecraftCore.Crypto.BigInteger">
-      <HintPath>..\..\src\FreecraftCore.Crypto.RC4\bin\Debug\net35\FreecraftCore.Crypto.BigInteger.dll</HintPath>
-    </Reference>
-    <Reference Include="FreecraftCore.Crypto.Common">
-      <HintPath>..\..\src\FreecraftCore.Crypto.RC4\bin\Debug\net35\FreecraftCore.Crypto.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="FreecraftCore.Crypto.RC4">
-      <HintPath>..\..\src\FreecraftCore.Crypto.RC4\bin\Debug\net35\FreecraftCore.Crypto.RC4.dll</HintPath>
-    </Reference>
-    <Reference Include="FreecraftCore.Serializer.Metadata">
-      <HintPath>..\..\src\FreecraftCore.Crypto.RC4\bin\Debug\net35\FreecraftCore.Serializer.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +54,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj">
+      <Project>{9B65D1B2-F81E-4A8B-9F7B-6343D7F3E4CC}</Project>
+      <Name>FreecraftCore.Crypto.BigInteger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Crypto.RC4\FreecraftCore.Crypto.RC4.csproj">
+      <Project>{62B0B88C-EE7B-499B-BAB0-29A64546A908}</Project>
+      <Name>FreecraftCore.Crypto.RC4</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

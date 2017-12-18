@@ -24,10 +24,21 @@ namespace FreecraftCore.Packet
 		/// </summary>
 		/// <param name="operationCode">The operation code.</param>
 		public GamePayloadOperationCodeAttribute(NetworkOperationCode operationCode) 
-			: base((int)operationCode)
+			: base((int)operationCode, typeof(GamePacketPayload))
 		{
 			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode)) 
 				throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the NetworkOperationCode enum.");
+		}
+
+		/// <summary>
+		/// Reserved only for testing.
+		/// DO NOT CALL.
+		/// </summary>
+		/// <param name="i"></param>
+		internal GamePayloadOperationCodeAttribute(int i)
+			: base(i, typeof(GamePacketPayload))
+		{
+			
 		}
 	}
 }

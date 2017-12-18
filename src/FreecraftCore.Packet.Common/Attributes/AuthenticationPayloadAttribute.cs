@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FreecraftCore.Packet.Auth;
 using FreecraftCore.Serializer;
 
 
@@ -26,7 +27,7 @@ namespace FreecraftCore.Packet
 		public AuthOperationDestinationCode DestinationCode { get; }
 
 		public AuthenticationPayloadAttribute(AuthOperationCode operationCode, AuthOperationDestinationCode destinationCode)
-			: base((((int)operationCode) << 8) + (int)destinationCode) //this shifts the opcode (Ex. 0000 0001 to become 0000 0001 0000 0000) and then inserts the destination code (Ex. 0000 0001 0000 0001) which is written little endian with the real opcode being closest
+			: base((((int)operationCode) << 8) + (int)destinationCode, typeof(AuthenticationPayload)) //this shifts the opcode (Ex. 0000 0001 to become 0000 0001 0000 0000) and then inserts the destination code (Ex. 0000 0001 0000 0001) which is written little endian with the real opcode being closest
 		{
 			if (!Enum.IsDefined(typeof(AuthOperationCode), operationCode))
 				throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the AuthOperationCode enum.");
@@ -36,6 +37,16 @@ namespace FreecraftCore.Packet
 
 			OperationCode = operationCode;
 			DestinationCode = destinationCode;
+		}
+		
+		/// <summary>
+		/// Used for testing purposes only.
+		/// </summary>
+		/// <param name="i">Testing index.</param>
+		internal AuthenticationPayloadAttribute(int i)
+			: base(i, typeof(AuthenticationPayload))
+		{
+			
 		}
 	}
 }
