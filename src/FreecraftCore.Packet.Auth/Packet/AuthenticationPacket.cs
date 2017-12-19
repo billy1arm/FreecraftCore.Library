@@ -19,9 +19,9 @@ namespace FreecraftCore.Packet.Auth
 		public IAuthenticationPacketHeader Header { get; }
 
 		/// <inheritdoc />
-		public AuthenticationPayload Payload { get; }
+		public AuthenticationServerPayload Payload { get; }
 
-		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] AuthenticationPayload authPayload)
+		public AuthenticationPacket([NotNull] IAuthenticationPacketHeader authPacketHeader, [NotNull] AuthenticationServerPayload authPayload)
 		{
 			if (authPacketHeader == null) throw new ArgumentNullException(nameof(authPacketHeader));
 			if (authPayload == null) throw new ArgumentNullException(nameof(authPayload));

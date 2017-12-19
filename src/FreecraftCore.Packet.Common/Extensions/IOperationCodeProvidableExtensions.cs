@@ -91,10 +91,10 @@ namespace FreecraftCore.Packet
 		{
 			if (t == null) throw new ArgumentNullException(nameof(t));
 
-			AuthenticationPayloadAttribute attribute = t.GetTypeInfo().GetCustomAttribute<AuthenticationPayloadAttribute>();
+			AuthenticationServerPayloadAttribute attribute = t.GetTypeInfo().GetCustomAttribute<AuthenticationServerPayloadAttribute>();
 
 			if (attribute == null)
-				throw new InvalidOperationException($"{t.FullName} does not have a {nameof(AuthenticationPayloadAttribute)} that defines its {nameof(AuthOperationCode)}.");
+				throw new InvalidOperationException($"{t.FullName} does not have a {nameof(AuthenticationServerPayloadAttribute)} that defines its {nameof(AuthOperationCode)}.");
 
 			return attribute.OperationCode; throw new NotImplementedException();
 		}

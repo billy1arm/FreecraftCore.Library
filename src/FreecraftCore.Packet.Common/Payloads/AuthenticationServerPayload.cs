@@ -12,14 +12,13 @@ using FreecraftCore.Packet.Auth;
 
 namespace FreecraftCore.Packet.Auth
 {
-	//There is a reason the keytype is UShort. It's complex to explain but the authserver sends a byte operation code. This is not enough information
-	//to know what payload to deserialize so we extend the keytype by inserting data into the stream depending on if we're on the client or the server.
 	/// <summary>
 	/// Authentication payload base type that is used to wire children for serialization purposes.
+	/// This version of the Authentication Payload is for payloads sent by the server.
 	/// </summary>
 	[ProtocolGrouping(ProtocolCode.Authentication)] //we can put this on the base type because all auth packets have the same protocol.
-	[WireDataContract(WireDataContractAttribute.KeyType.UShort, InformationHandlingFlags.DontWrite, true)] //expect runtime linking
-	public abstract class AuthenticationPayload : IMessageVerifyable, IProtocolGroupable, IOperationCodeProvidable<AuthOperationCode>
+	[WireDataContract(WireDataContractAttribute.KeyType.Byte, true)] //expect runtime linking
+	public abstract class AuthenticationServerPayload : IMessageVerifyable, IProtocolGroupable, IOperationCodeProvidable<AuthOperationCode>
 	{
 		/// <inheritdoc />
 		public abstract bool isValid { get; }

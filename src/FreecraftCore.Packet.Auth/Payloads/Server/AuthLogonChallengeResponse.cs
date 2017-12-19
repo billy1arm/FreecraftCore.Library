@@ -14,8 +14,8 @@ namespace FreecraftCore.Packet.Auth
 	/// The response payload to a <see cref="AuthLogonChallengeRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE, AuthOperationDestinationCode.Client)] //TODO: Figure out how to support linking with the limited information.
-	public class AuthLogonChallengeResponse : AuthenticationPayload
+	[AuthenticationServerPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //TODO: Figure out how to support linking with the limited information.
+	public class AuthLogonChallengeResponse : AuthenticationServerPayload
 	{
 		//TODO: Implement
 		public override bool isValid { get; } = true;

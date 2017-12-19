@@ -9,8 +9,8 @@ using JetBrains.Annotations;
 namespace FreecraftCore.Packet.Auth
 {
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Server)] //TODO: Figure out how to support linking with the limited information.
-	public class AuthLogonProofRequest : AuthenticationPayload
+	[AuthenticationClientPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.
+	public class AuthLogonProofRequest : AuthenticationClientPayload
 	{
 		//TODO: Implement
 		public override bool isValid { get; } = true;

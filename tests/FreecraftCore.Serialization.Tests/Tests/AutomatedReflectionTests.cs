@@ -23,10 +23,10 @@ namespace FreecraftCore.Tests
 		{
 			//arrange
 			//Find the attribute that should be annoting these payloads
-			WireDataContractBaseLinkAttribute linkAttri = typeof(AuthenticationPayloadAttribute)
+			WireDataContractBaseLinkAttribute linkAttri = typeof(AuthenticationServerPayloadAttribute)
 				.Assembly
 				.GetTypes()
-				.Where(t => t.BaseType == typeof(WireDataContractBaseLinkAttribute))
+				.Where(t =>  typeof(WireDataContractBaseLinkAttribute).IsAssignableFrom(t) && !t.IsAbstract)
 				.Select(t => Activator.CreateInstance(t, BindingFlags.CreateInstance | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { 5 }, null) as WireDataContractBaseLinkAttribute)
 				.FirstOrDefault(c => c.BaseType == typeof(TPayloadBaseType));
 

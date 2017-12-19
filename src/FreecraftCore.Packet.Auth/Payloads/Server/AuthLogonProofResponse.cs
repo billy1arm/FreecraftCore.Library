@@ -11,8 +11,8 @@ namespace FreecraftCore.Packet.Auth
 	/// Response payload sent in response to the <see cref="AuthLogonProofRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationPayload(AuthOperationCode.AUTH_LOGON_PROOF, AuthOperationDestinationCode.Client)]
-	public class AuthLogonProofResponse : AuthenticationPayload
+	[AuthenticationServerPayload(AuthOperationCode.AUTH_LOGON_PROOF)]
+	public class AuthLogonProofResponse : AuthenticationServerPayload
 	{
 		//TODO: Implement
 		public override bool isValid { get; } = true;
