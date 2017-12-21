@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Stream" Version="3.0.20" />
+    <PackageReference Include="FreecraftCore.Serializer.Stream" Version="3.0.23" />
     <PackageReference Include="JetBrains.Annotations" Version="10.2.1" />
   </ItemGroup>
 

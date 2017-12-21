@@ -40,8 +40,9 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Game the client is for.
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[EnumString]
-		[KnownSize(3)]
+		[KnownSize(4)]
 		[WireMember(3)]
 		public GameType Game { get; private set; }
 
@@ -70,24 +71,27 @@ namespace FreecraftCore.Packet.Auth
 		/// <summary>
 		/// Indicates the platform/arc (Ex. 32bit or 64bit)
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[EnumString]
 		[ReverseData]
-		[KnownSize(3)]
+		[KnownSize(4)]
 		[WireMember(8)]
 		public PlatformType Platform { get; private set; }
 
 		/// <summary>
 		/// Indicates the operating system the client is running on (Ex. Win or Mac)
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[EnumString]
 		[ReverseData]
-		[KnownSize(3)]
+		[KnownSize(4)]
 		[WireMember(9)]
 		public OperatingSystemType OperatingSystem { get; private set; }
 
 		/// <summary>
 		/// Indicates the Locale of the client. (Ex. En-US)
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[EnumString]
 		[ReverseData]
 		[DontTerminate] //Locale also doesn't terminate. It is a char[4] like "SUne" without a terminator.

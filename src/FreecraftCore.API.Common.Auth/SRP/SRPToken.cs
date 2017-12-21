@@ -11,6 +11,7 @@ namespace FreecraftCore.API.Common.Auth
 	/// SRP token based on Trinitycore/Mangos/WoW authentication protocol.
 	/// Review http://srp.stanford.edu/design.html for more information
 	/// </summary>
+	[WireDataContract]
 	public class SRPToken 
 	{
 		/// <summary>
@@ -42,5 +43,11 @@ namespace FreecraftCore.API.Common.Auth
 		[KnownSize(32)] //trinitycore sends 32 byte salt
 		[WireMember(4)]
 		public byte[] salt { get; private set; }
+
+		//Serializer ctor
+		protected SRPToken()
+		{
+			
+		}
 	}
 }

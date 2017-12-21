@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARC4.ThirdParty.Tests", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.Serialization.Tests", "tests\FreecraftCore.Serialization.Tests\FreecraftCore.Serialization.Tests.csproj", "{71D7A3B0-9AE2-4F22-9C63-542709BD507A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication.TestClient", "tests\Authentication.TestClient\Authentication.TestClient.csproj", "{87A8364A-74E6-4A71-8A88-1A4178CE9C02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{71D7A3B0-9AE2-4F22-9C63-542709BD507A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71D7A3B0-9AE2-4F22-9C63-542709BD507A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71D7A3B0-9AE2-4F22-9C63-542709BD507A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A8364A-74E6-4A71-8A88-1A4178CE9C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A8364A-74E6-4A71-8A88-1A4178CE9C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A8364A-74E6-4A71-8A88-1A4178CE9C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A8364A-74E6-4A71-8A88-1A4178CE9C02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -209,6 +215,7 @@ Global
 		{BABC0403-BE4B-476C-99B2-C9592AC8C8D5} = {0AD22DB5-C13F-4337-90FB-B68279786457}
 		{B81EBB25-9A20-4699-9C7B-A9A4A1A6EC66} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 		{71D7A3B0-9AE2-4F22-9C63-542709BD507A} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
+		{87A8364A-74E6-4A71-8A88-1A4178CE9C02} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}

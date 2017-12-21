@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.20" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.23" />
   </ItemGroup>
 
 </Project>

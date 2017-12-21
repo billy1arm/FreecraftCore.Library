@@ -24,7 +24,7 @@ namespace FreecraftCore.Packet.Auth
 		/// Unknown 0x00 byte sent from the server.
 		/// </summary>
 		[WireMember(1)]
-		private readonly byte unknownResponseByte;
+		public readonly byte unknownResponseByte;
 
 		//Second piece of data sent is a result
 		[WireMember(2)]
