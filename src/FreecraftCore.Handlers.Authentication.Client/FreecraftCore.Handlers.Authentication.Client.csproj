@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GladNet3.Handler.API" Version="3.0.16" />
+    <PackageReference Include="JetBrains.Annotations" Version="10.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Crypto.SRP6\FreecraftCore.Crypto.SRP6.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Subjects;
 using System.Threading.Tasks;
 using FreecraftCore.API.Common;
-using FreecraftCore.Network;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using JetBrains.Annotations;
 
 namespace FreecraftCore.Handlers
 {
-	[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_PROOF)]
+	/*[AuthenticationMessageHandler(AuthOperationCode.AUTH_LOGON_PROOF)]
 	public class AuthenticationLogonProofResponseMessageHandler : AuthenticationMessageHandlerAsync<AuthLogonProofResponse>
 	{
 		/// <summary>
@@ -48,5 +46,5 @@ namespace FreecraftCore.Handlers
 
 			return NetworkMessageContextState.Handled;
 		}
-	}
+	}*/
 }

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.API.Common;
-using FreecraftCore.Network;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Packet.Common;
 using JetBrains.Annotations;
 
 namespace FreecraftCore.Handlers
 {
-	[AuthenticationMessageHandler(AuthOperationCode.REALM_LIST)]
+	/*[AuthenticationMessageHandler(AuthOperationCode.REALM_LIST)]
 	public class RealmListResponseMessageHandler : AuthenticationMessageHandler<AuthRealmListResponse>
 	{
 		/// <summary>
@@ -39,5 +37,5 @@ namespace FreecraftCore.Handlers
 
 			return NetworkMessageContextState.Handled;
 		}
-	}
+	}*/
 }

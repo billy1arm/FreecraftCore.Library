@@ -71,6 +71,10 @@
       <Project>{9B65D1B2-F81E-4A8B-9F7B-6343D7F3E4CC}</Project>
       <Name>FreecraftCore.Crypto.BigInteger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Handlers.Authentication.Client\FreecraftCore.Handlers.Authentication.Client.csproj">
+      <Project>{5F4BF7C4-BE9C-4790-A6A8-DA072EE2B823}</Project>
+      <Name>FreecraftCore.Handlers.Authentication.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj">
       <Project>{FE9B9306-281B-4134-AA8F-B995F6098B91}</Project>
       <Name>FreecraftCore.Packet.Auth</Name>

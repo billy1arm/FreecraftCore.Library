@@ -16,4 +16,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="GladNet3.Common.API" Version="3.0.16" />
+    <PackageReference Include="Microsoft.Tpl.Dataflow" Version="4.5.24" />
+  </ItemGroup>
+
 </Project>
